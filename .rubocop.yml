@@ -1,0 +1,17 @@
+
+
+Metrics/LineLength:
+  Enabled: true
+  Max: 99
+
+Layout/EndOfLine:
+  Enabled: true
+
+Style/BracesAroundHashParameters:
+  Enabled: true
+
+Style/ClassMethods:
+  Enabled: true
+
+Style/DefWithParentetheses:
+  Enabled: false
