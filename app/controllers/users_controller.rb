@@ -1,5 +1,5 @@
 
-require 'test_helper'
+require 'users_helper'
 
 class UsersController < ApplicationController
     test "should get new" do
