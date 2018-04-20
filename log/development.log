@@ -145,3 +145,396 @@ Migrating to CreateCategories (20180420002156)
   [1m[35m (136.6ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (171.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(2066412043304455350)[0m
   [1m[35m (216.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2018-04-19 21:47:54 -0300
+  
+PG::ConnectionBad (could not translate host name "db" to address: Name or service not known
+):
+  
+pg (1.0.0) lib/pg.rb:56:in `initialize'
+pg (1.0.0) lib/pg.rb:56:in `new'
+pg (1.0.0) lib/pg.rb:56:in `connect'
+activerecord (5.1.5) lib/active_record/connection_adapters/postgresql_adapter.rb:697:in `connect'
+activerecord (5.1.5) lib/active_record/connection_adapters/postgresql_adapter.rb:221:in `initialize'
+activerecord (5.1.5) lib/active_record/connection_adapters/postgresql_adapter.rb:38:in `new'
+activerecord (5.1.5) lib/active_record/connection_adapters/postgresql_adapter.rb:38:in `postgresql_connection'
+activerecord (5.1.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:759:in `new_connection'
+activerecord (5.1.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:803:in `checkout_new_connection'
+activerecord (5.1.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:782:in `try_to_checkout_new_connection'
+activerecord (5.1.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:743:in `acquire_connection'
+activerecord (5.1.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:500:in `checkout'
+activerecord (5.1.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:374:in `connection'
+activerecord (5.1.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:931:in `retrieve_connection'
+activerecord (5.1.5) lib/active_record/connection_handling.rb:116:in `retrieve_connection'
+activerecord (5.1.5) lib/active_record/connection_handling.rb:88:in `connection'
+activerecord (5.1.5) lib/active_record/migration.rb:562:in `connection'
+activerecord (5.1.5) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.5) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-04-19 21:51:03 -0300
+  
+PG::ConnectionBad (could not translate host name "db" to address: Name or service not known
+):
+  
+pg (1.0.0) lib/pg.rb:56:in `initialize'
+pg (1.0.0) lib/pg.rb:56:in `new'
+pg (1.0.0) lib/pg.rb:56:in `connect'
+activerecord (5.1.5) lib/active_record/connection_adapters/postgresql_adapter.rb:697:in `connect'
+activerecord (5.1.5) lib/active_record/connection_adapters/postgresql_adapter.rb:221:in `initialize'
+activerecord (5.1.5) lib/active_record/connection_adapters/postgresql_adapter.rb:38:in `new'
+activerecord (5.1.5) lib/active_record/connection_adapters/postgresql_adapter.rb:38:in `postgresql_connection'
+activerecord (5.1.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:759:in `new_connection'
+activerecord (5.1.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:803:in `checkout_new_connection'
+activerecord (5.1.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:782:in `try_to_checkout_new_connection'
+activerecord (5.1.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:743:in `acquire_connection'
+activerecord (5.1.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:500:in `checkout'
+activerecord (5.1.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:374:in `connection'
+activerecord (5.1.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:931:in `retrieve_connection'
+activerecord (5.1.5) lib/active_record/connection_handling.rb:116:in `retrieve_connection'
+activerecord (5.1.5) lib/active_record/connection_handling.rb:88:in `connection'
+activerecord (5.1.5) lib/active_record/migration.rb:562:in `connection'
+activerecord (5.1.5) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.5) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 172.18.0.1 at 2018-04-20 00:53:05 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (179.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (2.4ms)
+Started GET "/" for 172.18.0.1 at 2018-04-20 00:53:09 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 5117ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Undefined variable: "$navbarColor".):
+    4:     <title>Example</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   </head>
+   10: 
+  
+app/assets/stylesheets/partials/home_page.scss:30
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__1770680862322296015_69897673574600'
+Completed 500 Internal Server Error in 5451ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Undefined variable: "$navbarColor".):
+    4:     <title>Example</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   </head>
+   10: 
+  
+app/assets/stylesheets/partials/home_page.scss:30
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__1770680862322296015_47400042981140'
+Started GET "/" for 172.18.0.1 at 2018-04-20 00:55:41 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 350ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Undefined variable: "$navbarColor".):
+     5:     <%= csrf_meta_tags %>
+     6: 
+     7: 
+     8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+     9:   </head>
+    10: 
+    11:   <body>
+  
+app/assets/stylesheets/partials/home_page.scss:30
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__1770680862322296015_69897606204260'
+Started GET "/" for 172.18.0.1 at 2018-04-20 00:55:50 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_navigation.html.erb (0.3ms)
+Completed 200 OK in 5ms (Views: 3.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 172.18.0.1 at 2018-04-20 00:55:52 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_navigation.html.erb (0.3ms)
+Completed 200 OK in 7ms (Views: 5.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 172.18.0.1 at 2018-04-20 00:56:31 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_navigation.html.erb (0.3ms)
+Completed 200 OK in 1184ms (Views: 1176.9ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (189.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2066412043304455350)[0m
+  [1m[35m (131.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (183.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (136.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (220.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (191.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(2066412043304455350)[0m
+  [1m[35m (283.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (174.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (190.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (145.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (289.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (141.6ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Política"], ["created_at", "2018-04-20 01:05:33.661525"], ["updated_at", "2018-04-20 01:05:33.661525"]]
+  [1m[35m (158.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (143.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (168.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Programación"], ["created_at", "2018-04-20 01:05:34.111325"], ["updated_at", "2018-04-20 01:05:34.111325"]]
+  [1m[35m (147.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (138.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (646.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Juegos"], ["created_at", "2018-04-20 01:05:34.570392"], ["updated_at", "2018-04-20 01:05:34.570392"]]
+  [1m[35m (289.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (140.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (153.5ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Data Science"], ["created_at", "2018-04-20 01:05:35.651879"], ["updated_at", "2018-04-20 01:05:35.651879"]]
+  [1m[35m (133.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCategory Load (155.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[35m (145.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (191.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (129.5ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Política"], ["created_at", "2018-04-20 01:06:02.106985"], ["updated_at", "2018-04-20 01:06:02.106985"]]
+  [1m[35m (133.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (240.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (202.7ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Programación"], ["created_at", "2018-04-20 01:06:02.615660"], ["updated_at", "2018-04-20 01:06:02.615660"]]
+  [1m[35m (203.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (311.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (133.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Juegos"], ["created_at", "2018-04-20 01:06:03.338571"], ["updated_at", "2018-04-20 01:06:03.338571"]]
+  [1m[35m (165.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (203.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (201.7ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Data Science"], ["created_at", "2018-04-20 01:06:03.845408"], ["updated_at", "2018-04-20 01:06:03.845408"]]
+  [1m[35m (204.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCategory Load (205.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[35m (197.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (150.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (205.7ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Et molestiae expedita sunt fugit distinctio."], ["content", "Impedit aperiam ea."], ["category_id", 1], ["created_at", "2018-04-20 01:06:05.897005"], ["updated_at", "2018-04-20 01:06:05.897005"]]
+  [1m[35m (199.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (152.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (148.8ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (202.3ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Qui earum molestiae sapiente."], ["content", "Aut nostrum occaecati."], ["category_id", 1], ["created_at", "2018-04-20 01:06:06.612747"], ["updated_at", "2018-04-20 01:06:06.612747"]]
+  [1m[35m (201.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (225.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (135.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (252.5ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Assumenda itaque animi."], ["content", "Tempora architecto aut sit quod ipsa similique sed."], ["category_id", 1], ["created_at", "2018-04-20 01:06:07.386072"], ["updated_at", "2018-04-20 01:06:07.386072"]]
+  [1m[35m (242.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (163.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (200.7ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (196.7ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Facere ipsum voluptate tenetur."], ["content", "Vel molestiae reiciendis assumenda quia commodi sit possimus."], ["category_id", 1], ["created_at", "2018-04-20 01:06:08.254536"], ["updated_at", "2018-04-20 01:06:08.254536"]]
+  [1m[35m (222.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (184.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (127.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (281.2ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Aut autem enim eum harum esse consequatur qui."], ["content", "Aspernatur aut porro."], ["category_id", 1], ["created_at", "2018-04-20 01:06:08.993121"], ["updated_at", "2018-04-20 01:06:08.993121"]]
+  [1m[35m (207.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (202.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (161.8ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (236.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Amet eum nihil est ad."], ["content", "Perspiciatis quos qui beatae in."], ["category_id", 2], ["created_at", "2018-04-20 01:06:09.853665"], ["updated_at", "2018-04-20 01:06:09.853665"]]
+  [1m[35m (187.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (423.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (201.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (205.1ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Incidunt voluptatem dolores sapiente qui doloribus ab."], ["content", "Ullam error veniam eius."], ["category_id", 2], ["created_at", "2018-04-20 01:06:10.911873"], ["updated_at", "2018-04-20 01:06:10.911873"]]
+  [1m[35m (204.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (135.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (169.7ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (205.2ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Atque aut rerum aliquam."], ["content", "Porro ipsam qui nihil quisquam."], ["category_id", 2], ["created_at", "2018-04-20 01:06:11.636168"], ["updated_at", "2018-04-20 01:06:11.636168"]]
+  [1m[35m (216.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (184.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (201.5ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (200.2ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Blanditiis consequatur temporibus quo cumque ullam."], ["content", "Saepe est vel eius natus."], ["category_id", 2], ["created_at", "2018-04-20 01:06:12.453028"], ["updated_at", "2018-04-20 01:06:12.453028"]]
+  [1m[35m (216.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (150.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (259.7ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (130.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Odio dolores nostrum quibusdam similique et corrupti."], ["content", "Omnis tenetur aut autem quis harum."], ["category_id", 2], ["created_at", "2018-04-20 01:06:13.288289"], ["updated_at", "2018-04-20 01:06:13.288289"]]
+  [1m[35m (132.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (223.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (201.9ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (305.5ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Consequatur veniam blanditiis dicta quo."], ["content", "Voluptatem harum recusandae consequatur illo."], ["category_id", 3], ["created_at", "2018-04-20 01:06:13.986121"], ["updated_at", "2018-04-20 01:06:13.986121"]]
+  [1m[35m (206.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (140.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (391.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (244.7ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Sint illum eos aut vero voluptatibus ullam."], ["content", "Fuga eum est modi nostrum laudantium praesentium voluptate."], ["category_id", 3], ["created_at", "2018-04-20 01:06:15.041213"], ["updated_at", "2018-04-20 01:06:15.041213"]]
+  [1m[35m (237.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (404.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (200.8ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (204.5ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Et dignissimos consequatur expedita eos magni sapiente corporis."], ["content", "Cum eveniet dolorum rerum iste fugit facilis laborum."], ["category_id", 3], ["created_at", "2018-04-20 01:06:16.137444"], ["updated_at", "2018-04-20 01:06:16.137444"]]
+  [1m[35m (247.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (468.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (193.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (203.3ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Cupiditate aut nulla atque est eveniet dolorem ea."], ["content", "Ea est ut praesentium laboriosam."], ["category_id", 3], ["created_at", "2018-04-20 01:06:17.261823"], ["updated_at", "2018-04-20 01:06:17.261823"]]
+  [1m[35m (216.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (189.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (211.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (202.5ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Fugit tenetur qui repudiandae harum ipsam."], ["content", "Nemo et consequuntur numquam qui impedit."], ["category_id", 3], ["created_at", "2018-04-20 01:06:18.090528"], ["updated_at", "2018-04-20 01:06:18.090528"]]
+  [1m[35m (297.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (207.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (196.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (206.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Numquam est repellat et quia at voluptatem."], ["content", "Molestiae omnis officiis eos."], ["category_id", 4], ["created_at", "2018-04-20 01:06:19.004059"], ["updated_at", "2018-04-20 01:06:19.004059"]]
+  [1m[35m (151.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (284.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (134.9ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (136.1ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Molestiae dolores aspernatur."], ["content", "Modi autem maiores saepe dolores eos reiciendis."], ["category_id", 4], ["created_at", "2018-04-20 01:06:19.789199"], ["updated_at", "2018-04-20 01:06:19.789199"]]
+  [1m[35m (201.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (293.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (234.5ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (137.7ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Voluptas quo error voluptatem."], ["content", "Ut ut explicabo et est soluta."], ["category_id", 4], ["created_at", "2018-04-20 01:06:20.663471"], ["updated_at", "2018-04-20 01:06:20.663471"]]
+  [1m[35m (135.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (212.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (190.9ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (244.6ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Maxime qui deserunt."], ["content", "Dolor atque ut eveniet voluptatem reiciendis aut est."], ["category_id", 4], ["created_at", "2018-04-20 01:06:21.346838"], ["updated_at", "2018-04-20 01:06:21.346838"]]
+  [1m[35m (178.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (198.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (208.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (203.7ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Eos soluta ipsum dignissimos veritatis voluptas est et."], ["content", "Quia omnis iusto."], ["category_id", 4], ["created_at", "2018-04-20 01:06:22.180538"], ["updated_at", "2018-04-20 01:06:22.180538"]]
+  [1m[35m (205.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (134.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (166.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (211.2ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Qui dolore excepturi corporis magni velit esse aut."], ["content", "Sunt qui harum saepe iste."], ["category_id", 5], ["created_at", "2018-04-20 01:06:22.893490"], ["updated_at", "2018-04-20 01:06:22.893490"]]
+  [1m[35m (198.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (132.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (127.9ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (272.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Tempore ex in incidunt id."], ["content", "Eius eligendi et eum odit non."], ["category_id", 5], ["created_at", "2018-04-20 01:06:23.571290"], ["updated_at", "2018-04-20 01:06:23.571290"]]
+  [1m[35m (175.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (206.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (205.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (221.3ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Eligendi nobis velit praesentium exercitationem quibusdam."], ["content", "Eos enim accusantium animi vero."], ["category_id", 5], ["created_at", "2018-04-20 01:06:24.437550"], ["updated_at", "2018-04-20 01:06:24.437550"]]
+  [1m[35m (279.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (136.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (178.7ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (292.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Distinctio quia quae quam dolores quia magni quisquam."], ["content", "Tenetur aut similique necessitatibus quaerat voluptatem dicta."], ["category_id", 5], ["created_at", "2018-04-20 01:06:25.259111"], ["updated_at", "2018-04-20 01:06:25.259111"]]
+  [1m[35m (204.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (203.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (200.7ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (131.7ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Delectus vitae ipsam."], ["content", "Quas ad ut illo et."], ["category_id", 5], ["created_at", "2018-04-20 01:06:26.167616"], ["updated_at", "2018-04-20 01:06:26.167616"]]
+  [1m[35m (172.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (257.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (148.5ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (204.5ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Assumenda cumque nostrum culpa doloribus aut quos est."], ["content", "Eum debitis iusto."], ["category_id", 6], ["created_at", "2018-04-20 01:06:26.885069"], ["updated_at", "2018-04-20 01:06:26.885069"]]
+  [1m[35m (127.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (160.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (130.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (192.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Blanditiis sit magnam et odio repudiandae omnis."], ["content", "Sit sunt doloribus nihil rerum."], ["category_id", 6], ["created_at", "2018-04-20 01:06:27.511709"], ["updated_at", "2018-04-20 01:06:27.511709"]]
+  [1m[35m (130.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (127.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (151.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (198.7ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Ipsam magnam enim non dicta aut eaque."], ["content", "Omnis sequi quisquam sunt quas et est vero."], ["category_id", 6], ["created_at", "2018-04-20 01:06:28.119753"], ["updated_at", "2018-04-20 01:06:28.119753"]]
+  [1m[35m (208.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (283.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (136.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (186.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Aut vero tenetur."], ["content", "Amet voluptatum fuga sunt ipsa quidem pariatur nisi."], ["category_id", 6], ["created_at", "2018-04-20 01:06:28.952271"], ["updated_at", "2018-04-20 01:06:28.952271"]]
+  [1m[35m (133.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (168.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (210.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (202.1ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Incidunt eaque libero reprehenderit et."], ["content", "Consequatur necessitatibus et ex."], ["category_id", 6], ["created_at", "2018-04-20 01:06:29.656371"], ["updated_at", "2018-04-20 01:06:29.656371"]]
+  [1m[35m (205.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (145.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (158.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (131.3ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Et nihil veritatis optio consequatur vitae natus."], ["content", "Occaecati enim sequi temporibus at dolores voluptatum facilis."], ["category_id", 7], ["created_at", "2018-04-20 01:06:30.374499"], ["updated_at", "2018-04-20 01:06:30.374499"]]
+  [1m[35m (177.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (293.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (206.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (208.6ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Ducimus quis ab."], ["content", "Repellat voluptatem est voluptatem."], ["category_id", 7], ["created_at", "2018-04-20 01:06:31.189003"], ["updated_at", "2018-04-20 01:06:31.189003"]]
+  [1m[35m (198.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (243.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (199.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (164.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Est in culpa magnam dolores fugit reiciendis sint."], ["content", "Mollitia cumque magni ab voluptatibus molestiae aut."], ["category_id", 7], ["created_at", "2018-04-20 01:06:32.043327"], ["updated_at", "2018-04-20 01:06:32.043327"]]
+  [1m[35m (156.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (150.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (218.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (288.2ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Corporis cum sed magnam possimus fugiat."], ["content", "Quia est et beatae rerum."], ["category_id", 7], ["created_at", "2018-04-20 01:06:32.743616"], ["updated_at", "2018-04-20 01:06:32.743616"]]
+  [1m[35m (137.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (255.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (142.5ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (172.2ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Maxime aut nulla labore expedita dolore."], ["content", "Quaerat earum est itaque aut voluptatibus nulla sit."], ["category_id", 7], ["created_at", "2018-04-20 01:06:33.574588"], ["updated_at", "2018-04-20 01:06:33.574588"]]
+  [1m[35m (136.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (270.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (338.6ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (172.2ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Laborum aut minima saepe."], ["content", "Aliquid sunt exercitationem esse."], ["category_id", 8], ["created_at", "2018-04-20 01:06:34.497515"], ["updated_at", "2018-04-20 01:06:34.497515"]]
+  [1m[35m (204.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (214.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (193.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (140.5ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Quis facere est optio corrupti sed."], ["content", "Qui sunt dolorum eveniet consequatur."], ["category_id", 8], ["created_at", "2018-04-20 01:06:35.290510"], ["updated_at", "2018-04-20 01:06:35.290510"]]
+  [1m[35m (138.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (151.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (133.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (145.1ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Minima velit sequi nam."], ["content", "Consequuntur laudantium velit."], ["category_id", 8], ["created_at", "2018-04-20 01:06:35.860351"], ["updated_at", "2018-04-20 01:06:35.860351"]]
+  [1m[35m (134.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (136.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (148.5ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (137.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Ipsa debitis in quam vero."], ["content", "Repellat aliquam ab amet fugit error neque."], ["category_id", 8], ["created_at", "2018-04-20 01:06:36.432121"], ["updated_at", "2018-04-20 01:06:36.432121"]]
+  [1m[35m (142.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (130.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (137.7ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (137.5ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Perspiciatis sed totam."], ["content", "Aliquid nulla voluptate."], ["category_id", 8], ["created_at", "2018-04-20 01:06:36.990202"], ["updated_at", "2018-04-20 01:06:36.990202"]]
+  [1m[35m (194.1ms)[0m  [1m[35mCOMMIT[0m
