@@ -7,8 +7,7 @@ default: &default
   pool: 5
 
 development:
-  <<: *default
-  database: myapp_development
+  url: <%= ENV['DATABASE_URL'] %>
 
 
 test:
