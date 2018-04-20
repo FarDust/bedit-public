@@ -124,3 +124,24 @@ Processing by WelcomeController#index as HTML
 Completed 200 OK in 43ms (Views: 41.4ms)
 
 
+  [1m[35m (278.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (140.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (138.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2066412043304455350)[0m
+  [1m[35m (202.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePosts (20180420002144)
+  [1m[35m (189.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (203.0ms)[0m  [1m[35mCREATE TABLE "posts" ("id" bigserial primary key, "title" character varying, "content" text, "category_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (222.8ms)[0m  [1m[35mCREATE  INDEX  "index_posts_on_category_id" ON "posts"  ("category_id")[0m
+  [1m[35mSQL (146.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180420002144"]]
+  [1m[35m (201.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCategories (20180420002156)
+  [1m[35m (202.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (135.6ms)[0m  [1m[35mCREATE TABLE "categories" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (129.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180420002156"]]
+  [1m[35m (134.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (201.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (187.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (201.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-04-20 00:42:17.888800"], ["updated_at", "2018-04-20 00:42:17.888800"]]
+  [1m[35m (136.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (171.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(2066412043304455350)[0m
+  [1m[35m (216.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
