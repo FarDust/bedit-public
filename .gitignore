@@ -48,7 +48,8 @@ Temporary Items
 capybara-*.html
 .rspec
 /log
-/tmp
+tmp
+tmp/**/*
 /db/*.sqlite3
 /db/*.sqlite3-journal
 /public/system
@@ -98,7 +99,6 @@ bower.json
 /spec/examples.txt
 /test/tmp/
 /test/version_tmp/
-/tmp/
 
 # Used by dotenv library to load environment variables.
 # .env
