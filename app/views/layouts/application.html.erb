@@ -20,7 +20,7 @@
     </div>
     <div class="container">
       <% if user_signed_in?() %>
-        <div>Hello!, <%= current_user.email %></div>
+        <div>Hello!, <%= current_user.username %></div>
       <%end%>
       <%= render('layouts/messages') %>
       <%= render('layouts/navigation') %>
