@@ -1,7 +1,7 @@
 <h2>Create new forum</h2>
 
 <div class='container'>
-  <%= form_for(:post) do |f| %>
+  <%= form_for(:post, url: posts_path()) do |f| %>
     <div class="field">
       <%= f.label(:tittle) %><br />
       <%= f.text_field(:tittle) %>
