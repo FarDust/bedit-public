@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable)
   validates(:email,uniqueness: true)
   validates(:username,uniqueness: true)
+  has_many(:publication)
 end
