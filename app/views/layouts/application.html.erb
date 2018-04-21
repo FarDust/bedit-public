@@ -15,8 +15,11 @@
       <%= link_to("Sign Up", new_user_registration_path()) %>
     </div>
     <div class="container">
+      <% if user_signed_in?() %>
+        <div>Hello!, <%= current_user.email %></div>
+      <%end%>
       <%= render('layouts/messages') %>
-      <%= render 'layouts/navigation' %>
+      <%= render('layouts/navigation') %>
       <%= yield %>
     </div>
   </body>

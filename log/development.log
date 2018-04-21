@@ -2934,3 +2934,677 @@ Processing by WelcomeController#index as HTML
   Rendered layouts/_navigation.html.erb (0.3ms)
 Completed 200 OK in 386ms (Views: 254.3ms | ActiveRecord: 130.4ms)
 
+Started GET "/" for 172.20.0.1 at 2018-04-21 16:06:28 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.1.5) lib/active_record/migration.rb:576:in `check_pending!'
+activerecord (5.1.5) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.5) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:20:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7864839756650184315)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePosts (20180420002144)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (35.1ms)[0m  [1m[35mCREATE TABLE "posts" ("id" bigserial primary key, "title" character varying, "content" text, "category_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE  INDEX  "index_posts_on_category_id" ON "posts"  ("category_id")[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180420002144"]]
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCategories (20180420002156)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (10.4ms)[0m  [1m[35mCREATE TABLE "categories" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180420002156"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7864839756650184315)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 172.20.0.1 at 2018-04-21 16:09:36 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered welcome/index.html.erb within layouts/application (6.3ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+  Rendered layouts/_navigation.html.erb (0.4ms)
+Completed 200 OK in 11204ms (Views: 11121.3ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/" for 172.20.0.1 at 2018-04-21 16:09:55 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered welcome/index.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+  Rendered layouts/_navigation.html.erb (0.5ms)
+Completed 200 OK in 373ms (Views: 353.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 172.20.0.1 at 2018-04-21 16:09:56 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered welcome/index.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_messages.html.erb (0.7ms)
+  Rendered layouts/_navigation.html.erb (0.4ms)
+Completed 200 OK in 782ms (Views: 748.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/sign_in" for 172.20.0.1 at 2018-04-21 16:09:58 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::SessionsController#new as HTML
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 702ms (ActiveRecord: 9.9ms)
+
+
+Started GET "/" for 172.20.0.1 at 2018-04-21 16:09:59 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered welcome/index.html.erb within layouts/application (2.6ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+  Rendered layouts/_navigation.html.erb (0.5ms)
+Completed 200 OK in 527ms (Views: 507.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/sign_up" for 172.20.0.1 at 2018-04-21 16:10:02 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 172.20.0.1 at 2018-04-21 16:10:02 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered welcome/index.html.erb within layouts/application (2.3ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+  Rendered layouts/_navigation.html.erb (0.4ms)
+Completed 200 OK in 242ms (Views: 229.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/sign_in" for 172.20.0.1 at 2018-04-21 16:10:07 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::SessionsController#new as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 6ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 172.20.0.1 at 2018-04-21 16:10:07 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered welcome/index.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_messages.html.erb (0.9ms)
+  Rendered layouts/_navigation.html.erb (0.6ms)
+Completed 200 OK in 297ms (Views: 283.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 172.20.0.1 at 2018-04-21 16:10:08 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered welcome/index.html.erb within layouts/application (2.3ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+  Rendered layouts/_navigation.html.erb (0.4ms)
+Completed 200 OK in 969ms (Views: 946.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 172.20.0.1 at 2018-04-21 16:10:11 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered welcome/index.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+  Rendered layouts/_navigation.html.erb (0.9ms)
+Completed 200 OK in 374ms (Views: 338.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 172.20.0.1 at 2018-04-21 16:10:11 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered welcome/index.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+  Rendered layouts/_navigation.html.erb (0.4ms)
+Completed 200 OK in 465ms (Views: 432.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 172.20.0.1 at 2018-04-21 16:10:12 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+Started GET "/" for 172.20.0.1 at 2018-04-21 16:10:12 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+Started GET "/" for 172.20.0.1 at 2018-04-21 16:10:12 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered welcome/index.html.erb within layouts/application (38.3ms)
+  Rendering welcome/index.html.erb within layouts/application
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (2.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered welcome/index.html.erb within layouts/application (86.4ms)
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered welcome/index.html.erb within layouts/application (75.1ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+  Rendered layouts/_navigation.html.erb (1.9ms)
+Completed 200 OK in 955ms (Views: 822.5ms | ActiveRecord: 58.3ms)
+
+
+  Rendered layouts/_navigation.html.erb (0.5ms)
+Completed 200 OK in 1239ms (Views: 1119.4ms | ActiveRecord: 56.4ms)
+
+
+  Rendered layouts/_navigation.html.erb (0.8ms)
+Completed 200 OK in 1433ms (Views: 1377.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 172.20.0.1 at 2018-04-21 16:28:25 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered welcome/index.html.erb within layouts/application (2.3ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+  Rendered layouts/_navigation.html.erb (0.3ms)
+Completed 200 OK in 404ms (Views: 378.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 172.20.0.1 at 2018-04-21 16:28:29 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered welcome/index.html.erb within layouts/application (2.6ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+  Rendered layouts/_navigation.html.erb (0.5ms)
+Completed 200 OK in 701ms (Views: 682.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/sign_in" for 172.20.0.1 at 2018-04-21 16:28:31 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::SessionsController#new as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 9ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 172.20.0.1 at 2018-04-21 16:28:31 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered welcome/index.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+  Rendered layouts/_navigation.html.erb (0.3ms)
+Completed 200 OK in 474ms (Views: 446.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/sign_up" for 172.20.0.1 at 2018-04-21 16:28:44 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 172.20.0.1 at 2018-04-21 16:28:45 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered welcome/index.html.erb within layouts/application (5.9ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+  Rendered layouts/_navigation.html.erb (0.5ms)
+Completed 200 OK in 312ms (Views: 295.2ms | ActiveRecord: 0.3ms)
+
+
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Política"], ["created_at", "2018-04-21 16:33:29.783175"], ["updated_at", "2018-04-21 16:33:29.783175"]]
+  [1m[35m (4.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Programación"], ["created_at", "2018-04-21 16:33:29.791579"], ["updated_at", "2018-04-21 16:33:29.791579"]]
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Juegos"], ["created_at", "2018-04-21 16:33:29.796842"], ["updated_at", "2018-04-21 16:33:29.796842"]]
+  [1m[35m (3.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Data Science"], ["created_at", "2018-04-21 16:33:29.802653"], ["updated_at", "2018-04-21 16:33:29.802653"]]
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Vel aut soluta sed dolores temporibus."], ["content", "Aut aliquam reprehenderit tempore eligendi autem."], ["category_id", 1], ["created_at", "2018-04-21 16:33:30.591104"], ["updated_at", "2018-04-21 16:33:30.591104"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Similique voluptatum omnis vel."], ["content", "Voluptas quibusdam qui."], ["category_id", 1], ["created_at", "2018-04-21 16:33:30.598124"], ["updated_at", "2018-04-21 16:33:30.598124"]]
+  [1m[35m (3.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Magnam quia ipsum non."], ["content", "Libero rem nemo voluptatibus."], ["category_id", 1], ["created_at", "2018-04-21 16:33:30.605958"], ["updated_at", "2018-04-21 16:33:30.605958"]]
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Sint necessitatibus aut aut molestiae corporis dolor amet."], ["content", "Aut quibusdam ut."], ["category_id", 1], ["created_at", "2018-04-21 16:33:30.616245"], ["updated_at", "2018-04-21 16:33:30.616245"]]
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (1.9ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Minus est et rerum odio omnis."], ["content", "Iusto debitis porro a velit voluptatum omnis."], ["category_id", 1], ["created_at", "2018-04-21 16:33:30.624596"], ["updated_at", "2018-04-21 16:33:30.624596"]]
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Ducimus sit quia sed corrupti quis."], ["content", "Aut quam dolorem voluptas."], ["category_id", 2], ["created_at", "2018-04-21 16:33:30.631327"], ["updated_at", "2018-04-21 16:33:30.631327"]]
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Sint aliquid corrupti itaque quibusdam quo in nisi."], ["content", "Aliquid provident est rerum quo animi."], ["category_id", 2], ["created_at", "2018-04-21 16:33:30.637943"], ["updated_at", "2018-04-21 16:33:30.637943"]]
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Reprehenderit quibusdam cupiditate ut incidunt sint maxime porro."], ["content", "Alias molestiae libero."], ["category_id", 2], ["created_at", "2018-04-21 16:33:30.645493"], ["updated_at", "2018-04-21 16:33:30.645493"]]
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Ad aut sit et."], ["content", "Sed ea sint quia et voluptas."], ["category_id", 2], ["created_at", "2018-04-21 16:33:30.656046"], ["updated_at", "2018-04-21 16:33:30.656046"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Quidem autem exercitationem pariatur dolores eaque et."], ["content", "Exercitationem aspernatur deleniti laborum."], ["category_id", 2], ["created_at", "2018-04-21 16:33:30.662538"], ["updated_at", "2018-04-21 16:33:30.662538"]]
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Voluptatum temporibus dicta beatae."], ["content", "Quod rem delectus at dolor eveniet."], ["category_id", 3], ["created_at", "2018-04-21 16:33:30.669772"], ["updated_at", "2018-04-21 16:33:30.669772"]]
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Sed porro nam mollitia cumque."], ["content", "Itaque sed asperiores."], ["category_id", 3], ["created_at", "2018-04-21 16:33:30.680987"], ["updated_at", "2018-04-21 16:33:30.680987"]]
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Culpa sed sit dolor omnis."], ["content", "Voluptatem sed debitis est culpa qui velit sit."], ["category_id", 3], ["created_at", "2018-04-21 16:33:30.687628"], ["updated_at", "2018-04-21 16:33:30.687628"]]
+  [1m[35m (3.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Ut corrupti possimus beatae."], ["content", "Quam autem delectus voluptas officiis sed."], ["category_id", 3], ["created_at", "2018-04-21 16:33:30.697079"], ["updated_at", "2018-04-21 16:33:30.697079"]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Omnis aut sunt sed occaecati enim."], ["content", "Sit architecto porro eos nam consequuntur quae et."], ["category_id", 3], ["created_at", "2018-04-21 16:33:30.704105"], ["updated_at", "2018-04-21 16:33:30.704105"]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Voluptas cumque cum ut."], ["content", "Aut repellat ad laboriosam perferendis possimus eum."], ["category_id", 4], ["created_at", "2018-04-21 16:33:30.710470"], ["updated_at", "2018-04-21 16:33:30.710470"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Et sequi animi aut ipsam praesentium."], ["content", "Ea modi quae dolor laborum sed molestias ipsam."], ["category_id", 4], ["created_at", "2018-04-21 16:33:30.716257"], ["updated_at", "2018-04-21 16:33:30.716257"]]
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Nemo harum ut minima mollitia."], ["content", "Excepturi ipsum sed dolorem voluptates."], ["category_id", 4], ["created_at", "2018-04-21 16:33:30.723607"], ["updated_at", "2018-04-21 16:33:30.723607"]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Veniam aut aut ut et fugiat."], ["content", "Praesentium vitae debitis aliquid quo suscipit."], ["category_id", 4], ["created_at", "2018-04-21 16:33:30.730186"], ["updated_at", "2018-04-21 16:33:30.730186"]]
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Aut et ut doloribus reprehenderit."], ["content", "Quod quae repudiandae delectus beatae."], ["category_id", 4], ["created_at", "2018-04-21 16:33:30.736485"], ["updated_at", "2018-04-21 16:33:30.736485"]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for 172.20.0.1 at 2018-04-21 16:34:10 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered collection of posts/_post.html.erb [5 times] (1.0ms)
+  Rendered welcome/index.html.erb within layouts/application (27.8ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+  Rendered layouts/_navigation.html.erb (0.4ms)
+Completed 200 OK in 361ms (Views: 331.6ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/" for 172.20.0.1 at 2018-04-21 16:42:01 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered collection of posts/_post.html.erb [5 times] (0.9ms)
+  Rendered welcome/index.html.erb within layouts/application (23.6ms)
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered layouts/_messages.html.erb (1.5ms)
+  Rendered layouts/_navigation.html.erb (0.4ms)
+Completed 200 OK in 799ms (Views: 722.1ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/" for 172.20.0.1 at 2018-04-21 16:42:10 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered collection of posts/_post.html.erb [5 times] (1.2ms)
+  Rendered welcome/index.html.erb within layouts/application (15.5ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered layouts/_messages.html.erb (0.5ms)
+  Rendered layouts/_navigation.html.erb (0.5ms)
+Completed 200 OK in 323ms (Views: 304.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 172.20.0.1 at 2018-04-21 16:42:15 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered collection of posts/_post.html.erb [5 times] (1.2ms)
+  Rendered welcome/index.html.erb within layouts/application (28.3ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered layouts/_messages.html.erb (0.5ms)
+  Rendered layouts/_navigation.html.erb (0.3ms)
+Completed 200 OK in 337ms (Views: 306.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users/sign_in" for 172.20.0.1 at 2018-04-21 16:42:16 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::SessionsController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 7ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 172.20.0.1 at 2018-04-21 16:42:16 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered collection of posts/_post.html.erb [5 times] (0.9ms)
+  Rendered welcome/index.html.erb within layouts/application (25.6ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered layouts/_messages.html.erb (0.5ms)
+Started GET "/users/sign_up" for 172.20.0.1 at 2018-04-21 16:42:16 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  Rendered layouts/_navigation.html.erb (0.5ms)
+Completed 200 OK in 378ms (Views: 359.7ms | ActiveRecord: 0.9ms)
+
+
+Processing by Users::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 8ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 172.20.0.1 at 2018-04-21 16:42:16 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered collection of posts/_post.html.erb [5 times] (2.9ms)
+  Rendered welcome/index.html.erb within layouts/application (52.4ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered layouts/_messages.html.erb (0.6ms)
+  Rendered layouts/_navigation.html.erb (0.4ms)
+Completed 200 OK in 724ms (Views: 688.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/users/sign_in" for 172.20.0.1 at 2018-04-21 16:42:18 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::SessionsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 172.20.0.1 at 2018-04-21 16:42:18 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered collection of posts/_post.html.erb [5 times] (3.2ms)
+  Rendered welcome/index.html.erb within layouts/application (31.7ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered layouts/_messages.html.erb (0.5ms)
+  Rendered layouts/_navigation.html.erb (0.3ms)
+Completed 200 OK in 505ms (Views: 468.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/sign_up" for 172.20.0.1 at 2018-04-21 16:42:20 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 8ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 172.20.0.1 at 2018-04-21 16:42:20 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (1.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered collection of posts/_post.html.erb [5 times] (0.9ms)
+  Rendered welcome/index.html.erb within layouts/application (31.8ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered layouts/_messages.html.erb (0.5ms)
+  Rendered layouts/_navigation.html.erb (0.5ms)
+Completed 200 OK in 317ms (Views: 293.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/users/sign_in" for 172.20.0.1 at 2018-04-21 16:42:22 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::SessionsController#new as HTML
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 9ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/" for 172.20.0.1 at 2018-04-21 16:42:22 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered collection of posts/_post.html.erb [5 times] (1.3ms)
+  Rendered welcome/index.html.erb within layouts/application (44.6ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered layouts/_messages.html.erb (0.5ms)
+  Rendered layouts/_navigation.html.erb (0.6ms)
+Completed 200 OK in 596ms (Views: 547.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 172.20.0.1 at 2018-04-21 16:42:23 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered collection of posts/_post.html.erb [5 times] (1.2ms)
+  Rendered welcome/index.html.erb within layouts/application (15.2ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered layouts/_messages.html.erb (0.4ms)
+  Rendered layouts/_navigation.html.erb (0.3ms)
+Completed 200 OK in 356ms (Views: 333.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/sign_in" for 172.20.0.1 at 2018-04-21 16:42:24 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::SessionsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 172.20.0.1 at 2018-04-21 16:42:24 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered collection of posts/_post.html.erb [5 times] (1.0ms)
+  Rendered welcome/index.html.erb within layouts/application (26.0ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered layouts/_messages.html.erb (0.5ms)
+  Rendered layouts/_navigation.html.erb (4.1ms)
+Completed 200 OK in 557ms (Views: 528.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/sign_up" for 172.20.0.1 at 2018-04-21 16:42:25 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 11ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 172.20.0.1 at 2018-04-21 16:42:25 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered collection of posts/_post.html.erb [5 times] (1.9ms)
+  Rendered welcome/index.html.erb within layouts/application (43.0ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered layouts/_messages.html.erb (0.6ms)
+  Rendered layouts/_navigation.html.erb (0.5ms)
+Completed 200 OK in 569ms (Views: 525.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users/sign_in" for 172.20.0.1 at 2018-04-21 16:42:27 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::SessionsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 172.20.0.1 at 2018-04-21 16:42:27 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered collection of posts/_post.html.erb [5 times] (0.9ms)
+  Rendered welcome/index.html.erb within layouts/application (24.7ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered layouts/_messages.html.erb (0.5ms)
+  Rendered layouts/_navigation.html.erb (0.3ms)
+Completed 200 OK in 330ms (Views: 298.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 172.20.0.1 at 2018-04-21 16:42:28 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (1.8ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered collection of posts/_post.html.erb [5 times] (1.2ms)
+  Rendered welcome/index.html.erb within layouts/application (18.0ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered layouts/_messages.html.erb (0.5ms)
+  Rendered layouts/_navigation.html.erb (0.3ms)
+Completed 200 OK in 325ms (Views: 278.6ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/" for 172.20.0.1 at 2018-04-21 16:43:35 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered collection of posts/_post.html.erb [5 times] (1.2ms)
+  Rendered welcome/index.html.erb within layouts/application (20.1ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered layouts/_messages.html.erb (0.6ms)
+  Rendered layouts/_navigation.html.erb (0.3ms)
+Completed 200 OK in 378ms (Views: 346.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 172.20.0.1 at 2018-04-21 16:44:37 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered collection of posts/_post.html.erb [5 times] (1.1ms)
+  Rendered welcome/index.html.erb within layouts/application (33.2ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered layouts/_messages.html.erb (1.9ms)
+  Rendered layouts/_navigation.html.erb (0.5ms)
+Completed 200 OK in 598ms (Views: 525.0ms | ActiveRecord: 1.0ms)
+
+
