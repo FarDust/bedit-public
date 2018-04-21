@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Grupo 21 - Forum</title>
-    <%= csrf_meta_tags %>
+    <%= csrf_meta_tags() %>
 
     <%= stylesheet_link_tag('application', media: 'all', 'data-turbolinks-track': 'reload') %>
     <%= javascript_include_tag( 'application', 'data-turbolinks-track': 'reload') %>
@@ -14,6 +14,9 @@
       <%= link_to("Log In", user_session_path()) %>
       <%= link_to("Sign Up", new_user_registration_path()) %>
     </div>
-    <%= yield %>
+    <div class="container">
+      <%= render('layouts/messages') %>
+      <%= yield %>
+    </div>
   </body>
 </html>

@@ -7,7 +7,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # GET /resource/sign_up
   def new
     super
-    require 'popup'
   end
 
   # POST /resource
@@ -52,12 +51,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # The path used after sign up.
-  def after_sign_up_path_for(resource_or_scope)
-    return(super(resource_or_scope))
-  end
+  # def after_sign_up_path_for(resource_or_scope)
+  #   super(resource_or_scope)
+  # end
 
   # The path used after sign up for inactive accounts.
-  def after_inactive_sign_up_path_for(resource_or_scope)
-    return(super(resource_or_scope))
-  end
+  # def after_inactive_sign_up_path_for(resource_or_scope)
+  #   super(resource_or_scope)
+  # end
 end
