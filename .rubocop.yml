@@ -13,5 +13,6 @@ Style/BracesAroundHashParameters:
 Style/ClassMethods:
   Enabled: true
 
-Style/DefWithParentetheses:
-  Enabled: false
+Style/TernaryParentheses:
+  Enabled: true
+  EnforcedStyle: require_parentheses
