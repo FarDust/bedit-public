@@ -1,0 +1,17 @@
+<h2>Create new forum</h2>
+
+<div class='container'>
+  <%= form_for(:post) do |f| %>
+    <div class="field">
+      <%= f.label(:tittle) %><br />
+      <%= f.text_field(:tittle) %>
+    </div>
+    <div class="field">
+      <%= f.label(:content) %><br />
+      <%= f.text_field(:content) %>
+    </div>
+    <div class="actions">
+      <%= f.submit("Create") %>
+  </div>
+  <% end %>
+</div>

@@ -1,0 +1,6 @@
+  <div class="container">
+    <%= link_to("Create Forum", new_post_path(), html_options = {class: "btn btn-primary active"}) %>
+    <div id="main-content" class="col-sm-12">
+      <%= render(@posts) %>
+    </div>
+  </div>
