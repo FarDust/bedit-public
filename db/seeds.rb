@@ -5,3 +5,27 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+def seed_categories
+  categorias = ['Política', 'Programación', 'Juegos', 'Data Science']
+  categorias.each do |name|
+    Category.create(name: name)
+  end
+end
+
+def seed_posts
+  categorias = Category.all 
+  categorias.each do |categoria|
+    5.times do
+      Post.create(
+        title: Faker::Lorem.sentences[0], 
+        content: Faker::Lorem.sentences[0], 
+        category_id: categoria.id
+      )
+    end
+  end
+end
+
+seed_categories
+seed_posts

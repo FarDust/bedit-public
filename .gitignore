@@ -1,3 +1,4 @@
+log/development.log
 
 # Created by https://www.gitignore.io/api/ruby,macos,linux,rails,windows
 
@@ -48,7 +49,9 @@ Temporary Items
 capybara-*.html
 .rspec
 /log
-/tmp
+/log/*
+tmp
+tmp/**/*
 /db/*.sqlite3
 /db/*.sqlite3-journal
 /public/system
@@ -99,7 +102,6 @@ bower.json
 /test/tmp/
 /test/version_tmp/
 /tmp/
-
 # Used by dotenv library to load environment variables.
 # .env
 
