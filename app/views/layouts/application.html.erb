@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Example</title>
+    <title>Grupo 21 - Forum</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +9,10 @@
   </head>
 
   <body>
+    <div>
+      <%= link_to("Log In", user_session_path()) %>
+      <%= link_to("Sign Up", new_user_registration_path()) %>
+    </div>
     <%= yield %>
   </body>
 </html>
