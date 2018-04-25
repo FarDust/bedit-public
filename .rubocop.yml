@@ -1,4 +1,12 @@
 
+AllCops:
+  Exclude:
+    - 'db/*'
+    - 'config/*'
+    - 'bin/*'
+    - 'test/test_helper.rb'
+    - 'config/initializers/devise.rb'
+
 
 Metrics/LineLength:
   Enabled: true
@@ -16,3 +24,21 @@ Style/ClassMethods:
 Style/TernaryParentheses:
   Enabled: true
   EnforcedStyle: require_parentheses
+
+Style/ClassAndModuleChildren:
+  EnforcedStyle: compact
+
+Style/MethodCallWithoutArgsParentheses:
+  Enabled: false
+
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
+
+Style/Documentation:
+  Enabled: false
+
+Style/EmptyMethod:
+  EnforcedStyle: expanded
+
+Layout/EndOfLine:
+  Enabled: false
