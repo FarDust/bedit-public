@@ -2,6 +2,10 @@
 
 <div class='container'>
   <%= form_for(:post, url: posts_path()) do |f| %>
+    <div class='form-group'>
+      <% f.label(:category) %><br />
+      <% f.collection_select(:category, Category.all, :id , :name ,{prompt: 'Select a Forum',include_blank: "Please select", class: "form-control"}) %>
+    </div>
     <div class="field">
       <%= f.label(:tittle) %><br />
       <%= f.text_field(:tittle) %>
