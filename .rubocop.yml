@@ -31,6 +31,9 @@ Style/ClassAndModuleChildren:
 Style/MethodCallWithoutArgsParentheses:
   Enabled: false
 
+Style/MethodCallWithArgsParentheses:
+  Enabled: true
+
 Style/StringLiterals:
   EnforcedStyle: single_quotes
 
