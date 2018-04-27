@@ -41,6 +41,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'devise'
 gem 'rubocop', '~> 0.55.0', require: false
+gem 'redcarpet'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
