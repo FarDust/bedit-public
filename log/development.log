@@ -3608,3 +3608,346 @@ Processing by WelcomeController#index as HTML
 Completed 200 OK in 598ms (Views: 525.0ms | ActiveRecord: 1.0ms)
 
 
+Started GET "/" for 172.20.0.1 at 2018-04-27 22:54:50 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (5.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered collection of posts/_post.html.erb [5 times] (5.1ms)
+  Rendered welcome/index.html.erb within layouts/application (97.2ms)
+Started GET "/" for 172.20.0.1 at 2018-04-27 22:54:57 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered collection of posts/_post.html.erb [5 times] (2.1ms)
+  Rendered welcome/index.html.erb within layouts/application (72.2ms)
+  [1m[36mUser Load (8.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (48.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_messages.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+  Rendered layouts/_navigation.html.erb (0.5ms)
+Completed 200 OK in 22012ms (Views: 21835.7ms | ActiveRecord: 39.8ms)
+
+
+  Rendered layouts/_navigation.html.erb (0.3ms)
+Completed 200 OK in 14975ms (Views: 14892.7ms | ActiveRecord: 65.1ms)
+
+
+Started GET "/" for 172.20.0.1 at 2018-04-27 22:59:23 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered collection of posts/_post.html.erb [5 times] (302.1ms)
+  Rendered welcome/index.html.erb within layouts/application (319.5ms)
+Completed 500 Internal Server Error in 426ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `markdown' for #<#<Class:0x0000558df82bbed0>:0x00007f73e6753580>):
+     6:       </h4>
+     7:       <div class="post-content">
+     8:         <h3><%= post.title %></h3> 
+     9:         <p><%= markdown(post.content) %></p>
+    10:       </div>
+    11:     </div>
+    12:   </div><!-- card -->
+  
+app/views/posts/_post.html.erb:9:in `_app_views_posts__post_html_erb___691904189924010273_70067882263660'
+app/views/welcome/index.html.erb:5:in `_app_views_welcome_index_html_erb__367233778222280541_70067882205000'
+Started GET "/" for 172.20.0.1 at 2018-04-27 22:59:57 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered collection of posts/_post.html.erb [5 times] (0.9ms)
+  Rendered welcome/index.html.erb within layouts/application (30.5ms)
+  [1m[36mUser Load (6.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_messages.html.erb (0.6ms)
+  Rendered layouts/_navigation.html.erb (0.5ms)
+Completed 200 OK in 1895ms (Views: 1825.2ms | ActiveRecord: 20.4ms)
+
+
+Started GET "/forum" for 172.20.0.1 at 2018-04-27 23:00:02 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" ASC[0m
+  Rendered collection of posts/_post.html.erb [62 times] (4.7ms)
+  Rendered forums/index.html.erb within layouts/application (25.3ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+  Rendered layouts/_navigation.html.erb (0.4ms)
+Completed 200 OK in 428ms (Views: 403.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/posts/new" for 172.20.0.1 at 2018-04-27 23:00:12 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mCategory Load (2.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered posts/new.html.erb within layouts/application (1042.2ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+  Rendered layouts/_navigation.html.erb (0.3ms)
+Completed 200 OK in 1447ms (Views: 1414.6ms | ActiveRecord: 5.8ms)
+
+
+Started POST "/posts" for 172.20.0.1 at 2018-04-27 23:00:37 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"G1TE9ttBdUFkvz3WiixgEW9Z/ofQe666F2g9PJlIXWLc/GCAj+OVRSfAPGeMd9hvQOIUFAl7sQ80DxlI3Oj0TQ==", "post"=>{"tittle"=>"cat", "content"=>":smile: "}, "commit"=>"Create"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Juegos"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "cat"], ["content", ":smile: "], ["category_id", 3], ["created_at", "2018-04-27 23:00:37.181301"], ["updated_at", "2018-04-27 23:00:37.181301"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/forum
+Completed 302 Found in 35ms (ActiveRecord: 7.7ms)
+
+
+Started GET "/forum" for 172.20.0.1 at 2018-04-27 23:00:37 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" ASC[0m
+  Rendered collection of posts/_post.html.erb [63 times] (4.9ms)
+  Rendered forums/index.html.erb within layouts/application (27.0ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+  Rendered layouts/_navigation.html.erb (0.4ms)
+Completed 200 OK in 433ms (Views: 402.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/posts/new" for 172.20.0.1 at 2018-04-27 23:02:24 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered posts/new.html.erb within layouts/application (19.9ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+  Rendered layouts/_navigation.html.erb (0.4ms)
+Completed 200 OK in 385ms (Views: 330.7ms | ActiveRecord: 9.2ms)
+
+
+Started GET "/posts/new" for 172.20.0.1 at 2018-04-27 23:05:49 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered posts/new.html.erb within layouts/application (17.7ms)
+  Rendered layouts/_messages.html.erb (0.7ms)
+  Rendered layouts/_navigation.html.erb (0.3ms)
+Completed 200 OK in 443ms (Views: 424.3ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/posts" for 172.20.0.1 at 2018-04-27 23:06:17 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SD4hktaWog/6/rq8WDk4xKolzeSEuFno5TNJoDz0TNMyJVo9BRIF2AZzEb9Ecnx3xgrpTy9TIgvdfD1Z5/zSCA==", "post"=>{"tittle"=>"hi ", "content"=>"#Hello *world*\r\n\r\n- hi\r\n- bye"}, "commit"=>"Create"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Juegos"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "hi "], ["content", "#Hello *world*\r\n\r\n- hi\r\n- bye"], ["category_id", 3], ["created_at", "2018-04-27 23:06:17.536477"], ["updated_at", "2018-04-27 23:06:17.536477"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/forum
+Completed 302 Found in 46ms (ActiveRecord: 9.2ms)
+
+
+Started GET "/forum" for 172.20.0.1 at 2018-04-27 23:06:17 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" ASC[0m
+  Rendered collection of posts/_post.html.erb [64 times] (9.8ms)
+  Rendered forums/index.html.erb within layouts/application (51.0ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+  Rendered layouts/_navigation.html.erb (0.3ms)
+Completed 200 OK in 554ms (Views: 516.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/posts/new" for 172.20.0.1 at 2018-04-27 23:09:05 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered posts/new.html.erb within layouts/application (2.9ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+  Rendered layouts/_navigation.html.erb (0.4ms)
+Completed 200 OK in 347ms (Views: 329.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/posts/new" for 172.20.0.1 at 2018-04-27 23:09:14 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered posts/new.html.erb within layouts/application (224.8ms)
+Completed 500 Internal Server Error in 299ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `link_to' for #<ActionView::Helpers::FormBuilder:0x00007ffaf50b8f18>):
+    12:     </div>
+    13:     <div class="field">
+    14:       <%= f.label(:content) %><br />
+    15:       <%= f.link_to()%>
+    16:       <%= f.text_area(:content, rows: 15, placeholder: "Write your content...") %>
+    17:     </div>
+    18:     <div class="actions">
+  
+app/views/posts/new.html.erb:15:in `block in _app_views_posts_new_html_erb___4495196648745741024_70357914892360'
+app/views/posts/new.html.erb:4:in `_app_views_posts_new_html_erb___4495196648745741024_70357914892360'
+Started GET "/posts/new" for 172.20.0.1 at 2018-04-27 23:11:35 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered posts/new.html.erb within layouts/application (513.7ms)
+Completed 500 Internal Server Error in 596ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `link_to' for #<ActionView::Helpers::FormBuilder:0x00007ffb020ce810>):
+    12:     </div>
+    13:     <div class="field">
+    14:       <%= f.label(:content) %><br />
+    15:       <%= f.link_to("Markdown style reference", "https://github.com/google/styleguide/blob/gh-pages/docguide/style.md")%>
+    16:       <%= f.text_area(:content, rows: 15, placeholder: "Write your content...") %>
+    17:     </div>
+    18:     <div class="actions">
+  
+app/views/posts/new.html.erb:15:in `block in _app_views_posts_new_html_erb___4495196648745741024_70358024210500'
+app/views/posts/new.html.erb:4:in `_app_views_posts_new_html_erb___4495196648745741024_70358024210500'
+Started GET "/posts/new" for 172.20.0.1 at 2018-04-27 23:11:39 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered posts/new.html.erb within layouts/application (205.0ms)
+Completed 500 Internal Server Error in 263ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `link_to' for #<ActionView::Helpers::FormBuilder:0x00007ffaf8363058>):
+    12:     </div>
+    13:     <div class="field">
+    14:       <%= f.label(:content) %><br />
+    15:       <%= f.link_to("Markdown style reference", "https://github.com/google/styleguide/blob/gh-pages/docguide/style.md")%>
+    16:       <%= f.text_area(:content, rows: 15, placeholder: "Write your content...") %>
+    17:     </div>
+    18:     <div class="actions">
+  
+app/views/posts/new.html.erb:15:in `block in _app_views_posts_new_html_erb___4495196648745741024_70357941479480'
+app/views/posts/new.html.erb:4:in `_app_views_posts_new_html_erb___4495196648745741024_70357941479480'
+Started GET "/posts/new" for 172.20.0.1 at 2018-04-27 23:14:37 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered posts/new.html.erb within layouts/application (809.1ms)
+Completed 500 Internal Server Error in 940ms (ActiveRecord: 13.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `link_to' for #<ActionView::Helpers::FormBuilder:0x000055fd919af968>):
+    12:     </div>
+    13:     <div class="field">
+    14:       <%= f.label(:content) %><br />
+    15:       <%= f.link_to("Markdown style reference", "https://github.com/google/styleguide/blob/gh-pages/docguide/style.md")%>
+    16:       <%= f.text_area(:content, rows: 15, placeholder: "Write your content...") %>
+    17:     </div>
+    18:     <div class="actions">
+  
+app/views/posts/new.html.erb:15:in `block in _app_views_posts_new_html_erb___745290383595292259_47273779173200'
+app/views/posts/new.html.erb:4:in `_app_views_posts_new_html_erb___745290383595292259_47273779173200'
+Started GET "/posts/new" for 172.20.0.1 at 2018-04-27 23:14:40 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered posts/new.html.erb within layouts/application (233.0ms)
+Completed 500 Internal Server Error in 319ms (ActiveRecord: 1.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `link_to' for #<ActionView::Helpers::FormBuilder:0x000055fd91b79960>):
+    12:     </div>
+    13:     <div class="field">
+    14:       <%= f.label(:content) %><br />
+    15:       <%= f.link_to("Markdown style reference", "https://github.com/google/styleguide/blob/gh-pages/docguide/style.md")%>
+    16:       <%= f.text_area(:content, rows: 15, placeholder: "Write your content...") %>
+    17:     </div>
+    18:     <div class="actions">
+  
+app/views/posts/new.html.erb:15:in `block in _app_views_posts_new_html_erb___745290383595292259_47273779994920'
+app/views/posts/new.html.erb:4:in `_app_views_posts_new_html_erb___745290383595292259_47273779994920'
+Started GET "/posts/new" for 172.20.0.1 at 2018-04-27 23:16:00 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mCategory Load (3.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered posts/new.html.erb within layouts/application (43.9ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+  Rendered layouts/_navigation.html.erb (0.4ms)
+Completed 200 OK in 1942ms (Views: 1905.1ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/posts/new" for 172.20.0.1 at 2018-04-27 23:16:28 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered posts/new.html.erb within layouts/application (3.7ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+  Rendered layouts/_navigation.html.erb (0.4ms)
+Completed 200 OK in 357ms (Views: 316.4ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/posts" for 172.20.0.1 at 2018-04-27 23:19:36 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4EeRdtWLiHZU/4qnUIJlS8BHpoNDG5/qc58CIBMmmWGaXOrZBg8voahyIaRMySH4rGiCKOjw5AlL0HbZyC4Hug==", "post"=>{"category"=>"1", "tittle"=>"la muerte de don juanito", "content"=>"# Su muerte fue penosa\r\n - murio por feo\r\n - por abandonado\r\n´´´\r\nset ENV = cat\r\n´´´\r\n"}, "commit"=>"Create"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Juegos"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "la muerte de don juanito"], ["content", "# Su muerte fue penosa\r\n - murio por feo\r\n - por abandonado\r\n´´´\r\nset ENV = cat\r\n´´´\r\n"], ["category_id", 3], ["created_at", "2018-04-27 23:19:37.011684"], ["updated_at", "2018-04-27 23:19:37.011684"]]
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/forum
+Completed 302 Found in 59ms (ActiveRecord: 8.9ms)
+
+
+Started GET "/forum" for 172.20.0.1 at 2018-04-27 23:19:37 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" ASC[0m
+  Rendered collection of posts/_post.html.erb [65 times] (7.1ms)
+  Rendered forums/index.html.erb within layouts/application (37.4ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+  Rendered layouts/_navigation.html.erb (0.5ms)
+Completed 200 OK in 498ms (Views: 467.4ms | ActiveRecord: 1.6ms)
+
+
