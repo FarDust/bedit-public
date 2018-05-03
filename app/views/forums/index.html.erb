@@ -4,7 +4,9 @@
     La aplicación se encuentra aún en desarrollo
   </div>
   <%if user_signed_in?()%>
-    <%= link_to("Create Forum", new_post_path(), html_options = {class: "btn btn-primary active"}) %>
+    <div class="alert alert-success" role="alert">
+      ¿No encuentras el foro que buscas? <br> <%= link_to("Crear foro", new_post_path(), html_options = {class: "btn btn-primary active"}) %>
+    </div>
   <%end%>
   <!-- Espacio para mostrar los fotos en la aplicación -->
   <div class="row">
