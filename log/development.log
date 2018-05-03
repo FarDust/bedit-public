@@ -8514,3 +8514,15 @@ Processing by ForumsController#index as HTML
 Completed 200 OK in 88ms (Views: 79.7ms | ActiveRecord: 5.6ms)
 
 
+Started GET "/forum" for 172.18.0.1 at 2018-05-03 04:04:07 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  Rendered collection of posts/_post.html.erb [20 times] (29.8ms)
+  Rendered forums/index.html.erb within layouts/application (47.4ms)
+  Rendered layouts/_navigation.html.erb (1.0ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 119ms (Views: 104.5ms | ActiveRecord: 5.4ms)
+
+
