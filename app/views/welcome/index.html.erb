@@ -1,9 +1,5 @@
-<div class="container">
-  <div class="row">
-    <%= link_to("Go to forum", forum_path(), html_options = {class: "btn btn-primary active"}) %>
-    <div id="main-content" class="col-sm-12">
-      <%= render(@posts) %>
-    </div>
-
-  </div>
+<div class="jumbotron">
+  <h1>Hola!</h1>
+  <p>La aplicación se encuentra aún en la fase de desarrollo así que puede ser que encuentres unos pequeños errores.</p>
+  <p><%= link_to("Ver los foros", forum_path(), html_options = {class: "btn btn-primary active"}) %></p>
 </div>

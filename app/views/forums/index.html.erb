@@ -1,8 +1,16 @@
-  <div class="container">
-    <%if user_signed_in?()%>
-      <%= link_to("Create Forum", new_post_path(), html_options = {class: "btn btn-primary active"}) %>
-    <%end%>
-    <div id="main-content" class="col-sm-12">
-      <%= render(@posts) %>
-    </div>
+<div class="container">
+  <!-- Espacio con alerta de desarrollo -->
+  <div class="alert alert-danger" role="alert">
+    La aplicación se encuentra aún en desarrollo
   </div>
+  <%if user_signed_in?()%>
+    <div class="alert alert-success" role="alert">
+      ¿No encuentras el foro que buscas? <br><br> <%= link_to("Crear foro", new_post_path(), html_options = {class: "btn btn-primary active"}) %>
+    </div>
+  <%end%>
+  <!-- Espacio para mostrar los fotos en la aplicación -->
+  <div class="row">
+    <!-- Renderear cada post -->
+    <%= render(@posts) %>
+  </div>
+</div>
