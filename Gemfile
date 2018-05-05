@@ -41,8 +41,10 @@ gem('bcrypt', '~> 3.1.7')
 gem('devise')
 gem('rubocop', '~> 0.55.0', require: false)
 
+# Profile images
 gem('carrierwave')
 gem('cloudinary')
+gem('identicon')
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
