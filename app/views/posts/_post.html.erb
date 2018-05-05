@@ -1,14 +1,22 @@
-<div class="col-sm-6 col-md-4" id=<%= post_path(post.id) %>>  
+<div class="col-sm-6 col-md-4" id=<%= post_path(post.id) %>>
   <div class="thumbnail" style="height: 200px">
     <!-- En caso de querer mostrar una imagen (ToDo) -->
     <!-- <img src="..." alt="..."> -->
     <div class="caption">
       <!-- Titulo del foro -->
-      <h3><%= truncate(post.title, :length => 40) %></h3>
+      <h3>
+        <%= truncate(post.title, :length => 40) %>
+      </h3>
       <!-- Descripción del foro -->
       <p><%= markdown(post.content) %></p>
       <!-- ToDo: Proximamente agregar botones de favoritos y ver más -->
-      <p><a href="#" class="btn btn-primary" role="button">Ver más</a> <a href="#" class="btn btn-default" role="button">Agregar a favoritos</a></p>
+      <p>
+        <a href="#" class="btn btn-primary" role="button">Ver más</a>
+        <a href="#" class="btn btn-default" role="button">Agregar a favoritos</a>
+        &nbsp;
+        <!-- Editar foro -->
+        <a href="#"><span class="glyphicon glyphicon-pencil"></span></a>
+      </p>
     </div>
   </div>
 </div>
