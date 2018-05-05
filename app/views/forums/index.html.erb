@@ -5,12 +5,21 @@
   </div>
   <%if user_signed_in?()%>
     <div class="alert alert-success" role="alert">
-      ¿No encuentras el foro que buscas? <br><br> <%= link_to("Crear foro", new_post_path(), html_options = {class: "btn btn-primary active"}) %>
+      ¿No encuentras el foro que buscas? <br><br> <%= link_to("Crear foro", new_post_path(),
+      html_options = {class: "btn btn-primary active"}) %>
     </div>
   <%end%>
   <!-- Espacio para mostrar los fotos en la aplicación -->
   <div class="row">
     <!-- Renderear cada post -->
     <%= render(@posts) %>
+  </div>
+  <div class="row">
+    <blockquote class="blockquote text-center">
+      <h4>
+          <!-- Dividir por páginas (6 foros por página) -->
+          <%= will_paginate(@posts) %>
+      </h4>
+    </blockquote>
   </div>
 </div>
