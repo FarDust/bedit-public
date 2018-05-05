@@ -32,9 +32,18 @@
   </div>
 
   <div class="field">
-    <%= f.label(:avatar) %>
-    <%= f.file_field(:avatar)%>
+    <%= f.label(:avatar) %><br>
+    <span class="btn btn-success fileinput-button">
+      <i class="glyphicon glyphicon-plus"></i>
+        <span>Select files...</span>
+      <%= f.file_field(:avatar, {id: "fileupload" })%>
+    </span>
   </div>
+
+  <div id="progress" class="progress">
+    <div class="progress-bar progress-bar-success"></div>
+  </div>
+  <div id="files" class="files"></div>
 
   <div class="actions">
     <%= f.submit "Update" %>

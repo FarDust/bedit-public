@@ -12,7 +12,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   def create
-    url = Cloudinary::Uploader.upload(Identicon.data_url_for(params['user']['username']), options = {})
+    url = Cloudinary::Uploader.upload(Identicon.data_url_for(params['user']['username']),options = {public_id: params['user']['username']})
     params['user']['avatar'] = url['secure_url']
     super
   end
@@ -23,9 +23,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   # PUT /resource
-  # def update
-  #   super
-  # end
+  def update
+    url = Cloudinary::Uploader.upload(params['user']['avatar'],options = {public_id: params['user']['username']})
+    params['user']['avatar'] = url['secure_url']
+    super
+  end
 
   # DELETE /resource
   # def destroy
