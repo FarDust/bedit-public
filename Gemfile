@@ -45,6 +45,7 @@ gem('rubocop', '~> 0.55.0', require: false)
 gem('carrierwave')
 gem('cloudinary')
 gem('identicon')
+gem("jquery-fileupload-rails")
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
