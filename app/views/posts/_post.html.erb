@@ -15,7 +15,9 @@
         <a href="#" class="btn btn-default" role="button">Agregar a favoritos</a>
         &nbsp;
         <!-- Editar foro -->
-        <a href="#"><span class="glyphicon glyphicon-pencil"></span></a>
+        <%=
+          link_to("", edit_post_path(post.id), html_options = {class: "glyphicon glyphicon-pencil"})
+        %>
         &nbsp;
         <!-- Borrar foro -->
         <a href="#"><span class="glyphicon glyphicon-trash"></span></a>
