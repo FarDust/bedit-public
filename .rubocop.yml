@@ -6,11 +6,16 @@ AllCops:
     - 'bin/*'
     - 'test/test_helper.rb'
     - 'config/initializers/devise.rb'
+    - 'app/channels/application_cable/*'
 
 
 Metrics/LineLength:
   Enabled: true
   Max: 99
+
+Metrics/MethodLength:
+  Enabled: true
+  Max: 15
 
 Layout/EndOfLine:
   Enabled: true
