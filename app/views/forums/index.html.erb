@@ -17,7 +17,7 @@
   <div class="row">
     <h4 class="text-center">
         <!-- Dividir por páginas (6 foros por página) -->
-        <%= will_paginate(@posts) %>
+        <%= will_paginate @posts, :previous_label => "&larr; Anterior", :next_label => "Siguiente &rarr;" %>
     </h4>
   </div>
 </div>
