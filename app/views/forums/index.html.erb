@@ -15,11 +15,9 @@
     <%= render(@posts) %>
   </div>
   <div class="row">
-    <blockquote class="blockquote text-center">
-      <h4>
-          <!-- Dividir por páginas (6 foros por página) -->
-          <%= will_paginate(@posts) %>
-      </h4>
-    </blockquote>
+    <h4 class="text-center">
+        <!-- Dividir por páginas (6 foros por página) -->
+        <%= will_paginate(@posts) %>
+    </h4>
   </div>
 </div>
