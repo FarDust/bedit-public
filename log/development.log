@@ -9576,3 +9576,1544 @@ Processing by Users::SessionsController#new as HTML
 Completed 200 OK in 66ms (Views: 63.9ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/users/sign_in" for 172.18.0.1 at 2018-05-03 04:39:03 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered /usr/local/bundle/gems/devise-4.4.3/app/views/devise/shared/_links.html.erb (1.4ms)
+  Rendered users/sessions/new.html.erb within layouts/application (5.8ms)
+  Rendered layouts/_navigation.html.erb (1.5ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+Completed 200 OK in 78ms (Views: 76.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 172.18.0.1 at 2018-05-03 04:39:05 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_navigation.html.erb (1.4ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+Completed 200 OK in 80ms (Views: 78.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/forum" for 172.18.0.1 at 2018-05-03 04:39:05 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (1.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  Rendered collection of posts/_post.html.erb [20 times] (8.2ms)
+  Rendered forums/index.html.erb within layouts/application (21.1ms)
+  Rendered layouts/_navigation.html.erb (0.9ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 121ms (Views: 116.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/users/sign_up" for 172.18.0.1 at 2018-05-03 04:39:08 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /usr/local/bundle/gems/devise-4.4.3/app/views/devise/shared/_links.html.erb (1.4ms)
+  Rendered users/registrations/new.html.erb within layouts/application (7.8ms)
+  Rendered layouts/_navigation.html.erb (0.8ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 69ms (Views: 66.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 172.18.0.1 at 2018-05-03 04:39:27 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_navigation.html.erb (2.0ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+Completed 200 OK in 85ms (Views: 82.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 172.18.0.1 at 2018-05-03 04:39:27 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_navigation.html.erb (1.4ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 114ms (Views: 107.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/forum" for 172.18.0.1 at 2018-05-03 04:39:28 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (1.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  Rendered collection of posts/_post.html.erb [20 times] (8.7ms)
+  Rendered forums/index.html.erb within layouts/application (23.5ms)
+  Rendered layouts/_navigation.html.erb (0.9ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+Completed 200 OK in 124ms (Views: 118.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 172.18.0.1 at 2018-05-03 04:39:37 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_navigation.html.erb (1.2ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 60ms (Views: 56.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 172.18.0.1 at 2018-05-03 04:39:52 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /usr/local/bundle/gems/devise-4.4.3/app/views/devise/shared/_links.html.erb (1.1ms)
+  Rendered users/registrations/new.html.erb within layouts/application (6.3ms)
+  Rendered layouts/_navigation.html.erb (0.8ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 77ms (Views: 74.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 172.18.0.1 at 2018-05-03 15:30:34 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_navigation.html.erb (4.8ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+Completed 200 OK in 471ms (Views: 446.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/forum" for 172.18.0.1 at 2018-05-03 15:30:38 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (5.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  Rendered collection of posts/_post.html.erb [20 times] (14.0ms)
+  Rendered forums/index.html.erb within layouts/application (53.1ms)
+  Rendered layouts/_navigation.html.erb (1.5ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 94ms (Views: 67.1ms | ActiveRecord: 25.1ms)
+
+
+Started GET "/users/sign_up" for 172.18.0.1 at 2018-05-03 15:30:48 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /usr/local/bundle/gems/devise-4.4.3/app/views/devise/shared/_links.html.erb (0.7ms)
+  Rendered users/registrations/new.html.erb within layouts/application (468.5ms)
+  Rendered layouts/_navigation.html.erb (1.0ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 537ms (Views: 512.1ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/users/sign_in" for 172.18.0.1 at 2018-05-03 15:30:51 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered /usr/local/bundle/gems/devise-4.4.3/app/views/devise/shared/_links.html.erb (1.6ms)
+  Rendered users/sessions/new.html.erb within layouts/application (12.8ms)
+  Rendered layouts/_navigation.html.erb (0.8ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 75ms (Views: 73.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 172.18.0.1 at 2018-05-03 15:30:57 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (5.7ms)
+  Rendered layouts/_navigation.html.erb (1.3ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 75ms (Views: 71.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 172.18.0.1 at 2018-05-03 15:30:59 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_navigation.html.erb (1.3ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 65ms (Views: 63.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/forum" for 172.18.0.1 at 2018-05-03 15:30:59 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (3.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  Rendered collection of posts/_post.html.erb [20 times] (11.3ms)
+  Rendered forums/index.html.erb within layouts/application (28.1ms)
+  Rendered layouts/_navigation.html.erb (1.1ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 155ms (Views: 146.8ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/" for 172.18.0.1 at 2018-05-03 15:31:05 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_navigation.html.erb (0.9ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 59ms (Views: 57.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 172.18.0.1 at 2018-05-03 15:31:06 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /usr/local/bundle/gems/devise-4.4.3/app/views/devise/shared/_links.html.erb (1.1ms)
+  Rendered users/registrations/new.html.erb within layouts/application (6.0ms)
+  Rendered layouts/_navigation.html.erb (1.0ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 68ms (Views: 67.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 172.18.0.1 at 2018-05-03 15:31:07 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered /usr/local/bundle/gems/devise-4.4.3/app/views/devise/shared/_links.html.erb (1.2ms)
+  Rendered users/sessions/new.html.erb within layouts/application (5.7ms)
+  Rendered layouts/_navigation.html.erb (1.5ms)
+  Rendered layouts/_messages.html.erb (1.0ms)
+Completed 200 OK in 81ms (Views: 79.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 172.18.0.1 at 2018-05-07 01:29:56 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_navigation.html.erb (3.8ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+Completed 200 OK in 317ms (Views: 299.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 172.18.0.1 at 2018-05-07 01:29:58 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /usr/local/bundle/gems/devise-4.4.3/app/views/devise/shared/_links.html.erb (1.0ms)
+  Rendered users/registrations/new.html.erb within layouts/application (423.3ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 500ms (Views: 464.3ms | ActiveRecord: 11.8ms)
+
+
+Started GET "/users/sign_up" for 172.18.0.1 at 2018-05-07 01:34:23 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /usr/local/bundle/gems/devise-4.4.3/app/views/devise/shared/_links.html.erb (0.7ms)
+  Rendered /usr/local/bundle/gems/devise-4.4.3/app/views/devise/shared/_links.html.erb (0.2ms)
+  Rendered users/registrations/new.html.erb within layouts/application (9.9ms)
+  Rendered layouts/_navigation.html.erb (0.8ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+Completed 200 OK in 54ms (Views: 52.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 172.18.0.1 at 2018-05-07 01:34:33 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /usr/local/bundle/gems/devise-4.4.3/app/views/devise/shared/_links.html.erb (3.7ms)
+  Rendered users/registrations/new.html.erb within layouts/application (23.2ms)
+  Rendered layouts/_navigation.html.erb (1.7ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 129ms (Views: 126.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 172.18.0.1 at 2018-05-07 01:34:35 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_navigation.html.erb (1.1ms)
+  Rendered layouts/_messages.html.erb (1.0ms)
+Completed 200 OK in 79ms (Views: 64.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 172.18.0.1 at 2018-05-07 01:34:37 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered /usr/local/bundle/gems/devise-4.4.3/app/views/devise/shared/_links.html.erb (2.3ms)
+  Rendered users/sessions/new.html.erb within layouts/application (17.9ms)
+  Rendered layouts/_navigation.html.erb (0.8ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 91ms (Views: 86.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 172.18.0.1 at 2018-05-07 01:36:52 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_navigation.html.erb (0.9ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+Completed 200 OK in 69ms (Views: 66.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 172.18.0.1 at 2018-05-07 01:36:53 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (4.5ms)
+  Rendered layouts/_navigation.html.erb (0.9ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 108ms (Views: 104.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/forum" for 172.18.0.1 at 2018-05-07 01:36:53 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (5.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  Rendered collection of posts/_post.html.erb [6 times] (4.9ms)
+  [1m[35m (3.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered forums/index.html.erb within layouts/application (93.7ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 152ms (Views: 121.9ms | ActiveRecord: 23.2ms)
+
+
+Started GET "/forum?page=2" for 172.18.0.1 at 2018-05-07 01:36:57 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (2.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 6]]
+  Rendered collection of posts/_post.html.erb [6 times] (3.2ms)
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered forums/index.html.erb within layouts/application (24.2ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 113ms (Views: 104.1ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/forum?page=3" for 172.18.0.1 at 2018-05-07 01:36:58 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"page"=>"3"}
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (1.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 12]]
+  Rendered collection of posts/_post.html.erb [6 times] (5.5ms)
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered forums/index.html.erb within layouts/application (29.8ms)
+  Rendered layouts/_navigation.html.erb (0.8ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 114ms (Views: 106.3ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/forum?page=4" for 172.18.0.1 at 2018-05-07 01:36:59 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"page"=>"4"}
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (1.9ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 18]]
+  Rendered collection of posts/_post.html.erb [2 times] (3.4ms)
+  Rendered forums/index.html.erb within layouts/application (25.3ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 112ms (Views: 105.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/forum?page=3" for 172.18.0.1 at 2018-05-07 01:37:01 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"page"=>"3"}
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (1.9ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 12]]
+  Rendered collection of posts/_post.html.erb [6 times] (5.1ms)
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered forums/index.html.erb within layouts/application (27.3ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 128ms (Views: 120.0ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/forum?page=4" for 172.18.0.1 at 2018-05-07 01:37:04 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"page"=>"4"}
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (1.7ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 18]]
+  Rendered collection of posts/_post.html.erb [2 times] (3.4ms)
+  Rendered forums/index.html.erb within layouts/application (20.5ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 124ms (Views: 116.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/forum?page=4" for 172.18.0.1 at 2018-05-07 01:37:28 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"page"=>"4"}
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 18]]
+  Rendered collection of posts/_post.html.erb [2 times] (1.0ms)
+  Rendered forums/index.html.erb within layouts/application (6.9ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 64ms (Views: 60.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/forum?page=4" for 172.18.0.1 at 2018-05-07 01:37:43 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"page"=>"4"}
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (1.9ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 18]]
+  Rendered collection of posts/_post.html.erb [2 times] (3.2ms)
+  Rendered forums/index.html.erb within layouts/application (18.9ms)
+  Rendered layouts/_navigation.html.erb (0.8ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 112ms (Views: 105.2ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/forum?page=4" for 172.18.0.1 at 2018-05-07 01:38:12 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"page"=>"4"}
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 18]]
+  Rendered collection of posts/_post.html.erb [2 times] (1.4ms)
+  Rendered forums/index.html.erb within layouts/application (8.3ms)
+  Rendered layouts/_navigation.html.erb (1.4ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 70ms (Views: 66.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/forum?page=4" for 172.18.0.1 at 2018-05-07 01:38:22 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"page"=>"4"}
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 18]]
+  Rendered collection of posts/_post.html.erb [2 times] (1.2ms)
+  Rendered forums/index.html.erb within layouts/application (6.3ms)
+  Rendered layouts/_navigation.html.erb (0.9ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 46ms (Views: 43.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/forum?page=3" for 172.18.0.1 at 2018-05-07 01:39:11 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"page"=>"3"}
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 12]]
+  Rendered collection of posts/_post.html.erb [6 times] (1.1ms)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered forums/index.html.erb within layouts/application (7.5ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 63ms (Views: 59.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/forum?page=2" for 172.18.0.1 at 2018-05-07 01:39:13 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (1.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 6]]
+  Rendered collection of posts/_post.html.erb [6 times] (4.8ms)
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered forums/index.html.erb within layouts/application (22.8ms)
+  Rendered layouts/_navigation.html.erb (0.8ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 94ms (Views: 86.7ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/forum?page=1" for 172.18.0.1 at 2018-05-07 01:39:13 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"page"=>"1"}
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (1.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  Rendered collection of posts/_post.html.erb [6 times] (7.5ms)
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered forums/index.html.erb within layouts/application (27.7ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 131ms (Views: 123.1ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/forum?page=1" for 172.18.0.1 at 2018-05-07 01:40:28 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"page"=>"1"}
+  Rendering forums/index.html.erb within layouts/application
+  Rendered forums/index.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/grupo21/app/views/forums/index.html.erb:20: syntax error, unexpected ',', expecting ')'
+...append=( will_paginate(@posts), :previous_label => 'Anterior...
+...                              ^
+/grupo21/app/views/forums/index.html.erb:20: syntax error, unexpected ',', expecting ')'
+... :previous_label => 'Anterior', :next_label => 'Siguiente' )...
+...                              ^):
+  
+app/views/forums/index.html.erb:20: syntax error, unexpected ',', expecting ')'
+app/views/forums/index.html.erb:20: syntax error, unexpected ',', expecting ')'
+Started GET "/forum?page=1" for 172.18.0.1 at 2018-05-07 01:40:52 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"page"=>"1"}
+  Rendering forums/index.html.erb within layouts/application
+  Rendered forums/index.html.erb within layouts/application (4.4ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/grupo21/app/views/forums/index.html.erb:20: syntax error, unexpected ',', expecting ')'
+...append=( will_paginate(@posts), :prev_label => 'Anterior', :...
+...                              ^
+/grupo21/app/views/forums/index.html.erb:20: syntax error, unexpected ',', expecting ')'
+...ts), :prev_label => 'Anterior', :next_label => 'Siguiente' )...
+...                              ^):
+  
+app/views/forums/index.html.erb:20: syntax error, unexpected ',', expecting ')'
+app/views/forums/index.html.erb:20: syntax error, unexpected ',', expecting ')'
+Started GET "/forum?page=1" for 172.18.0.1 at 2018-05-07 01:41:31 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"page"=>"1"}
+  Rendering forums/index.html.erb within layouts/application
+  Rendered forums/index.html.erb within layouts/application (2.9ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/grupo21/app/views/forums/index.html.erb:20: syntax error, unexpected ',', expecting ')'
+...append=( will_paginate(@posts), :prev_label => "Anterior", :...
+...                              ^
+/grupo21/app/views/forums/index.html.erb:20: syntax error, unexpected ',', expecting ')'
+...ts), :prev_label => "Anterior", :next_label => "Siguiente" )...
+...                              ^):
+  
+app/views/forums/index.html.erb:20: syntax error, unexpected ',', expecting ')'
+app/views/forums/index.html.erb:20: syntax error, unexpected ',', expecting ')'
+Started GET "/forum?page=1" for 172.18.0.1 at 2018-05-07 01:41:59 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"page"=>"1"}
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (1.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  Rendered collection of posts/_post.html.erb [6 times] (6.3ms)
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered forums/index.html.erb within layouts/application (28.4ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 99ms (Views: 90.9ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/forum?page=2" for 172.18.0.1 at 2018-05-07 01:42:02 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 6]]
+  Rendered collection of posts/_post.html.erb [6 times] (4.0ms)
+  [1m[35m (4.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered forums/index.html.erb within layouts/application (19.5ms)
+  Rendered layouts/_navigation.html.erb (0.8ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 104ms (Views: 95.1ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/forum?page=3" for 172.18.0.1 at 2018-05-07 01:42:03 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"page"=>"3"}
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (1.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 12]]
+  Rendered collection of posts/_post.html.erb [6 times] (4.0ms)
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered forums/index.html.erb within layouts/application (26.9ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 112ms (Views: 97.6ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/forum?page=4" for 172.18.0.1 at 2018-05-07 01:42:03 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"page"=>"4"}
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (1.8ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 18]]
+  Rendered collection of posts/_post.html.erb [2 times] (4.2ms)
+  Rendered forums/index.html.erb within layouts/application (34.6ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 129ms (Views: 120.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/forum?page=3" for 172.18.0.1 at 2018-05-07 01:42:05 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"page"=>"3"}
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 12]]
+  Rendered collection of posts/_post.html.erb [6 times] (1.7ms)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered forums/index.html.erb within layouts/application (10.9ms)
+  Rendered layouts/_navigation.html.erb (1.0ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 70ms (Views: 65.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/forum?page=2" for 172.18.0.1 at 2018-05-07 01:42:06 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (2.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 6]]
+  Rendered collection of posts/_post.html.erb [6 times] (5.4ms)
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered forums/index.html.erb within layouts/application (29.3ms)
+  Rendered layouts/_navigation.html.erb (0.9ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 121ms (Views: 110.8ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/forum?page=2" for 172.18.0.1 at 2018-05-07 01:42:14 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 6]]
+  Rendered collection of posts/_post.html.erb [6 times] (1.0ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered forums/index.html.erb within layouts/application (5.9ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 50ms (Views: 47.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/forum?page=3" for 172.18.0.1 at 2018-05-07 01:42:16 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"page"=>"3"}
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (1.7ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 12]]
+  Rendered collection of posts/_post.html.erb [6 times] (5.6ms)
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered forums/index.html.erb within layouts/application (28.6ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 100ms (Views: 93.4ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/forum?page=2" for 172.18.0.1 at 2018-05-07 01:42:16 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (1.7ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 6]]
+  Rendered collection of posts/_post.html.erb [6 times] (6.8ms)
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered forums/index.html.erb within layouts/application (30.1ms)
+  Rendered layouts/_navigation.html.erb (0.8ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 114ms (Views: 104.6ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/forum?page=2" for 172.18.0.1 at 2018-05-07 01:43:10 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 6]]
+  Rendered collection of posts/_post.html.erb [6 times] (1.0ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered forums/index.html.erb within layouts/application (5.3ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 45ms (Views: 43.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/forum?page=2" for 172.18.0.1 at 2018-05-07 01:43:16 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 6]]
+  Rendered collection of posts/_post.html.erb [6 times] (1.2ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered forums/index.html.erb within layouts/application (6.4ms)
+  Rendered layouts/_navigation.html.erb (0.8ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 52ms (Views: 49.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/forum?page=3" for 172.18.0.1 at 2018-05-07 01:43:18 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"page"=>"3"}
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (1.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 12]]
+  Rendered collection of posts/_post.html.erb [6 times] (4.7ms)
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered forums/index.html.erb within layouts/application (24.7ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 113ms (Views: 105.0ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/forum?page=2" for 172.18.0.1 at 2018-05-07 01:43:19 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (1.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 6]]
+  Rendered collection of posts/_post.html.erb [6 times] (3.9ms)
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered forums/index.html.erb within layouts/application (26.7ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 108ms (Views: 100.6ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/forum?page=1" for 172.18.0.1 at 2018-05-07 01:43:20 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"page"=>"1"}
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (2.9ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  Rendered collection of posts/_post.html.erb [6 times] (4.6ms)
+  [1m[35m (3.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered forums/index.html.erb within layouts/application (28.6ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 138ms (Views: 127.6ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/forum?page=2" for 172.18.0.1 at 2018-05-07 01:43:21 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 6]]
+  Rendered collection of posts/_post.html.erb [6 times] (1.9ms)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered forums/index.html.erb within layouts/application (14.5ms)
+  Rendered layouts/_navigation.html.erb (1.0ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 88ms (Views: 80.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/forum?page=3" for 172.18.0.1 at 2018-05-07 01:43:21 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"page"=>"3"}
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (2.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 12]]
+  Rendered collection of posts/_post.html.erb [6 times] (5.7ms)
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered forums/index.html.erb within layouts/application (34.7ms)
+  Rendered layouts/_navigation.html.erb (1.1ms)
+  Rendered layouts/_messages.html.erb (0.7ms)
+Completed 200 OK in 128ms (Views: 117.4ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/forum?page=4" for 172.18.0.1 at 2018-05-07 01:43:22 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"page"=>"4"}
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (2.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 18]]
+  Rendered collection of posts/_post.html.erb [2 times] (3.8ms)
+  Rendered forums/index.html.erb within layouts/application (26.1ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 129ms (Views: 117.4ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/forum?page=4" for 172.18.0.1 at 2018-05-07 01:43:23 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"page"=>"4"}
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (1.7ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 18]]
+  Rendered collection of posts/_post.html.erb [2 times] (3.7ms)
+  Rendered forums/index.html.erb within layouts/application (22.7ms)
+  Rendered layouts/_navigation.html.erb (1.2ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 124ms (Views: 117.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/forum?page=1" for 172.18.0.1 at 2018-05-07 01:44:28 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"page"=>"1"}
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (1.8ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  Rendered collection of posts/_post.html.erb [6 times] (6.7ms)
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered forums/index.html.erb within layouts/application (29.4ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 124ms (Views: 113.9ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/forum?page=2" for 172.18.0.1 at 2018-05-07 01:44:32 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (1.9ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 6]]
+  Rendered collection of posts/_post.html.erb [6 times] (11.2ms)
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered forums/index.html.erb within layouts/application (32.7ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 126ms (Views: 115.4ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/forum?page=3" for 172.18.0.1 at 2018-05-07 01:44:33 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"page"=>"3"}
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 12]]
+  Rendered collection of posts/_post.html.erb [6 times] (2.9ms)
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered forums/index.html.erb within layouts/application (18.8ms)
+  Rendered layouts/_navigation.html.erb (0.9ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+Completed 200 OK in 92ms (Views: 81.8ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/forum?page=4" for 172.18.0.1 at 2018-05-07 01:44:34 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"page"=>"4"}
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (1.9ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 18]]
+  Rendered collection of posts/_post.html.erb [2 times] (5.4ms)
+  Rendered forums/index.html.erb within layouts/application (28.5ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 123ms (Views: 116.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/forum?page=3" for 172.18.0.1 at 2018-05-07 01:44:35 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"page"=>"3"}
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 12]]
+  Rendered collection of posts/_post.html.erb [6 times] (1.4ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered forums/index.html.erb within layouts/application (16.9ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 76ms (Views: 71.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/forum?page=2" for 172.18.0.1 at 2018-05-07 01:44:37 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (2.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 6]]
+  Rendered collection of posts/_post.html.erb [6 times] (4.2ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered forums/index.html.erb within layouts/application (17.8ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 102ms (Views: 84.7ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/forum?page=1" for 172.18.0.1 at 2018-05-07 01:44:37 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"page"=>"1"}
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (1.7ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  Rendered collection of posts/_post.html.erb [6 times] (4.9ms)
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered forums/index.html.erb within layouts/application (31.5ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 125ms (Views: 114.7ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/forum" for 172.18.0.1 at 2018-05-07 01:44:39 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (2.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  Rendered collection of posts/_post.html.erb [6 times] (2.6ms)
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered forums/index.html.erb within layouts/application (16.9ms)
+  Rendered layouts/_navigation.html.erb (0.8ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 92ms (Views: 84.8ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/" for 172.18.0.1 at 2018-05-07 01:44:39 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_navigation.html.erb (0.8ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 105ms (Views: 100.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 172.18.0.1 at 2018-05-07 01:44:40 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered /usr/local/bundle/gems/devise-4.4.3/app/views/devise/shared/_links.html.erb (3.2ms)
+  Rendered users/sessions/new.html.erb within layouts/application (25.6ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 117ms (Views: 109.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 172.18.0.1 at 2018-05-07 01:44:41 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /usr/local/bundle/gems/devise-4.4.3/app/views/devise/shared/_links.html.erb (1.5ms)
+  Rendered users/registrations/new.html.erb within layouts/application (14.9ms)
+  Rendered layouts/_navigation.html.erb (0.8ms)
+  Rendered layouts/_messages.html.erb (1.0ms)
+Completed 200 OK in 76ms (Views: 72.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 172.18.0.1 at 2018-05-07 01:44:42 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered /usr/local/bundle/gems/devise-4.4.3/app/views/devise/shared/_links.html.erb (2.4ms)
+  Rendered users/sessions/new.html.erb within layouts/application (7.9ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 73ms (Views: 71.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 172.18.0.1 at 2018-05-07 01:49:24 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_navigation.html.erb (0.9ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 92ms (Views: 88.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 172.18.0.1 at 2018-05-07 01:49:24 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_navigation.html.erb (1.2ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 79ms (Views: 72.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 172.18.0.1 at 2018-05-07 01:49:25 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (3.6ms)
+  Rendered layouts/_navigation.html.erb (0.8ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 130ms (Views: 119.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 172.18.0.1 at 2018-05-07 01:55:34 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered /usr/local/bundle/gems/devise-4.4.3/app/views/devise/shared/_links.html.erb (5.0ms)
+  Rendered users/sessions/new.html.erb within layouts/application (27.4ms)
+  Rendered layouts/_navigation.html.erb (1.0ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+Completed 200 OK in 127ms (Views: 115.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 172.18.0.1 at 2018-05-07 01:55:35 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /usr/local/bundle/gems/devise-4.4.3/app/views/devise/shared/_links.html.erb (2.3ms)
+  Rendered users/registrations/new.html.erb within layouts/application (20.9ms)
+  Rendered layouts/_navigation.html.erb (0.8ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 106ms (Views: 101.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/forum" for 172.18.0.1 at 2018-05-07 01:55:37 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (1.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  Rendered collection of posts/_post.html.erb [6 times] (6.7ms)
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered forums/index.html.erb within layouts/application (26.6ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 137ms (Views: 125.6ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/forum" for 172.18.0.1 at 2018-05-07 01:55:39 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (1.8ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  Rendered collection of posts/_post.html.erb [6 times] (2.3ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered forums/index.html.erb within layouts/application (10.1ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 73ms (Views: 67.7ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/forum" for 172.18.0.1 at 2018-05-07 01:55:41 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (1.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  Rendered collection of posts/_post.html.erb [6 times] (4.2ms)
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered forums/index.html.erb within layouts/application (23.2ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 107ms (Views: 99.9ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/forum" for 172.18.0.1 at 2018-05-07 01:55:42 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (1.9ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  Rendered collection of posts/_post.html.erb [6 times] (5.6ms)
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered forums/index.html.erb within layouts/application (30.9ms)
+  Rendered layouts/_navigation.html.erb (0.8ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 143ms (Views: 126.4ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/forum?page=2" for 172.18.0.1 at 2018-05-07 01:55:46 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 6]]
+  Rendered collection of posts/_post.html.erb [6 times] (1.7ms)
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered forums/index.html.erb within layouts/application (10.7ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 79ms (Views: 74.8ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/forum?page=3" for 172.18.0.1 at 2018-05-07 01:55:47 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"page"=>"3"}
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 12]]
+  Rendered collection of posts/_post.html.erb [6 times] (1.2ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered forums/index.html.erb within layouts/application (7.2ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 60ms (Views: 57.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/forum?page=2" for 172.18.0.1 at 2018-05-07 01:55:48 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 6]]
+  Rendered collection of posts/_post.html.erb [6 times] (1.7ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered forums/index.html.erb within layouts/application (11.7ms)
+  Rendered layouts/_navigation.html.erb (0.8ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 66ms (Views: 61.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/forum?page=1" for 172.18.0.1 at 2018-05-07 01:55:49 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"page"=>"1"}
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (1.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  Rendered collection of posts/_post.html.erb [6 times] (6.7ms)
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered forums/index.html.erb within layouts/application (33.0ms)
+  Rendered layouts/_navigation.html.erb (1.0ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 137ms (Views: 125.4ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/forum?page=1" for 172.18.0.1 at 2018-05-07 02:09:58 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"page"=>"1"}
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (9.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["category_id", 1], ["LIMIT", 6], ["OFFSET", 0]]
+  Rendered collection of posts/_post.html.erb [5 times] (12.6ms)
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  Rendered collection of posts/_post.html.erb [6 times] (3.5ms)
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered forums/index.html.erb within layouts/application (179.7ms)
+  Rendered layouts/_navigation.html.erb (2.2ms)
+  Rendered layouts/_messages.html.erb (1.6ms)
+Completed 200 OK in 758ms (Views: 531.5ms | ActiveRecord: 71.1ms)
+
+
+Started GET "/forum?page=1" for 172.18.0.1 at 2018-05-07 02:14:12 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"page"=>"1"}
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["category_id", 1], ["LIMIT", 6], ["OFFSET", 0]]
+  Rendered collection of posts/_post.html.erb [5 times] (4.0ms)
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  Rendered collection of posts/_post.html.erb [6 times] (1.4ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered forums/index.html.erb within layouts/application (16.9ms)
+  Rendered layouts/_navigation.html.erb (1.3ms)
+  Rendered layouts/_messages.html.erb (1.0ms)
+Completed 200 OK in 103ms (Views: 95.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/forum?page=1" for 172.18.0.1 at 2018-05-07 02:14:29 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"page"=>"1"}
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["category_id", 1], ["LIMIT", 6], ["OFFSET", 0]]
+  Rendered collection of posts/_post.html.erb [5 times] (2.5ms)
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  Rendered collection of posts/_post.html.erb [6 times] (2.2ms)
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered forums/index.html.erb within layouts/application (22.7ms)
+  Rendered layouts/_navigation.html.erb (0.8ms)
+  Rendered layouts/_messages.html.erb (0.7ms)
+Completed 200 OK in 132ms (Views: 121.8ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/forum?page=1" for 172.18.0.1 at 2018-05-07 02:14:41 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"page"=>"1"}
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["category_id", 1], ["LIMIT", 6], ["OFFSET", 0]]
+  Rendered collection of posts/_post.html.erb [5 times] (0.9ms)
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  Rendered collection of posts/_post.html.erb [6 times] (0.6ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered forums/index.html.erb within layouts/application (10.6ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+Completed 200 OK in 58ms (Views: 54.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/forum?page=1" for 172.18.0.1 at 2018-05-07 02:16:49 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"page"=>"1"}
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["category_id", 1], ["LIMIT", 6], ["OFFSET", 0]]
+  Rendered collection of posts/_post.html.erb [5 times] (3.3ms)
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  Rendered collection of posts/_post.html.erb [6 times] (0.9ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered forums/index.html.erb within layouts/application (14.3ms)
+  Rendered layouts/_navigation.html.erb (1.7ms)
+  Rendered layouts/_messages.html.erb (0.8ms)
+Completed 200 OK in 79ms (Views: 73.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/forum?page=1" for 172.18.0.1 at 2018-05-07 02:17:05 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"page"=>"1"}
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["category_id", 1], ["LIMIT", 6], ["OFFSET", 0]]
+  Rendered collection of posts/_post.html.erb [5 times] (1.4ms)
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  Rendered collection of posts/_post.html.erb [6 times] (1.4ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered forums/index.html.erb within layouts/application (11.3ms)
+  Rendered layouts/_navigation.html.erb (7.4ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+Completed 200 OK in 86ms (Views: 82.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/forum?page=1" for 172.18.0.1 at 2018-05-07 02:17:23 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"page"=>"1"}
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["category_id", 1], ["LIMIT", 4], ["OFFSET", 0]]
+  Rendered collection of posts/_post.html.erb [4 times] (0.7ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = $1[0m  [["category_id", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  Rendered collection of posts/_post.html.erb [6 times] (0.9ms)
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered forums/index.html.erb within layouts/application (19.4ms)
+  Rendered layouts/_navigation.html.erb (1.4ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 91ms (Views: 78.4ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/forum?page=2" for 172.18.0.1 at 2018-05-07 02:17:26 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["category_id", 1], ["LIMIT", 4], ["OFFSET", 4]]
+  Rendered collection of posts/_post.html.erb [1 times] (1.2ms)
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 6]]
+  Rendered collection of posts/_post.html.erb [6 times] (1.8ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered forums/index.html.erb within layouts/application (22.2ms)
+  Rendered layouts/_navigation.html.erb (1.0ms)
+  Rendered layouts/_messages.html.erb (0.7ms)
+Completed 200 OK in 90ms (Views: 81.6ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/forum?page=1" for 172.18.0.1 at 2018-05-07 02:17:27 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"page"=>"1"}
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["category_id", 1], ["LIMIT", 4], ["OFFSET", 0]]
+  Rendered collection of posts/_post.html.erb [4 times] (1.6ms)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = $1[0m  [["category_id", 1]]
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  Rendered collection of posts/_post.html.erb [6 times] (0.9ms)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered forums/index.html.erb within layouts/application (16.9ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 85ms (Views: 79.4ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/forum?page=2" for 172.18.0.1 at 2018-05-07 02:17:30 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (1.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["category_id", 1], ["LIMIT", 4], ["OFFSET", 4]]
+  Rendered collection of posts/_post.html.erb [1 times] (0.9ms)
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 6]]
+  Rendered collection of posts/_post.html.erb [6 times] (0.5ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered forums/index.html.erb within layouts/application (12.0ms)
+  Rendered layouts/_navigation.html.erb (1.1ms)
+  Rendered layouts/_messages.html.erb (0.8ms)
+Completed 200 OK in 82ms (Views: 76.7ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/forum?page=1" for 172.18.0.1 at 2018-05-07 02:17:32 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"page"=>"1"}
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (2.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["category_id", 1], ["LIMIT", 4], ["OFFSET", 0]]
+  Rendered collection of posts/_post.html.erb [4 times] (6.3ms)
+  [1m[35m (4.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = $1[0m  [["category_id", 1]]
+  [1m[36mPost Load (7.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  Rendered collection of posts/_post.html.erb [6 times] (1.8ms)
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered forums/index.html.erb within layouts/application (52.9ms)
+  Rendered layouts/_navigation.html.erb (0.8ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 133ms (Views: 111.6ms | ActiveRecord: 15.4ms)
+
+
+Started GET "/forum?page=1" for 172.18.0.1 at 2018-05-07 02:18:02 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"page"=>"1"}
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["category_id", 1], ["LIMIT", 4], ["OFFSET", 0]]
+  Rendered collection of posts/_post.html.erb [4 times] (1.1ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = $1[0m  [["category_id", 1]]
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  Rendered collection of posts/_post.html.erb [6 times] (0.7ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered forums/index.html.erb within layouts/application (12.9ms)
+  Rendered layouts/_navigation.html.erb (1.1ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+Completed 200 OK in 64ms (Views: 60.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/forum?page=1" for 172.18.0.1 at 2018-05-07 02:18:20 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"page"=>"1"}
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["category_id", 1], ["LIMIT", 4], ["OFFSET", 0]]
+  Rendered collection of posts/_post.html.erb [4 times] (1.0ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = $1[0m  [["category_id", 1]]
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  Rendered collection of posts/_post.html.erb [6 times] (0.6ms)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered forums/index.html.erb within layouts/application (11.1ms)
+  Rendered layouts/_navigation.html.erb (0.8ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 55ms (Views: 50.7ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/forum?page=2" for 172.18.0.1 at 2018-05-07 02:18:23 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["category_id", 1], ["LIMIT", 4], ["OFFSET", 4]]
+  Rendered collection of posts/_post.html.erb [1 times] (1.2ms)
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 6]]
+  Rendered collection of posts/_post.html.erb [6 times] (0.5ms)
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered forums/index.html.erb within layouts/application (14.3ms)
+  Rendered layouts/_navigation.html.erb (1.4ms)
+  Rendered layouts/_messages.html.erb (0.7ms)
+Completed 200 OK in 67ms (Views: 63.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/forum?page=1" for 172.18.0.1 at 2018-05-07 02:18:24 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"page"=>"1"}
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["category_id", 1], ["LIMIT", 4], ["OFFSET", 0]]
+  Rendered collection of posts/_post.html.erb [4 times] (1.4ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = $1[0m  [["category_id", 1]]
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  Rendered collection of posts/_post.html.erb [6 times] (0.7ms)
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered forums/index.html.erb within layouts/application (13.5ms)
+  Rendered layouts/_navigation.html.erb (0.8ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 90ms (Views: 84.8ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/forum?page=1" for 172.18.0.1 at 2018-05-07 02:21:03 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"page"=>"1"}
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["category_id", 1], ["LIMIT", 4], ["OFFSET", 0]]
+  Rendered collection of posts/_post.html.erb [4 times] (0.8ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = $1[0m  [["category_id", 1]]
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["category_id", 2], ["LIMIT", 4], ["OFFSET", 0]]
+  Rendered collection of posts/_post.html.erb [4 times] (0.4ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = $1[0m  [["category_id", 2]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["category_id", 3], ["LIMIT", 4], ["OFFSET", 0]]
+  Rendered collection of posts/_post.html.erb [4 times] (0.3ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = $1[0m  [["category_id", 3]]
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["category_id", 3], ["LIMIT", 4], ["OFFSET", 0]]
+  Rendered collection of posts/_post.html.erb [4 times] (0.3ms)
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = $1[0m  [["category_id", 3]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  Rendered collection of posts/_post.html.erb [6 times] (0.4ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered forums/index.html.erb within layouts/application (25.7ms)
+  Rendered layouts/_navigation.html.erb (0.8ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 74ms (Views: 61.2ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/forum?page=2" for 172.18.0.1 at 2018-05-07 02:21:05 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["category_id", 1], ["LIMIT", 4], ["OFFSET", 4]]
+  Rendered collection of posts/_post.html.erb [1 times] (1.3ms)
+  [1m[36mPost Load (2.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["category_id", 2], ["LIMIT", 4], ["OFFSET", 4]]
+  Rendered collection of posts/_post.html.erb [1 times] (0.2ms)
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["category_id", 3], ["LIMIT", 4], ["OFFSET", 4]]
+  Rendered collection of posts/_post.html.erb [1 times] (0.3ms)
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["category_id", 3], ["LIMIT", 4], ["OFFSET", 4]]
+  Rendered collection of posts/_post.html.erb [1 times] (0.4ms)
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 6]]
+  Rendered collection of posts/_post.html.erb [6 times] (0.5ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered forums/index.html.erb within layouts/application (28.3ms)
+  Rendered layouts/_navigation.html.erb (2.1ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 92ms (Views: 84.4ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/forum?page=1" for 172.18.0.1 at 2018-05-07 02:21:08 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"page"=>"1"}
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (1.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["category_id", 1], ["LIMIT", 4], ["OFFSET", 0]]
+  Rendered collection of posts/_post.html.erb [4 times] (4.4ms)
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = $1[0m  [["category_id", 1]]
+  [1m[36mPost Load (2.7ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["category_id", 2], ["LIMIT", 4], ["OFFSET", 0]]
+  Rendered collection of posts/_post.html.erb [4 times] (1.6ms)
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = $1[0m  [["category_id", 2]]
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["category_id", 3], ["LIMIT", 4], ["OFFSET", 0]]
+  Rendered collection of posts/_post.html.erb [4 times] (0.9ms)
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = $1[0m  [["category_id", 3]]
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["category_id", 3], ["LIMIT", 4], ["OFFSET", 0]]
+  Rendered collection of posts/_post.html.erb [4 times] (0.8ms)
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = $1[0m  [["category_id", 3]]
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  Rendered collection of posts/_post.html.erb [6 times] (1.6ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered forums/index.html.erb within layouts/application (67.3ms)
+  Rendered layouts/_navigation.html.erb (1.9ms)
+  Rendered layouts/_messages.html.erb (1.6ms)
+Completed 200 OK in 235ms (Views: 218.3ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/forum?page=1" for 172.18.0.1 at 2018-05-07 02:23:37 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"page"=>"1"}
+  [1m[36mPost Load (4.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."id" DESC LIMIT $2[0m  [["category_id", 1], ["LIMIT", 4]]
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."id" DESC LIMIT $2[0m  [["category_id", 2], ["LIMIT", 4]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."id" DESC LIMIT $2[0m  [["category_id", 3], ["LIMIT", 4]]
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."id" DESC LIMIT $2[0m  [["category_id", 3], ["LIMIT", 4]]
+  Rendering forums/index.html.erb within layouts/application
+  Rendered collection of posts/_post.html.erb [4 times] (1.6ms)
+  Rendered forums/index.html.erb within layouts/application (21.4ms)
+Completed 500 Internal Server Error in 65ms (ActiveRecord: 9.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `total_pages' for #<Array:0x00007f2328e0fbd0>):
+    22:       <div class="row">
+    23:       <h4 class="text-center">
+    24:           <!-- Dividir por páginas (6 foros por página) -->
+    25:           <%= will_paginate @posts_politica, :previous_label => "&larr; Anterior", :next_label => "Siguiente &rarr;" %>
+    26:       </h4>
+    27:     </div>
+    28:   </div>
+  
+app/views/forums/index.html.erb:25:in `_app_views_forums_index_html_erb__4525096009726948893_69894493348580'
+Started GET "/forum?page=1" for 172.18.0.1 at 2018-05-07 02:23:46 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"page"=>"1"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."id" DESC LIMIT $2[0m  [["category_id", 1], ["LIMIT", 4]]
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."id" DESC LIMIT $2[0m  [["category_id", 2], ["LIMIT", 4]]
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."id" DESC LIMIT $2[0m  [["category_id", 3], ["LIMIT", 4]]
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."id" DESC LIMIT $2[0m  [["category_id", 3], ["LIMIT", 4]]
+  Rendering forums/index.html.erb within layouts/application
+  Rendered collection of posts/_post.html.erb [4 times] (0.9ms)
+  Rendered collection of posts/_post.html.erb [4 times] (0.3ms)
+  Rendered collection of posts/_post.html.erb [4 times] (0.2ms)
+  Rendered collection of posts/_post.html.erb [4 times] (0.2ms)
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  Rendered collection of posts/_post.html.erb [6 times] (0.4ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered forums/index.html.erb within layouts/application (10.7ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 79ms (Views: 57.5ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/forum?page=1" for 172.18.0.1 at 2018-05-07 02:25:45 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"page"=>"1"}
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."id" DESC LIMIT $2[0m  [["category_id", 1], ["LIMIT", 4]]
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."id" DESC LIMIT $2[0m  [["category_id", 2], ["LIMIT", 4]]
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."id" DESC LIMIT $2[0m  [["category_id", 3], ["LIMIT", 4]]
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."id" DESC LIMIT $2[0m  [["category_id", 3], ["LIMIT", 4]]
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  Rendered collection of posts/_post.html.erb [6 times] (1.6ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered collection of posts/_post.html.erb [4 times] (0.3ms)
+  Rendered collection of posts/_post.html.erb [4 times] (0.3ms)
+  Rendered collection of posts/_post.html.erb [4 times] (0.2ms)
+  Rendered collection of posts/_post.html.erb [4 times] (0.2ms)
+  Rendered forums/index.html.erb within layouts/application (13.2ms)
+  Rendered layouts/_navigation.html.erb (0.9ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 73ms (Views: 62.5ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/forum?page=2" for 172.18.0.1 at 2018-05-07 02:25:56 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."id" DESC LIMIT $2[0m  [["category_id", 1], ["LIMIT", 4]]
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."id" DESC LIMIT $2[0m  [["category_id", 2], ["LIMIT", 4]]
+  [1m[36mPost Load (1.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."id" DESC LIMIT $2[0m  [["category_id", 3], ["LIMIT", 4]]
+  [1m[36mCACHE Post Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."id" DESC LIMIT $2[0m  [["category_id", 3], ["LIMIT", 4]]
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 6]]
+  Rendered collection of posts/_post.html.erb [6 times] (1.8ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered collection of posts/_post.html.erb [4 times] (0.9ms)
+  Rendered collection of posts/_post.html.erb [4 times] (0.7ms)
+  Rendered collection of posts/_post.html.erb [4 times] (0.7ms)
+  Rendered collection of posts/_post.html.erb [4 times] (0.6ms)
+  Rendered forums/index.html.erb within layouts/application (19.2ms)
+  Rendered layouts/_navigation.html.erb (1.1ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 91ms (Views: 71.1ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/forum?page=3" for 172.18.0.1 at 2018-05-07 02:25:58 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"page"=>"3"}
+  [1m[36mPost Load (2.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."id" DESC LIMIT $2[0m  [["category_id", 1], ["LIMIT", 4]]
+  [1m[36mPost Load (2.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."id" DESC LIMIT $2[0m  [["category_id", 2], ["LIMIT", 4]]
+  [1m[36mPost Load (2.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."id" DESC LIMIT $2[0m  [["category_id", 3], ["LIMIT", 4]]
+  [1m[36mCACHE Post Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."id" DESC LIMIT $2[0m  [["category_id", 3], ["LIMIT", 4]]
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (1.9ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 12]]
+  Rendered collection of posts/_post.html.erb [6 times] (4.1ms)
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered collection of posts/_post.html.erb [4 times] (1.0ms)
+  Rendered collection of posts/_post.html.erb [4 times] (1.1ms)
+  Rendered collection of posts/_post.html.erb [4 times] (1.0ms)
+  Rendered collection of posts/_post.html.erb [4 times] (0.9ms)
+  Rendered forums/index.html.erb within layouts/application (36.8ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 125ms (Views: 92.2ms | ActiveRecord: 9.7ms)
+
+
+Started GET "/forum?page=3" for 172.18.0.1 at 2018-05-07 02:26:24 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"page"=>"3"}
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."id" DESC LIMIT $2[0m  [["category_id", 1], ["LIMIT", 4]]
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."id" DESC LIMIT $2[0m  [["category_id", 2], ["LIMIT", 4]]
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."id" DESC LIMIT $2[0m  [["category_id", 3], ["LIMIT", 4]]
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."id" DESC LIMIT $2[0m  [["category_id", 3], ["LIMIT", 4]]
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 12]]
+  Rendered collection of posts/_post.html.erb [6 times] (1.2ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered collection of posts/_post.html.erb [4 times] (1.0ms)
+  Rendered collection of posts/_post.html.erb [4 times] (0.5ms)
+  Rendered collection of posts/_post.html.erb [4 times] (0.9ms)
+  Rendered collection of posts/_post.html.erb [4 times] (0.5ms)
+  Rendered forums/index.html.erb within layouts/application (15.3ms)
+  Rendered layouts/_navigation.html.erb (1.4ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 94ms (Views: 84.7ms | ActiveRecord: 3.1ms)
+
+
