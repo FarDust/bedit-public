@@ -5,8 +5,10 @@
   </div>
   <%if user_signed_in?()%>
     <div class="alert alert-success" role="alert">
-      ¿No encuentras el foro que buscas? <br><br> <%= link_to("Crear foro", new_post_path(),
-      html_options = {class: "btn btn-primary active"}) %>
+      ¿No encuentras el foro que buscas? <br><br>
+      <%=
+        link_to("Crear foro", new_post_path(), html_options = {class: "btn btn-primary active"})
+      %>
     </div>
   <%end%>
   <!-- Espacio para mostrar los fotos en la aplicación -->
