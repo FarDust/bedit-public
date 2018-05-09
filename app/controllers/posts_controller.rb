@@ -26,7 +26,7 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     @post.update(title: params[:title], content: params[:content])
-    redirect_to(forum_path())
+    redirect_to(forum_path(), notice: 'Me has editado, gracias por darme una nueva imagen :D')
   end
 
   def destroy
