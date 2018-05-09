@@ -3,8 +3,8 @@
 <div class='container'>
   <%= form_for(:post, url: posts_path()) do |f| %>
     <div class='form-group'>
-      <% f.label(:category) %><br />
-      <% f.collection_select(:category, Category.all, :id , :name ,{prompt: 'Select a Forum',include_blank: "Please select", class: "form-control"}) %>
+      <%= f.label(:category) %><br />
+      <%= f.collection_select(:category, Category.all, :id , :name ,{prompt: 'Select a Forum', class: "form-control"}) %>
     </div>
     <div class="field">
       <%= f.label(:tittle) %><br />
@@ -12,10 +12,11 @@
     </div>
     <div class="field">
       <%= f.label(:content) %><br />
-      <%= f.text_field(:content) %>
+      <%= link_to("Markdown style reference", "https://github.com/google/styleguide/blob/gh-pages/docguide/style.md")%><br/>
+      <%= f.text_area(:content, rows: 15, placeholder: "Write your content...") %>
     </div>
     <div class="actions">
-      <%= f.submit("Create") %>
+      <%= f.submit("Create", class: "btn btn-large btn-success") %>
   </div>
   <% end %>
 </div>

@@ -26,7 +26,9 @@ gem('jquery-rails')
 
 # Use CoffeeScript for .coffee assets and views
 gem('coffee-rails', '~> 4.2')
-# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
+
+# Turbolinks makes navigating your web application faster.
+# Read more: https://github.com/turbolinks/turbolinks
 gem('turbolinks', '~> 5')
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem('jbuilder', '~> 2.5')
@@ -38,14 +40,20 @@ gem('bcrypt', '~> 3.1.7')
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+
+gem('bootstrap', '~> 4.1.0')
 gem('devise')
+gem('redcarpet')
 gem('rubocop', '~> 0.55.0', require: false)
+gem('sprockets-rails')
+gem('will_paginate', '~> 3.1.0')
 
 # Profile images
 gem('carrierwave')
 gem('cloudinary')
 gem('identicon')
 gem("jquery-fileupload-rails")
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -59,7 +67,9 @@ group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'web-console', '>= 3.3.0'
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+
+  # Spring speeds up development by keeping your application running in the background.
+  # Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
