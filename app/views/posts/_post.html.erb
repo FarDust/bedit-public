@@ -4,11 +4,28 @@
     <!-- <img src="..." alt="..."> -->
     <div class="caption">
       <!-- Titulo del foro -->
-      <h3><%= truncate(post.title, :length => 40) %></h3>
+      <h3>
+        <%= truncate(post.title, :length => 40) %>
+      </h3>
       <!-- Descripción del foro -->
       <p><%= markdown(post.content) %></p>
       <!-- ToDo: Proximamente agregar botones de favoritos y ver más -->
-      <p><a href="#" class="btn btn-primary" role="button">Ver más</a> <a href="#" class="btn btn-default" role="button">Agregar a favoritos</a></p>
+      <p>
+        <a href="#" class="btn btn-primary" role="button">Ver más</a>
+        <%if user_signed_in?()%>
+          <a href="#" class="btn btn-default" role="button">Agregar a favoritos</a>
+          &nbsp;
+          <!-- Editar foro -->
+          <%=link_to("", edit_post_path(post.id),
+                     html_options = {class: "glyphicon glyphicon-pencil"})%>
+          &nbsp;
+          <!-- Borrar foro -->
+          <%=link_to("", post_path(post.id),
+                     html_options = {class: "glyphicon glyphicon-trash", method: :delete,
+                                     data: {confirm: "¿Deseas borrarme?"}})%>
+          <!-- <a href="#"><span class="glyphicon glyphicon-trash"></span></a>-->
+        <%end%>
+      </p>
     </div>
   </div>
 </div>

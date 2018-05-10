@@ -1,22 +1,30 @@
-<h2>Create new forum</h2>
+<div class="jumbotron">
+  <div class="row">
+    <h2>Create new post</h2>
+    <%= form_for(:post, url: posts_path(), class: "form-horizontal") do |f| %>
+      <div class="form-group">
+        <%= f.label(:category) %><br />
+        <%= f.collection_select(:category, Category.all, :id, :name, {prompt: "--Select a forum--",
+                                                                      class: "custom-select"}) %>
+      </div>
+      <div class="form-group">
+        <%= f.label(:title) %><br />
+        <%= f.text_field(:title, class: "form-control") %>
+      </div>
+      <div class="form-group">
+        <%= f.label(:content) %>
+        &nbsp;
+        <a href="https://github.com/google/styleguide/blob/gh-pages/docguide/style.md" class="badge">
+            Markdown style reference
+        </a>
+        <br/>
+        <%= f.text_area(:content, rows: 15, placeholder: "Write your content...",
+                                  class: "form-control") %>
+      </div>
 
-<div class='container'>
-  <%= form_for(:post, url: posts_path()) do |f| %>
-    <div class='form-group'>
-      <%= f.label(:category) %><br />
-      <%= f.collection_select(:category, Category.all, :id , :name ,{prompt: 'Select a Forum', class: "form-control"}) %>
-    </div>
-    <div class="field">
-      <%= f.label(:tittle) %><br />
-      <%= f.text_field(:tittle) %>
-    </div>
-    <div class="field">
-      <%= f.label(:content) %><br />
-      <%= link_to("Markdown style reference", "https://github.com/google/styleguide/blob/gh-pages/docguide/style.md")%><br/>
-      <%= f.text_area(:content, rows: 15, placeholder: "Write your content...") %>
-    </div>
-    <div class="actions">
-      <%= f.submit("Create", class: "btn btn-large btn-success") %>
+      <div class="actions">
+        <%= f.submit("Create", class: "btn btn-primary active") %>
+      </div>
+    <% end %>
   </div>
-  <% end %>
 </div>
