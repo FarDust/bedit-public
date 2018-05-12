@@ -11,7 +11,7 @@
       <p><%= markdown(post.content) %></p>
       <!-- ToDo: Proximamente agregar botones de favoritos y ver más -->
       <p>
-        <a href="#" class="btn btn-primary" role="button">Ver más</a>
+        <%= link_to "Ver Más", post_path(post.id), html_options = {class: "btn btn-primary active"} %>
         <%if user_signed_in?()%>
           <a href="#" class="btn btn-default" role="button">Agregar a favoritos</a>
           &nbsp;
