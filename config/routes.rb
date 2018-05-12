@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get('/susses', to: 'message#index')
   get('/forum', to: 'forums#index')
   get('/posts/:id', to: 'forums#mostrar')
+  post('/commentaries', to: 'commentaries#create')
   root(to: 'pages#index')
   resources :posts do
     collection do
