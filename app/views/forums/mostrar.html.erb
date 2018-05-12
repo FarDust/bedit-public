@@ -9,3 +9,21 @@
 </div>
 
 <%= render(@comentarios) %>
+
+<div class="jumbotron">
+  <div class="row">
+    <h2>Comentar</h2>
+    <%= form_for(:commentary, url: commentaries_path(), class: "form-horizontal") do |f| %>
+      <!-- Enviar escondido el id del post  -->
+      <%= hidden_field_tag "commentary[post_id]", "#{@post.id}" %>
+      <div class="form-group">
+        <%= f.label(:title) %><br />
+        <%= f.text_field(:text, class: "form-control") %>
+      </div>
+
+    <div class="actions">
+        <%= f.submit("Crear", class: "btn btn-primary active") %>
+      </div>
+    <% end %>
+  </div>
+</div>
