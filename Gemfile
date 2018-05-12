@@ -20,7 +20,7 @@ gem('uglifier', '>= 1.3.0')
 
 # Bootrsap sass
 gem('bootstrap-sass', '~> 3.3.6')
-gem('dotenv-rails', groups: %i[development test])
+gem('dotenv-rails', groups: %i[development test production])
 gem('faker')
 gem('jquery-rails')
 
