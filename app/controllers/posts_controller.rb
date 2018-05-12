@@ -1,7 +1,8 @@
 require('redcarpet/compat')
 
 class PostsController < ApplicationController
-  
+  before_action(:authenticate_user!, except: [:show])
+
   def show
     @post = Post.find(params[:id])
     @comentarios = Commentary.where(post_id: params[:id])
@@ -11,7 +12,6 @@ class PostsController < ApplicationController
   end
 
   def create
-    before_action(:authenticate_user!)
     new_category = Post.create(category: Category.find_by(id: params['post']['category']),
                                title: params['post']['title'], content: params['post']['content'])
     new_category.save()
