@@ -24,8 +24,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # PUT /resource
   def update
-    url = Cloudinary::Uploader.upload(params['user']['avatar'],options = {public_id: params['user']['username']})
-    params['user']['avatar'] = url['secure_url']
+    if params.key?('user') && params['user'].key?('avatar')
+      url = Cloudinary::Uploader.upload(params['user']['avatar'],options = {public_id: params['user']['username']})
+      params['user']['avatar'] = url['secure_url']
+    end
     super
   end
 
