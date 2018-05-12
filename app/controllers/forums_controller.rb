@@ -9,5 +9,6 @@ class ForumsController < ApplicationController
 
   def mostrar
     @post = Post.find(params[:id])
+    @comentarios = Commentary.where(post_id: params[:id])
   end
 end
