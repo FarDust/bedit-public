@@ -1,8 +1,21 @@
 
+AllCops:
+  Exclude:
+    - 'db/*'
+    - 'config/*'
+    - 'bin/*'
+    - 'test/test_helper.rb'
+    - 'config/initializers/devise.rb'
+    - 'app/channels/application_cable/*'
+
 
 Metrics/LineLength:
   Enabled: true
   Max: 99
+
+Metrics/MethodLength:
+  Enabled: true
+  Max: 15
 
 Layout/EndOfLine:
   Enabled: true
@@ -16,3 +29,27 @@ Style/ClassMethods:
 Style/TernaryParentheses:
   Enabled: true
   EnforcedStyle: require_parentheses
+
+Style/ClassAndModuleChildren:
+  EnforcedStyle: compact
+
+Style/MethodCallWithoutArgsParentheses:
+  Enabled: false
+
+Style/MethodCallWithArgsParentheses:
+  Enabled: true
+
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
+
+Style/Documentation:
+  Enabled: false
+
+Style/EmptyMethod:
+  EnforcedStyle: expanded
+
+Layout/EndOfLine:
+  Enabled: false
+
+Lint/UselessAssignment:
+  Enabled: false

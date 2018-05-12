@@ -1,5 +1,5 @@
 class MessageController < ApplicationController
   def index
-    @confirmation = 'Sign Up Sussesfull'
+    @confirmation = 'Registrado correctamente'
   end
 end

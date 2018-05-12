@@ -1,8 +1,76 @@
-  <div class="container">
-    <%if user_signed_in?()%>
-      <%= link_to("Create Forum", new_post_path(), html_options = {class: "btn btn-primary active"}) %>
-    <%end%>
-    <div id="main-content" class="col-sm-12">
-      <%= render(@posts) %>
+<div class="container">
+  <!-- Espacio con alerta de desarrollo -->
+  <div class="alert alert-danger" role="alert">
+    La aplicación se encuentra aún en desarrollo
+  </div>
+  <%if user_signed_in?()%>
+    <div class="alert alert-success" role="alert">
+      ¿No encuentras el foro que buscas? <br><br>
+      <%=
+        link_to("Crear foro", new_post_path(), html_options = {class: "btn btn-primary active"})
+      %>
+    </div>
+  <%end%>
+  
+  <!-- Todos los foros -->
+  <h3>Todos los foros</h3>
+  <h5>Últimos foros creados en todas las categorías</h5>
+  <div class="jumbotron">
+        <!-- Espacio para mostrar los fotos en la aplicación -->
+      <div class="row">
+        <!-- Renderear cada post -->
+        <%= render(@posts) %>
+      </div>
+      <div class="row">
+        <h4 class="text-center">
+            <!-- Dividir por páginas (6 foros por página) -->
+            <%= will_paginate @posts, :previous_label => "&larr; Anterior", :next_label => "Siguiente &rarr;" %>
+        </h4>
+      </div>
     </div>
   </div>
+
+  <!-- Categoría de politica -->
+  <h3>Politica</h3>
+  <!-- Only for debugging purposes -->
+  <h5>Últimos <%= @posts_politica.length %> foros</h5>
+  <div class="jumbotron">
+      <div class="row">
+        <!-- Renderear cada post de la categoría -->
+        <%= render(@posts_politica) %>
+      </div>
+  </div>
+
+  <!-- Categoría de programación -->
+  <h3>Programación</h3>
+  <!-- Only for debugging purposes -->
+  <h5>Últimos <%= @posts_programacion.length %> foros</h5>
+  <div class="jumbotron">
+      <div class="row">
+        <!-- Renderear cada post de la categoría -->
+        <%= render(@posts_programacion) %>
+      </div>
+  </div>
+
+  <!-- Categoría de Juegos -->
+  <h3>Juegos</h3>
+  <!-- Only for debugging purposes -->
+  <h5>Últimos <%= @posts_juegos.length %> foros</h5>
+  <div class="jumbotron">
+      <div class="row">
+        <!-- Renderear cada post de la categoría -->
+        <%= render(@posts_juegos) %>
+      </div>
+  </div>
+  
+  <!-- Categoría de Data Science -->
+  <h3>Data Science</h3>
+  <!-- Only for debugging purposes -->
+  <h5>Últimos <%= @posts_data_science.length %> foros</h5>
+  <div class="jumbotron">
+      <div class="row">
+        <!-- Renderear cada post de la categoría -->
+        <%= render(@posts_data_science) %>
+      </div>
+  </div>
+      
