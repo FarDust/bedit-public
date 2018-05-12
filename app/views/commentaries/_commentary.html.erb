@@ -1,6 +1,7 @@
 <div class="jumbotron" id=<%= post_path(commentary.id) %>>
   <div class="row">
-    <!-- Mostrar el contenido del post -->
+    <!-- Mostrar el contenido del comentario -->
     <h3><%= markdown(commentary.text) %></h3>
+    <h4h5>Publicado por: <%= commentary.user_id %> </h5>
   </div>
 </div>
