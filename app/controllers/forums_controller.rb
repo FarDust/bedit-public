@@ -6,4 +6,8 @@ class ForumsController < ApplicationController
     @posts_juegos = Post.where(category_id: 3).last(4)
     @posts_data_science = Post.where(category_id: 3).last(4)
   end
+
+  def mostrar
+    @post = Post.find(params[:id])
+  end
 end
