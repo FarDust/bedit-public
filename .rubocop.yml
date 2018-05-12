@@ -50,3 +50,6 @@ Style/EmptyMethod:
 
 Layout/EndOfLine:
   Enabled: false
+
+Lint/UselessAssignment:
+  Enabled: false
