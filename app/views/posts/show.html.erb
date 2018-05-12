@@ -18,8 +18,8 @@
         <!-- Enviar escondido el id del post  -->
         <%= hidden_field_tag "commentary[post_id]", "#{@post.id}" %>
         <div class="form-group">
-          <%= f.label(:title) %><br />
-          <%= f.text_field(:text, class: "form-control") %>
+          <%= f.label(:title, style: "display: none;") %><br />
+          <%= f.text_area(:text,rows: 4, class: "form-control", placeholder: "Escribe aqui...") %>
         </div>
 
       <div class="actions">
