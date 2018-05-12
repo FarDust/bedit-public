@@ -3,7 +3,7 @@
 <div class="jumbotron">
   <div class="row">
     <!-- Mostrar el contenido del post -->
-    <h3><%= @post.content %></h3>
+    <h3><%=markdown(@post.content) %></h3>
     <h5>Creado el: <%= @post.created_at %></h5>
   </div>
 </div>
