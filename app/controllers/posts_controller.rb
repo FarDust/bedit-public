@@ -1,14 +1,12 @@
 require('redcarpet/compat')
 
 class PostsController < ApplicationController
-  before_action(:authenticate_user!)
+  before_action(:authenticate_user!, except: [:show])
 
   def show
     @post = Post.find(params[:id])
     @comentarios = Commentary.where(post_id: params[:id])
   end
-
-
 
   def new
   end
