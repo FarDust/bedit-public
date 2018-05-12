@@ -16,12 +16,7 @@
       </div>
 
       <div class="form-group">
-        <%= f.label("Contraseña") %><br />
-        <%= f.password_field(:password, autocomplete: "off", class: "form-control") %>
-      </div>
-
-      <div class="form-group">
-        <%= f.label(:password) %>
+        <%= f.label("Contraseña") %>
         <% if @minimum_password_length %>
         <em>(<%= @minimum_password_length %> characters minimum)</em>
         <% end %><br />
@@ -29,11 +24,9 @@
       </div>
 
       <div class="form-group">
-        <%= f.label(:password_confirmation) %><br />
+        <%= f.label("Confirmar contraseña") %><br />
         <%= f.password_field(:password_confirmation, autocomplete: "off", class: "form-control") %>
       </div>
-
-
 
       <div class="form-group">
         <%= f.submit("Registrarse", class: "btn btn-primary active") %>
