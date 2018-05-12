@@ -28,7 +28,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def update
     if params.key?('user') && params['user'].key?('avatar')
       avatar = params['user']['avatar']
-      url = Cloudinary::Uploader.upload(avatar, options = { public_id: avatar })
+      url = Cloudinary::Uploader.upload(avatar, options = { public_id: current_user.username })
       params['user']['avatar'] = url['secure_url']
     end
     super
