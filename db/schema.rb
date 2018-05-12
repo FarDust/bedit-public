@@ -23,8 +23,10 @@ ActiveRecord::Schema.define(version: 20180421173818) do
 
   create_table "commentaries", force: :cascade do |t|
     t.string "text"
+    t.bigint "post_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_commentaries_on_post_id"
   end
 
   create_table "posts", force: :cascade do |t|
