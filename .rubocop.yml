@@ -8,6 +8,9 @@ AllCops:
     - 'config/initializers/devise.rb'
     - 'app/channels/application_cable/*'
 
+Metrics/AbcSize:
+  Enabled: true
+  Max: 18
 
 Metrics/LineLength:
   Enabled: true
