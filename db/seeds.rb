@@ -27,5 +27,19 @@ def seed_posts
   end
 end
 
+def seed_commentaries
+  comentarios = ['Comentario 1', 'Comentario 2']
+  posts = Post.all
+  posts.each do |post|
+    comentarios.each do |comentario|
+      Commentary.create(
+        text: comentario,
+        post_id: post.id
+      )
+    end
+  end
+end
+
 seed_categories
 seed_posts
+seed_commentaries

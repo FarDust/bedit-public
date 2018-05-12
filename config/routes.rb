@@ -5,9 +5,8 @@ Rails.application.routes.draw do
   root('welcome#index')
   get('/susses', to: 'message#index')
   get('/forum', to: 'forums#index')
+  post('/commentaries', to: 'commentaries#create')
   root(to: 'pages#index')
-  resources :posts do
-    collection do
-    end
-  end
+  resources :posts 
+
 end
