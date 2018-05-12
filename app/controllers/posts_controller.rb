@@ -3,8 +3,12 @@ require('redcarpet/compat')
 class PostsController < ApplicationController
   before_action(:authenticate_user!)
 
-  def index
+  def show
+    @post = Post.find(params[:id])
+    @comentarios = Commentary.where(post_id: params[:id])
   end
+
+
 
   def new
   end
@@ -34,4 +38,6 @@ class PostsController < ApplicationController
     @post.delete()
     redirect_to(forum_path(), notice: "Me has borrado, espero que estés feliz :')")
   end
+
+
 end
