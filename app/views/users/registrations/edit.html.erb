@@ -40,10 +40,7 @@
     </span>
   </div>
 
-  <div id="progress" class="progress">
-    <div class="progress-bar progress-bar-success"></div>
-  </div>
-  <div id="files" class="files"></div>
+  <img id="outFrame" style= "width: 50px; height: 50px;"></img>
 
   <div class="actions">
     <%= f.submit "Update" %>
@@ -55,3 +52,16 @@
 <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
 <%= link_to("Back", :back )%>
+
+<script type='text/javascript'>
+document.getElementById("fileupload").onchange = function(evt) {
+  console.log(evt);
+  var tgt = evt.target || windows.event.srcElement, files = tgt.files;
+  var fr = new FileReader();
+  fr.onload = function () {
+    document.getElementById("outFrame").src = fr.result;
+  }
+  fr.readAsDataURL(files[0]);
+}
+console.log("here");
+</script>10
