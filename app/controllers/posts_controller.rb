@@ -36,6 +36,4 @@ class PostsController < ApplicationController
     @post.delete()
     redirect_to(forum_path(), notice: "Me has borrado, espero que estés feliz :')")
   end
-
-
 end

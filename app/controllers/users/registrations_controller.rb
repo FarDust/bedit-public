@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require('identicon')
 
 class Users::RegistrationsController < Devise::RegistrationsController
@@ -12,7 +13,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   def create
-    url = Cloudinary::Uploader.upload(Identicon.data_url_for(params['user']['username']),options = {public_id: params['user']['username']})
+    url = Cloudinary::Uploader.upload(Identicon.data_url_for(params['user']['username']), options = { public_id: params['user']['username'] })
     params['user']['avatar'] = url['secure_url']
     super
   end
@@ -25,7 +26,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # PUT /resource
   def update
     if params.key?('user') && params['user'].key?('avatar')
-      url = Cloudinary::Uploader.upload(params['user']['avatar'],options = {public_id: params['user']['username']})
+      url = Cloudinary::Uploader.upload(params['user']['avatar'], options = { public_id: params['user']['username'] })
       params['user']['avatar'] = url['secure_url']
     end
     super

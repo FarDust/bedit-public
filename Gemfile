@@ -40,7 +40,6 @@ gem('bcrypt', '~> 3.1.7')
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-
 gem('bootstrap', '~> 4.1.0')
 gem('devise')
 gem('redcarpet')
@@ -52,8 +51,7 @@ gem('will_paginate', '~> 3.1.0')
 gem('carrierwave')
 gem('cloudinary')
 gem('identicon')
-gem("jquery-fileupload-rails")
-
+gem('jquery-fileupload-rails')
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
