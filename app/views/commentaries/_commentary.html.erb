@@ -14,6 +14,9 @@
           <%usr = User.find(commentary.user_id).username %> 
         <% end %>
         Publicado por: <%= usr.capitalize%>
-      </h5>
+    </h5>
+    <div>
+      Total de votos: <%= commentary.votes.size%>
+    </div>
   </div>
 </div>
