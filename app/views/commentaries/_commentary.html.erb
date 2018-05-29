@@ -13,10 +13,17 @@
         <%if commentary.user_id %>
           <%usr = User.find(commentary.user_id).username %> 
         <% end %>
-        Publicado por: <%= usr.capitalize%>
+        Publicado por: <%= usr.capitalize%><br>
+        Publicado hace: <%=time_ago_in_words(commentary.created_at)%>
     </h5>
     <div>
-      Total de votos: <%= commentary.votes.size%>
+      
+    </div>
+    <div>
+      Total de votos: <%= commentary.get_likes.size%><br>
+      <%= link_to like_commentary_path(commentary), method: :put do %>
+        like
+      <% end %>
     </div>
   </div>
 </div>

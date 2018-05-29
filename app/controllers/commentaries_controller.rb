@@ -17,5 +17,12 @@ class CommentariesController < ApplicationController
   end
 
   def vote
+    @commentary = Commentary.find(params[:id])
+    if current_user.voted_as_when_voted_for?(@commentary) == false
+      @commentary.disliked_by(current_user)
+    else
+      @commentary.liked_by(current_user)
+    end
+    redirect_back(fallback_location: root_path())
   end
 end
