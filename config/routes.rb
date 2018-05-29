@@ -7,6 +7,10 @@ Rails.application.routes.draw do
   get('/forum', to: 'forums#index')
   post('/commentaries', to: 'commentaries#create')
   root(to: 'pages#index')
-  resources :posts 
-
+  resources(:posts)
+  resources :commentaries do
+    member do
+      put('like', to: 'commentaries#vote')
+    end
+  end
 end
