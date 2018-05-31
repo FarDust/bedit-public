@@ -54,8 +54,7 @@ gem('identicon')
 gem('jquery-fileupload-rails')
 
 # Search
-gem('sunspot_rails')
-gem('sunspot_solr')
+gem( 'rails-simple-search')
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
