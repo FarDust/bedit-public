@@ -53,10 +53,9 @@ gem('cloudinary')
 gem('identicon')
 gem('jquery-fileupload-rails')
 
-#Search
-gem('mysql2',          '~> 0.3',    :platform => :ruby)
-gem('jdbc-mysql',      '~> 5.1.35', :platform => :jruby)
-gem('thinking-sphinx', '~> 4.0')
+# Search
+gem('sunspot_rails')
+gem('sunspot_solr')
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
