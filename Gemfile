@@ -54,8 +54,9 @@ gem('identicon')
 gem('jquery-fileupload-rails')
 
 #Search
-gem('elasticsearch-model', github: 'elastic/elasticsearch-rails', branch: '5.x')
-gem('elasticsearch-rails', github: 'elastic/elasticsearch-rails', branch: '5.x')
+gem('mysql2',          '~> 0.3',    :platform => :ruby)
+gem('jdbc-mysql',      '~> 5.1.35', :platform => :jruby)
+gem('thinking-sphinx', '~> 4.0')
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
