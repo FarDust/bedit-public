@@ -8,4 +8,9 @@ Rails.application.routes.draw do
   post('/commentaries', to: 'commentaries#create')
   root(to: 'pages#index')
   resources(:posts)
+  resources :commentaries do
+    member do
+      put('like', to: 'commentaries#vote')
+    end
+  end
 end
