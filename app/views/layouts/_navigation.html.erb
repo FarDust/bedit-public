@@ -17,9 +17,9 @@
         <li><%= link_to("Inicio", root_path()) %></li>
         <li><%= link_to("Foros", forum_path()) %></li>
         <li>
-          <%=form_for :anything, url: search_path(), class: "navbar-form navbar-left" do |f| %>
+          <%=form_for :search, url: search_path(), class: "navbar-form navbar-left" do |f| %>
             <div class= "form-group">
-              <%=f.text_field(:post,:title,class: "form-control", placeholder: "search")%>
+              <%=f.text_field(:query,class: "form-control", placeholder: "search")%>
             </div>
             <%f.submit(class: "btn btn-default")%>
           </div>
