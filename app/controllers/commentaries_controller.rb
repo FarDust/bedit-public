@@ -10,7 +10,7 @@ class CommentariesController < ApplicationController
         text: params['commentary']['text'],
         user_id: params['commentary']['user_id']
       )
-      new_comentary.post = Post.find(params['commentary']['post_id'].to_i)
+      # new_comentary.post = Post.find(params['commentary']['post_id'].to_i)
       new_comentary.user = current_user
       new_comentary.save()
     elsif params.key?('reply')

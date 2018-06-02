@@ -1,5 +1,5 @@
 class Commentary < ApplicationRecord
-  belongs_to(:post)
+  # belongs_to(:post)
   belongs_to(:user)
   # http://http://railscasts.com/episodes/163-self-referential-association
   has_many(:replies)

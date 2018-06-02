@@ -24,6 +24,9 @@
           <%= f.submit(class: "btn btn-default") %>
         <% end %>
       </div>
+      <% for reply in commentary.replies %>
+        <%= render(reply.response)%>
+      <% end%>
     <% end %>
   </div>
 </div>

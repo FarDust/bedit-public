@@ -1,4 +1,4 @@
 class Post < ApplicationRecord
   belongs_to(:category)
-  has_many(:commentary, dependent: :destroy)
+  has_many(:commentary)
 end
