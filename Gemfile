@@ -63,7 +63,7 @@ gem('acts_as_votable', '~> 0.11.1')
 gem('traceroute')
 
 # Authorization
-# Falta gema
+gem("pundit")
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
