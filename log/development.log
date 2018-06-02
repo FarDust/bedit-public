@@ -19394,3 +19394,99 @@ Processing by CommunitiesController#index as HTML
 Completed 200 OK in 134ms (Views: 123.0ms | ActiveRecord: 1.6ms)
 
 
+Started GET "/forum" for 172.18.0.1 at 2018-06-02 03:54:05 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  [1m[36mPost Load (1.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."id" DESC LIMIT $2[0m  [["category_id", 1], ["LIMIT", 4]]
+  [1m[36mPost Load (1.8ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."id" DESC LIMIT $2[0m  [["category_id", 2], ["LIMIT", 4]]
+  [1m[36mPost Load (1.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."id" DESC LIMIT $2[0m  [["category_id", 3], ["LIMIT", 4]]
+  [1m[36mCACHE Post Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."id" DESC LIMIT $2[0m  [["category_id", 3], ["LIMIT", 4]]
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  Rendered collection of posts/_post.html.erb [6 times] (7.6ms)
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered collection of posts/_post.html.erb [4 times] (1.8ms)
+  Rendered collection of posts/_post.html.erb [4 times] (1.4ms)
+  Rendered collection of posts/_post.html.erb [4 times] (1.5ms)
+  Rendered collection of posts/_post.html.erb [4 times] (2.2ms)
+  Rendered forums/index.html.erb within layouts/application (33.0ms)
+  Rendered layouts/_navigation.html.erb (1.4ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 150ms (Views: 120.6ms | ActiveRecord: 7.1ms)
+
+
+Started GET "/posts/12" for 172.18.0.1 at 2018-06-02 03:54:36 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCommentary Load (0.6ms)[0m  [1m[34mSELECT "commentaries".* FROM "commentaries" WHERE "commentaries"."post_id" = $1[0m  [["post_id", 12]]
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 23], ["votable_type", "Commentary"], ["vote_flag", "t"]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 24], ["votable_type", "Commentary"], ["vote_flag", "t"]]
+  Rendered collection of commentaries/_commentary.html.erb [2 times] (24.2ms)
+  Rendered posts/show.html.erb within layouts/application (36.6ms)
+  Rendered layouts/_navigation.html.erb (1.6ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 122ms (Views: 94.5ms | ActiveRecord: 10.7ms)
+
+
+Started GET "/" for 172.18.0.1 at 2018-06-02 03:54:40 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_navigation.html.erb (1.5ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 105ms (Views: 100.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/community" for 172.18.0.1 at 2018-06-02 03:54:40 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CommunitiesController#index as HTML
+  [1m[36mCategory Load (1.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" ORDER BY "categories"."id" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendering communities/index.html.erb within layouts/application
+  Rendered collection of categories/_category.html.erb [4 times] (2.2ms)
+  Rendered communities/index.html.erb within layouts/application (7.5ms)
+  Rendered layouts/_navigation.html.erb (1.6ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 147ms (Views: 138.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/forum" for 172.18.0.1 at 2018-06-02 03:54:41 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  [1m[36mPost Load (1.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."id" DESC LIMIT $2[0m  [["category_id", 1], ["LIMIT", 4]]
+  [1m[36mPost Load (1.7ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."id" DESC LIMIT $2[0m  [["category_id", 2], ["LIMIT", 4]]
+  [1m[36mPost Load (1.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."id" DESC LIMIT $2[0m  [["category_id", 3], ["LIMIT", 4]]
+  [1m[36mCACHE Post Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."id" DESC LIMIT $2[0m  [["category_id", 3], ["LIMIT", 4]]
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (1.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  Rendered collection of posts/_post.html.erb [6 times] (8.6ms)
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered collection of posts/_post.html.erb [4 times] (2.1ms)
+  Rendered collection of posts/_post.html.erb [4 times] (1.7ms)
+  Rendered collection of posts/_post.html.erb [4 times] (1.6ms)
+  Rendered collection of posts/_post.html.erb [4 times] (1.7ms)
+  Rendered forums/index.html.erb within layouts/application (42.0ms)
+  Rendered layouts/_navigation.html.erb (1.4ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 143ms (Views: 116.1ms | ActiveRecord: 7.5ms)
+
+
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7864839756650184315)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddFavourites (20180602035553)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7864839756650184315)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7864839756650184315)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddFavourites (20180602035553)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.0ms)[0m  [1m[35mCREATE TABLE "favourites" ("id" bigserial primary key, "user_id" character varying, "post_id" character varying)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180602035553"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7864839756650184315)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
