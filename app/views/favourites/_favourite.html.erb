@@ -1,2 +1,10 @@
 <% post = Post.find(favourite.post_id) %> 
-<li><%= post.title %></li>
+<li>
+  <%= post.title %> -  
+  <%= form_for(:favourite, :html => {:method => :delete} , class: "form-horizontal") do |f| %>
+      <%= hidden_field_tag "post[post_id]", post.id %>
+      <%= f.submit("Borrar", class: "btn btn-primary active") %>
+    <% end %>      
+</li>
+<!-- 
+form_for @user, :url => url_for(:controller => 'mycontroller', :action => 'myaction') -->

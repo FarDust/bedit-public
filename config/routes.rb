@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :communities
   post('/commentaries', to: 'commentaries#create')
   post('/favourites', to: 'favourites#create')
+  delete('/favourites', to: 'favourites#delete')
   resources(:favourites)
   root(to: 'pages#index')
   resources(:posts)

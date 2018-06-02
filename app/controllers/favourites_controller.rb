@@ -11,4 +11,9 @@ class FavouritesController < ApplicationController
       user_id: params['post']['user_id']
     )
   end
+
+  def delete
+    Favourite.where(post_id: params['post']['post_id'], user_id: current_user.id).delete_all
+    redirect_to(favourites_path())
+  end
 end
