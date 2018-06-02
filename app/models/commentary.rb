@@ -11,7 +11,9 @@ class Commentary < ApplicationRecord
           notify_type: 'comment',
           actor: user,
           user: subcrition.user,
-          target: self)
+          post: subcrition.post,
+          target: self
+        )
       end
     else
       # Code for commentary of commentaries notifications
