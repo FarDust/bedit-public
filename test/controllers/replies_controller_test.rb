@@ -1,21 +1,21 @@
-require 'test_helper'
+require('test_helper')
 
 class RepliesControllerTest < ActionDispatch::IntegrationTest
   setup do
     @reply = replies(:one)
   end
 
-  test "should get index" do
+  test 'should get index' do
     get replies_url
     assert_response :success
   end
 
-  test "should get new" do
+  test 'should get new' do
     get new_reply_url
     assert_response :success
   end
 
-  test "should create reply" do
+  test 'should create reply' do
     assert_difference('Reply.count') do
       post replies_url, params: { reply: { commetary_id: @reply.commetary_id, create: @reply.create, destroy: @reply.destroy, reply_id: @reply.reply_id } }
     end
@@ -23,22 +23,22 @@ class RepliesControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to reply_url(Reply.last)
   end
 
-  test "should show reply" do
+  test 'should show reply' do
     get reply_url(@reply)
     assert_response :success
   end
 
-  test "should get edit" do
+  test 'should get edit' do
     get edit_reply_url(@reply)
     assert_response :success
   end
 
-  test "should update reply" do
+  test 'should update reply' do
     patch reply_url(@reply), params: { reply: { commetary_id: @reply.commetary_id, create: @reply.create, destroy: @reply.destroy, reply_id: @reply.reply_id } }
     assert_redirected_to reply_url(@reply)
   end
 
-  test "should destroy reply" do
+  test 'should destroy reply' do
     assert_difference('Reply.count', -1) do
       delete reply_url(@reply)
     end
