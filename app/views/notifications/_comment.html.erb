@@ -2,6 +2,15 @@
     Comentaron un post que sigues
 </div>
 <div class="media-content">
-  <%post = notification.post%>
-  <%= notification.actor.username %> commento en <%=link_to(post.title ,main_app.posts_path(post.id))%>
+  <%post = Post.find(notification.target.post_id)%>
+  <%= notification.actor.username %> commento en <%=link_to(post.title ,main_app.posts_path() + "/" + post.id.to_s, onclick: "render(this);")%>
 </div>
+<script>
+  function render(obj) {
+      var href = obj.href
+      console.log(href)
+      if (window.location !== window.top.location) {
+          window.top.location.href = href
+      }
+  };
+</script>

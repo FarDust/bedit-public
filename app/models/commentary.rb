@@ -11,7 +11,6 @@ class Commentary < ApplicationRecord
           notify_type: 'comment',
           actor: user,
           user: subcrition.user,
-          post: subcrition.post,
           target: self
         )
       end
