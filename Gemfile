@@ -53,7 +53,7 @@ gem('cloudinary')
 gem('identicon')
 gem('jquery-fileupload-rails')
 
-#replies
+# replies
 gem('safe_attributes')
 
 # votes
@@ -61,7 +61,6 @@ gem('acts_as_votable', '~> 0.11.1')
 
 # Static code improvement
 gem('traceroute')
-
 
 # Notifications
 gem('notifications', '~> 0.6.0')
