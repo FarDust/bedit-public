@@ -13,22 +13,20 @@
 
     <!-- Links de la izquierda dentro de la barra de navegación -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li><%= link_to("Inicio", root_path()) %></li>
+      <ul class="nav navbar-nav navbar navbar-light bg-light navbar-left">
+        <li><%= link_to("Inicio", root_path(), class: "") %></li>
         <li><%= link_to("Foros", forum_path()) %></li>
         <li><%= link_to("Comunidades", communities_path()) %></li>
         <% if user_signed_in?() %>
           <li><li><%= link_to("Favoritos", favourites_path()) %></li></li>
         <%end%>
-        <li>
-          <%=form_for :search, url: search_path(), class: "navbar-form navbar-left" do |f| %>
-            <div class= "form-group">
-              <%=f.text_field(:query,class: "form-control", placeholder: "search")%>
-            </div>
-            <%f.submit(class: "btn btn-default")%>
-          </div>
+        <li style= "margin-top: 10px;">
+            <%=form_for :search, url: search_path(), class: "form-inline" do |f| %>
+              <%=f.text_field(:query, class: "form-control mr-sm-2", placeholder: "search")%>
+              <%=f.submit(:search, class: "btn btn-outline-success my-2 my-sm-0", style: "display: none;")%>
+            <% end %>
         </li>
-      <% end %>
+      </div>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in?() %>
@@ -39,7 +37,7 @@
             <% end %>
           </li>
           <li>
-          <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">
+          <button style="margin-top: 10px;" type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">
             Notifications <span class="badge"><%= Notification.unread_count(current_user) %></span>
           </button>
           </li>
