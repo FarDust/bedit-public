@@ -353,8 +353,8 @@ DEPENDENCIES
   rails (~> 5.1.5)
   redcarpet
   rubocop (~> 0.55.0)
-  safe_attributes
   rubycritic
+  safe_attributes
   sass-rails (~> 5.0)
   selenium-webdriver
   spring
