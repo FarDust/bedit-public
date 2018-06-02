@@ -10,6 +10,7 @@ class CommentariesController < ApplicationController
         text: params['commentary']['text'],
         user_id: params['commentary']['user_id']
       )
+      new_comentario.post << Post.find(params['commentary']['post_id'].to_i)
       new_comentario.save()
       redirect_to(post_path(params['commentary']['post_id']))
     elsif params.key?('reply')
