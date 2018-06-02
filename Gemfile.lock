@@ -197,6 +197,8 @@ GEM
     ruby-progressbar (1.9.0)
     ruby_dep (1.5.0)
     rubyzip (1.2.1)
+    safe_attributes (1.0.10)
+      activerecord (>= 3.0.0)
     sass (3.5.5)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -276,6 +278,7 @@ DEPENDENCIES
   rails (~> 5.1.5)
   redcarpet
   rubocop (~> 0.55.0)
+  safe_attributes
   sass-rails (~> 5.0)
   selenium-webdriver
   spring
