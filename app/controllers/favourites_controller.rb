@@ -3,6 +3,8 @@ class FavouritesController < ApplicationController
 
   def index
     @favourites = Favourite.where(user_id: current_user.id).or(Favourite.where(user: current_user))
+    # necesario arreglarlo denuevo
+    # @favourites = Favourite.select(:post_id).distinct.where(user_id: current_user.id)
   end
 
   def create
@@ -18,5 +20,10 @@ class FavouritesController < ApplicationController
       favourite.isSubcribe = !favourite.isSubcribe
       favourite.save()
     end
+  end
+
+  def delete
+    Favourite.where(post_id: params['post']['post_id'], user_id: current_user.id).delete_all
+    redirect_to(favourites_path())
   end
 end

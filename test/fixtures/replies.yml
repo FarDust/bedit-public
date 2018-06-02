@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  commetary_id: 1
+  reply_id: 1
+  create: MyString
+  destroy: MyString
+
+two:
+  commetary_id: 1
+  reply_id: 1
+  create: MyString
+  destroy: MyString

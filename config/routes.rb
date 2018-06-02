@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :communities
   post('/commentaries', to: 'commentaries#create')
   post('/favourites', to: 'favourites#create')
+  delete('/favourites', to: 'favourites#delete')
   patch('/subscribe', to: 'favourites#subscribe')
   resources(:favourites)
   root(to: 'pages#index')
