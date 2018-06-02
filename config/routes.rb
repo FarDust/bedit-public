@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get('/forum', to: 'forums#index')
   get('/community', to: 'communities#index')
   post('/commentaries', to: 'commentaries#create')
+  post('/favourites', to: 'favourites#create')
+  resources(:favourites)
   root(to: 'pages#index')
   resources(:posts)
   resources :commentaries do
