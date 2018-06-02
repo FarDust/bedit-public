@@ -9,7 +9,7 @@
                           transform: translate(-50%, -50%)">
         <%= truncate(category.name, :length => 40) %>
       </h3>
-      <%= link_to "Ver Más", communities_path(category.id), html_options = {class: "btn btn-primary active"} %>
+      <%= link_to "Ver Más", community_path(category.id), html_options = {class: "btn btn-primary active"} %>
       </p>
     </div>
   </div>
