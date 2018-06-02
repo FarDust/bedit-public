@@ -24778,3 +24778,1466 @@ Processing by CommunitiesController#index as HTML
 Completed 200 OK in 113ms (Views: 95.8ms | ActiveRecord: 5.0ms)
 
 
+Started GET "/" for 172.18.0.1 at 2018-06-02 22:19:52 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.1.5) lib/active_record/migration.rb:576:in `check_pending!'
+activerecord (5.1.5) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.5) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:20:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35mSQL (0.8ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (17.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "categories" CASCADE[0m
+  [1m[35m (24.8ms)[0m  [1m[35mCREATE TABLE "categories" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (2.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "commentaries" CASCADE[0m
+  [1m[35m (8.1ms)[0m  [1m[35mCREATE TABLE "commentaries" ("id" bigserial primary key, "text" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "user_id" character varying, "post_id" bigint)[0m
+  [1m[35m (4.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "favourites" CASCADE[0m
+  [1m[35m (9.9ms)[0m  [1m[35mCREATE TABLE "favourites" ("id" bigserial primary key, "user_id" character varying, "post_id" character varying, "isSubcribe" boolean DEFAULT 'f' NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "notifications" CASCADE[0m
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE TABLE "notifications" ("id" serial NOT NULL PRIMARY KEY, "user_id" integer NOT NULL, "actor_id" integer, "notify_type" character varying NOT NULL, "target_type" character varying, "target_id" integer, "second_target_type" character varying, "second_target_id" integer, "third_target_type" character varying, "third_target_id" integer, "read_at" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE  INDEX  "index_notifications_on_user_id_and_notify_type" ON "notifications"  ("user_id", "notify_type")[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE  INDEX  "index_notifications_on_user_id" ON "notifications"  ("user_id")[0m
+  [1m[35m (2.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "posts" CASCADE[0m
+  [1m[35m (7.2ms)[0m  [1m[35mCREATE TABLE "posts" ("id" bigserial primary key, "title" character varying, "content" text, "category_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (4.1ms)[0m  [1m[35mCREATE  INDEX  "index_posts_on_category_id" ON "posts"  ("category_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "replies" CASCADE[0m
+  [1m[35m (7.8ms)[0m  [1m[35mCREATE TABLE "replies" ("id" bigserial primary key, "commentary_id" integer, "response_id" integer, "create" character varying, "destroy" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (3.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (7.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "username" character varying, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "avatar" character varying)[0m
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (5.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35m (5.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_username" ON "users"  ("username")[0m
+  [1m[35m (6.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "votes" CASCADE[0m
+  [1m[35m (12.8ms)[0m  [1m[35mCREATE TABLE "votes" ("id" serial NOT NULL PRIMARY KEY, "votable_type" character varying, "votable_id" integer, "voter_type" character varying, "voter_id" integer, "vote_flag" boolean, "vote_scope" character varying, "vote_weight" integer, "created_at" timestamp, "updated_at" timestamp)[0m
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE  INDEX  "index_votes_on_votable_id_and_votable_type_and_vote_scope" ON "votes"  ("votable_id", "votable_type", "vote_scope")[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE  INDEX  "index_votes_on_voter_id_and_voter_type_and_vote_scope" ON "votes"  ("voter_id", "voter_type", "vote_scope")[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180602165337)[0m
+  [1m[35m (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180602063445),
+(20180602151413);
+
+[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (20.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "categories" CASCADE[0m
+  [1m[35m (25.3ms)[0m  [1m[35mCREATE TABLE "categories" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (5.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "commentaries" CASCADE[0m
+  [1m[35m (11.2ms)[0m  [1m[35mCREATE TABLE "commentaries" ("id" bigserial primary key, "text" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "user_id" character varying, "post_id" bigint)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "favourites" CASCADE[0m
+  [1m[35m (8.4ms)[0m  [1m[35mCREATE TABLE "favourites" ("id" bigserial primary key, "user_id" character varying, "post_id" character varying, "isSubcribe" boolean DEFAULT 'f' NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "notifications" CASCADE[0m
+  [1m[35m (8.7ms)[0m  [1m[35mCREATE TABLE "notifications" ("id" serial NOT NULL PRIMARY KEY, "user_id" integer NOT NULL, "actor_id" integer, "notify_type" character varying NOT NULL, "target_type" character varying, "target_id" integer, "second_target_type" character varying, "second_target_id" integer, "third_target_type" character varying, "third_target_id" integer, "read_at" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE  INDEX  "index_notifications_on_user_id_and_notify_type" ON "notifications"  ("user_id", "notify_type")[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE  INDEX  "index_notifications_on_user_id" ON "notifications"  ("user_id")[0m
+  [1m[35m (2.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "posts" CASCADE[0m
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE TABLE "posts" ("id" bigserial primary key, "title" character varying, "content" text, "category_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE  INDEX  "index_posts_on_category_id" ON "posts"  ("category_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "replies" CASCADE[0m
+  [1m[35m (7.0ms)[0m  [1m[35mCREATE TABLE "replies" ("id" bigserial primary key, "commentary_id" integer, "response_id" integer, "create" character varying, "destroy" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (4.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (7.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "username" character varying, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "avatar" character varying)[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35m (4.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_username" ON "users"  ("username")[0m
+  [1m[35m (6.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "votes" CASCADE[0m
+  [1m[35m (10.9ms)[0m  [1m[35mCREATE TABLE "votes" ("id" serial NOT NULL PRIMARY KEY, "votable_type" character varying, "votable_id" integer, "voter_type" character varying, "voter_id" integer, "vote_flag" boolean, "vote_scope" character varying, "vote_weight" integer, "created_at" timestamp, "updated_at" timestamp)[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE  INDEX  "index_votes_on_votable_id_and_votable_type_and_vote_scope" ON "votes"  ("votable_id", "votable_type", "vote_scope")[0m
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE  INDEX  "index_votes_on_voter_id_and_voter_type_and_vote_scope" ON "votes"  ("voter_id", "voter_type", "vote_scope")[0m
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180602165337)[0m
+  [1m[35m (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180602063445),
+(20180602035553),
+(20180602151413);
+
+[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "development"], ["updated_at", "2018-06-02 22:27:42.175874"], ["key", "environment"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2018-06-02 22:27:42.189397"], ["key", "environment"]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Política"], ["created_at", "2018-06-02 22:27:42.255957"], ["updated_at", "2018-06-02 22:27:42.255957"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Programación"], ["created_at", "2018-06-02 22:27:42.259931"], ["updated_at", "2018-06-02 22:27:42.259931"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Juegos"], ["created_at", "2018-06-02 22:27:42.263371"], ["updated_at", "2018-06-02 22:27:42.263371"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Data Science"], ["created_at", "2018-06-02 22:27:42.266983"], ["updated_at", "2018-06-02 22:27:42.266983"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Optio repellendus magni pariatur id officia nulla."], ["content", "Sunt ut quam."], ["category_id", 1], ["created_at", "2018-06-02 22:27:42.814881"], ["updated_at", "2018-06-02 22:27:42.814881"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Doloremque error quidem vero repellat."], ["content", "Saepe sit nemo et facere tenetur est."], ["category_id", 1], ["created_at", "2018-06-02 22:27:42.819399"], ["updated_at", "2018-06-02 22:27:42.819399"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Quod et minima."], ["content", "Qui dignissimos est adipisci."], ["category_id", 1], ["created_at", "2018-06-02 22:27:42.823508"], ["updated_at", "2018-06-02 22:27:42.823508"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Doloribus ut in tempore sit ex."], ["content", "Laboriosam dolor quidem sed libero."], ["category_id", 1], ["created_at", "2018-06-02 22:27:42.827794"], ["updated_at", "2018-06-02 22:27:42.827794"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Esse quia cum minus saepe perferendis quis distinctio."], ["content", "Incidunt quam dolor."], ["category_id", 1], ["created_at", "2018-06-02 22:27:42.832208"], ["updated_at", "2018-06-02 22:27:42.832208"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Consequatur nemo quo recusandae itaque corporis debitis."], ["content", "Hic iusto nostrum praesentium quia voluptate."], ["category_id", 2], ["created_at", "2018-06-02 22:27:42.836330"], ["updated_at", "2018-06-02 22:27:42.836330"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Et sequi aspernatur officia."], ["content", "Laborum doloremque molestias ea dolores optio dolores quibusdam."], ["category_id", 2], ["created_at", "2018-06-02 22:27:42.840150"], ["updated_at", "2018-06-02 22:27:42.840150"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Cupiditate alias porro."], ["content", "Dolore maxime in facere dolorum possimus et."], ["category_id", 2], ["created_at", "2018-06-02 22:27:42.844680"], ["updated_at", "2018-06-02 22:27:42.844680"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Quas labore illum nihil."], ["content", "Totam occaecati quo omnis."], ["category_id", 2], ["created_at", "2018-06-02 22:27:42.849121"], ["updated_at", "2018-06-02 22:27:42.849121"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Quia at suscipit eius est."], ["content", "Veniam fuga voluptas at."], ["category_id", 2], ["created_at", "2018-06-02 22:27:42.853367"], ["updated_at", "2018-06-02 22:27:42.853367"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Odit dolores ullam saepe fugit."], ["content", "Deserunt nesciunt voluptatem ad omnis."], ["category_id", 3], ["created_at", "2018-06-02 22:27:42.857680"], ["updated_at", "2018-06-02 22:27:42.857680"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Voluptates iusto officia non nisi dolorum natus quos."], ["content", "Voluptatem ratione incidunt delectus ipsa aut itaque rerum."], ["category_id", 3], ["created_at", "2018-06-02 22:27:42.862433"], ["updated_at", "2018-06-02 22:27:42.862433"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Ducimus ullam porro numquam repellendus doloremque."], ["content", "At non deserunt."], ["category_id", 3], ["created_at", "2018-06-02 22:27:42.866868"], ["updated_at", "2018-06-02 22:27:42.866868"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Molestiae deleniti pariatur rerum dolores."], ["content", "Placeat quia quo beatae voluptatem harum quae."], ["category_id", 3], ["created_at", "2018-06-02 22:27:42.871083"], ["updated_at", "2018-06-02 22:27:42.871083"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Sit voluptas consequatur perspiciatis nemo doloremque porro et."], ["content", "Mollitia quae et nihil dolorem itaque incidunt."], ["category_id", 3], ["created_at", "2018-06-02 22:27:42.875494"], ["updated_at", "2018-06-02 22:27:42.875494"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Quia nostrum earum qui placeat."], ["content", "Exercitationem et ratione."], ["category_id", 4], ["created_at", "2018-06-02 22:27:42.879836"], ["updated_at", "2018-06-02 22:27:42.879836"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Veritatis culpa velit natus est eos."], ["content", "Nisi unde provident blanditiis reiciendis et."], ["category_id", 4], ["created_at", "2018-06-02 22:27:42.884380"], ["updated_at", "2018-06-02 22:27:42.884380"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Et rem debitis."], ["content", "Est laboriosam est ex soluta qui ut."], ["category_id", 4], ["created_at", "2018-06-02 22:27:42.888529"], ["updated_at", "2018-06-02 22:27:42.888529"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Rerum blanditiis vitae aut voluptate neque consequatur mollitia."], ["content", "Unde culpa iste corporis sed aut facere."], ["category_id", 4], ["created_at", "2018-06-02 22:27:42.892885"], ["updated_at", "2018-06-02 22:27:42.892885"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Ullam repudiandae quaerat quia."], ["content", "Tempora nihil et consequuntur recusandae labore odit qui."], ["category_id", 4], ["created_at", "2018-06-02 22:27:42.897056"], ["updated_at", "2018-06-02 22:27:42.897056"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.9ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Started GET "/" for 172.18.0.1 at 2018-06-02 22:28:44 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.8ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation.html.erb (18.0ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 3472ms (Views: 3456.5ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/notifications" for 172.18.0.1 at 2018-06-02 22:28:48 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Notifications::NotificationsController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+RuntimeError (You need reqiure user login for /notifications page.):
+  
+app/controllers/notifications/notifications_controller.rb:20:in `notifications'
+app/controllers/notifications/notifications_controller.rb:4:in `index'
+Started GET "/communities" for 172.18.0.1 at 2018-06-02 22:28:59 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CommunitiesController#index as HTML
+  [1m[36mCategory Load (2.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" ORDER BY "categories"."id" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendering communities/index.html.erb within layouts/application
+  Rendered collection of categories/_category.html.erb [4 times] (1.6ms)
+  Rendered communities/index.html.erb within layouts/application (5.0ms)
+  Rendered layouts/_navigation.html.erb (1.7ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 158ms (Views: 98.6ms | ActiveRecord: 15.5ms)
+
+
+Started GET "/notifications" for 172.18.0.1 at 2018-06-02 22:29:00 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Notifications::NotificationsController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+RuntimeError (You need reqiure user login for /notifications page.):
+  
+app/controllers/notifications/notifications_controller.rb:20:in `notifications'
+app/controllers/notifications/notifications_controller.rb:4:in `index'
+Started GET "/communities/1" for 172.18.0.1 at 2018-06-02 22:29:01 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CommunitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."id" DESC LIMIT $2[0m  [["category_id", 1], ["LIMIT", 100]]
+  Rendering communities/show.html.erb within layouts/application
+  Rendered collection of posts/_post.html.erb [5 times] (2.7ms)
+  Rendered communities/show.html.erb within layouts/application (4.5ms)
+  Rendered layouts/_navigation.html.erb (1.4ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 115ms (Views: 78.5ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/notifications" for 172.18.0.1 at 2018-06-02 22:29:01 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Notifications::NotificationsController#index as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+RuntimeError (You need reqiure user login for /notifications page.):
+  
+app/controllers/notifications/notifications_controller.rb:20:in `notifications'
+app/controllers/notifications/notifications_controller.rb:4:in `index'
+Started GET "/posts/1" for 172.18.0.1 at 2018-06-02 22:29:03 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCommentary Load (1.5ms)[0m  [1m[34mSELECT "commentaries".* FROM "commentaries" WHERE "commentaries"."post_id" = $1[0m  [["post_id", 1]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered posts/show.html.erb within layouts/application (5.0ms)
+  Rendered layouts/_navigation.html.erb (1.4ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 154ms (Views: 101.8ms | ActiveRecord: 9.3ms)
+
+
+Started GET "/notifications" for 172.18.0.1 at 2018-06-02 22:29:04 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Notifications::NotificationsController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+RuntimeError (You need reqiure user login for /notifications page.):
+  
+app/controllers/notifications/notifications_controller.rb:20:in `notifications'
+app/controllers/notifications/notifications_controller.rb:4:in `index'
+Started GET "/forum" for 172.18.0.1 at 2018-06-02 22:29:06 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."id" DESC LIMIT $2[0m  [["category_id", 1], ["LIMIT", 4]]
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."id" DESC LIMIT $2[0m  [["category_id", 2], ["LIMIT", 4]]
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."id" DESC LIMIT $2[0m  [["category_id", 3], ["LIMIT", 4]]
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."id" DESC LIMIT $2[0m  [["category_id", 3], ["LIMIT", 4]]
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (1.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  Rendered collection of posts/_post.html.erb [6 times] (7.7ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered collection of posts/_post.html.erb [4 times] (0.8ms)
+  Rendered collection of posts/_post.html.erb [4 times] (0.7ms)
+  Rendered collection of posts/_post.html.erb [4 times] (0.7ms)
+  Rendered collection of posts/_post.html.erb [4 times] (0.9ms)
+  Rendered forums/index.html.erb within layouts/application (23.1ms)
+  Rendered layouts/_navigation.html.erb (1.4ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+Completed 200 OK in 110ms (Views: 92.6ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/notifications" for 172.18.0.1 at 2018-06-02 22:29:06 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Notifications::NotificationsController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+RuntimeError (You need reqiure user login for /notifications page.):
+  
+app/controllers/notifications/notifications_controller.rb:20:in `notifications'
+app/controllers/notifications/notifications_controller.rb:4:in `index'
+Started GET "/posts/20" for 172.18.0.1 at 2018-06-02 22:29:11 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCommentary Load (0.5ms)[0m  [1m[34mSELECT "commentaries".* FROM "commentaries" WHERE "commentaries"."post_id" = $1[0m  [["post_id", 20]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered posts/show.html.erb within layouts/application (3.8ms)
+  Rendered layouts/_navigation.html.erb (1.5ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 88ms (Views: 81.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/notifications" for 172.18.0.1 at 2018-06-02 22:29:11 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Notifications::NotificationsController#index as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+RuntimeError (You need reqiure user login for /notifications page.):
+  
+app/controllers/notifications/notifications_controller.rb:20:in `notifications'
+app/controllers/notifications/notifications_controller.rb:4:in `index'
+Started GET "/forum" for 172.18.0.1 at 2018-06-02 22:29:14 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  [1m[36mPost Load (1.9ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."id" DESC LIMIT $2[0m  [["category_id", 1], ["LIMIT", 4]]
+  [1m[36mPost Load (2.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."id" DESC LIMIT $2[0m  [["category_id", 2], ["LIMIT", 4]]
+  [1m[36mPost Load (2.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."id" DESC LIMIT $2[0m  [["category_id", 3], ["LIMIT", 4]]
+  [1m[36mCACHE Post Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."id" DESC LIMIT $2[0m  [["category_id", 3], ["LIMIT", 4]]
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  Rendered collection of posts/_post.html.erb [6 times] (5.3ms)
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered collection of posts/_post.html.erb [4 times] (1.3ms)
+  Rendered collection of posts/_post.html.erb [4 times] (2.0ms)
+  Rendered collection of posts/_post.html.erb [4 times] (1.7ms)
+  Rendered collection of posts/_post.html.erb [4 times] (1.1ms)
+  Rendered forums/index.html.erb within layouts/application (36.3ms)
+Started GET "/notifications" for 172.18.0.1 at 2018-06-02 22:29:14 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Notifications::NotificationsController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+RuntimeError (You need reqiure user login for /notifications page.):
+  
+app/controllers/notifications/notifications_controller.rb:20:in `notifications'
+app/controllers/notifications/notifications_controller.rb:4:in `index'
+  Rendered layouts/_navigation.html.erb (1.4ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 248ms (Views: 215.9ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/notifications" for 172.18.0.1 at 2018-06-02 22:29:15 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Notifications::NotificationsController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+RuntimeError (You need reqiure user login for /notifications page.):
+  
+app/controllers/notifications/notifications_controller.rb:20:in `notifications'
+app/controllers/notifications/notifications_controller.rb:4:in `index'
+Started GET "/posts/17" for 172.18.0.1 at 2018-06-02 22:29:16 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mPost Load (1.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCommentary Load (2.7ms)[0m  [1m[34mSELECT "commentaries".* FROM "commentaries" WHERE "commentaries"."post_id" = $1[0m  [["post_id", 17]]
+  Rendered collection of templates [0 times] (0.1ms)
+  Rendered posts/show.html.erb within layouts/application (13.2ms)
+  Rendered layouts/_navigation.html.erb (1.4ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 143ms (Views: 129.9ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/notifications" for 172.18.0.1 at 2018-06-02 22:29:16 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Notifications::NotificationsController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+RuntimeError (You need reqiure user login for /notifications page.):
+  
+app/controllers/notifications/notifications_controller.rb:20:in `notifications'
+app/controllers/notifications/notifications_controller.rb:4:in `index'
+Started GET "/forum" for 172.18.0.1 at 2018-06-02 22:29:17 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."id" DESC LIMIT $2[0m  [["category_id", 1], ["LIMIT", 4]]
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."id" DESC LIMIT $2[0m  [["category_id", 2], ["LIMIT", 4]]
+  [1m[36mPost Load (1.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."id" DESC LIMIT $2[0m  [["category_id", 3], ["LIMIT", 4]]
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."id" DESC LIMIT $2[0m  [["category_id", 3], ["LIMIT", 4]]
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  Rendered collection of posts/_post.html.erb [6 times] (5.0ms)
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered collection of posts/_post.html.erb [4 times] (5.1ms)
+Started GET "/notifications" for 172.18.0.1 at 2018-06-02 22:29:17 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Notifications::NotificationsController#index as HTML
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+RuntimeError (You need reqiure user login for /notifications page.):
+  
+app/controllers/notifications/notifications_controller.rb:20:in `notifications'
+app/controllers/notifications/notifications_controller.rb:4:in `index'
+  Rendered collection of posts/_post.html.erb [4 times] (1.2ms)
+  Rendered collection of posts/_post.html.erb [4 times] (0.7ms)
+  Rendered collection of posts/_post.html.erb [4 times] (0.6ms)
+  Rendered forums/index.html.erb within layouts/application (96.6ms)
+  Rendered layouts/_navigation.html.erb (1.4ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 253ms (Views: 238.2ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/notifications" for 172.18.0.1 at 2018-06-02 22:29:18 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Notifications::NotificationsController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+RuntimeError (You need reqiure user login for /notifications page.):
+  
+app/controllers/notifications/notifications_controller.rb:20:in `notifications'
+app/controllers/notifications/notifications_controller.rb:4:in `index'
+Started GET "/users/sign_up" for 172.18.0.1 at 2018-06-02 22:29:19 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /usr/local/bundle/gems/devise-4.4.3/app/views/devise/shared/_links.html.erb (0.8ms)
+  Rendered users/registrations/new.html.erb within layouts/application (380.8ms)
+  Rendered layouts/_navigation.html.erb (1.5ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+Completed 200 OK in 474ms (Views: 456.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/notifications" for 172.18.0.1 at 2018-06-02 22:29:19 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Notifications::NotificationsController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+RuntimeError (You need reqiure user login for /notifications page.):
+  
+app/controllers/notifications/notifications_controller.rb:20:in `notifications'
+app/controllers/notifications/notifications_controller.rb:4:in `index'
+Started POST "/users" for 172.18.0.1 at 2018-06-02 22:29:29 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZK9OdoKYLSUpf0UXLnYzmuBK1M+1pjehWK6rP2fa99l5JYThD+gbxGZ/4F/rJh5x/EFUSdSSGx8BV0ezooZI6A==", "user"=>{"email"=>"eavillagran@uc.cl", "username"=>"eavillagran", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Registrarse"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "eavillagran@uc.cl"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "eavillagran@uc.cl"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "eavillagran"], ["LIMIT", 1]]
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "username", "encrypted_password", "created_at", "updated_at", "avatar") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "eavillagran@uc.cl"], ["username", "eavillagran"], ["encrypted_password", "$2a$11$zI7T8HBUfd2P6zWNFUezz.IJSgxGfk2H.ykcFiydsFsivRYDl/5YK"], ["created_at", "2018-06-02 22:29:31.054640"], ["updated_at", "2018-06-02 22:29:31.054640"], ["avatar", "https://res.cloudinary.com/tralmor/image/upload/v1527912640/eavillagran.png"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "current_sign_in_ip" = $4, "last_sign_in_ip" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["sign_in_count", 1], ["current_sign_in_at", "2018-06-02 22:29:31.059727"], ["last_sign_in_at", "2018-06-02 22:29:31.059727"], ["current_sign_in_ip", "172.18.0.1/32"], ["last_sign_in_ip", "172.18.0.1/32"], ["updated_at", "2018-06-02 22:29:31.060958"], ["id", 1]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 1605ms (ActiveRecord: 6.5ms)
+
+
+Started GET "/" for 172.18.0.1 at 2018-06-02 22:29:31 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "notifications" WHERE "notifications"."user_id" = 1 AND "notifications"."read_at" IS NULL[0m
+  Rendered layouts/_navigation.html.erb (11.6ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 100ms (Views: 96.1ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/notifications" for 172.18.0.1 at 2018-06-02 22:29:31 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Notifications::NotificationsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mNotification Load (0.4ms)[0m  [1m[34mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."user_id" = $1 ORDER BY id desc LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 30], ["OFFSET", 0]]
+  Rendering notifications/notifications/index.html.erb within layouts/application
+  Rendered notifications/notifications/index.html.erb within layouts/application (3.4ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 102ms (Views: 94.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/communities" for 172.18.0.1 at 2018-06-02 22:29:32 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CommunitiesController#index as HTML
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" ORDER BY "categories"."id" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendering communities/index.html.erb within layouts/application
+  Rendered collection of categories/_category.html.erb [4 times] (1.4ms)
+  Rendered communities/index.html.erb within layouts/application (5.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "notifications" WHERE "notifications"."user_id" = 1 AND "notifications"."read_at" IS NULL[0m
+  Rendered layouts/_navigation.html.erb (4.1ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 96ms (Views: 89.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/notifications" for 172.18.0.1 at 2018-06-02 22:29:32 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Notifications::NotificationsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mNotification Load (0.7ms)[0m  [1m[34mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."user_id" = $1 ORDER BY id desc LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 30], ["OFFSET", 0]]
+  Rendering notifications/notifications/index.html.erb within layouts/application
+  Rendered notifications/notifications/index.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+Completed 200 OK in 87ms (Views: 80.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/forum" for 172.18.0.1 at 2018-06-02 22:29:33 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  [1m[36mPost Load (1.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."id" DESC LIMIT $2[0m  [["category_id", 1], ["LIMIT", 4]]
+  [1m[36mPost Load (1.8ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."id" DESC LIMIT $2[0m  [["category_id", 2], ["LIMIT", 4]]
+  [1m[36mPost Load (2.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."id" DESC LIMIT $2[0m  [["category_id", 3], ["LIMIT", 4]]
+  [1m[36mCACHE Post Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."id" DESC LIMIT $2[0m  [["category_id", 3], ["LIMIT", 4]]
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (1.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  Rendered collection of posts/_post.html.erb [6 times] (19.3ms)
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered collection of posts/_post.html.erb [4 times] (6.4ms)
+  Rendered collection of posts/_post.html.erb [4 times] (4.8ms)
+  Rendered collection of posts/_post.html.erb [4 times] (2.8ms)
+  Rendered collection of posts/_post.html.erb [4 times] (4.9ms)
+  Rendered forums/index.html.erb within layouts/application (70.5ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "notifications" WHERE "notifications"."user_id" = 1 AND "notifications"."read_at" IS NULL[0m
+  Rendered layouts/_navigation.html.erb (2.8ms)
+  Rendered layouts/_messages.html.erb (0.7ms)
+Completed 200 OK in 194ms (Views: 157.4ms | ActiveRecord: 10.7ms)
+
+
+Started GET "/notifications" for 172.18.0.1 at 2018-06-02 22:29:33 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Notifications::NotificationsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mNotification Load (0.7ms)[0m  [1m[34mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."user_id" = $1 ORDER BY id desc LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 30], ["OFFSET", 0]]
+  Rendering notifications/notifications/index.html.erb within layouts/application
+  Rendered notifications/notifications/index.html.erb within layouts/application (3.3ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 117ms (Views: 108.6ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/favourites" for 172.18.0.1 at 2018-06-02 22:29:34 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"R+v4UxawK1S5CrZQ/9LN0tY/HeRfXH+54tKbE4bBgh6FAIXwZ4ge7zdcNoqaPfAk3Nd9hkvZ//R4Bdb77g5hpw==", "post"=>{"post_id"=>"20", "user_id"=>"1"}, "commit"=>"A Favoritos"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "favourites" ("user_id", "post_id") VALUES ($1, $2) RETURNING "id"[0m  [["user_id", "1"], ["post_id", "20"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+No template found for FavouritesController#create, rendering head :no_content
+Completed 204 No Content in 122ms (ActiveRecord: 11.1ms)
+
+
+Started GET "/favourites" for 172.18.0.1 at 2018-06-02 22:29:35 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (1.7ms)[0m  [1m[34mSELECT "favourites".* FROM "favourites" WHERE ("favourites"."user_id" = $1 OR "favourites"."user_id" = '1')[0m  [["user_id", "1"]]
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mPost Load (1.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  Rendered collection of favourites/_favourite.html.erb [1 times] (25.4ms)
+  Rendered favourites/index.html.erb within layouts/application (39.0ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "notifications" WHERE "notifications"."user_id" = 1 AND "notifications"."read_at" IS NULL[0m
+  Rendered layouts/_navigation.html.erb (2.9ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 139ms (Views: 120.3ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/notifications" for 172.18.0.1 at 2018-06-02 22:29:35 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Notifications::NotificationsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mNotification Load (0.5ms)[0m  [1m[34mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."user_id" = $1 ORDER BY id desc LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 30], ["OFFSET", 0]]
+  Rendering notifications/notifications/index.html.erb within layouts/application
+  Rendered notifications/notifications/index.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 77ms (Views: 70.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/posts/20" for 172.18.0.1 at 2018-06-02 22:29:37 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCommentary Load (0.7ms)[0m  [1m[34mSELECT "commentaries".* FROM "commentaries" WHERE "commentaries"."post_id" = $1[0m  [["post_id", 20]]
+  Rendered collection of templates [0 times] (0.0ms)
+  [1m[36mUser Load (4.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.erb within layouts/application (21.9ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "notifications" WHERE "notifications"."user_id" = 1 AND "notifications"."read_at" IS NULL[0m
+  Rendered layouts/_navigation.html.erb (3.4ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 127ms (Views: 112.6ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/notifications" for 172.18.0.1 at 2018-06-02 22:29:37 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Notifications::NotificationsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mNotification Load (0.7ms)[0m  [1m[34mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."user_id" = $1 ORDER BY id desc LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 30], ["OFFSET", 0]]
+  Rendering notifications/notifications/index.html.erb within layouts/application
+  Rendered notifications/notifications/index.html.erb within layouts/application (5.6ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 78ms (Views: 70.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/favourites" for 172.18.0.1 at 2018-06-02 22:29:39 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (1.4ms)[0m  [1m[34mSELECT "favourites".* FROM "favourites" WHERE ("favourites"."user_id" = $1 OR "favourites"."user_id" = '1')[0m  [["user_id", "1"]]
+  [1m[36mPost Load (1.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  Rendered collection of favourites/_favourite.html.erb [1 times] (18.1ms)
+  Rendered favourites/index.html.erb within layouts/application (27.8ms)
+Started GET "/notifications" for 172.18.0.1 at 2018-06-02 22:29:40 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Notifications::NotificationsController#index as HTML
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mNotification Load (1.5ms)[0m  [1m[34mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."user_id" = $1 ORDER BY id desc LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 30], ["OFFSET", 0]]
+  Rendering notifications/notifications/index.html.erb within layouts/application
+  Rendered notifications/notifications/index.html.erb within layouts/application (2.8ms)
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "notifications" WHERE "notifications"."user_id" = 1 AND "notifications"."read_at" IS NULL[0m
+  Rendered layouts/_navigation.html.erb (3.3ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 195ms (Views: 176.7ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/notifications" for 172.18.0.1 at 2018-06-02 22:29:40 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Notifications::NotificationsController#index as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mNotification Load (0.7ms)[0m  [1m[34mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."user_id" = $1 ORDER BY id desc LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 30], ["OFFSET", 0]]
+  Rendering notifications/notifications/index.html.erb within layouts/application
+  Rendered notifications/notifications/index.html.erb within layouts/application (3.9ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 208ms (Views: 178.4ms | ActiveRecord: 12.5ms)
+
+
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 109ms (Views: 81.9ms | ActiveRecord: 2.7ms)
+
+
+Started PATCH "/subscribe.1" for 172.18.0.1 at 2018-06-02 22:29:41 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#subscribe as 
+  Parameters: {"authenticity_token"=>"9j6ligpWt+1vHjkIePu7yD6gI6Y3trpODLNYeXS+7ZCxeGoejRy2l5TaB8eB6uKFoPgzXH88rCHvpwmcHB7psg=="}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFavourite Load (0.8ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "favourites" SET "isSubcribe" = $1 WHERE "favourites"."id" = $2[0m  [["isSubcribe", "t"], ["id", 1]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+No template found for FavouritesController#subscribe, rendering head :no_content
+Completed 204 No Content in 140ms (ActiveRecord: 6.0ms)
+
+
+Started DELETE "/favourites" for 172.18.0.1 at 2018-06-02 22:29:44 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#delete as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uqj3F83c4Mdre7h5t2U+jB6yAKXe10eVb2FjTmhoLzQcBvpBcgwhE3T2+4AjOIns8I8kgPXUa4RtQidloxkD2w==", "post"=>{"post_id"=>"20"}, "commit"=>"Borrar"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (2.6ms)[0m  [1m[31mDELETE FROM "favourites" WHERE "favourites"."post_id" = $1 AND "favourites"."user_id" = $2[0m  [["post_id", "20"], ["user_id", "1"]]
+Redirected to http://localhost:3000/favourites
+Completed 302 Found in 15ms (ActiveRecord: 4.5ms)
+
+
+Started GET "/favourites" for 172.18.0.1 at 2018-06-02 22:29:44 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (1.6ms)[0m  [1m[34mSELECT "favourites".* FROM "favourites" WHERE ("favourites"."user_id" = $1 OR "favourites"."user_id" = '1')[0m  [["user_id", "1"]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered favourites/index.html.erb within layouts/application (5.8ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "notifications" WHERE "notifications"."user_id" = 1 AND "notifications"."read_at" IS NULL[0m
+  Rendered layouts/_navigation.html.erb (2.9ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 112ms (Views: 97.9ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/notifications" for 172.18.0.1 at 2018-06-02 22:29:45 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Notifications::NotificationsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mNotification Load (0.6ms)[0m  [1m[34mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."user_id" = $1 ORDER BY id desc LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 30], ["OFFSET", 0]]
+  Rendering notifications/notifications/index.html.erb within layouts/application
+  Rendered notifications/notifications/index.html.erb within layouts/application (3.5ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 116ms (Views: 110.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/communities" for 172.18.0.1 at 2018-06-02 22:29:46 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CommunitiesController#index as HTML
+  [1m[36mCategory Load (2.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" ORDER BY "categories"."id" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendering communities/index.html.erb within layouts/application
+  Rendered collection of categories/_category.html.erb [4 times] (1.5ms)
+  Rendered communities/index.html.erb within layouts/application (3.6ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "notifications" WHERE "notifications"."user_id" = 1 AND "notifications"."read_at" IS NULL[0m
+  Rendered layouts/_navigation.html.erb (4.2ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 103ms (Views: 94.5ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/notifications" for 172.18.0.1 at 2018-06-02 22:29:46 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Notifications::NotificationsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mNotification Load (0.6ms)[0m  [1m[34mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."user_id" = $1 ORDER BY id desc LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 30], ["OFFSET", 0]]
+  Rendering notifications/notifications/index.html.erb within layouts/application
+  Rendered notifications/notifications/index.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 74ms (Views: 67.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 172.18.0.1 at 2018-06-02 22:44:35 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (4.5ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "notifications" WHERE "notifications"."user_id" = 1 AND "notifications"."read_at" IS NULL[0m
+  Rendered layouts/_navigation.html.erb (8.8ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 144ms (Views: 127.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/notifications" for 172.18.0.1 at 2018-06-02 22:44:36 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Notifications::NotificationsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mNotification Load (0.5ms)[0m  [1m[34mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."user_id" = $1 ORDER BY id desc LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 30], ["OFFSET", 0]]
+  Rendering notifications/notifications/index.html.erb within layouts/application
+  Rendered notifications/notifications/index.html.erb within layouts/application (2.9ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 75ms (Views: 68.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/forum" for 172.18.0.1 at 2018-06-02 22:44:37 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."id" DESC LIMIT $2[0m  [["category_id", 1], ["LIMIT", 4]]
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."id" DESC LIMIT $2[0m  [["category_id", 2], ["LIMIT", 4]]
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."id" DESC LIMIT $2[0m  [["category_id", 3], ["LIMIT", 4]]
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."id" DESC LIMIT $2[0m  [["category_id", 3], ["LIMIT", 4]]
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  Rendered collection of posts/_post.html.erb [6 times] (10.7ms)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered collection of posts/_post.html.erb [4 times] (4.0ms)
+  Rendered collection of posts/_post.html.erb [4 times] (2.3ms)
+  Rendered collection of posts/_post.html.erb [4 times] (2.8ms)
+  Rendered collection of posts/_post.html.erb [4 times] (2.8ms)
+  Rendered forums/index.html.erb within layouts/application (37.9ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "notifications" WHERE "notifications"."user_id" = 1 AND "notifications"."read_at" IS NULL[0m
+  Rendered layouts/_navigation.html.erb (2.6ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 123ms (Views: 110.7ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/notifications" for 172.18.0.1 at 2018-06-02 22:44:37 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Notifications::NotificationsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mNotification Load (0.7ms)[0m  [1m[34mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."user_id" = $1 ORDER BY id desc LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 30], ["OFFSET", 0]]
+  Rendering notifications/notifications/index.html.erb within layouts/application
+  Rendered notifications/notifications/index.html.erb within layouts/application (4.4ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 103ms (Views: 96.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/communities" for 172.18.0.1 at 2018-06-02 22:44:38 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CommunitiesController#index as HTML
+  [1m[36mCategory Load (1.5ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" ORDER BY "categories"."id" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendering communities/index.html.erb within layouts/application
+  Rendered collection of categories/_category.html.erb [4 times] (1.2ms)
+  Rendered communities/index.html.erb within layouts/application (3.2ms)
+Started GET "/notifications" for 172.18.0.1 at 2018-06-02 22:44:38 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Notifications::NotificationsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mNotification Load (1.2ms)[0m  [1m[34mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."user_id" = $1 ORDER BY id desc LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 30], ["OFFSET", 0]]
+  Rendering notifications/notifications/index.html.erb within layouts/application
+  Rendered notifications/notifications/index.html.erb within layouts/application (3.3ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (5.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "notifications" WHERE "notifications"."user_id" = 1 AND "notifications"."read_at" IS NULL[0m
+  Rendered layouts/_navigation.html.erb (12.6ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 150ms (Views: 138.5ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/notifications" for 172.18.0.1 at 2018-06-02 22:44:39 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Notifications::NotificationsController#index as HTML
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mNotification Load (2.5ms)[0m  [1m[34mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."user_id" = $1 ORDER BY id desc LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 30], ["OFFSET", 0]]
+  Rendering notifications/notifications/index.html.erb within layouts/application
+  Rendered notifications/notifications/index.html.erb within layouts/application (5.2ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 194ms (Views: 185.6ms | ActiveRecord: 1.8ms)
+
+
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 110ms (Views: 96.4ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/communities" for 172.18.0.1 at 2018-06-02 22:48:37 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CommunitiesController#index as HTML
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" ORDER BY "categories"."id" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendering communities/index.html.erb within layouts/application
+  Rendered collection of categories/_category.html.erb [4 times] (0.7ms)
+  Rendered communities/index.html.erb within layouts/application (1.9ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "notifications" WHERE "notifications"."user_id" = 1 AND "notifications"."read_at" IS NULL[0m
+  Rendered layouts/_navigation.html.erb (26.6ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 117ms (Views: 96.5ms | ActiveRecord: 10.8ms)
+
+
+Started GET "/notifications" for 172.18.0.1 at 2018-06-02 22:48:37 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Notifications::NotificationsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mNotification Load (0.5ms)[0m  [1m[34mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."user_id" = $1 ORDER BY id desc LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 30], ["OFFSET", 0]]
+  Rendering notifications/notifications/index.html.erb within layouts/application
+  Rendered notifications/notifications/index.html.erb within layouts/application (4.6ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 108ms (Views: 103.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/communities" for 172.18.0.1 at 2018-06-02 22:49:19 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CommunitiesController#index as HTML
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" ORDER BY "categories"."id" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendering communities/index.html.erb within layouts/application
+  Rendered collection of categories/_category.html.erb [4 times] (0.8ms)
+  Rendered communities/index.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "notifications" WHERE "notifications"."user_id" = 1 AND "notifications"."read_at" IS NULL[0m
+  Rendered layouts/_navigation.html.erb (4.0ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 84ms (Views: 78.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/notifications" for 172.18.0.1 at 2018-06-02 22:49:19 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Notifications::NotificationsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mNotification Load (0.5ms)[0m  [1m[34mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."user_id" = $1 ORDER BY id desc LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 30], ["OFFSET", 0]]
+  Rendering notifications/notifications/index.html.erb within layouts/application
+  Rendered notifications/notifications/index.html.erb within layouts/application (3.3ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+Completed 200 OK in 98ms (Views: 92.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/communities" for 172.18.0.1 at 2018-06-02 22:49:38 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CommunitiesController#index as HTML
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" ORDER BY "categories"."id" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendering communities/index.html.erb within layouts/application
+  Rendered collection of categories/_category.html.erb [4 times] (0.9ms)
+  Rendered communities/index.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "notifications" WHERE "notifications"."user_id" = 1 AND "notifications"."read_at" IS NULL[0m
+  Rendered layouts/_navigation.html.erb (4.1ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 96ms (Views: 89.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/notifications" for 172.18.0.1 at 2018-06-02 22:49:38 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Notifications::NotificationsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mNotification Load (0.5ms)[0m  [1m[34mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."user_id" = $1 ORDER BY id desc LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 30], ["OFFSET", 0]]
+  Rendering notifications/notifications/index.html.erb within layouts/application
+  Rendered notifications/notifications/index.html.erb within layouts/application (4.5ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 104ms (Views: 98.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/communities" for 172.18.0.1 at 2018-06-02 22:50:05 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CommunitiesController#index as HTML
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" ORDER BY "categories"."id" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendering communities/index.html.erb within layouts/application
+  Rendered collection of categories/_category.html.erb [4 times] (0.7ms)
+  Rendered communities/index.html.erb within layouts/application (1.8ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "notifications" WHERE "notifications"."user_id" = 1 AND "notifications"."read_at" IS NULL[0m
+  Rendered layouts/_navigation.html.erb (4.7ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 78ms (Views: 72.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/notifications" for 172.18.0.1 at 2018-06-02 22:50:05 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Notifications::NotificationsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mNotification Load (0.5ms)[0m  [1m[34mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."user_id" = $1 ORDER BY id desc LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 30], ["OFFSET", 0]]
+  Rendering notifications/notifications/index.html.erb within layouts/application
+  Rendered notifications/notifications/index.html.erb within layouts/application (3.9ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 117ms (Views: 111.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/communities" for 172.18.0.1 at 2018-06-02 22:50:13 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CommunitiesController#index as HTML
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" ORDER BY "categories"."id" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendering communities/index.html.erb within layouts/application
+  Rendered collection of categories/_category.html.erb [4 times] (0.9ms)
+  Rendered communities/index.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "notifications" WHERE "notifications"."user_id" = 1 AND "notifications"."read_at" IS NULL[0m
+  Rendered layouts/_navigation.html.erb (5.6ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 108ms (Views: 103.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/notifications" for 172.18.0.1 at 2018-06-02 22:50:13 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Notifications::NotificationsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mNotification Load (0.6ms)[0m  [1m[34mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."user_id" = $1 ORDER BY id desc LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 30], ["OFFSET", 0]]
+  Rendering notifications/notifications/index.html.erb within layouts/application
+  Rendered notifications/notifications/index.html.erb within layouts/application (4.1ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 104ms (Views: 99.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/communities" for 172.18.0.1 at 2018-06-02 22:50:20 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CommunitiesController#index as HTML
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" ORDER BY "categories"."id" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendering communities/index.html.erb within layouts/application
+  Rendered collection of categories/_category.html.erb [4 times] (1.0ms)
+  Rendered communities/index.html.erb within layouts/application (2.8ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation.html.erb (4.4ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+Completed 200 OK in 89ms (Views: 85.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/notifications" for 172.18.0.1 at 2018-06-02 22:50:20 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Notifications::NotificationsController#index as HTML
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mNotification Load (0.5ms)[0m  [1m[34mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."user_id" = $1 ORDER BY id desc LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 30], ["OFFSET", 0]]
+  Rendering notifications/notifications/index.html.erb within layouts/application
+  Rendered notifications/notifications/index.html.erb within layouts/application (3.8ms)
+  Rendered layouts/_messages.html.erb (1.1ms)
+Completed 200 OK in 97ms (Views: 90.9ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/communities" for 172.18.0.1 at 2018-06-02 22:50:46 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CommunitiesController#index as HTML
+  [1m[36mCategory Load (1.7ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" ORDER BY "categories"."id" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendering communities/index.html.erb within layouts/application
+  Rendered collection of categories/_category.html.erb [4 times] (0.8ms)
+  Rendered communities/index.html.erb within layouts/application (1.9ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "notifications" WHERE "notifications"."user_id" = 1 AND "notifications"."read_at" IS NULL[0m
+  Rendered layouts/_navigation.html.erb (4.1ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 96ms (Views: 89.6ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/notifications" for 172.18.0.1 at 2018-06-02 22:50:46 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Notifications::NotificationsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mNotification Load (0.6ms)[0m  [1m[34mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."user_id" = $1 ORDER BY id desc LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 30], ["OFFSET", 0]]
+  Rendering notifications/notifications/index.html.erb within layouts/application
+  Rendered notifications/notifications/index.html.erb within layouts/application (3.5ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+Completed 200 OK in 128ms (Views: 123.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/communities" for 172.18.0.1 at 2018-06-02 22:50:58 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CommunitiesController#index as HTML
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" ORDER BY "categories"."id" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendering communities/index.html.erb within layouts/application
+  Rendered collection of categories/_category.html.erb [4 times] (1.0ms)
+  Rendered communities/index.html.erb within layouts/application (2.5ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "notifications" WHERE "notifications"."user_id" = 1 AND "notifications"."read_at" IS NULL[0m
+  Rendered layouts/_navigation.html.erb (5.2ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 84ms (Views: 79.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/notifications" for 172.18.0.1 at 2018-06-02 22:50:58 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Notifications::NotificationsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mNotification Load (0.6ms)[0m  [1m[34mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."user_id" = $1 ORDER BY id desc LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 30], ["OFFSET", 0]]
+  Rendering notifications/notifications/index.html.erb within layouts/application
+  Rendered notifications/notifications/index.html.erb within layouts/application (3.8ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 124ms (Views: 118.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/communities" for 172.18.0.1 at 2018-06-02 22:51:02 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CommunitiesController#index as HTML
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" ORDER BY "categories"."id" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendering communities/index.html.erb within layouts/application
+  Rendered collection of categories/_category.html.erb [4 times] (0.9ms)
+  Rendered communities/index.html.erb within layouts/application (2.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "notifications" WHERE "notifications"."user_id" = 1 AND "notifications"."read_at" IS NULL[0m
+  Rendered layouts/_navigation.html.erb (4.1ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 76ms (Views: 72.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/notifications" for 172.18.0.1 at 2018-06-02 22:51:02 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Notifications::NotificationsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mNotification Load (0.6ms)[0m  [1m[34mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."user_id" = $1 ORDER BY id desc LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 30], ["OFFSET", 0]]
+  Rendering notifications/notifications/index.html.erb within layouts/application
+  Rendered notifications/notifications/index.html.erb within layouts/application (3.7ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+Completed 200 OK in 133ms (Views: 128.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/communities" for 172.18.0.1 at 2018-06-02 22:51:21 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CommunitiesController#index as HTML
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" ORDER BY "categories"."id" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendering communities/index.html.erb within layouts/application
+  Rendered collection of categories/_category.html.erb [4 times] (0.7ms)
+  Rendered communities/index.html.erb within layouts/application (1.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "notifications" WHERE "notifications"."user_id" = 1 AND "notifications"."read_at" IS NULL[0m
+  Rendered layouts/_navigation.html.erb (4.2ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 70ms (Views: 66.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/notifications" for 172.18.0.1 at 2018-06-02 22:51:21 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Notifications::NotificationsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mNotification Load (0.5ms)[0m  [1m[34mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."user_id" = $1 ORDER BY id desc LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 30], ["OFFSET", 0]]
+  Rendering notifications/notifications/index.html.erb within layouts/application
+  Rendered notifications/notifications/index.html.erb within layouts/application (2.8ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+Completed 200 OK in 103ms (Views: 96.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/communities" for 172.18.0.1 at 2018-06-02 22:51:22 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CommunitiesController#index as HTML
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" ORDER BY "categories"."id" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendering communities/index.html.erb within layouts/application
+  Rendered collection of categories/_category.html.erb [4 times] (1.0ms)
+  Rendered communities/index.html.erb within layouts/application (2.4ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "notifications" WHERE "notifications"."user_id" = 1 AND "notifications"."read_at" IS NULL[0m
+  Rendered layouts/_navigation.html.erb (6.1ms)
+  Rendered layouts/_messages.html.erb (0.7ms)
+Completed 200 OK in 105ms (Views: 95.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/notifications" for 172.18.0.1 at 2018-06-02 22:51:22 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Notifications::NotificationsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mNotification Load (0.9ms)[0m  [1m[34mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."user_id" = $1 ORDER BY id desc LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 30], ["OFFSET", 0]]
+  Rendering notifications/notifications/index.html.erb within layouts/application
+  Rendered notifications/notifications/index.html.erb within layouts/application (5.1ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 115ms (Views: 108.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/communities" for 172.18.0.1 at 2018-06-02 22:51:26 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CommunitiesController#index as HTML
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" ORDER BY "categories"."id" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendering communities/index.html.erb within layouts/application
+  Rendered collection of categories/_category.html.erb [4 times] (0.8ms)
+  Rendered communities/index.html.erb within layouts/application (1.9ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "notifications" WHERE "notifications"."user_id" = 1 AND "notifications"."read_at" IS NULL[0m
+  Rendered layouts/_navigation.html.erb (4.2ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 84ms (Views: 79.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/notifications" for 172.18.0.1 at 2018-06-02 22:51:26 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Notifications::NotificationsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mNotification Load (0.4ms)[0m  [1m[34mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."user_id" = $1 ORDER BY id desc LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 30], ["OFFSET", 0]]
+  Rendering notifications/notifications/index.html.erb within layouts/application
+  Rendered notifications/notifications/index.html.erb within layouts/application (3.3ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 98ms (Views: 93.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/communities" for 172.18.0.1 at 2018-06-02 22:51:36 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CommunitiesController#index as HTML
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" ORDER BY "categories"."id" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendering communities/index.html.erb within layouts/application
+  Rendered collection of categories/_category.html.erb [4 times] (0.8ms)
+  Rendered communities/index.html.erb within layouts/application (1.8ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "notifications" WHERE "notifications"."user_id" = 1 AND "notifications"."read_at" IS NULL[0m
+  Rendered layouts/_navigation.html.erb (4.1ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 80ms (Views: 76.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/notifications" for 172.18.0.1 at 2018-06-02 22:51:36 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Notifications::NotificationsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mNotification Load (0.6ms)[0m  [1m[34mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."user_id" = $1 ORDER BY id desc LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 30], ["OFFSET", 0]]
+  Rendering notifications/notifications/index.html.erb within layouts/application
+  Rendered notifications/notifications/index.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 112ms (Views: 105.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/communities" for 172.18.0.1 at 2018-06-02 22:51:37 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CommunitiesController#index as HTML
+  [1m[36mCategory Load (2.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" ORDER BY "categories"."id" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendering communities/index.html.erb within layouts/application
+  Rendered collection of categories/_category.html.erb [4 times] (3.8ms)
+  Rendered communities/index.html.erb within layouts/application (8.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "notifications" WHERE "notifications"."user_id" = 1 AND "notifications"."read_at" IS NULL[0m
+  Rendered layouts/_navigation.html.erb (4.0ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 130ms (Views: 118.6ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/notifications" for 172.18.0.1 at 2018-06-02 22:51:37 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Notifications::NotificationsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mNotification Load (0.5ms)[0m  [1m[34mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."user_id" = $1 ORDER BY id desc LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 30], ["OFFSET", 0]]
+  Rendering notifications/notifications/index.html.erb within layouts/application
+  Rendered notifications/notifications/index.html.erb within layouts/application (4.4ms)
+Started GET "/communities" for 172.18.0.1 at 2018-06-02 22:51:37 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CommunitiesController#index as HTML
+  [1m[36mCategory Load (2.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" ORDER BY "categories"."id" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 105ms (Views: 100.1ms | ActiveRecord: 1.1ms)
+
+
+  Rendering communities/index.html.erb within layouts/application
+  Rendered collection of categories/_category.html.erb [4 times] (0.8ms)
+  Rendered communities/index.html.erb within layouts/application (1.9ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "notifications" WHERE "notifications"."user_id" = 1 AND "notifications"."read_at" IS NULL[0m
+  Rendered layouts/_navigation.html.erb (5.3ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 113ms (Views: 103.7ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/notifications" for 172.18.0.1 at 2018-06-02 22:51:37 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Notifications::NotificationsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mNotification Load (0.5ms)[0m  [1m[34mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."user_id" = $1 ORDER BY id desc LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 30], ["OFFSET", 0]]
+  Rendering notifications/notifications/index.html.erb within layouts/application
+  Rendered notifications/notifications/index.html.erb within layouts/application (3.3ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+Completed 200 OK in 105ms (Views: 99.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/communities" for 172.18.0.1 at 2018-06-02 22:51:47 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CommunitiesController#index as HTML
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" ORDER BY "categories"."id" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendering communities/index.html.erb within layouts/application
+  Rendered collection of categories/_category.html.erb [4 times] (0.9ms)
+  Rendered communities/index.html.erb within layouts/application (2.2ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "notifications" WHERE "notifications"."user_id" = 1 AND "notifications"."read_at" IS NULL[0m
+  Rendered layouts/_navigation.html.erb (4.7ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 109ms (Views: 104.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/notifications" for 172.18.0.1 at 2018-06-02 22:51:48 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Notifications::NotificationsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mNotification Load (0.7ms)[0m  [1m[34mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."user_id" = $1 ORDER BY id desc LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 30], ["OFFSET", 0]]
+  Rendering notifications/notifications/index.html.erb within layouts/application
+  Rendered notifications/notifications/index.html.erb within layouts/application (3.9ms)
+  Rendered layouts/_messages.html.erb (0.7ms)
+Completed 200 OK in 99ms (Views: 93.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/communities" for 172.18.0.1 at 2018-06-02 22:51:48 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CommunitiesController#index as HTML
+  [1m[36mCategory Load (3.7ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" ORDER BY "categories"."id" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendering communities/index.html.erb within layouts/application
+  Rendered collection of categories/_category.html.erb [4 times] (4.5ms)
+  Rendered communities/index.html.erb within layouts/application (9.3ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "notifications" WHERE "notifications"."user_id" = 1 AND "notifications"."read_at" IS NULL[0m
+  Rendered layouts/_navigation.html.erb (5.6ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 144ms (Views: 131.3ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/notifications" for 172.18.0.1 at 2018-06-02 22:51:49 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Notifications::NotificationsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mNotification Load (0.6ms)[0m  [1m[34mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."user_id" = $1 ORDER BY id desc LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 30], ["OFFSET", 0]]
+  Rendering notifications/notifications/index.html.erb within layouts/application
+  Rendered notifications/notifications/index.html.erb within layouts/application (3.3ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 98ms (Views: 92.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/communities" for 172.18.0.1 at 2018-06-02 22:52:22 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CommunitiesController#index as HTML
+  [1m[36mCategory Load (1.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" ORDER BY "categories"."id" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendering communities/index.html.erb within layouts/application
+  Rendered collection of categories/_category.html.erb [4 times] (1.4ms)
+  Rendered communities/index.html.erb within layouts/application (3.4ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "notifications" WHERE "notifications"."user_id" = 1 AND "notifications"."read_at" IS NULL[0m
+  Rendered layouts/_navigation.html.erb (4.7ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 102ms (Views: 92.5ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/notifications" for 172.18.0.1 at 2018-06-02 22:52:22 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Notifications::NotificationsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mNotification Load (0.5ms)[0m  [1m[34mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."user_id" = $1 ORDER BY id desc LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 30], ["OFFSET", 0]]
+  Rendering notifications/notifications/index.html.erb within layouts/application
+  Rendered notifications/notifications/index.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 88ms (Views: 83.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/communities" for 172.18.0.1 at 2018-06-02 22:52:23 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CommunitiesController#index as HTML
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" ORDER BY "categories"."id" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendering communities/index.html.erb within layouts/application
+  Rendered collection of categories/_category.html.erb [4 times] (1.1ms)
+  Rendered communities/index.html.erb within layouts/application (2.4ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "notifications" WHERE "notifications"."user_id" = 1 AND "notifications"."read_at" IS NULL[0m
+  Rendered layouts/_navigation.html.erb (4.4ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 98ms (Views: 92.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/notifications" for 172.18.0.1 at 2018-06-02 22:52:23 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Notifications::NotificationsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mNotification Load (0.6ms)[0m  [1m[34mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."user_id" = $1 ORDER BY id desc LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 30], ["OFFSET", 0]]
+  Rendering notifications/notifications/index.html.erb within layouts/application
+  Rendered notifications/notifications/index.html.erb within layouts/application (5.0ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 129ms (Views: 122.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/communities" for 172.18.0.1 at 2018-06-02 22:52:28 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CommunitiesController#index as HTML
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" ORDER BY "categories"."id" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendering communities/index.html.erb within layouts/application
+  Rendered collection of categories/_category.html.erb [4 times] (0.8ms)
+  Rendered communities/index.html.erb within layouts/application (1.9ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "notifications" WHERE "notifications"."user_id" = 1 AND "notifications"."read_at" IS NULL[0m
+  Rendered layouts/_navigation.html.erb (4.2ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 87ms (Views: 83.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/notifications" for 172.18.0.1 at 2018-06-02 22:52:28 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Notifications::NotificationsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mNotification Load (1.4ms)[0m  [1m[34mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."user_id" = $1 ORDER BY id desc LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 30], ["OFFSET", 0]]
+  Rendering notifications/notifications/index.html.erb within layouts/application
+  Rendered notifications/notifications/index.html.erb within layouts/application (3.1ms)
+  Rendered layouts/_messages.html.erb (0.8ms)
+Completed 200 OK in 109ms (Views: 102.3ms | ActiveRecord: 1.9ms)
+
+
