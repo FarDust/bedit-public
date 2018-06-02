@@ -20,7 +20,6 @@ class Commentary < ApplicationRecord
           target: self
         )
       end
-    else
       # Code for commentary of commentaries notifications
     end
   end
