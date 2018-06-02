@@ -2,7 +2,7 @@ class FavouritesController < ApplicationController
   before_action(:authenticate_user!)
 
   def index
-    @favourites = Favourite.where(user_id: current_user.id)
+    @favourites = Favourite.select(:post_id).distinct.where(user_id: current_user.id)
   end
 
   def create
@@ -10,5 +10,10 @@ class FavouritesController < ApplicationController
       post_id: params['post']['post_id'],
       user_id: params['post']['user_id']
     )
+  end
+
+  def delete
+    Favourite.where(post_id: params['post']['post_id'], user_id: current_user.id).delete_all
+    redirect_to(favourites_path())
   end
 end

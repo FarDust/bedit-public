@@ -23108,3 +23108,1673 @@ Processing by CommunitiesController#show as HTML
 Completed 200 OK in 160ms (Views: 143.6ms | ActiveRecord: 5.1ms)
 
 
+Started GET "/" for 172.18.0.1 at 2018-06-02 18:23:14 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.8ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation.html.erb (523.9ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 1074ms (Views: 1057.2ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/favourites" for 172.18.0.1 at 2018-06-02 18:23:17 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (2.1ms)[0m  [1m[34mSELECT DISTINCT "favourites".* FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", "1"]]
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  Rendered collection of favourites/_favourite.html.erb [6 times] (24.0ms)
+  Rendered favourites/index.html.erb within layouts/application (41.2ms)
+  Rendered layouts/_navigation.html.erb (1.6ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 130ms (Views: 103.2ms | ActiveRecord: 16.0ms)
+
+
+Started GET "/communities" for 172.18.0.1 at 2018-06-02 18:23:31 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CommunitiesController#index as HTML
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" ORDER BY "categories"."id" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendering communities/index.html.erb within layouts/application
+  Rendered collection of categories/_category.html.erb [4 times] (1.0ms)
+  Rendered communities/index.html.erb within layouts/application (2.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation.html.erb (16.8ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 107ms (Views: 80.9ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/favourites" for 172.18.0.1 at 2018-06-02 18:23:32 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 168ms (ActiveRecord: 6.4ms)
+
+
+  
+NameError (undefined local variable or method `post_id' for #<FavouritesController:0x00007f59c9f4f630>):
+  
+app/controllers/favourites_controller.rb:5:in `index'
+Started GET "/favourites" for 172.18.0.1 at 2018-06-02 18:24:40 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 114ms (ActiveRecord: 4.6ms)
+
+
+  
+NameError (undefined local variable or method `post_id' for #<FavouritesController:0x00007f59cabc98e8>):
+  
+app/controllers/favourites_controller.rb:5:in `index'
+Started GET "/favourites" for 172.18.0.1 at 2018-06-02 18:24:51 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.6ms)[0m  [1m[34mSELECT DISTINCT "favourites"."post_id" FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", "1"]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  Rendered collection of favourites/_favourite.html.erb [5 times] (13.7ms)
+  Rendered favourites/index.html.erb within layouts/application (20.8ms)
+  Rendered layouts/_navigation.html.erb (1.5ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 111ms (Views: 84.7ms | ActiveRecord: 11.5ms)
+
+
+Started GET "/favourites" for 172.18.0.1 at 2018-06-02 18:24:54 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.5ms)[0m  [1m[34mSELECT DISTINCT "favourites"."post_id" FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", "1"]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  Rendered collection of favourites/_favourite.html.erb [5 times] (4.3ms)
+  Rendered favourites/index.html.erb within layouts/application (6.9ms)
+  Rendered layouts/_navigation.html.erb (1.5ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 85ms (Views: 77.9ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/communities" for 172.18.0.1 at 2018-06-02 18:24:56 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CommunitiesController#index as HTML
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" ORDER BY "categories"."id" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendering communities/index.html.erb within layouts/application
+  Rendered collection of categories/_category.html.erb [4 times] (0.9ms)
+  Rendered communities/index.html.erb within layouts/application (2.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation.html.erb (2.9ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 100ms (Views: 81.3ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/favourites" for 172.18.0.1 at 2018-06-02 18:24:56 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (1.6ms)[0m  [1m[34mSELECT DISTINCT "favourites"."post_id" FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", "1"]]
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  Rendered collection of favourites/_favourite.html.erb [5 times] (20.4ms)
+  Rendered favourites/index.html.erb within layouts/application (28.5ms)
+  Rendered layouts/_navigation.html.erb (1.4ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 145ms (Views: 129.9ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/favourites" for 172.18.0.1 at 2018-06-02 18:24:57 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (2.2ms)[0m  [1m[34mSELECT DISTINCT "favourites"."post_id" FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", "1"]]
+  [1m[36mPost Load (1.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mPost Load (1.7ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mPost Load (4.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  Rendered collection of favourites/_favourite.html.erb [5 times] (21.6ms)
+  Rendered favourites/index.html.erb within layouts/application (32.0ms)
+  Rendered layouts/_navigation.html.erb (2.3ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 165ms (Views: 141.0ms | ActiveRecord: 13.1ms)
+
+
+Started GET "/communities" for 172.18.0.1 at 2018-06-02 18:25:23 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CommunitiesController#index as HTML
+  [1m[36mCategory Load (1.8ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" ORDER BY "categories"."id" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendering communities/index.html.erb within layouts/application
+  Rendered collection of categories/_category.html.erb [4 times] (1.7ms)
+  Rendered communities/index.html.erb within layouts/application (4.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation.html.erb (3.0ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 100ms (Views: 83.9ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/forum" for 172.18.0.1 at 2018-06-02 18:25:24 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."id" DESC LIMIT $2[0m  [["category_id", 1], ["LIMIT", 4]]
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."id" DESC LIMIT $2[0m  [["category_id", 2], ["LIMIT", 4]]
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."id" DESC LIMIT $2[0m  [["category_id", 3], ["LIMIT", 4]]
+  [1m[36mCACHE Post Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = $1 ORDER BY "posts"."id" DESC LIMIT $2[0m  [["category_id", 3], ["LIMIT", 4]]
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  Rendered collection of posts/_post.html.erb [6 times] (5.6ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered collection of posts/_post.html.erb [4 times] (4.9ms)
+  Rendered collection of posts/_post.html.erb [4 times] (2.7ms)
+  Rendered collection of posts/_post.html.erb [4 times] (1.8ms)
+  Rendered collection of posts/_post.html.erb [4 times] (1.7ms)
+  Rendered forums/index.html.erb within layouts/application (31.3ms)
+  Rendered layouts/_navigation.html.erb (1.4ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 119ms (Views: 104.1ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/" for 172.18.0.1 at 2018-06-02 18:25:25 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation.html.erb (5.8ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 99ms (Views: 96.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/favourites" for 172.18.0.1 at 2018-06-02 18:25:27 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (4.0ms)[0m  [1m[34mSELECT DISTINCT "favourites"."post_id" FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", "1"]]
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  Rendered collection of favourites/_favourite.html.erb [5 times] (8.8ms)
+  Rendered favourites/index.html.erb within layouts/application (17.9ms)
+  Rendered layouts/_navigation.html.erb (1.5ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 130ms (Views: 104.8ms | ActiveRecord: 8.1ms)
+
+
+Started GET "/communities" for 172.18.0.1 at 2018-06-02 18:25:27 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CommunitiesController#index as HTML
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" ORDER BY "categories"."id" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendering communities/index.html.erb within layouts/application
+  Rendered collection of categories/_category.html.erb [4 times] (1.6ms)
+  Rendered communities/index.html.erb within layouts/application (3.8ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation.html.erb (3.4ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 108ms (Views: 95.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 172.18.0.1 at 2018-06-02 18:25:28 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (2.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation.html.erb (3.0ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 130ms (Views: 125.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/favourites" for 172.18.0.1 at 2018-06-02 18:25:32 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (12.1ms)[0m  [1m[34mSELECT DISTINCT "favourites"."post_id" FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", "1"]]
+  [1m[36mPost Load (2.8ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  Rendered collection of favourites/_favourite.html.erb [5 times] (18.1ms)
+  Rendered favourites/index.html.erb within layouts/application (36.8ms)
+  Rendered layouts/_navigation.html.erb (1.5ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 144ms (Views: 114.9ms | ActiveRecord: 19.7ms)
+
+
+Started GET "/favourites" for 172.18.0.1 at 2018-06-02 18:26:43 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+SyntaxError (/grupo21/app/controllers/favourites_controller.rb:16: syntax error, unexpected ':', expecting ')'
+    Favourite.where(:post_id: params['post']['post_id']).d...
+                            ^
+/grupo21/app/controllers/favourites_controller.rb:16: syntax error, unexpected ')', expecting keyword_end
+..._id: params['post']['post_id']).destroy_all
+...                              ^):
+  
+app/controllers/favourites_controller.rb:16: syntax error, unexpected ':', expecting ')'
+app/controllers/favourites_controller.rb:16: syntax error, unexpected ')', expecting keyword_end
+Started GET "/favourites" for 172.18.0.1 at 2018-06-02 18:26:55 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.4ms)[0m  [1m[34mSELECT DISTINCT "favourites"."post_id" FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", "1"]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  Rendered collection of favourites/_favourite.html.erb [5 times] (15.7ms)
+  Rendered favourites/index.html.erb within layouts/application (21.6ms)
+  Rendered layouts/_navigation.html.erb (2.1ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 120ms (Views: 86.0ms | ActiveRecord: 10.9ms)
+
+
+Started GET "/favourites" for 172.18.0.1 at 2018-06-02 18:28:27 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.6ms)[0m  [1m[34mSELECT DISTINCT "favourites"."post_id" FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", "1"]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  Rendered collection of favourites/_favourite.html.erb [5 times] (6.2ms)
+  Rendered favourites/index.html.erb within layouts/application (9.2ms)
+  Rendered layouts/_navigation.html.erb (1.4ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 97ms (Views: 91.6ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/favourites" for 172.18.0.1 at 2018-06-02 18:29:06 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (2.6ms)[0m  [1m[34mSELECT DISTINCT "favourites"."post_id" FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", "1"]]
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  Rendered collection of favourites/_favourite.html.erb [5 times] (17.8ms)
+  Rendered favourites/index.html.erb within layouts/application (27.7ms)
+  Rendered layouts/_navigation.html.erb (2.4ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+Completed 200 OK in 153ms (Views: 136.3ms | ActiveRecord: 8.2ms)
+
+
+Started GET "/favourites" for 172.18.0.1 at 2018-06-02 18:29:17 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.5ms)[0m  [1m[34mSELECT DISTINCT "favourites"."post_id" FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", "1"]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  Rendered collection of favourites/_favourite.html.erb [5 times] (6.1ms)
+  Rendered favourites/index.html.erb within layouts/application (8.3ms)
+  Rendered layouts/_navigation.html.erb (2.8ms)
+  Rendered layouts/_messages.html.erb (0.7ms)
+Completed 200 OK in 117ms (Views: 111.4ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/favourites" for 172.18.0.1 at 2018-06-02 18:31:09 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.5ms)[0m  [1m[34mSELECT DISTINCT "favourites"."post_id" FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", "1"]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  Rendered collection of favourites/_favourite.html.erb [5 times] (213.1ms)
+  Rendered favourites/index.html.erb within layouts/application (216.0ms)
+Completed 500 Internal Server Error in 225ms (ActiveRecord: 1.5ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `delete' for #<#<Class:0x00007f59cb109790>:0x00007f59c85eb950>):
+    1: <% post = Post.find(favourite.post_id) %> 
+    2: <li>
+    3:   <%= post.title %> -  
+    4:   <%= form_for(controller: favourite, action: delete, url: favourites_path(), class: "form-horizontal") do |f| %>
+    5:       <%= hidden_field_tag "post[post_id]", post.id %>
+    6:       <%= f.submit("Borrar", class: "btn btn-primary active") %>
+    7:     <% end %>      
+  
+app/views/favourites/_favourite.html.erb:4:in `_app_views_favourites__favourite_html_erb___3554908661643253189_70011799900120'
+app/views/favourites/index.html.erb:2:in `_app_views_favourites_index_html_erb___3043898090333836518_70011795279420'
+Started GET "/favourites" for 172.18.0.1 at 2018-06-02 18:31:22 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.6ms)[0m  [1m[34mSELECT DISTINCT "favourites"."post_id" FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", "1"]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  Rendered collection of favourites/_favourite.html.erb [5 times] (142.0ms)
+  Rendered favourites/index.html.erb within layouts/application (144.8ms)
+Completed 500 Internal Server Error in 151ms (ActiveRecord: 1.7ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `favourites' for #<#<Class:0x00007f59cb109790>:0x00007f59c8d29a50>):
+    1: <% post = Post.find(favourite.post_id) %> 
+    2: <li>
+    3:   <%= post.title %> -  
+    4:   <%= form_for(controller: favourites, action: delete, url: favourites_path(), class: "form-horizontal") do |f| %>
+    5:       <%= hidden_field_tag "post[post_id]", post.id %>
+    6:       <%= f.submit("Borrar", class: "btn btn-primary active") %>
+    7:     <% end %>      
+  
+app/views/favourites/_favourite.html.erb:4:in `_app_views_favourites__favourite_html_erb___3554908661643253189_70011798697300'
+app/views/favourites/index.html.erb:2:in `_app_views_favourites_index_html_erb___3043898090333836518_70011799055600'
+Started GET "/favourites" for 172.18.0.1 at 2018-06-02 18:32:08 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (1.0ms)[0m  [1m[34mSELECT DISTINCT "favourites"."post_id" FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", "1"]]
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  Rendered collection of favourites/_favourite.html.erb [5 times] (195.2ms)
+  Rendered favourites/index.html.erb within layouts/application (201.1ms)
+Completed 500 Internal Server Error in 220ms (ActiveRecord: 3.1ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `favourites' for #<#<Class:0x00007f59cb109790>:0x00007f59ca6acf68>):
+    1: <% post = Post.find(favourite.post_id) %> 
+    2: <li>
+    3:   <%= post.title %> -  
+    4:   <%= form_for(:controller => favourites, :action => delete, url: favourites_path(), class: "form-horizontal") do |f| %>
+    5:       <%= hidden_field_tag "post[post_id]", post.id %>
+    6:       <%= f.submit("Borrar", class: "btn btn-primary active") %>
+    7:     <% end %>      
+  
+app/views/favourites/_favourite.html.erb:4:in `_app_views_favourites__favourite_html_erb___3554908661643253189_70011812279140'
+app/views/favourites/index.html.erb:2:in `_app_views_favourites_index_html_erb___3043898090333836518_70011812408520'
+Started GET "/favourites" for 172.18.0.1 at 2018-06-02 18:33:11 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (1.3ms)[0m  [1m[34mSELECT DISTINCT "favourites"."post_id" FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", "1"]]
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  Rendered collection of favourites/_favourite.html.erb [5 times] (151.4ms)
+  Rendered favourites/index.html.erb within layouts/application (158.6ms)
+Completed 500 Internal Server Error in 179ms (ActiveRecord: 4.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `delete' for #<#<Class:0x00007f59cb109790>:0x00007f59ca63e900>):
+    1: <% post = Post.find(favourite.post_id) %> 
+    2: <li>
+    3:   <%= post.title %> -  
+    4:   <%= form_for(@favourites, :url => { action: delete }, class: "form-horizontal") do |f| %>
+    5:       <%= hidden_field_tag "post[post_id]", post.id %>
+    6:       <%= f.submit("Borrar", class: "btn btn-primary active") %>
+    7:     <% end %>      
+  
+app/views/favourites/_favourite.html.erb:4:in `_app_views_favourites__favourite_html_erb___3554908661643253189_70011812139040'
+app/views/favourites/index.html.erb:2:in `_app_views_favourites_index_html_erb___3043898090333836518_70011812182920'
+Started GET "/favourites" for 172.18.0.1 at 2018-06-02 18:33:17 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.5ms)[0m  [1m[34mSELECT DISTINCT "favourites"."post_id" FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", "1"]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  Rendered collection of favourites/_favourite.html.erb [5 times] (148.5ms)
+  Rendered favourites/index.html.erb within layouts/application (151.6ms)
+Completed 500 Internal Server Error in 159ms (ActiveRecord: 1.6ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `delete' for #<#<Class:0x00007f59cb109790>:0x00007f59c9f45720>):
+    1: <% post = Post.find(favourite.post_id) %> 
+    2: <li>
+    3:   <%= post.title %> -  
+    4:   <%= form_for(@favourites, :url => { :action => delete }, class: "form-horizontal") do |f| %>
+    5:       <%= hidden_field_tag "post[post_id]", post.id %>
+    6:       <%= f.submit("Borrar", class: "btn btn-primary active") %>
+    7:     <% end %>      
+  
+app/views/favourites/_favourite.html.erb:4:in `_app_views_favourites__favourite_html_erb___3554908661643253189_70011808505980'
+app/views/favourites/index.html.erb:2:in `_app_views_favourites_index_html_erb___3043898090333836518_70011808526380'
+Started GET "/favourites" for 172.18.0.1 at 2018-06-02 18:33:48 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (1.5ms)[0m  [1m[34mSELECT DISTINCT "favourites"."post_id" FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", "1"]]
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  Rendered collection of favourites/_favourite.html.erb [5 times] (204.1ms)
+  Rendered favourites/index.html.erb within layouts/application (211.9ms)
+Completed 500 Internal Server Error in 238ms (ActiveRecord: 4.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `delete' for #<#<Class:0x00007f59cb109790>:0x00007f59c97a1de8>):
+    1: <% post = Post.find(favourite.post_id) %> 
+    2: <li>
+    3:   <%= post.title %> -  
+    4:   <%= form_for(:favourite, :url => { :action => delete }, class: "form-horizontal") do |f| %>
+    5:       <%= hidden_field_tag "post[post_id]", post.id %>
+    6:       <%= f.submit("Borrar", class: "btn btn-primary active") %>
+    7:     <% end %>      
+  
+app/views/favourites/_favourite.html.erb:4:in `_app_views_favourites__favourite_html_erb___3554908661643253189_70011804381780'
+app/views/favourites/index.html.erb:2:in `_app_views_favourites_index_html_erb___3043898090333836518_70011804522800'
+Started GET "/favourites" for 172.18.0.1 at 2018-06-02 18:34:31 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.7ms)[0m  [1m[34mSELECT DISTINCT "favourites"."post_id" FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", "1"]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  Rendered collection of favourites/_favourite.html.erb [5 times] (139.3ms)
+  Rendered favourites/index.html.erb within layouts/application (142.9ms)
+Completed 500 Internal Server Error in 156ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `delete' for #<#<Class:0x00007f59cb109790>:0x00007f59c889a958>):
+    1: <% post = Post.find(favourite.post_id) %> 
+    2: <li>
+    3:   <%= post.title %> -  
+    4:   <%= form_for(:favourite, url: { action: delete }, class: "form-horizontal") do |f| %>
+    5:       <%= hidden_field_tag "post[post_id]", post.id %>
+    6:       <%= f.submit("Borrar", class: "btn btn-primary active") %>
+    7:     <% end %>      
+  
+app/views/favourites/_favourite.html.erb:4:in `_app_views_favourites__favourite_html_erb___3554908661643253189_70011796497440'
+app/views/favourites/index.html.erb:2:in `_app_views_favourites_index_html_erb___3043898090333836518_70011796643360'
+Started GET "/favourites" for 172.18.0.1 at 2018-06-02 18:36:38 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (1.1ms)[0m  [1m[34mSELECT DISTINCT "favourites"."post_id" FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", "1"]]
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  Rendered collection of favourites/_favourite.html.erb [5 times] (179.6ms)
+  Rendered favourites/index.html.erb within layouts/application (187.6ms)
+Completed 500 Internal Server Error in 205ms (ActiveRecord: 3.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `delete' for #<#<Class:0x00007f59cb109790>:0x00007f59caea03c8>):
+    1: <% post = Post.find(favourite.post_id) %> 
+    2: <li>
+    3:   <%= post.title %> -  
+    4:   <%= form_for(:favourite, url: { action: delete }, class: "form-horizontal") do |f| %>
+    5:       <%= hidden_field_tag "post[post_id]", post.id %>
+    6:       <%= f.submit("Borrar", class: "btn btn-primary active") %>
+    7:     <% end %>      
+  
+app/views/favourites/_favourite.html.erb:4:in `_app_views_favourites__favourite_html_erb___3554908661643253189_70011816486680'
+app/views/favourites/index.html.erb:2:in `_app_views_favourites_index_html_erb___3043898090333836518_70011816577580'
+Started GET "/favourites" for 172.18.0.1 at 2018-06-02 18:38:05 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (1.7ms)[0m  [1m[34mSELECT DISTINCT "favourites"."post_id" FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", "1"]]
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  Rendered collection of favourites/_favourite.html.erb [5 times] (9.5ms)
+  Rendered favourites/index.html.erb within layouts/application (17.5ms)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 3.9ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"delete", :controller=>"favourite"}):
+    1: <% post = Post.find(favourite.post_id) %> 
+    2: <li>
+    3:   <%= post.title %> -  
+    4:   <%= form_for(:favourite, url: url_for(:controller => 'favourite', :action => 'delete'), class: "form-horizontal") do |f| %>
+    5:       <%= hidden_field_tag "post[post_id]", post.id %>
+    6:       <%= f.submit("Borrar", class: "btn btn-primary active") %>
+    7:     <% end %>      
+  
+app/views/favourites/_favourite.html.erb:4:in `_app_views_favourites__favourite_html_erb___3554908661643253189_70011812335420'
+app/views/favourites/index.html.erb:2:in `_app_views_favourites_index_html_erb___3043898090333836518_70011812430960'
+Started GET "/favourites" for 172.18.0.1 at 2018-06-02 18:38:14 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.7ms)[0m  [1m[34mSELECT DISTINCT "favourites"."post_id" FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", "1"]]
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  Rendered collection of favourites/_favourite.html.erb [5 times] (3.1ms)
+  Rendered favourites/index.html.erb within layouts/application (6.1ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 1.6ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"delete", :controller=>"favourites"}):
+    1: <% post = Post.find(favourite.post_id) %> 
+    2: <li>
+    3:   <%= post.title %> -  
+    4:   <%= form_for(:favourite, url: url_for(:controller => 'favourites', :action => 'delete'), class: "form-horizontal") do |f| %>
+    5:       <%= hidden_field_tag "post[post_id]", post.id %>
+    6:       <%= f.submit("Borrar", class: "btn btn-primary active") %>
+    7:     <% end %>      
+  
+app/views/favourites/_favourite.html.erb:4:in `_app_views_favourites__favourite_html_erb___3554908661643253189_70011816067100'
+app/views/favourites/index.html.erb:2:in `_app_views_favourites_index_html_erb___3043898090333836518_70011816128340'
+Started GET "/favourites" for 172.18.0.1 at 2018-06-02 18:39:08 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (1.0ms)[0m  [1m[34mSELECT DISTINCT "favourites"."post_id" FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", "1"]]
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  Rendered collection of favourites/_favourite.html.erb [5 times] (9.0ms)
+  Rendered favourites/index.html.erb within layouts/application (15.2ms)
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 3.5ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"delete", :controller=>"favourites"}):
+    1: <% post = Post.find(favourite.post_id) %> 
+    2: <li>
+    3:   <%= post.title %> -  
+    4:   <%= form_for(:favourite, url: { :action => 'delete' }, class: "form-horizontal") do |f| %>
+    5:       <%= hidden_field_tag "post[post_id]", post.id %>
+    6:       <%= f.submit("Borrar", class: "btn btn-primary active") %>
+    7:     <% end %>      
+  
+app/views/favourites/_favourite.html.erb:4:in `_app_views_favourites__favourite_html_erb___3554908661643253189_70011819578380'
+app/views/favourites/index.html.erb:2:in `_app_views_favourites_index_html_erb___3043898090333836518_47056166263220'
+Started GET "/favourites" for 172.18.0.1 at 2018-06-02 18:39:28 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.5ms)[0m  [1m[34mSELECT DISTINCT "favourites"."post_id" FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", "1"]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  Rendered collection of favourites/_favourite.html.erb [5 times] (3.1ms)
+  Rendered favourites/index.html.erb within layouts/application (5.6ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 1.7ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"delete", :controller=>"favourites"}):
+    1: <% post = Post.find(favourite.post_id) %> 
+    2: <li>
+    3:   <%= post.title %> -  
+    4:   <%= form_for(:favourite, :url => { :action => 'delete' }, class: "form-horizontal") do |f| %>
+    5:       <%= hidden_field_tag "post[post_id]", post.id %>
+    6:       <%= f.submit("Borrar", class: "btn btn-primary active") %>
+    7:     <% end %>      
+  
+app/views/favourites/_favourite.html.erb:4:in `_app_views_favourites__favourite_html_erb___3554908661643253189_70011797814480'
+app/views/favourites/index.html.erb:2:in `_app_views_favourites_index_html_erb___3043898090333836518_70011798081800'
+Started GET "/favourites" for 172.18.0.1 at 2018-06-02 18:39:56 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.4ms)[0m  [1m[34mSELECT DISTINCT "favourites"."post_id" FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", "1"]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  Rendered collection of favourites/_favourite.html.erb [5 times] (12.1ms)
+  Rendered favourites/index.html.erb within layouts/application (17.4ms)
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 10.8ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"hola", :controller=>"favourites"}):
+    1: <% post = Post.find(favourite.post_id) %> 
+    2: <li>
+    3:   <%= post.title %> -  
+    4:   <%= form_for(:favourite, :url => { :action => 'hola' }, class: "form-horizontal") do |f| %>
+    5:       <%= hidden_field_tag "post[post_id]", post.id %>
+    6:       <%= f.submit("Borrar", class: "btn btn-primary active") %>
+    7:     <% end %>      
+  
+app/views/favourites/_favourite.html.erb:4:in `_app_views_favourites__favourite_html_erb___3554908661643253189_70011817806680'
+app/views/favourites/index.html.erb:2:in `_app_views_favourites_index_html_erb___3043898090333836518_70011818185660'
+Started GET "/favourites" for 172.18.0.1 at 2018-06-02 18:40:57 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.5ms)[0m  [1m[34mSELECT DISTINCT "favourites"."post_id" FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", "1"]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  Rendered collection of favourites/_favourite.html.erb [5 times] (20.2ms)
+  Rendered favourites/index.html.erb within layouts/application (26.6ms)
+  Rendered layouts/_navigation.html.erb (2.0ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 143ms (Views: 110.5ms | ActiveRecord: 13.4ms)
+
+
+Started POST "/favourites" for 172.18.0.1 at 2018-06-02 18:41:00 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hG43+7ptLRIbvWeglQlF/J8qAoXue5bEhePYquvnY6TDKPhvPScsaOB5WW9sGByxAXISf6bxgKtm94lPg0dnhg==", "post"=>{"post_id"=>"15"}, "commit"=>"Borrar"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.8ms)[0m  [1m[32mINSERT INTO "favourites" ("post_id") VALUES ($1) RETURNING "id"[0m  [["post_id", "15"]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+No template found for FavouritesController#create, rendering head :no_content
+Completed 204 No Content in 45ms (ActiveRecord: 5.3ms)
+
+
+Started GET "/favourites" for 172.18.0.1 at 2018-06-02 18:41:02 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.5ms)[0m  [1m[34mSELECT DISTINCT "favourites"."post_id" FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", "1"]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  Rendered collection of favourites/_favourite.html.erb [5 times] (10.0ms)
+  Rendered favourites/index.html.erb within layouts/application (12.2ms)
+  Rendered layouts/_navigation.html.erb (2.0ms)
+  Rendered layouts/_messages.html.erb (0.7ms)
+Completed 200 OK in 99ms (Views: 92.8ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/favourites" for 172.18.0.1 at 2018-06-02 18:41:04 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.4ms)[0m  [1m[34mSELECT DISTINCT "favourites"."post_id" FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", "1"]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  Rendered collection of favourites/_favourite.html.erb [5 times] (8.0ms)
+  Rendered favourites/index.html.erb within layouts/application (10.1ms)
+  Rendered layouts/_navigation.html.erb (1.9ms)
+  Rendered layouts/_messages.html.erb (0.7ms)
+Completed 200 OK in 97ms (Views: 91.7ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/favourites" for 172.18.0.1 at 2018-06-02 18:41:06 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6z7fK3yNMwTOGwJvqAUeMPmxMs4yU9Uie1Fm/4bNIkaseBC/+8cyfjXfPKBRFEd9Z+kiNHrZw02YRTca7m0mZA==", "post"=>{"post_id"=>"20"}, "commit"=>"Borrar"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "favourites" ("post_id") VALUES ($1) RETURNING "id"[0m  [["post_id", "20"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+No template found for FavouritesController#create, rendering head :no_content
+Completed 204 No Content in 49ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/favourites" for 172.18.0.1 at 2018-06-02 18:41:08 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.5ms)[0m  [1m[34mSELECT DISTINCT "favourites"."post_id" FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", "1"]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  Rendered collection of favourites/_favourite.html.erb [5 times] (8.9ms)
+  Rendered favourites/index.html.erb within layouts/application (11.3ms)
+  Rendered layouts/_navigation.html.erb (1.4ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 92ms (Views: 85.5ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/favourites" for 172.18.0.1 at 2018-06-02 18:41:41 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.6ms)[0m  [1m[34mSELECT DISTINCT "favourites"."post_id" FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", "1"]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  Rendered collection of favourites/_favourite.html.erb [5 times] (17.9ms)
+  Rendered favourites/index.html.erb within layouts/application (31.9ms)
+  Rendered layouts/_navigation.html.erb (1.4ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 130ms (Views: 99.0ms | ActiveRecord: 11.4ms)
+
+
+Started POST "/favourites" for 172.18.0.1 at 2018-06-02 18:41:42 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"z/2PLXXoZKn62hgB7Ci10jV8qWSMEd/+0vIuJJin7OeIu0C58qJl0wEeJs4VOeyfqyS5nsSbyZEx5n/B8AfoxQ==", "post"=>{"post_id"=>"15"}, "commit"=>"Borrar"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "favourites" ("post_id") VALUES ($1) RETURNING "id"[0m  [["post_id", "15"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+No template found for FavouritesController#create, rendering head :no_content
+Completed 204 No Content in 54ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/favourites" for 172.18.0.1 at 2018-06-02 18:41:44 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.9ms)[0m  [1m[34mSELECT DISTINCT "favourites"."post_id" FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", "1"]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  Rendered collection of favourites/_favourite.html.erb [5 times] (9.0ms)
+  Rendered favourites/index.html.erb within layouts/application (13.7ms)
+  Rendered layouts/_navigation.html.erb (1.6ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 120ms (Views: 110.6ms | ActiveRecord: 3.4ms)
+
+
+Started POST "/favourites" for 172.18.0.1 at 2018-06-02 18:41:46 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6P2S/IAWuT6kn0pAYN2tSzMt1ITmWSg63dAxvljrcOSvu11oB1y4RF9bdI+ZzPQGrXXEfq7TPlU+xGBbMEt0xg==", "post"=>{"post_id"=>"20"}, "commit"=>"Borrar"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "favourites" ("post_id") VALUES ($1) RETURNING "id"[0m  [["post_id", "20"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+No template found for FavouritesController#create, rendering head :no_content
+Completed 204 No Content in 51ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/favourites" for 172.18.0.1 at 2018-06-02 18:41:47 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.7ms)[0m  [1m[34mSELECT DISTINCT "favourites"."post_id" FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", "1"]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  Rendered collection of favourites/_favourite.html.erb [5 times] (7.9ms)
+  Rendered favourites/index.html.erb within layouts/application (11.4ms)
+  Rendered layouts/_navigation.html.erb (2.4ms)
+  Rendered layouts/_messages.html.erb (0.8ms)
+Completed 200 OK in 167ms (Views: 160.6ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/favourites" for 172.18.0.1 at 2018-06-02 18:42:11 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.4ms)[0m  [1m[34mSELECT DISTINCT "favourites"."post_id" FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", "1"]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  Rendered collection of favourites/_favourite.html.erb [5 times] (18.1ms)
+  Rendered favourites/index.html.erb within layouts/application (25.3ms)
+  Rendered layouts/_navigation.html.erb (1.5ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 119ms (Views: 90.8ms | ActiveRecord: 11.5ms)
+
+
+Started POST "/favourites" for 172.18.0.1 at 2018-06-02 18:42:12 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wjRyreMNl9FBn6ySCLFkx5cDzxSxv7D77jFb3f8AsKuFcr05ZEeWq7pbkl3xoD2KCVvf7vk1ppQNJQo4l6C0iQ==", "post"=>{"post_id"=>"15"}, "commit"=>"Borrar"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "favourites" ("post_id") VALUES ($1) RETURNING "id"[0m  [["post_id", "15"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+No template found for FavouritesController#create, rendering head :no_content
+Completed 204 No Content in 47ms (ActiveRecord: 2.7ms)
+
+
+Started POST "/favourites" for 172.18.0.1 at 2018-06-02 18:42:20 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wjRyreMNl9FBn6ySCLFkx5cDzxSxv7D77jFb3f8AsKuFcr05ZEeWq7pbkl3xoD2KCVvf7vk1ppQNJQo4l6C0iQ==", "post"=>{"post_id"=>"20"}, "commit"=>"Borrar"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "favourites" ("post_id") VALUES ($1) RETURNING "id"[0m  [["post_id", "20"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+No template found for FavouritesController#create, rendering head :no_content
+Completed 204 No Content in 62ms (ActiveRecord: 4.2ms)
+
+
+Started GET "/favourites" for 172.18.0.1 at 2018-06-02 18:42:22 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.6ms)[0m  [1m[34mSELECT DISTINCT "favourites"."post_id" FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", "1"]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  Rendered collection of favourites/_favourite.html.erb [5 times] (9.1ms)
+  Rendered favourites/index.html.erb within layouts/application (12.9ms)
+  Rendered layouts/_navigation.html.erb (2.6ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 117ms (Views: 106.7ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/favourites" for 172.18.0.1 at 2018-06-02 18:43:31 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.5ms)[0m  [1m[34mSELECT DISTINCT "favourites"."post_id" FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", "1"]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  Rendered collection of favourites/_favourite.html.erb [5 times] (24.4ms)
+  Rendered favourites/index.html.erb within layouts/application (31.7ms)
+  Rendered layouts/_navigation.html.erb (1.7ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 134ms (Views: 99.8ms | ActiveRecord: 12.5ms)
+
+
+Started POST "/favourites" for 172.18.0.1 at 2018-06-02 18:43:32 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"e6n3tPqf5rkEoSlysFL2cqNYAY84DniwppEn043KJYo87zggfdXnw/9lF71JQ68/PQARdXCEbt9FhXY25WohqA==", "post"=>{"post_id"=>"15"}, "commit"=>"Borrar"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "favourites" ("post_id") VALUES ($1) RETURNING "id"[0m  [["post_id", "15"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+No template found for FavouritesController#create, rendering head :no_content
+Completed 204 No Content in 59ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/favourites" for 172.18.0.1 at 2018-06-02 18:43:34 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (1.2ms)[0m  [1m[34mSELECT DISTINCT "favourites"."post_id" FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", "1"]]
+  [1m[36mPost Load (1.8ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  Rendered collection of favourites/_favourite.html.erb [5 times] (26.1ms)
+  Rendered favourites/index.html.erb within layouts/application (33.2ms)
+  Rendered layouts/_navigation.html.erb (2.1ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 135ms (Views: 119.0ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/favourites" for 172.18.0.1 at 2018-06-02 18:43:35 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.7ms)[0m  [1m[34mSELECT DISTINCT "favourites"."post_id" FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", "1"]]
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  Rendered collection of favourites/_favourite.html.erb [5 times] (11.9ms)
+  Rendered favourites/index.html.erb within layouts/application (15.2ms)
+  Rendered layouts/_navigation.html.erb (2.5ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 109ms (Views: 102.6ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/favourites" for 172.18.0.1 at 2018-06-02 18:43:56 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.5ms)[0m  [1m[34mSELECT DISTINCT "favourites"."post_id" FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", "1"]]
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  Rendered collection of favourites/_favourite.html.erb [5 times] (18.8ms)
+  Rendered favourites/index.html.erb within layouts/application (24.6ms)
+  Rendered layouts/_navigation.html.erb (2.2ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 129ms (Views: 103.2ms | ActiveRecord: 10.4ms)
+
+
+Started POST "/favourites" for 172.18.0.1 at 2018-06-02 18:44:07 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rGavZSjG36JzlHCdhDzU/4kc9U/7JP1FJtkQ+itStMfrIGDxr4ze2IhQTlJ9LY2yF0TltbOu6yrFzUEfQ/Kw5Q==", "post"=>{"post_id"=>"15"}, "commit"=>"Borrar"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "favourites" ("post_id") VALUES ($1) RETURNING "id"[0m  [["post_id", "15"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+No template found for FavouritesController#create, rendering head :no_content
+Completed 204 No Content in 48ms (ActiveRecord: 2.4ms)
+
+
+Started POST "/favourites" for 172.18.0.1 at 2018-06-02 18:44:33 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rGavZSjG36JzlHCdhDzU/4kc9U/7JP1FJtkQ+itStMfrIGDxr4ze2IhQTlJ9LY2yF0TltbOu6yrFzUEfQ/Kw5Q==", "post"=>{"post_id"=>"20"}, "commit"=>"Borrar"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (2.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "favourites" ("post_id") VALUES ($1) RETURNING "id"[0m  [["post_id", "20"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+No template found for FavouritesController#create, rendering head :no_content
+Completed 204 No Content in 69ms (ActiveRecord: 6.1ms)
+
+
+Started POST "/favourites" for 172.18.0.1 at 2018-06-02 18:44:36 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rGavZSjG36JzlHCdhDzU/4kc9U/7JP1FJtkQ+itStMfrIGDxr4ze2IhQTlJ9LY2yF0TltbOu6yrFzUEfQ/Kw5Q==", "post"=>{"post_id"=>"19"}, "commit"=>"Borrar"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "favourites" ("post_id") VALUES ($1) RETURNING "id"[0m  [["post_id", "19"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+No template found for FavouritesController#create, rendering head :no_content
+Completed 204 No Content in 74ms (ActiveRecord: 5.5ms)
+
+
+Started GET "/favourites" for 172.18.0.1 at 2018-06-02 18:45:35 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.5ms)[0m  [1m[34mSELECT DISTINCT "favourites"."post_id" FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", "1"]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  Rendered collection of favourites/_favourite.html.erb [5 times] (31.8ms)
+  Rendered favourites/index.html.erb within layouts/application (40.6ms)
+  Rendered layouts/_navigation.html.erb (1.6ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 176ms (Views: 137.0ms | ActiveRecord: 13.7ms)
+
+
+Started POST "/favourites" for 172.18.0.1 at 2018-06-02 18:45:37 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MiU5fja6CHNDMEL60qgnmJXtBEpvU8k8/15i+LNabY91Y/bqsfAJCbj0fDUruX7VC7UUsCfZ31McSjMd2/pprQ==", "post"=>{"post_id"=>"16"}, "commit"=>"Borrar"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "favourites" ("post_id") VALUES ($1) RETURNING "id"[0m  [["post_id", "16"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+No template found for FavouritesController#create, rendering head :no_content
+Completed 204 No Content in 47ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/favourites" for 172.18.0.1 at 2018-06-02 18:45:39 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.6ms)[0m  [1m[34mSELECT DISTINCT "favourites"."post_id" FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", "1"]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  Rendered collection of favourites/_favourite.html.erb [5 times] (8.1ms)
+  Rendered favourites/index.html.erb within layouts/application (10.7ms)
+  Rendered layouts/_navigation.html.erb (9.2ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 112ms (Views: 105.1ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/favourites" for 172.18.0.1 at 2018-06-02 18:45:40 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iMe3GsK8Fg8Qfo3a+3CMs5pDipkC933DFNSQEYgC+rbPgXiORfYXdeu6sxUCYdX+BBuaY0p9a6z3wMH04KL+lA==", "post"=>{"post_id"=>"15"}, "commit"=>"Borrar"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "favourites" ("post_id") VALUES ($1) RETURNING "id"[0m  [["post_id", "15"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+No template found for FavouritesController#create, rendering head :no_content
+Completed 204 No Content in 47ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/favourites" for 172.18.0.1 at 2018-06-02 18:45:41 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.4ms)[0m  [1m[34mSELECT DISTINCT "favourites"."post_id" FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", "1"]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  Rendered collection of favourites/_favourite.html.erb [5 times] (9.6ms)
+  Rendered favourites/index.html.erb within layouts/application (12.5ms)
+  Rendered layouts/_navigation.html.erb (2.3ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 94ms (Views: 87.8ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/favourites" for 172.18.0.1 at 2018-06-02 18:46:24 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Z7I4MPoLun0PGxfZ7dK+ef8o0UoZ7esjYtYXn6ICXuYg9PekfUG7B/TfKRYUw+c0YXDBsFFn/UyBwkZ6yqJaxA==", "post"=>{"post_id"=>"17"}, "commit"=>"Borrar"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "favourites" ("post_id") VALUES ($1) RETURNING "id"[0m  [["post_id", "17"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+No template found for FavouritesController#create, rendering head :no_content
+Completed 204 No Content in 51ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/favourites" for 172.18.0.1 at 2018-06-02 18:46:26 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.7ms)[0m  [1m[34mSELECT DISTINCT "favourites"."post_id" FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", "1"]]
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  Rendered collection of favourites/_favourite.html.erb [5 times] (10.5ms)
+  Rendered favourites/index.html.erb within layouts/application (15.1ms)
+  Rendered layouts/_navigation.html.erb (2.4ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 99ms (Views: 91.5ms | ActiveRecord: 3.4ms)
+
+
+Started POST "/favourites" for 172.18.0.1 at 2018-06-02 18:46:34 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mqnCdtuBZHtvdLPpvJC3wJXEO6OB/xdvStuFputyZmnd7w3iXMtlAZSwjSZFge6NC5wrWcl1AQCpz9RDg9JiSw==", "post"=>{"post_id"=>"15"}, "commit"=>"Borrar"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "favourites" ("post_id") VALUES ($1) RETURNING "id"[0m  [["post_id", "15"]]
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+No template found for FavouritesController#create, rendering head :no_content
+Completed 204 No Content in 90ms (ActiveRecord: 9.4ms)
+
+
+Started GET "/favourites" for 172.18.0.1 at 2018-06-02 18:48:09 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.6ms)[0m  [1m[34mSELECT DISTINCT "favourites"."post_id" FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", "1"]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  Rendered collection of favourites/_favourite.html.erb [5 times] (17.1ms)
+  Rendered favourites/index.html.erb within layouts/application (25.6ms)
+  Rendered layouts/_navigation.html.erb (2.6ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+Completed 200 OK in 133ms (Views: 103.3ms | ActiveRecord: 11.8ms)
+
+
+Started GET "/favourites" for 172.18.0.1 at 2018-06-02 18:48:10 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (1.2ms)[0m  [1m[34mSELECT DISTINCT "favourites"."post_id" FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", "1"]]
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mPost Load (1.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  Rendered collection of favourites/_favourite.html.erb [5 times] (28.1ms)
+  Rendered favourites/index.html.erb within layouts/application (36.2ms)
+  Rendered layouts/_navigation.html.erb (1.7ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 186ms (Views: 169.2ms | ActiveRecord: 7.9ms)
+
+
+Started POST "/favourites" for 172.18.0.1 at 2018-06-02 18:48:11 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+1vs51AmUFgcKAog8FTqIBVOi4eqtWuER7yba2V7uWi8HSNz12xRIufsNO8JRbNtixabfeI/feukqMqODdu9Sg==", "post"=>{"post_id"=>"15"}, "commit"=>"Borrar"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "favourites" ("post_id") VALUES ($1) RETURNING "id"[0m  [["post_id", "15"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+No template found for FavouritesController#create, rendering head :no_content
+Completed 204 No Content in 78ms (ActiveRecord: 4.6ms)
+
+
+Started GET "/favourites" for 172.18.0.1 at 2018-06-02 18:48:12 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (1.3ms)[0m  [1m[34mSELECT DISTINCT "favourites"."post_id" FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", "1"]]
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  Rendered collection of favourites/_favourite.html.erb [5 times] (11.5ms)
+  Rendered favourites/index.html.erb within layouts/application (16.6ms)
+  Rendered layouts/_navigation.html.erb (1.4ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 115ms (Views: 100.2ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/favourites" for 172.18.0.1 at 2018-06-02 18:49:07 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.4ms)[0m  [1m[34mSELECT DISTINCT "favourites"."post_id" FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", "1"]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  Rendered collection of favourites/_favourite.html.erb [5 times] (19.0ms)
+  Rendered favourites/index.html.erb within layouts/application (25.5ms)
+  Rendered layouts/_navigation.html.erb (1.5ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 134ms (Views: 105.2ms | ActiveRecord: 11.4ms)
+
+
+Started POST "/favourites" for 172.18.0.1 at 2018-06-02 18:49:09 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Dujitsn8tsN7ru+h5HFib4KW3EcizxTA/XCr4Xm+Uv5Jri0iTra3uYBq0W4dYDsiHM7MvWpFAq8eZPoEER5W3A==", "post"=>{"post_id"=>"15"}, "commit"=>"Borrar"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "favourites" ("post_id") VALUES ($1) RETURNING "id"[0m  [["post_id", "15"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+No template found for FavouritesController#create, rendering head :no_content
+Completed 204 No Content in 47ms (ActiveRecord: 2.5ms)
+
+
+Started POST "/favourites" for 172.18.0.1 at 2018-06-02 18:49:10 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Dujitsn8tsN7ru+h5HFib4KW3EcizxTA/XCr4Xm+Uv5Jri0iTra3uYBq0W4dYDsiHM7MvWpFAq8eZPoEER5W3A==", "post"=>{"post_id"=>"16"}, "commit"=>"Borrar"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "favourites" ("post_id") VALUES ($1) RETURNING "id"[0m  [["post_id", "16"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+No template found for FavouritesController#create, rendering head :no_content
+Completed 204 No Content in 70ms (ActiveRecord: 4.7ms)
+
+
+Started POST "/favourites" for 172.18.0.1 at 2018-06-02 18:49:10 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Dujitsn8tsN7ru+h5HFib4KW3EcizxTA/XCr4Xm+Uv5Jri0iTra3uYBq0W4dYDsiHM7MvWpFAq8eZPoEER5W3A==", "post"=>{"post_id"=>"17"}, "commit"=>"Borrar"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "favourites" ("post_id") VALUES ($1) RETURNING "id"[0m  [["post_id", "17"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+No template found for FavouritesController#create, rendering head :no_content
+Completed 204 No Content in 103ms (ActiveRecord: 4.9ms)
+
+
+Started GET "/favourites" for 172.18.0.1 at 2018-06-02 18:52:58 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.6ms)[0m  [1m[34mSELECT DISTINCT "favourites"."post_id" FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", "1"]]
+  Rendered collection of favourites/_favourite.html.erb [5 times] (1.0ms)
+  Rendered favourites/index.html.erb within layouts/application (4.3ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 1.2ms)
+
+
+  
+SyntaxError (/grupo21/app/views/favourites/_favourite.html.erb:4: syntax error, unexpected =>, expecting ')'
+...:favourite, :html => :method => :delete , class: "form-horiz...
+...                             ^~
+/grupo21/app/views/favourites/_favourite.html.erb:4: syntax error, unexpected ')', expecting keyword_end
+...ete , class: "form-horizontal") do |f| @output_buffer.safe_a...
+...                              ^
+/grupo21/app/views/favourites/_favourite.html.erb:13: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/favourites/_favourite.html.erb:4: syntax error, unexpected =>, expecting ')'
+app/views/favourites/_favourite.html.erb:4: syntax error, unexpected ')', expecting keyword_end
+app/views/favourites/_favourite.html.erb:13: syntax error, unexpected keyword_ensure, expecting end-of-input
+app/views/favourites/index.html.erb:2:in `_app_views_favourites_index_html_erb___3043898090333836518_70011806728620'
+Started GET "/favourites" for 172.18.0.1 at 2018-06-02 18:53:11 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.5ms)[0m  [1m[34mSELECT DISTINCT "favourites"."post_id" FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", "1"]]
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mPost Load (1.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  Rendered collection of favourites/_favourite.html.erb [5 times] (12.6ms)
+  Rendered favourites/index.html.erb within layouts/application (15.1ms)
+  Rendered layouts/_navigation.html.erb (1.6ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 107ms (Views: 99.6ms | ActiveRecord: 4.5ms)
+
+
+Started DELETE "/favourites" for 172.18.0.1 at 2018-06-02 18:53:15 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#delete as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GGUUYr4dbCUuw249lRT8ePdcnBpx5IWmZW1h0YZryYpfI9v2OVdtX9UHUPJsBaU1aQSM4Dluk8mGeTA07svNqA==", "post"=>{"post_id"=>"15"}, "commit"=>"Borrar"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.7ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/controllers/favourites_controller.rb:16:in `delete'
+Started DELETE "/favourites" for 172.18.0.1 at 2018-06-02 18:54:04 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#delete as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GGUUYr4dbCUuw249lRT8ePdcnBpx5IWmZW1h0YZryYpfI9v2OVdtX9UHUPJsBaU1aQSM4Dluk8mGeTA07svNqA==", "post"=>{"post_id"=>"15"}, "commit"=>"Borrar"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[31mDELETE FROM "favourites" WHERE "favourites"."post_id" = $1 AND "favourites"."user_id" = $2[0m  [["post_id", "15"], ["user_id", "1"]]
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 7.6ms)
+
+
+  
+NoMethodError (undefined method `save' for 2:Integer):
+  
+app/controllers/favourites_controller.rb:17:in `delete'
+Started DELETE "/favourites" for 172.18.0.1 at 2018-06-02 18:54:12 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#delete as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GGUUYr4dbCUuw249lRT8ePdcnBpx5IWmZW1h0YZryYpfI9v2OVdtX9UHUPJsBaU1aQSM4Dluk8mGeTA07svNqA==", "post"=>{"post_id"=>"15"}, "commit"=>"Borrar"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "favourites" WHERE "favourites"."post_id" = $1 AND "favourites"."user_id" = $2[0m  [["post_id", "15"], ["user_id", "1"]]
+Completed 500 Internal Server Error in 137ms (ActiveRecord: 5.3ms)
+
+
+  
+NoMethodError (undefined method `put' for #<FavouritesController:0x00007f59cb25b170>):
+  
+app/controllers/favourites_controller.rb:17:in `delete'
+Started DELETE "/favourites" for 172.18.0.1 at 2018-06-02 18:54:18 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#delete as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GGUUYr4dbCUuw249lRT8ePdcnBpx5IWmZW1h0YZryYpfI9v2OVdtX9UHUPJsBaU1aQSM4Dluk8mGeTA07svNqA==", "post"=>{"post_id"=>"15"}, "commit"=>"Borrar"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "favourites" WHERE "favourites"."post_id" = $1 AND "favourites"."user_id" = $2[0m  [["post_id", "15"], ["user_id", "1"]]
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 6.1ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"favourites"}, missing required keys: [:id]):
+  
+app/controllers/favourites_controller.rb:18:in `delete'
+Started DELETE "/favourites" for 172.18.0.1 at 2018-06-02 18:54:25 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#delete as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GGUUYr4dbCUuw249lRT8ePdcnBpx5IWmZW1h0YZryYpfI9v2OVdtX9UHUPJsBaU1aQSM4Dluk8mGeTA07svNqA==", "post"=>{"post_id"=>"15"}, "commit"=>"Borrar"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "favourites" WHERE "favourites"."post_id" = $1 AND "favourites"."user_id" = $2[0m  [["post_id", "15"], ["user_id", "1"]]
+No template found for FavouritesController#delete, rendering head :no_content
+Completed 204 No Content in 64ms (ActiveRecord: 6.4ms)
+
+
+Started DELETE "/favourites" for 172.18.0.1 at 2018-06-02 18:54:27 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#delete as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GGUUYr4dbCUuw249lRT8ePdcnBpx5IWmZW1h0YZryYpfI9v2OVdtX9UHUPJsBaU1aQSM4Dluk8mGeTA07svNqA==", "post"=>{"post_id"=>"15"}, "commit"=>"Borrar"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.2ms)[0m  [1m[31mDELETE FROM "favourites" WHERE "favourites"."post_id" = $1 AND "favourites"."user_id" = $2[0m  [["post_id", "15"], ["user_id", "1"]]
+No template found for FavouritesController#delete, rendering head :no_content
+Completed 204 No Content in 59ms (ActiveRecord: 2.3ms)
+
+
+Started DELETE "/favourites" for 172.18.0.1 at 2018-06-02 18:54:35 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#delete as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GGUUYr4dbCUuw249lRT8ePdcnBpx5IWmZW1h0YZryYpfI9v2OVdtX9UHUPJsBaU1aQSM4Dluk8mGeTA07svNqA==", "post"=>{"post_id"=>"15"}, "commit"=>"Borrar"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "favourites" WHERE "favourites"."post_id" = $1 AND "favourites"."user_id" = $2[0m  [["post_id", "15"], ["user_id", "1"]]
+No template found for FavouritesController#delete, rendering head :no_content
+Completed 204 No Content in 63ms (ActiveRecord: 6.9ms)
+
+
+Started DELETE "/favourites" for 172.18.0.1 at 2018-06-02 18:54:36 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#delete as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GGUUYr4dbCUuw249lRT8ePdcnBpx5IWmZW1h0YZryYpfI9v2OVdtX9UHUPJsBaU1aQSM4Dluk8mGeTA07svNqA==", "post"=>{"post_id"=>"15"}, "commit"=>"Borrar"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.1ms)[0m  [1m[31mDELETE FROM "favourites" WHERE "favourites"."post_id" = $1 AND "favourites"."user_id" = $2[0m  [["post_id", "15"], ["user_id", "1"]]
+No template found for FavouritesController#delete, rendering head :no_content
+Completed 204 No Content in 57ms (ActiveRecord: 2.3ms)
+
+
+Started DELETE "/favourites" for 172.18.0.1 at 2018-06-02 18:54:36 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#delete as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GGUUYr4dbCUuw249lRT8ePdcnBpx5IWmZW1h0YZryYpfI9v2OVdtX9UHUPJsBaU1aQSM4Dluk8mGeTA07svNqA==", "post"=>{"post_id"=>"15"}, "commit"=>"Borrar"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.3ms)[0m  [1m[31mDELETE FROM "favourites" WHERE "favourites"."post_id" = $1 AND "favourites"."user_id" = $2[0m  [["post_id", "15"], ["user_id", "1"]]
+No template found for FavouritesController#delete, rendering head :no_content
+Completed 204 No Content in 86ms (ActiveRecord: 3.1ms)
+
+
+Started DELETE "/favourites" for 172.18.0.1 at 2018-06-02 18:54:36 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#delete as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GGUUYr4dbCUuw249lRT8ePdcnBpx5IWmZW1h0YZryYpfI9v2OVdtX9UHUPJsBaU1aQSM4Dluk8mGeTA07svNqA==", "post"=>{"post_id"=>"15"}, "commit"=>"Borrar"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[31mDELETE FROM "favourites" WHERE "favourites"."post_id" = $1 AND "favourites"."user_id" = $2[0m  [["post_id", "15"], ["user_id", "1"]]
+No template found for FavouritesController#delete, rendering head :no_content
+Completed 204 No Content in 54ms (ActiveRecord: 2.0ms)
+
+
+Started DELETE "/favourites" for 172.18.0.1 at 2018-06-02 18:54:36 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#delete as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GGUUYr4dbCUuw249lRT8ePdcnBpx5IWmZW1h0YZryYpfI9v2OVdtX9UHUPJsBaU1aQSM4Dluk8mGeTA07svNqA==", "post"=>{"post_id"=>"15"}, "commit"=>"Borrar"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (2.2ms)[0m  [1m[31mDELETE FROM "favourites" WHERE "favourites"."post_id" = $1 AND "favourites"."user_id" = $2[0m  [["post_id", "15"], ["user_id", "1"]]
+No template found for FavouritesController#delete, rendering head :no_content
+Completed 204 No Content in 95ms (ActiveRecord: 3.4ms)
+
+
+Started DELETE "/favourites" for 172.18.0.1 at 2018-06-02 18:54:37 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#delete as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GGUUYr4dbCUuw249lRT8ePdcnBpx5IWmZW1h0YZryYpfI9v2OVdtX9UHUPJsBaU1aQSM4Dluk8mGeTA07svNqA==", "post"=>{"post_id"=>"15"}, "commit"=>"Borrar"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "favourites" WHERE "favourites"."post_id" = $1 AND "favourites"."user_id" = $2[0m  [["post_id", "15"], ["user_id", "1"]]
+No template found for FavouritesController#delete, rendering head :no_content
+Completed 204 No Content in 41ms (ActiveRecord: 0.6ms)
+
+
+Started DELETE "/favourites" for 172.18.0.1 at 2018-06-02 18:54:37 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#delete as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GGUUYr4dbCUuw249lRT8ePdcnBpx5IWmZW1h0YZryYpfI9v2OVdtX9UHUPJsBaU1aQSM4Dluk8mGeTA07svNqA==", "post"=>{"post_id"=>"15"}, "commit"=>"Borrar"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.2ms)[0m  [1m[31mDELETE FROM "favourites" WHERE "favourites"."post_id" = $1 AND "favourites"."user_id" = $2[0m  [["post_id", "15"], ["user_id", "1"]]
+No template found for FavouritesController#delete, rendering head :no_content
+Completed 204 No Content in 83ms (ActiveRecord: 3.1ms)
+
+
+Started DELETE "/favourites" for 172.18.0.1 at 2018-06-02 18:54:37 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#delete as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GGUUYr4dbCUuw249lRT8ePdcnBpx5IWmZW1h0YZryYpfI9v2OVdtX9UHUPJsBaU1aQSM4Dluk8mGeTA07svNqA==", "post"=>{"post_id"=>"15"}, "commit"=>"Borrar"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "favourites" WHERE "favourites"."post_id" = $1 AND "favourites"."user_id" = $2[0m  [["post_id", "15"], ["user_id", "1"]]
+No template found for FavouritesController#delete, rendering head :no_content
+Completed 204 No Content in 42ms (ActiveRecord: 1.0ms)
+
+
+Started DELETE "/favourites" for 172.18.0.1 at 2018-06-02 18:54:45 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#delete as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GGUUYr4dbCUuw249lRT8ePdcnBpx5IWmZW1h0YZryYpfI9v2OVdtX9UHUPJsBaU1aQSM4Dluk8mGeTA07svNqA==", "post"=>{"post_id"=>"15"}, "commit"=>"Borrar"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "favourites" WHERE "favourites"."post_id" = $1 AND "favourites"."user_id" = $2[0m  [["post_id", "15"], ["user_id", "1"]]
+No template found for FavouritesController#delete, rendering head :no_content
+Completed 204 No Content in 45ms (ActiveRecord: 1.0ms)
+
+
+Started DELETE "/favourites" for 172.18.0.1 at 2018-06-02 18:54:54 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#delete as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GGUUYr4dbCUuw249lRT8ePdcnBpx5IWmZW1h0YZryYpfI9v2OVdtX9UHUPJsBaU1aQSM4Dluk8mGeTA07svNqA==", "post"=>{"post_id"=>"15"}, "commit"=>"Borrar"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "favourites" WHERE "favourites"."post_id" = $1 AND "favourites"."user_id" = $2[0m  [["post_id", "15"], ["user_id", "1"]]
+No template found for FavouritesController#delete, rendering head :no_content
+Completed 204 No Content in 60ms (ActiveRecord: 5.6ms)
+
+
+Started DELETE "/favourites" for 172.18.0.1 at 2018-06-02 18:55:07 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#delete as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GGUUYr4dbCUuw249lRT8ePdcnBpx5IWmZW1h0YZryYpfI9v2OVdtX9UHUPJsBaU1aQSM4Dluk8mGeTA07svNqA==", "post"=>{"post_id"=>"15"}, "commit"=>"Borrar"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+No template found for FavouritesController#delete, rendering head :no_content
+Completed 204 No Content in 55ms (ActiveRecord: 3.6ms)
+
+
+Started DELETE "/favourites" for 172.18.0.1 at 2018-06-02 18:55:08 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#delete as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GGUUYr4dbCUuw249lRT8ePdcnBpx5IWmZW1h0YZryYpfI9v2OVdtX9UHUPJsBaU1aQSM4Dluk8mGeTA07svNqA==", "post"=>{"post_id"=>"15"}, "commit"=>"Borrar"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+No template found for FavouritesController#delete, rendering head :no_content
+Completed 204 No Content in 54ms (ActiveRecord: 1.0ms)
+
+
+Started DELETE "/favourites" for 172.18.0.1 at 2018-06-02 18:55:08 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#delete as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GGUUYr4dbCUuw249lRT8ePdcnBpx5IWmZW1h0YZryYpfI9v2OVdtX9UHUPJsBaU1aQSM4Dluk8mGeTA07svNqA==", "post"=>{"post_id"=>"15"}, "commit"=>"Borrar"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+No template found for FavouritesController#delete, rendering head :no_content
+Completed 204 No Content in 56ms (ActiveRecord: 0.9ms)
+
+
+Started DELETE "/favourites" for 172.18.0.1 at 2018-06-02 18:55:08 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#delete as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GGUUYr4dbCUuw249lRT8ePdcnBpx5IWmZW1h0YZryYpfI9v2OVdtX9UHUPJsBaU1aQSM4Dluk8mGeTA07svNqA==", "post"=>{"post_id"=>"15"}, "commit"=>"Borrar"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+No template found for FavouritesController#delete, rendering head :no_content
+Completed 204 No Content in 86ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/favourites" for 172.18.0.1 at 2018-06-02 18:55:19 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.9ms)[0m  [1m[34mSELECT DISTINCT "favourites"."post_id" FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", "1"]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  Rendered collection of favourites/_favourite.html.erb [4 times] (16.8ms)
+  Rendered favourites/index.html.erb within layouts/application (24.1ms)
+  Rendered layouts/_navigation.html.erb (2.9ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 185ms (Views: 149.3ms | ActiveRecord: 11.5ms)
+
+
+Started DELETE "/favourites" for 172.18.0.1 at 2018-06-02 18:55:22 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#delete as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2aKsqK+pgLOU/vRBmayhRSKdN55BIwsj1Ecy6F+CfWSe5GM8KOOByW86yo5gvfgIvMUnZAmpHUw3U2MNNyJ5Rg==", "post"=>{"post_id"=>"16"}, "commit"=>"Borrar"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.7ms)[0m  [1m[31mDELETE FROM "favourites" WHERE "favourites"."post_id" = $1 AND "favourites"."user_id" = $2[0m  [["post_id", "16"], ["user_id", "1"]]
+No template found for FavouritesController#delete, rendering head :no_content
+Completed 204 No Content in 46ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/favourites" for 172.18.0.1 at 2018-06-02 18:55:24 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.6ms)[0m  [1m[34mSELECT DISTINCT "favourites"."post_id" FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", "1"]]
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  Rendered collection of favourites/_favourite.html.erb [3 times] (5.7ms)
+  Rendered favourites/index.html.erb within layouts/application (8.8ms)
+  Rendered layouts/_navigation.html.erb (1.8ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 87ms (Views: 79.7ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/favourites" for 172.18.0.1 at 2018-06-02 18:55:45 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.4ms)[0m  [1m[34mSELECT DISTINCT "favourites"."post_id" FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", "1"]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  Rendered collection of favourites/_favourite.html.erb [3 times] (16.6ms)
+  Rendered favourites/index.html.erb within layouts/application (22.8ms)
+  Rendered layouts/_navigation.html.erb (1.4ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 110ms (Views: 81.2ms | ActiveRecord: 11.5ms)
+
+
+Started DELETE "/favourites" for 172.18.0.1 at 2018-06-02 18:55:46 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#delete as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3SIXmtX5v1d+uCFS4GXYY2eFmOoKoqJE8FwXgUECl/yaZNgOUrO+LYV8H50ZdIEu+d2IEEIotCsTSEZkKaKT3g==", "post"=>{"post_id"=>"17"}, "commit"=>"Borrar"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.3ms)[0m  [1m[31mDELETE FROM "favourites" WHERE "favourites"."post_id" = $1 AND "favourites"."user_id" = $2[0m  [["post_id", "17"], ["user_id", "1"]]
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 2.2ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"favourites"}, missing required keys: [:id]):
+  
+app/controllers/favourites_controller.rb:17:in `delete'
+Started DELETE "/favourites" for 172.18.0.1 at 2018-06-02 18:57:29 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#delete as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3SIXmtX5v1d+uCFS4GXYY2eFmOoKoqJE8FwXgUECl/yaZNgOUrO+LYV8H50ZdIEu+d2IEEIotCsTSEZkKaKT3g==", "post"=>{"post_id"=>"17"}, "commit"=>"Borrar"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "favourites" WHERE "favourites"."post_id" = $1 AND "favourites"."user_id" = $2[0m  [["post_id", "17"], ["user_id", "1"]]
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 7.1ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"index", :controller=>"favourites"}, missing required keys: [:id]):
+  
+app/controllers/favourites_controller.rb:17:in `delete'
+Started DELETE "/favourites" for 172.18.0.1 at 2018-06-02 18:58:08 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#delete as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3SIXmtX5v1d+uCFS4GXYY2eFmOoKoqJE8FwXgUECl/yaZNgOUrO+LYV8H50ZdIEu+d2IEEIotCsTSEZkKaKT3g==", "post"=>{"post_id"=>"17"}, "commit"=>"Borrar"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[31mDELETE FROM "favourites" WHERE "favourites"."post_id" = $1 AND "favourites"."user_id" = $2[0m  [["post_id", "17"], ["user_id", "1"]]
+Redirected to http://localhost:3000/favourites
+Completed 302 Found in 28ms (ActiveRecord: 6.8ms)
+
+
+Started GET "/favourites" for 172.18.0.1 at 2018-06-02 18:58:09 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.9ms)[0m  [1m[34mSELECT DISTINCT "favourites"."post_id" FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", "1"]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  Rendered collection of favourites/_favourite.html.erb [2 times] (16.8ms)
+  Rendered favourites/index.html.erb within layouts/application (24.7ms)
+  Rendered layouts/_navigation.html.erb (1.5ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 104ms (Views: 95.3ms | ActiveRecord: 6.2ms)
+
+
+Started DELETE "/favourites" for 172.18.0.1 at 2018-06-02 18:58:10 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#delete as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BDzkejRpOAjfZmPbmGjILQ6qXPtxyjcojzsTZiGU+8dDeivusyM5ciSiXRRheZFgkPJMATlAIUdsL0KDSTT/5Q==", "post"=>{"post_id"=>"19"}, "commit"=>"Borrar"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.4ms)[0m  [1m[31mDELETE FROM "favourites" WHERE "favourites"."post_id" = $1 AND "favourites"."user_id" = $2[0m  [["post_id", "19"], ["user_id", "1"]]
+Redirected to http://localhost:3000/favourites
+Completed 302 Found in 7ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/favourites" for 172.18.0.1 at 2018-06-02 18:58:10 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.5ms)[0m  [1m[34mSELECT DISTINCT "favourites"."post_id" FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", "1"]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  Rendered collection of favourites/_favourite.html.erb [1 times] (2.8ms)
+  Rendered favourites/index.html.erb within layouts/application (5.3ms)
+  Rendered layouts/_navigation.html.erb (1.8ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 81ms (Views: 77.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 172.18.0.1 at 2018-06-02 18:58:12 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation.html.erb (3.1ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 111ms (Views: 107.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/favourites" for 172.18.0.1 at 2018-06-02 18:58:13 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.6ms)[0m  [1m[34mSELECT DISTINCT "favourites"."post_id" FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", "1"]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  Rendered collection of favourites/_favourite.html.erb [1 times] (6.6ms)
+  Rendered favourites/index.html.erb within layouts/application (10.1ms)
+  Rendered layouts/_navigation.html.erb (1.4ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 102ms (Views: 95.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/communities" for 172.18.0.1 at 2018-06-02 18:58:14 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CommunitiesController#index as HTML
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" ORDER BY "categories"."id" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendering communities/index.html.erb within layouts/application
+  Rendered collection of categories/_category.html.erb [4 times] (1.2ms)
+  Rendered communities/index.html.erb within layouts/application (2.9ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation.html.erb (3.0ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 113ms (Views: 95.8ms | ActiveRecord: 5.0ms)
+
+
