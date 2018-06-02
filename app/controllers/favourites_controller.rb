@@ -2,7 +2,7 @@ class FavouritesController < ApplicationController
   before_action(:authenticate_user!)
 
   def index
-    @favourites = Favourite.where(user_id: current_user.id)
+    @favourites = Favourite.select(:post_id).distinct.where(user_id: current_user.id)
   end
 
   def create
