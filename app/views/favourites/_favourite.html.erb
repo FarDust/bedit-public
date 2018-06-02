@@ -1,1 +1,2 @@
-<li><%= truncate(favourite.post_id, :length => 40) %></li>
+<% post = Post.find(favourite.post_id) %> 
+<li><%= post.title %></li>
