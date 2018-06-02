@@ -38,6 +38,11 @@
               <%= image_tag(current_user.avatar, alt: current_user.username,size: "30") %>
             <% end %>
           </li>
+          <li>
+            <%=link_to notifications_path() do %>
+            Notifications <span class="badge"><%= Notification.unread_count(current_user) %></span>
+            <%end%>
+          </li>
         <%end%>
         <% if user_signed_in?() %>
           <li><%= link_to("Cerrar Sesión", destroy_user_session_path(), method: :delete) %></li>

@@ -18,20 +18,4 @@ class Favourite < ApplicationRecord
       super
     end
   end
-
-  def user
-    if !super.user.nil?
-      super
-    else
-      User.find(user_id)
-    end
-  end
-  
-  def post
-    if !super.post.nil?
-      super
-    else
-      User.find(post_id)
-    end
-  end
 end
