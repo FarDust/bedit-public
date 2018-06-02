@@ -7,6 +7,9 @@ class User < ApplicationRecord
   validates(:username, uniqueness: true)
   acts_as_voter()
   has_many(:publication)
+
+  has_many(:commentaries)
+  has_many(:favourites, dependent: :destroy)
   has_many(:post)
   has_many(:commentary)
 end

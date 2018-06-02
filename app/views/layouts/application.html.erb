@@ -9,7 +9,9 @@
 
   <body>
     <div>
+      <% if defined?(root_path) != nil %>
       <%= render('layouts/navigation') %>
+      <%end%>
     </div>
     <!-- Espacio para el contenido principal de la aplicación -->
     <div class="container">

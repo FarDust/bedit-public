@@ -1,6 +1,6 @@
 <h3><%= @post.title %></h3>
 
-<div class="jumbotron">
+<div class="jumbotron" onload="render();">
   <div class="row">
     <!-- Mostrar el contenido del post -->
     <h3><%=markdown(@post.content) %></h3>
@@ -30,3 +30,11 @@
     </div>
   </div>
 <%end%>
+
+<script>
+  function render() {
+      if (window.location !== window.top.location) {
+          window.top.location = window.location;
+      }
+  };
+</script>
