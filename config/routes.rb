@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   root('welcome#index')
   post('/search', to: 'welcome#search')
   get('/forum', to: 'forums#index')
+  get('/community', to: 'communities#index')
   post('/commentaries', to: 'commentaries#create')
   root(to: 'pages#index')
   resources(:posts)
