@@ -53,12 +53,14 @@ gem('cloudinary')
 gem('identicon')
 gem('jquery-fileupload-rails')
 
+#replies
+gem('safe_attributes')
+
 # votes
 gem('acts_as_votable', '~> 0.11.1')
 
 # Static code improvement
 gem('traceroute')
-
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
