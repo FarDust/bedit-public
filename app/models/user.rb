@@ -6,4 +6,6 @@ class User < ApplicationRecord
   validates(:email, uniqueness: true)
   validates(:username, uniqueness: true)
   has_many(:publication)
+  has_many(:post)
+  has_many(:commentary)
 end
