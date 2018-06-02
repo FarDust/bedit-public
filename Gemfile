@@ -53,12 +53,27 @@ gem('cloudinary')
 gem('identicon')
 gem('jquery-fileupload-rails')
 
+#replies
+gem('safe_attributes')
+
+# votes
+gem('acts_as_votable', '~> 0.11.1')
+
+# Static code improvement
+gem('traceroute')
+
+
+# Notifications
+gem('notifications', '~> 0.6.0')
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   # Adds support for Capybara system testing and selenium driver
+  gem('bullet')
   gem 'capybara', '~> 2.13'
-  gem 'selenium-webdriver'
+  gem('rubycritic', require: false)
+  gem('selenium-webdriver')
 end
 
 group :development do
@@ -68,6 +83,7 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background.
   # Read more: https://github.com/rails/spring
+  gem('brakeman', require: false)
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end

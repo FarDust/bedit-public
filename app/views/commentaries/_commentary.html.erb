@@ -3,7 +3,7 @@
     <!-- Mostrar el contenido del comentario -->
     <h3><%if commentary.user_id%>
           <%= image_tag(User.find(commentary.user_id).avatar, alt: User.find(commentary.user_id).username,size: "50")%>
-        <%end%>
+        <% end %>
         <%= markdown(commentary.text) %></h3>
     <div>
       
@@ -13,7 +13,30 @@
         <%if commentary.user_id %>
           <%usr = User.find(commentary.user_id).username %> 
         <% end %>
-        Publicado por: <%= usr.capitalize%>
-      </h5>
+        Publicado por: <%= usr.capitalize%><br>
+        Publicado hace: <%=time_ago_in_words(commentary.created_at)%>
+    </h5>
+    <div>
+      
+    </div>
+    <div>
+      Total de votos: <%= commentary.get_likes.size%><br>
+      <%= link_to like_commentary_path(commentary), method: :put do %>
+        like
+      <% end %>
+    </div>
+    <% if user_signed_in?%>
+      <div>
+        <%= form_for :reply, url: commentaries_path(), class: "form-group" do |f| %>
+          <%= f.label("Responder") %>
+          <%= f.text_field(:text,placeholder: "reply")%>
+          <%= hidden_field_tag(:commentary_id, commentary.id) %>
+          <%= f.submit(class: "btn btn-default") %>
+        <% end %>
+      </div>
+      <% for reply in commentary.replies %>
+        <%= render(reply.response)%>
+      <% end%>
+    <% end %>
   </div>
 </div>
