@@ -13,7 +13,12 @@
       <p>
         <%= link_to "Ver Más", post_path(post.id), html_options = {class: "btn btn-primary active"} %>
         <%if user_signed_in?()%>
-          <a href="#" class="btn btn-default" role="button">Agregar a favoritos</a>
+          <%= form_for(:favourite, url: favourites_path(), class: "form-horizontal") do |f| %>
+            <%= hidden_field_tag "post[post_id]", post.id %>
+            <%= hidden_field_tag "post[user_id]", current_user.id %>
+
+            <%= f.submit("A Favoritos", class: "btn btn-primary active") %>
+          <% end %>
           &nbsp;
           <!-- Editar foro -->
           <%=link_to("", edit_post_path(post.id),
