@@ -16,6 +16,7 @@
       <ul class="nav navbar-nav">
         <li><%= link_to("Inicio", root_path()) %></li>
         <li><%= link_to("Foros", forum_path()) %></li>
+        <li><%= link_to("Comunidades", community_path()) %></li>
         <li>
           <%=form_for :search, url: search_path(), class: "navbar-form navbar-left" do |f| %>
             <div class= "form-group">
