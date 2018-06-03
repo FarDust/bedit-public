@@ -63,28 +63,28 @@ gem('acts_as_votable', '~> 0.11.1')
 gem('traceroute')
 
 # Authorization
-gem('pundit')
+gem('cancancan', '~> 2.0')
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   # Adds support for Capybara system testing and selenium driver
-  gem('bullet')
   gem 'capybara', '~> 2.13'
-  gem('rubycritic', require: false)
   gem('selenium-webdriver')
+  gem('bullet')
+  gem("rubycritic", require: false)
 end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
-  gem('brakeman', require: false)
-  gem('listen', '>= 3.0.5', '< 3.2')
-  gem('web-console', '>= 3.3.0')
+  gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'web-console', '>= 3.3.0'
 
   # Spring speeds up development by keeping your application running in the background.
   # Read more: https://github.com/rails/spring
-  gem('spring')
-  gem('spring-watcher-listen', '~> 2.0.0')
+  gem 'spring'
+  gem 'spring-watcher-listen', '~> 2.0.0'
+  gem('brakeman', require: false)
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
