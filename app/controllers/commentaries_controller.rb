@@ -30,7 +30,7 @@ class CommentariesController < ApplicationController
 
   def vote
     @commentary = Commentary.find(params[:id])
-    if current_user.voted_as_when_voted_for?(@commentary) == false
+    if current_user.liked?(@commentary)
       @commentary.disliked_by(current_user)
     else
       @commentary.liked_by(current_user)

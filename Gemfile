@@ -41,7 +41,6 @@ gem('bcrypt', '~> 3.1.7')
 # gem 'capistrano-rails', group: :development
 
 gem('bootstrap', '~> 4.1.0')
-gem('devise')
 gem('redcarpet')
 gem('rubocop', '~> 0.55.0', require: false)
 gem('sprockets-rails')
@@ -53,6 +52,7 @@ gem('cloudinary')
 gem('identicon')
 gem('jquery-fileupload-rails')
 
+
 # Replies
 gem('safe_attributes')
 
@@ -62,17 +62,25 @@ gem('acts_as_votable', '~> 0.11.1')
 # Static code improvement
 gem('traceroute')
 
+# Notifications
+gem('notifications', '~> 0.6.0')
+
+# Users
+gem('cancancan', '~> 1.10')
+gem('rolify')
+gem('devise')
+
 # Authorization
-gem('cancancan', '~> 2.0')
+# gem('cancancan', '~> 2.0')
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '~> 2.13'
-  gem('selenium-webdriver')
   gem('bullet')
-  gem("rubycritic", require: false)
+  gem 'capybara', '~> 2.13'
+  gem('rubycritic', require: false)
+  gem('selenium-webdriver')
 end
 
 group :development do
@@ -82,9 +90,9 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background.
   # Read more: https://github.com/rails/spring
+  gem('brakeman', require: false)
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem('brakeman', require: false)
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

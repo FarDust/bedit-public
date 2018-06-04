@@ -1,4 +1,4 @@
-<div class="col-sm-6 col-md-6" id=<%= post_path(post.id) %>>  
+<div class="col-sm-6 col-md-6" id=<%= post_path(post.id) %> >  
   <div class="thumbnail" style="height: 230px">
     <!-- En caso de querer mostrar una imagen (ToDo) -->
     <!-- <img src="..." alt="..."> -->
@@ -21,13 +21,17 @@
           <% end %>
           &nbsp;
           <!-- Editar foro -->
-          <%=link_to("", edit_post_path(post.id),
-                     html_options = {class: "glyphicon glyphicon-pencil"})%>
+          <% if current_user.has_role?(:moderator)%>
+            <%=link_to("", edit_post_path(post.id),
+                      html_options = {class: "glyphicon glyphicon-pencil"})%>
+          <% end%>
           &nbsp;
           <!-- Borrar foro -->
-          <%=link_to("", post_path(post.id),
-                     html_options = {class: "glyphicon glyphicon-trash", method: :delete,
-                                     data: {confirm: "¿Deseas borrarme?"}})%>
+          <% if current_user.has_role?(:admin)%>
+            <%=link_to("", post_path(post.id),
+                      html_options = {class: "glyphicon glyphicon-trash", method: :delete,
+                                      data: {confirm: "¿Deseas borrarme?"}})%>
+          <% end %>
           <!-- <a href="#"><span class="glyphicon glyphicon-trash"></span></a>-->
         <%end%>
       </p>

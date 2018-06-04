@@ -13,30 +13,32 @@
 
     <!-- Links de la izquierda dentro de la barra de navegación -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li><%= link_to("Inicio", root_path()) %></li>
+      <ul class="nav navbar-nav navbar navbar-light bg-light navbar-left">
+        <li><%= link_to("Inicio", root_path(), class: "") %></li>
         <li><%= link_to("Foros", forum_path()) %></li>
         <li><%= link_to("Comunidades", communities_path()) %></li>
         <% if user_signed_in?() %>
           <li><li><%= link_to("Favoritos", favourites_path()) %></li></li>
         <%end%>
-        <li>
-          <%=form_for :search, url: search_path(), class: "navbar-form navbar-left" do |f| %>
-            <div class= "form-group">
-              <%=f.text_field(:query,class: "form-control", placeholder: "search")%>
-            </div>
-            <%f.submit(class: "btn btn-default")%>
-          </div>
+        <li style= "margin-top: 10px;">
+            <%=form_for :search, url: search_path(), class: "form-inline" do |f| %>
+              <%=f.text_field(:query, class: "form-control mr-sm-2", placeholder: "search")%>
+              <%=f.submit(:search, class: "btn btn-outline-success my-2 my-sm-0", style: "display: none;")%>
+            <% end %>
         </li>
-      <% end %>
       </ul>
-      <ul class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav navbar navbar-light bg-light navbar-right" style="margin-top: 0">
         <% if user_signed_in?() %>
           <li>
             <%= link_to(edit_user_registration_path()) do %>
               Hola, <%= current_user.username %>
               <%= image_tag(current_user.avatar, alt: current_user.username,size: "30") %>
             <% end %>
+          </li>
+          <li>
+          <button style="margin-top: 10px;" type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">
+            Notifications <span class="badge"><%= Notification.unread_count(current_user) %></span>
+          </button>
           </li>
         <%end%>
         <% if user_signed_in?() %>
@@ -49,3 +51,24 @@
     </div>
   </div>
 </nav>
+
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Notifications</h4>
+      </div>
+      <div class="modal-body">
+        <div class="embed-responsive embed-responsive-4by3">
+          <%= content_tag("iframe","Notifications", src: notifications_path()) %>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>

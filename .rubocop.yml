@@ -5,9 +5,14 @@ AllCops:
     - 'config/*'
     - 'bin/*'
     - 'test/test_helper.rb'
+    - 'test/controllers/*'
     - 'config/initializers/devise.rb'
     - 'app/channels/application_cable/*'
+    - 'app/controllers/notifications/notifications_controller.rb'
 
+Metrics/AbcSize:
+  Enabled: true
+  Max: 18
 
 Metrics/LineLength:
   Enabled: true
@@ -15,7 +20,7 @@ Metrics/LineLength:
 
 Metrics/MethodLength:
   Enabled: true
-  Max: 15
+  Max: 20
 
 Layout/EndOfLine:
   Enabled: true
@@ -45,8 +50,17 @@ Style/StringLiterals:
 Style/Documentation:
   Enabled: false
 
+Style/GuardClause:
+  Enabled: false
+
 Style/EmptyMethod:
   EnforcedStyle: expanded
+
+Style/For:
+  EnforcedStyle: for
+
+Style/NegateIf:
+  EnforcedStyle: postfix
 
 Layout/EndOfLine:
   Enabled: false
