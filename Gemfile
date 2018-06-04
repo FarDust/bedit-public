@@ -52,7 +52,8 @@ gem('cloudinary')
 gem('identicon')
 gem('jquery-fileupload-rails')
 
-# replies
+
+# Replies
 gem('safe_attributes')
 
 # votes
@@ -68,6 +69,9 @@ gem('notifications', '~> 0.6.0')
 gem('cancancan', '~> 1.10')
 gem('rolify')
 gem('devise')
+
+# Authorization
+# gem('cancancan', '~> 2.0')
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
