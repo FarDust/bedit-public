@@ -337,11 +337,7 @@ DEPENDENCIES
   brakeman
   bullet
   byebug
-<<<<<<< HEAD
-  cancancan (~> 1.10)
-=======
   cancancan (~> 2.0)
->>>>>>> origin/admin
   capybara (~> 2.13)
   carrierwave
   cloudinary

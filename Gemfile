@@ -66,7 +66,7 @@ gem('traceroute')
 gem('notifications', '~> 0.6.0')
 
 # Users
-gem('cancancan', '~> 1.10')
+gem('cancancan', '~> 2.0')
 gem('rolify')
 gem('devise')
 
