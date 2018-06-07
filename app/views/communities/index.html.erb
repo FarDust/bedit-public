@@ -1,6 +1,6 @@
 <div class="container">
 
-  <%if true%>
+  <% if current_user.has_role?(:admin)%>
     <div class="alert alert-success" role="alert">
       Herramientas de administrador <br><br>
       <%=
