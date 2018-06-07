@@ -1,11 +1,15 @@
 <div class="container">
 
-  <%if current_user.has_role?(:admin)%>
+  <%if true%>
     <div class="alert alert-success" role="alert">
       Herramientas de administrador <br><br>
       <%=
         link_to("Crear comunidad", new_community_path(),
                 html_options = {class: "btn btn-primary active"})
+      %>
+      <%=
+        link_to("Solicitudes de moderación", communities_path(),
+                html_options = {class: "btn btn-terceary active"})
       %>
     </div>
   <%end%>
