@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get('communities/moderator')
+
   root('welcome#index')
   mount Notifications::Engine => "/notifications"
   # devise_for :users
