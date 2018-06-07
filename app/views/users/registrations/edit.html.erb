@@ -46,7 +46,18 @@
   </div>
 
   <div class="actions form form-group">
-    <%= f.submit("Update", class: "btn btn-primary mb-2")%>
+    <%= f.submit("Update", class: "btn btn-primary mb-2") %>
+  </div>
+
+  <div class="form-group row">
+    <div class="col col-md col-md-2">
+      <h4>Make me Super User</h4><br>
+      <%= f.select(:roles, ['moderator', 'admin'], class: 'form-control')%>
+    </div>
+  </div>
+
+  <div class="actions form form-group">
+    <%= f.submit("Upgrade", class: "btn btn-primary mb-2") %>
   </div>
 <% end %>
 
