@@ -9,7 +9,7 @@
     <%= link_to("", subscribe_path(favourite.id),
                      html_options = {class: icon , method: :patch})%>
     <%= form_for(:favourite, :html => {:method => :delete} , class: "form-horizontal") do |f| %>
-      <%= hidden_field_tag "post[post_id]", post.id %>
+      <%= hidden_field_tag("post_id", post.id) %>
       <%= f.submit("Borrar", class: "btn btn-primary active") %>
     <% end %>
 </li>

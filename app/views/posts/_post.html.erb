@@ -10,25 +10,26 @@
       <!-- Descripción del foro -->
       <p><%= markdown(post.content) %></p>
       <!-- ToDo: Proximamente agregar botones de favoritos y ver más -->
-      <p>
+      <p class=''>
         <%= link_to "Ver Más", post_path(post.id), html_options = {class: "btn btn-primary active"} %>
         <%if user_signed_in?()%>
-          <%= form_for(:favourite, url: favourites_path(), class: "form-horizontal") do |f| %>
-            <%= hidden_field_tag "post[post_id]", post.id %>
-            <%= hidden_field_tag "post[user_id]", current_user.id %>
-
-            <%= f.submit("A Favoritos", class: "btn btn-primary active") %>
-          <% end %>
+          <% if Favourite.where(post: post, user: current_user).length() != 0 %>
+            <%= link_to("", favourites_path({post_id: post.id}),method: :delete,
+                      class: 'glyphicon glyphicon-star icon-link')%>
+          <% else %>
+            <%= link_to("", favourites_path({post_id: post.id}),method: :post,
+                      class: 'glyphicon glyphicon-star-empty icon-link')%>
+          <% end%>
+          <!-- Agregar favorito -->
           &nbsp;
           <!-- Editar foro -->
           <%=link_to("", edit_post_path(post.id),
-                     html_options = {class: "glyphicon glyphicon-pencil"})%>
+                     html_options = {class: "glyphicon glyphicon-pencil icon-link"})%>
           &nbsp;
           <!-- Borrar foro -->
           <%=link_to("", post_path(post.id),
-                     html_options = {class: "glyphicon glyphicon-trash", method: :delete,
+                     html_options = {class: "glyphicon glyphicon-trash icon-link", method: :delete,
                                      data: {confirm: "¿Deseas borrarme?"}})%>
-          <!-- <a href="#"><span class="glyphicon glyphicon-trash"></span></a>-->
         <%end%>
       </p>
     </div>

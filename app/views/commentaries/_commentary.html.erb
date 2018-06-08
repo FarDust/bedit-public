@@ -21,7 +21,7 @@
     </div>
     <div>
       <% if user_signed_in? %>
-        <%= link_to like_commentary_path(commentary), method: :put do %>
+        <%= link_to like_commentary_path(commentary), method: :put, class: 'vote-link' do %>
           <% if current_user.liked?(commentary)%>
             <span class="badge badge-liked">
           <% else%>
@@ -31,7 +31,7 @@
               <span class="glyphicon glyphicon-thumbs-up"></span>
             </span>
         <% end %>
-        <%= link_to dislike_commentary_path(commentary), method: :put do %>
+        <%= link_to dislike_commentary_path(commentary), method: :put,class: 'vote-link' do %>
           <% if current_user.disliked?(commentary)%>
             <span class="badge badge-disliked">
           <% else%>

@@ -17,4 +17,12 @@ class Favourite < ApplicationRecord
       super
     end
   end
+
+  def favourite?(user, post)
+    if self.user == user && self.post == post
+      true
+    else
+      false
+    end
+  end
 end
