@@ -17,3 +17,24 @@
 
 @import "jquery.fileupload";
 @import "jquery.fileupload-ui";
+
+.icon-flipped {
+    transform: scaleX(-1);
+    -moz-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    -ms-transform: scaleX(-1);
+}
+
+.badge-disliked {
+    background-color: #b94a48;
+    }
+.badge-disliked:hover {
+    background-color: #953b39;
+    }
+
+.badge-liked {
+    background-color: #468847;
+    }
+.badge-liked:hover {
+    background-color: #356635;
+    }
