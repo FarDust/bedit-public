@@ -5,9 +5,9 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @comentarios = Commentary.where(post_id: params[:id]).sort_by { |x| x.get_likes.size }.reverse!
-    # Sorty by priority in the votes of the commentarios
-    @comentarios = @comentarios
+    @comentarios = Commentary.where(post_id: params[:id]).sort_by { 
+      |x| (x.get_likes.size - x.get_dislikes.size) 
+    }.reverse!
   end
 
   def new
