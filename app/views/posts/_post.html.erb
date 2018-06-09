@@ -23,13 +23,17 @@
           <!-- Agregar favorito -->
           &nbsp;
           <!-- Editar foro -->
-          <%=link_to("", edit_post_path(post.id),
-                     html_options = {class: "glyphicon glyphicon-pencil icon-link"})%>
+          <% if current_user.has_role?(:moderator)%>
+            <%=link_to("", edit_post_path(post.id),
+                      html_options = {class: "glyphicon glyphicon-pencil"})%>
+          <% end%>
           &nbsp;
           <!-- Borrar foro -->
-          <%=link_to("", post_path(post.id),
-                     html_options = {class: "glyphicon glyphicon-trash icon-link", method: :delete,
-                                     data: {confirm: "¿Deseas borrarme?"}})%>
+          <% if current_user.has_role?(:admin)%>
+            <%=link_to("", post_path(post.id),
+                      html_options = {class: "glyphicon glyphicon-trash", method: :delete,
+                                      data: {confirm: "¿Deseas borrarme?"}})%>
+          <% end %>
         <%end%>
       </p>
     </div>

@@ -1,0 +1,22 @@
+<div class="jumbotron">
+
+  <div class="alert alert-danger" role="alert">
+    Este formulario se encuentra en desarrollo. Algunas opciones pueden fallar.
+  </div>
+
+  <div class="row">
+    <h2>Solicitar ser moderador</h2>
+    <%= form_for(:post, url: communities_path(), class: "form-horizontal") do |f| %>
+    
+      <div class="form-group">
+        <%= f.label(:category) %><br />
+        <%= f.collection_select(:category, Category.all, :id, :name, {prompt: "--Select a forum--",
+                                                                      class: "custom-select"}) %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit("Enviar solicitud", class: "btn btn-primary active") %>
+      </div>
+    <% end %>
+  </div>
+</div>
