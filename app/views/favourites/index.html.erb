@@ -1,2 +1,4 @@
 <!-- Mostrar la lista de favoritos -->
-<%= render(@favourites) %>
+<% if @favourites.length() != 0 %>
+  <%= render(@favourites) %>
+<% end %>

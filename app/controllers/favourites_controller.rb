@@ -2,16 +2,15 @@ class FavouritesController < ApplicationController
   before_action(:authenticate_user!)
 
   def index
-    @favourites = Favourite.where(user_id: current_user.id).or(Favourite.where(user: current_user))
-    # necesario arreglarlo denuevo
-    # @favourites = Favourite.select(:post_id).distinct.where(user_id: current_user.id)
+    @favourites = Favourite.where(user: current_user)
   end
 
   def create
     new_favourite = Favourite.create()
     new_favourite.user = current_user
-    new_favourite.post = Post.find(params['post']['post_id'])
+    new_favourite.post = Post.find(params['post_id'])
     new_favourite.save()
+    redirect_back(fallback_location: favourites_path())
   end
 
   def subscribe
@@ -20,10 +19,11 @@ class FavouritesController < ApplicationController
       favourite.isSubcribe = !favourite.isSubcribe
       favourite.save()
     end
+    redirect_back(fallback_location: favourites_path())
   end
 
   def delete
-    Favourite.where(post_id: params['post']['post_id'], user_id: current_user.id).delete_all
-    redirect_to(favourites_path())
+    Favourite.where(post_id: params['post_id'], user: current_user).delete_all()
+    redirect_back(fallback_location: favourites_path())
   end
 end

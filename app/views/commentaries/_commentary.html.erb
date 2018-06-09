@@ -20,9 +20,27 @@
       
     </div>
     <div>
-      Total de votos: <%= commentary.get_likes.size%><br>
-      <%= link_to like_commentary_path(commentary), method: :put do %>
-        like
+      <% if user_signed_in? %>
+        <%= link_to like_commentary_path(commentary), method: :put, class: 'vote-link' do %>
+          <% if current_user.liked?(commentary)%>
+            <span class="badge badge-liked">
+          <% else%>
+            <span class="badge">
+          <% end %>
+              <%= commentary.get_likes.size%>
+              <span class="glyphicon glyphicon-thumbs-up"></span>
+            </span>
+        <% end %>
+        <%= link_to dislike_commentary_path(commentary), method: :put,class: 'vote-link' do %>
+          <% if current_user.disliked?(commentary)%>
+            <span class="badge badge-disliked">
+          <% else%>
+            <span class="badge">
+          <% end %>
+            <span class="glyphicon glyphicon-thumbs-down icon-rotate icon-flipped"></span>
+            <%= commentary.get_dislikes.size%>
+          </span>
+        <% end %>
       <% end %>
     </div>
     <% if user_signed_in?%>
