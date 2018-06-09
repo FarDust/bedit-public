@@ -59,7 +59,7 @@ Style/EmptyMethod:
 Style/For:
   EnforcedStyle: for
 
-Style/Negateif:
+Style/NegatedIf:
   EnforcedStyle: postfix
 
 Layout/EndOfLine:

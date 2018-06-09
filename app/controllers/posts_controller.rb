@@ -36,4 +36,24 @@ class PostsController < ApplicationController
     @post.delete()
     redirect_to(forum_path(), notice: "Me has borrado, espero que estés feliz :')")
   end
+
+  def like
+    @post = Post.find(params[:id])
+    if current_user.liked?(@post)
+      @post.disliked_by(current_user)
+    else
+      @post.liked_by(current_user)
+    end
+    redirect_back(fallback_location: root_path())
+  end
+
+  def dislike
+    @post = Post.find(params[:id])
+    if current_user.disliked?(@post)
+      @post.liked_by(current_user)
+    else
+      @post.disliked_by(current_user)
+    end
+    redirect_back(fallback_location: root_path())
+  end
 end

@@ -14,9 +14,16 @@ Rails.application.routes.draw do
   resources(:favourites)
   root(to: 'pages#index')
   resources(:posts)
+  resources :posts do 
+    member do
+      put('like', to: 'posts#like')
+      put('dislike', to: 'posts#dislike')
+    end
+  end
   resources :commentaries do
     member do
-      put('like', to: 'commentaries#vote')
+      put('like', to: 'commentaries#like')
+      put('dislike', to: 'commentaries#dislike')
     end
   end
 end

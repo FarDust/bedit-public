@@ -28,12 +28,22 @@ class CommentariesController < ApplicationController
     redirect_back(fallback_location: forum_path())
   end
 
-  def vote
+  def like
     @commentary = Commentary.find(params[:id])
     if current_user.liked?(@commentary)
       @commentary.disliked_by(current_user)
     else
       @commentary.liked_by(current_user)
+    end
+    redirect_back(fallback_location: root_path())
+  end
+
+  def dislike
+    @commentary = Commentary.find(params[:id])
+    if current_user.disliked?(@commentary)
+      @commentary.liked_by(current_user)
+    else
+      @commentary.disliked_by(current_user)
     end
     redirect_back(fallback_location: root_path())
   end
