@@ -1,23 +1,29 @@
-<h1>Solicitudes de moderación</h1>
-<div class="jumbotron">
-  <div class="row">
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">Usuario</th>
-          <th scope="col">Categoría</th>
-          <th scope="col"></th>
-        </tr>
-      </thead>
-      <tbody>
-        <% Administrate.all.each do |r| %>
+<% if current_user.has_role?(:admin) %>
+  <h1>Solicitudes de moderación</h1>
+  <div class="jumbotron">
+    <div class="row">
+      <table class="table">
+        <thead>
           <tr>
-            <td><%= r.user %></td>
-            <td><%= Category.find_by(id: r.category).name %></td>
-            <td>botones</td>
+            <th scope="col">Usuario</th>
+            <th scope="col">Categoría</th>
+            <th scope="col"></th>
           </tr>
-        <% end %>
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          <% Administrate.all.each do |r| %>
+            <tr>
+              <td><%= r.user %></td>
+              <td><%= Category.find_by(id: r.category).name %></td>
+              <td>botones</td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
   </div>
+<% else %>
+<div class="alert alert-warning" role="alert">
+  Solo puedes acceder a esta página si eres administrador
 </div>
+<% end %>

@@ -9,13 +9,13 @@
       %>
       <%=
         link_to("Solicitudes de moderación (#{Administrate.all.length})",
-                communities_path(),
+                administrate_index_path(),
                 html_options = {class: "btn btn-terceary active"}
                 )
       %>
     </div>
   <%end%>
-  
+
   <h1>Comunidades</h1>
   <!-- Espacio para mostrar las comunidades -->
   <div class="jumbotron">
