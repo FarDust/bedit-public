@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  get('communities/moderator')
 
+  get('communities/moderator')
   root('welcome#index')
   mount Notifications::Engine => "/notifications"
   # devise_for :users
@@ -14,9 +14,10 @@ Rails.application.routes.draw do
   delete('/favourites', to: 'favourites#delete')
   patch('/subscribe', to: 'favourites#subscribe')
   resources(:favourites)
+  resources(:administrate)
   root(to: 'pages#index')
   resources(:posts)
-  resources :posts do 
+  resources :posts do
     member do
       put('like', to: 'posts#like')
       put('dislike', to: 'posts#dislike')
