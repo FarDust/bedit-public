@@ -1,4 +1,6 @@
 class AdministrateController < ApplicationController
+  before_action(:authenticate_user!)
+
   def new
   end
 
@@ -6,8 +8,5 @@ class AdministrateController < ApplicationController
   end
 
   def index
-  end
-
-  def show
   end
 end
