@@ -15,12 +15,12 @@ def seed_categories
 end
 
 def seed_posts
-  categorias = Category.all 
+  categorias = Category.all
   categorias.each do |categoria|
     5.times do
       Post.create(
-        title: Faker::Lorem.sentences[0], 
-        content: Faker::Lorem.sentences[0], 
+        title: Faker::Lorem.sentences[0],
+        content: Faker::Lorem.sentences[0],
         category_id: categoria.id
       )
     end

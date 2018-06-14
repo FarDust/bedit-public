@@ -1,4 +1,4 @@
-<div class="col-sm-6 col-md-6" id=<%= post_path(post.id) %> >  
+<div class="col-sm-6 col-md-6" id=<%= post_path(post.id) %> >
   <div class="thumbnail" style="height: 230px">
     <!-- En caso de querer mostrar una imagen (ToDo) -->
     <!-- <img src="..." alt="..."> -->
@@ -9,10 +9,11 @@
       </h3>
       <!-- Descripción del foro -->
       <p><%= markdown(post.content) %></p>
-      <!-- ToDo: Proximamente agregar botones de favoritos y ver más -->
       <p class=''>
-        <%= link_to "Ver Más", post_path(post.id), html_options = {class: "btn btn-primary active"} %>
+        <%= link_to("Ver Más", post_path(post.id),
+                    html_options = {class: "btn btn-primary active"})%>
         <%if user_signed_in?()%>
+          <!-- Agregar favorito -->
           <% if Favourite.where(post: post, user: current_user).length() != 0 %>
             <%= link_to("", favourites_path({post_id: post.id}),method: :delete,
                       class: 'glyphicon glyphicon-star icon-link')%>
@@ -20,19 +21,16 @@
             <%= link_to("", favourites_path({post_id: post.id}),method: :post,
                       class: 'glyphicon glyphicon-star-empty icon-link')%>
           <% end%>
-          <!-- Agregar favorito -->
           &nbsp;
-          <!-- Editar foro -->
-          <% if current_user.has_role?(:moderator)%>
-            <%=link_to("", edit_post_path(post.id),
-                      html_options = {class: "glyphicon glyphicon-pencil"})%>
-          <% end%>
-          &nbsp;
-          <!-- Borrar foro -->
-          <% if current_user.has_role?(:admin)%>
-            <%=link_to("", post_path(post.id),
-                      html_options = {class: "glyphicon glyphicon-trash", method: :delete,
-                                      data: {confirm: "¿Deseas borrarme?"}})%>
+          <% @category = Category.find(post.category_id) %>
+          <%if current_user.has_role?(:moderator, @category) or current_user.has_role?(:admin) %>
+              <!-- Editar foro -->
+              <%=link_to("", edit_post_path(post.id),
+                        html_options = {class: "glyphicon glyphicon-pencil"})%>
+              <!-- Borrar foro -->
+              <%=link_to("", post_path(post.id),
+                        html_options = {class: "glyphicon glyphicon-trash", method: :delete,
+                                        data: {confirm: "¿Deseas borrarme?"}})%>
           <% end %>
         <%end%>
       </p>

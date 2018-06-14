@@ -1,8 +1,15 @@
 class CommunitiesController < ApplicationController
+  before_action(:authenticate_user!, except: [:index, :show])
+
   def new
   end
 
   def create
+    if params.key?('request')
+      Administrate.create(user: params['request']['user'],
+                          category: params['request']['category'])
+      redirect_to(communities_path(), notice: '¡Tu solicitud a sido enviada!')
+    end
   end
 
   def index
@@ -14,5 +21,6 @@ class CommunitiesController < ApplicationController
   end
 
   def moderator
+
   end
 end
