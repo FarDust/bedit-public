@@ -22,20 +22,15 @@
                       class: 'glyphicon glyphicon-star-empty icon-link')%>
           <% end%>
           &nbsp;
-          <% if current_user.has_role?(:moderator)%>
-            <!-- Editar foro -->
-            <%=link_to("", edit_post_path(post.id),
-                      html_options = {class: "glyphicon glyphicon-pencil"})%>
-          <% end%>
-          &nbsp;
-          <% if current_user.has_role?(:admin)%>
-            <!-- Editar foro -->
-            <%=link_to("", edit_post_path(post.id),
-                      html_options = {class: "glyphicon glyphicon-pencil"})%>
-            <!-- Borrar foro -->
-            <%=link_to("", post_path(post.id),
-                      html_options = {class: "glyphicon glyphicon-trash", method: :delete,
-                                      data: {confirm: "¿Deseas borrarme?"}})%>
+          <% @category = Category.find(post.category_id) %>
+          <%if current_user.has_role?(:moderator, @category) or current_user.has_role?(:admin) %>
+              <!-- Editar foro -->
+              <%=link_to("", edit_post_path(post.id),
+                        html_options = {class: "glyphicon glyphicon-pencil"})%>
+              <!-- Borrar foro -->
+              <%=link_to("", post_path(post.id),
+                        html_options = {class: "glyphicon glyphicon-trash", method: :delete,
+                                        data: {confirm: "¿Deseas borrarme?"}})%>
           <% end %>
         <%end%>
       </p>

@@ -14,8 +14,27 @@
           <% Administrate.all.each do |r| %>
             <tr>
               <td><%= r.user %></td>
-              <td><%= Category.find_by(id: r.category).name %></td>
-              <td>botones</td>
+              <td><%= Category.find(r.category).name %></td>
+              <td>
+                <%= form_for(:administrate, url: administrate_approve_path(),
+                             class: "form-horizontal") do |f| %>
+                  <div class="form-group">
+                    <%= f.hidden_field(:user, value: r.user, class: "form-control") %>
+                    <%= f.hidden_field(:id, value: r.category, class: "form-control") %>
+                  </div>
+                  <div class="actions">
+                    <%= f.submit("Aceptar", class: "btn btn-success") %>
+                  </div>
+                <% end %>
+                <%= form_for(:administrate, url: administrate_refuse_path(),
+                             class: "form-horizontal") do |f| %>
+                  <%= f.hidden_field(:user, value: r.user, class: "form-control") %>
+                  <%= f.hidden_field(:id, value: r.category, class: "form-control") %>
+                  <div class="actions">
+                    <%= f.submit("Rechazar", class: "btn btn-danger") %>
+                  </div>
+                <% end %>
+              </td>
             </tr>
           <% end %>
         </tbody>

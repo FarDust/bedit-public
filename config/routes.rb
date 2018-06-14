@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
   get('communities/moderator')
+  post('administrate/approve')
+  post('administrate/refuse')
   root('welcome#index')
   mount Notifications::Engine => "/notifications"
   # devise_for :users
