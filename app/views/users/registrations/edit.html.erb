@@ -1,7 +1,12 @@
 <h2>Perfil de <%= resource.username.capitalize %></h2>
 
-<div>
-  Tu reputacion actual es <span class="badge"><%= resource.reputation.to_i %> </span> puntos
+<div class="panel panel-default">
+  <div class="panel-heading">Reputación</div>
+  <div class="panel-body">
+    <div>
+      ¡Felicidades tienes <span class="badge"><%= resource.reputation.to_i %> </span> puntos! 
+    </div>
+  </div>
 </div>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }, class:"form-horizontal") do |f| %>
