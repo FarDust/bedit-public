@@ -1,5 +1,9 @@
 <h2>Perfil de <%= resource.username.capitalize %></h2>
 
+<div>
+  Tu reputacion actual es <span class="badge"><%= resource.reputation.to_i %> </span> puntos
+</div>
+
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }, class:"form-horizontal") do |f| %>
   <%= devise_error_messages! %>
 
