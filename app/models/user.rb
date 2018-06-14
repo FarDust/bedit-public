@@ -17,14 +17,10 @@ class User < ApplicationRecord
   def reputation()
     total_likes = 0
     total_dislikes = 0
-    for post in posts do
-      total_likes += post.likes.size * 1.5
-      total_dislikes += post.dislikes.size * 1.2
+    for commentary in Commentary.where(user: self) do
+      total_likes += commentary.get_likes.size
+      total_dislikes += commentary.get_dislikes.size
     end
-    for commentary in commentaries do
-      total_likes += commentary.likes.size
-      total_dislikes += commentary.dislikes.size
-    end
-    Math.exp(total_likes) - total_dislikes*Math.log(total_dislikes)
+    [(Math.exp(total_likes) - total_dislikes * Math.log(total_likes)), 0].max()
   end
 end
