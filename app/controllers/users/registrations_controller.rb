@@ -26,7 +26,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # PUT /resource
   def update
-    if params.key?('user') && params['user'].key?('roles') && params['user']['roles']
+    if params.key?('user') && params['user'].key?('roles') && !params['user']['roles'].nil?
       current_user.remove_role(:admin) if params['user']['roles'] == 'normal'
       current_user.add_role(:admin) if params['user']['roles'] == 'admin'
     end

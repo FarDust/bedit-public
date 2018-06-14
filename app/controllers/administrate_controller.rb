@@ -26,6 +26,7 @@ class AdministrateController < ApplicationController
                                   category: params['administrate']['id'])
     @request.each() do |r|
       r.delete()
+    end
     redirect_to(administrate_index_path(), notice: 'Has rechazado la solicitud')
   end
 
