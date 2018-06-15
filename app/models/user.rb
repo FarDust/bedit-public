@@ -21,6 +21,6 @@ class User < ApplicationRecord
       total_likes += commentary.get_likes.size
       total_dislikes += commentary.get_dislikes.size
     end
-    [(Math.exp(total_likes) - total_dislikes * Math.log(total_likes)), 0].max()
+    [(Math.exp(total_likes) - total_dislikes * Math.log([total_likes, 1].max())), 0].max()
   end
 end
