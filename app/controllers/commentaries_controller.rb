@@ -28,6 +28,12 @@ class CommentariesController < ApplicationController
     redirect_back(fallback_location: forum_path())
   end
 
+  def destroy
+    @commentary = Commentary.find(params[:id])
+    @commentary.delete()
+    redirect_back(fallback_location: forum_path(), notice: 'Comentario borrado')
+  end
+
   def like
     @commentary = Commentary.find(params[:id])
     if current_user.liked?(@commentary)

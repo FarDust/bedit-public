@@ -15,18 +15,14 @@
     <h5>
         <% usr = ""%>
         <%if commentary.user_id %>
-          <%usr = User.find(commentary.user_id).username %> 
+          <%usr = User.find(commentary.user_id).username %>
         <% end %>
         Publicado por: <%= usr.capitalize%><br>
         Publicado hace: <%=time_ago_in_words(commentary.created_at)%>
     </h5>
     <div>
-      
-    </div>
-    <div>
-      <% if user_signed_in? %>
-        <%= link_to like_commentary_path(commentary), method: :put, class: 'vote-link' do %>
-          <% if current_user.liked?(commentary)%>
+        <%= link_to(like_commentary_path(commentary), method: :put, class: 'vote-link') do %>
+          <% if user_signed_in? && current_user.liked?(commentary)%>
             <span class="badge badge-liked">
           <% else%>
             <span class="badge">
@@ -36,7 +32,7 @@
             </span>
         <% end %>
         <%= link_to dislike_commentary_path(commentary), method: :put,class: 'vote-link' do %>
-          <% if current_user.disliked?(commentary)%>
+          <% if user_signed_in? && current_user.disliked?(commentary)%>
             <span class="badge badge-disliked">
           <% else%>
             <span class="badge">
@@ -45,7 +41,18 @@
             <%= commentary.get_dislikes.size%>
           </span>
         <% end %>
-      <% end %>
+        <% if user_signed_in? %>
+          <% @post = Post.find(commentary.post_id.to_i) %>
+          <% @forum = Category.find(@post.category_id) %>
+          <%
+            @roles = current_user.has_role?(:admin) || current_user.has_role?(:moderator, @forum)
+          %>
+          <%if (current_user.id.to_s == commentary.user_id) or @roles%>
+            <%=link_to("", commentary_path(commentary),
+                       html_options = {class: "glyphicon glyphicon-trash", method: :delete,
+                                       data: {confirm: "¿Deseas borrar este comentario?"}})%>
+          <% end %>
+        <% end %>
     </div>
     <% if user_signed_in?%>
       <div>
