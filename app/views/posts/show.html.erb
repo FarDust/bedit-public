@@ -27,6 +27,16 @@
             <%= @post.get_dislikes.size%>
           </span>
         <% end %>
+        &nbsp;&nbsp;
+        <!-- Agregar favorito -->
+        <% if Favourite.where(post: @post, user: current_user).length() != 0 %>
+          <%= link_to("", favourites_path({post_id: @post.id}),method: :delete,
+                    class: 'glyphicon glyphicon-star icon-link')%>
+        <% else %>
+          <%= link_to("", favourites_path({post_id: @post.id}),method: :post,
+                    class: 'glyphicon glyphicon-star-empty icon-link')%>
+        <% end%>
+        &nbsp;
         <% @category = Category.find(@post.category_id) %>
         <%if current_user.has_role?(:moderator, @category) or current_user.has_role?(:admin) %>
             <!-- Borrar post -->
