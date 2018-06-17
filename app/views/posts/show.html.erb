@@ -27,6 +27,13 @@
             <%= @post.get_dislikes.size%>
           </span>
         <% end %>
+        <% @category = Category.find(@post.category_id) %>
+        <%if current_user.has_role?(:moderator, @category) or current_user.has_role?(:admin) %>
+            <!-- Borrar post -->
+            <%=link_to("", post_path(@post.id),
+                      html_options = {class: "glyphicon glyphicon-trash", method: :delete,
+                                      data: {confirm: "¿Deseas borrar este post?"}})%>
+        <% end %>
       <% end %>
     </div>
   </div>
