@@ -55,9 +55,9 @@ def seed_commentaries
   comentarios = ['Comentario 1', 'Comentario 2']
   posts = Post.all
   posts.each do |post|
-    comentarios.each do |comentario|
+    3.times do
       Commentary.create(
-        text: comentario,
+        text: Faker::Lorem.sentences[0],
         post_id: post.id,
         user_id: User.all.sample.id
       )
