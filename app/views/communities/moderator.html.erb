@@ -11,9 +11,12 @@
           <%= f.label(:category) %><br />
           <% @categorias = Category.all.select {|category| not current_user.has_role?(:moderator,
                                                                                       category)} %>
-          <% @categorias = @categorias.select {|c| not c.name == params[:category]} %>
-          <%= f.collection_select(:category, @categorias, :id, :name,
-                                  {prompt: params[:category], class: "custom-select"}) %>
+          <% @categorias = @categorias.select {|c| not c.id == params[:category_id].to_i} %>
+          <% @first_category = Category.find(params[:category_id].to_i) %>
+          <% @categorias.insert(0, @first_category) %>
+          <%=
+            f.collection_select(:category, @categorias, :id, :name, {class: "custom-select"})
+          %>
         </div>
         <div class="actions">
           <%= f.submit("Enviar solicitud", class: "btn btn-primary active") %>
