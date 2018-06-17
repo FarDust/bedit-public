@@ -27,14 +27,14 @@ end
 def seed_users
   users = ['normal', 'moderator', 'admin']
   users.each do |user|
-    puts "|||||||||||||||||||||||||||||||||||||||||||#{user}||||||||||||||||||||||||||||||||||||||||||"
-    @user = User.create(
-              username: user,
-              password: '123456',
-              email: "#{user}@uc.cl",
-              avatar: Identicon.data_url_for(user)
-            )
-    define_role(@user)
+    @usuario = User.create(
+                  username: user,
+                  password: '123456',
+                  email: "#{user}@uc.cl",
+                  avatar: Identicon.data_url_for(user),
+                  id: users.find_index(user) + 1
+               )
+    define_role(@usuario)
   end
 end
 
@@ -58,7 +58,8 @@ def seed_commentaries
     comentarios.each do |comentario|
       Commentary.create(
         text: comentario,
-        post_id: post.id
+        post_id: post.id,
+        user_id: User.all.sample.id
       )
     end
   end
