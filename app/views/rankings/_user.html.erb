@@ -1,0 +1,8 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+      <%= image_tag(@user.avatar, alt: @user.username,size: "50") %> <%= @user.username %><br />
+    </div>
+    <div class="panel-body">
+      <span class="badge"><%= @user.reputation.to_i %></span> puntos
+    </div>
+</div>

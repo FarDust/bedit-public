@@ -1,5 +1,7 @@
 class RankingsController < ApplicationController
+    
     def users
+      @users = User.all().sort_by({ |user| [user.reputation] })[0..50]
     end
 
     def posts
@@ -7,4 +9,5 @@ class RankingsController < ApplicationController
 
     def categories
     end
+    
 end
