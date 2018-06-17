@@ -6,23 +6,23 @@
         <% end %>
         <%= markdown(commentary.text) %></h3>
     <div>
-      
+
     </div>
     <h5>
         <% usr = ""%>
         <%if commentary.user_id %>
-          <%usr = User.find(commentary.user_id).username %> 
+          <%usr = User.find(commentary.user_id).username %>
         <% end %>
         Publicado por: <%= usr.capitalize%><br>
         Publicado hace: <%=time_ago_in_words(commentary.created_at)%>
     </h5>
     <div>
-      
+
     </div>
     <div>
-      <% if user_signed_in? %>
-        <%= link_to like_commentary_path(commentary), method: :put, class: 'vote-link' do %>
-          <% if current_user.liked?(commentary)%>
+      <% if true %>
+        <%= link_to(like_commentary_path(commentary), method: :put, class: 'vote-link') do %>
+          <% if user_signed_in? && current_user.liked?(commentary)%>
             <span class="badge badge-liked">
           <% else%>
             <span class="badge">
@@ -32,7 +32,7 @@
             </span>
         <% end %>
         <%= link_to dislike_commentary_path(commentary), method: :put,class: 'vote-link' do %>
-          <% if current_user.disliked?(commentary)%>
+          <% if user_signed_in? && current_user.disliked?(commentary)%>
             <span class="badge badge-disliked">
           <% else%>
             <span class="badge">
@@ -41,6 +41,7 @@
             <%= commentary.get_dislikes.size%>
           </span>
         <% end %>
+
       <% end %>
     </div>
     <% if user_signed_in?%>
