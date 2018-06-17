@@ -2,7 +2,9 @@
   <div class="row">
     <!-- Mostrar el contenido del comentario -->
     <h3><%if commentary.user_id%>
-          <%= image_tag(User.find(commentary.user_id).avatar, alt: User.find(commentary.user_id).username,size: "50")%>
+          <%= image_tag(User.find(commentary.user_id).avatar,
+                        alt: User.find(commentary.user_id).username,
+                        size: "50")%>
         <% end %>
         <%= markdown(commentary.text) %></h3>
     <div>
@@ -20,7 +22,6 @@
 
     </div>
     <div>
-      <% if true %>
         <%= link_to(like_commentary_path(commentary), method: :put, class: 'vote-link') do %>
           <% if user_signed_in? && current_user.liked?(commentary)%>
             <span class="badge badge-liked">
@@ -41,8 +42,18 @@
             <%= commentary.get_dislikes.size%>
           </span>
         <% end %>
-
-      <% end %>
+        <% if user_signed_in? %>
+          <% @post = Post.find(commentary.post_id.to_i) %>
+          <% @forum = Category.find(@post.category_id) %>
+          <%
+            @roles = current_user.has_role?(:admin) || current_user.has_role?(:moderator, @forum)
+          %>
+          <%if (current_user.id.to_s == commentary.user_id) or @roles%>
+            <%=link_to("", commentary_path(commentary),
+                       html_options = {class: "glyphicon glyphicon-trash", method: :delete,
+                                       data: {confirm: "¿Deseas borrar este comentario?"}})%>
+          <% end %>
+        <% end %>
     </div>
     <% if user_signed_in?%>
       <div>
