@@ -54,11 +54,11 @@
             <th scope="col">Usuario</th>
             <th scope="col">Correo</th>
             <th scope="col" class="text-center">Permisos</th>
-            <th scope="col">Suspender</th>
+            <th scope="col" class="text-center">Suspender</th>
           </tr>
         </thead>
         <tbody>
-          <% User.all.each do |u| %>
+          <% User.all.sort {|x,y| x.username <=> y.username} .each do |u| %>
             <tr>
               <td class="col-xs-3">
                 <%= image_tag(u.avatar, alt: u.username, size: "30") %>
@@ -68,7 +68,7 @@
               <td class="col-xs-2"><%= u.email %></td>
               <td class="col-xs-4">
                 <% if u.has_role?(:admin) %>
-                  <div class="text-success" align="center">admin<div>
+                  <div class="text-success" align="center">admin</div>
                 <% else %>
                   <%= form_for(:administrate, url: administrate_approve_path(),
                                class: "form-horizontal") do |f| %>
@@ -86,15 +86,15 @@
                       </div>
                       <div class="col-lg-1">
                         <div class="actions">
-                          <%= f.submit("Dar permiso", class: "btn btn-success") %>
+                          <%= f.submit("Permitir moderar", class: "btn btn-success") %>
                         </div>
                       </div>
                   <% end %>
                 <% end %>
               </td>
-              <td class="col-xs-3">
+              <td class="col-xs-3" align="center">
                 <% if u.has_role?(:admin) %>
-                  <div class="text-danger" align="center">No puedes eliminar administradores<div>
+                  <div class="text-danger">No puedes eliminar administradores</div>
                 <% else %>
                   <%= button_to("Eliminar cuenta",
                                 administrate_delete_user_path(user_id: u.id),
