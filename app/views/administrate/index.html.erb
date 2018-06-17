@@ -53,7 +53,7 @@
           <tr>
             <th scope="col">Usuario</th>
             <th scope="col">Correo</th>
-            <th scope="col" class="text-center">Moderación</th>
+            <th scope="col" class="text-center">Permisos</th>
             <th scope="col">Suspender</th>
           </tr>
         </thead>
@@ -67,29 +67,40 @@
               </td>
               <td class="col-xs-2"><%= u.email %></td>
               <td class="col-xs-4">
-                <%= form_for(:administrate, url: administrate_approve_path(),
-                             class: "form-horizontal") do |f| %>
-                    <%= f.hidden_field(:user, value: u.username, class: "form-control") %>
-                    <div class="col-lg-1"></div>
-                    <div class="col-lg-5">
-                      <%= f.collection_select(:id,
-                                              Category.all,
-                                              :id,
-                                              :name,
-                                              {class: "custom-select"}) %>
-                    </div>
-                    <div class="col-lg-1">
-                      <div class="actions">
-                        <%= f.submit("Dar permiso", class: "btn btn-success") %>
+                <% if u.has_role?(:admin) %>
+                  <div class="text-success" align="center">admin<div>
+                <% else %>
+                  <%= form_for(:administrate, url: administrate_approve_path(),
+                               class: "form-horizontal") do |f| %>
+                      <%= f.hidden_field(:user, value: u.username, class: "form-control") %>
+                      <div class="col-lg-1"></div>
+                      <div class="col-lg-5">
+                        <%
+                          @categories = Category.all.select {|c| not u.has_role?(:moderator, c)}
+                        %>
+                        <%= f.collection_select(:id,
+                                                @categories,
+                                                :id,
+                                                :name,
+                                                {class: "custom-select"}) %>
                       </div>
-                    </div>
+                      <div class="col-lg-1">
+                        <div class="actions">
+                          <%= f.submit("Dar permiso", class: "btn btn-success") %>
+                        </div>
+                      </div>
+                  <% end %>
                 <% end %>
               </td>
               <td class="col-xs-3">
-                      <%= button_to("Eliminar cuenta",
-                                    administrate_delete_user_path(user_id: u.id),
-                                                data: { confirm: "Are you sure?" },
-                                                class: "btn btn-danger" )%>
+                <% if u.has_role?(:admin) %>
+                  <div class="text-danger" align="center">No puedes eliminar administradores<div>
+                <% else %>
+                  <%= button_to("Eliminar cuenta",
+                                administrate_delete_user_path(user_id: u.id),
+                                            data: { confirm: "Are you sure?" },
+                                            class: "btn btn-danger" )%>
+                <% end %>
               </td>
             </tr>
           <% end %>
