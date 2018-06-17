@@ -13,7 +13,10 @@
                                                                                       category)} %>
           <% @categorias = @categorias.select {|c| not c.id == params[:category_id].to_i} %>
           <% @first_category = Category.find(params[:category_id].to_i) %>
-          <% @categorias.insert(0, @first_category) %>
+          <%
+            @categorias.insert(0, @first_category) if not current_user.has_role?(:moderator,
+                                                                                 @first_category)
+          %>
           <%=
             f.collection_select(:category, @categorias, :id, :name, {class: "custom-select"})
           %>
