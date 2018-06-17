@@ -43,6 +43,60 @@
       </table>
     </div>
   </div>
+
+
+  <h1>Administrar usuarios</h1>
+  <div class="jumbotron">
+    <div class="row">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Usuario</th>
+            <th scope="col">Correo</th>
+            <th scope="col" class="text-center">Moderación</th>
+            <th scope="col">Suspender</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% User.all.each do |u| %>
+            <tr>
+              <td class="col-xs-3">
+                <%= image_tag(u.avatar, alt: u.username, size: "30") %>
+                &nbsp;&nbsp;
+                <%= u.username %>
+              </td>
+              <td class="col-xs-2"><%= u.email %></td>
+              <td class="col-xs-4">
+                <%= form_for(:administrate, url: administrate_approve_path(),
+                             class: "form-horizontal") do |f| %>
+                    <%= f.hidden_field(:user, value: u.username, class: "form-control") %>
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-5">
+                      <%= f.collection_select(:id,
+                                              Category.all,
+                                              :id,
+                                              :name,
+                                              {class: "custom-select"}) %>
+                    </div>
+                    <div class="col-lg-1">
+                      <div class="actions">
+                        <%= f.submit("Dar permiso", class: "btn btn-success") %>
+                      </div>
+                    </div>
+                <% end %>
+              </td>
+              <td class="col-xs-3">
+                      <%= button_to("Eliminar cuenta",
+                                    administrate_delete_user_path(user_id: u.id),
+                                                data: { confirm: "Are you sure?" },
+                                                class: "btn btn-danger" )%>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
 <% else %>
 <div class="alert alert-warning" role="alert">
   <p>Solo puedes acceder a esta página si eres administrador</p>
