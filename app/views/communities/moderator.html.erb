@@ -9,8 +9,11 @@
         <div class="form-group">
           <% f.text_field(:user, value: current_user.username, class: "form-control") %>
           <%= f.label(:category) %><br />
-          <%= f.collection_select(:category, Category.all, :id, :name,
-                                  {prompt: "--Select a forum--", class: "custom-select"}) %>
+          <% @categorias = Category.all.select {|category| not current_user.has_role?(:moderator,
+                                                                                      category)} %>
+          <% @categorias = @categorias.select {|c| not c.name == params[:category]} %>
+          <%= f.collection_select(:category, @categorias, :id, :name,
+                                  {prompt: params[:category], class: "custom-select"}) %>
         </div>
         <div class="actions">
           <%= f.submit("Enviar solicitud", class: "btn btn-primary active") %>

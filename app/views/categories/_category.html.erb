@@ -9,7 +9,7 @@
       <% if user_signed_in?()%>
         <% if not current_user.has_any_role?(:admin,
                                              { :name => :moderator, :resource => category })%>
-          <%= link_to("Ser moderador", communities_moderator_path(),
+          <%= link_to("Ser moderador", communities_moderator_path(:category => category.name),
                       html_options = {class: "btn btn-secundary active"}) %>
         <% end%>
       <% end%>
