@@ -1,3 +1,18 @@
 <div>
-  <%= render(@users)%>
+  <% ranking = 1%>
+  <%for user in @users do%>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h2>
+        <div class="icon-large icon-cup" ></div>
+        <strong>#<%=ranking%></strong>
+        <%= image_tag(user.avatar, alt: user.username,size: "50") %> <%= user.username.capitalize() %>
+        </h2>
+      </div>
+      <div class="panel-body">
+        <span class="badge"><%= user.reputation.to_i %></span> puntos
+      </div>
+    </div>
+    <% ranking +=1%>
+  <% end %>
 </div>
