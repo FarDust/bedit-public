@@ -1,0 +1,7 @@
+<div>
+  <% ranking = 1%>
+  <%for post in @posts do%>
+    <%= render(post)%> 
+    <%ranking +=1%>
+  <% end %>
+</div>

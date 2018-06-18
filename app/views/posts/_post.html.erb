@@ -1,41 +1,41 @@
 <div class="col-sm-6 col-md-6" id=<%= post_path(post.id) %> >  
-  <div class="thumbnail" style="height: 230px">
+  <div class="thumbnail" style="height: 300px">
     <!-- En caso de querer mostrar una imagen (ToDo) -->
-    <!-- <img src="..." alt="..."> -->
-    <div class="caption">
+    <div class="caption" style="height: 90%">
+      <div class="panel-default" style="height: 90%">
       <!-- Titulo del foro -->
-      <h3>
-        <%= truncate(post.title, :length => 40) %>
-      </h3>
-      <!-- Descripción del foro -->
-      <p><%= markdown(post.content) %></p>
-      <!-- ToDo: Proximamente agregar botones de favoritos y ver más -->
-      <p class=''>
-        <%= link_to "Ver Más", post_path(post.id), html_options = {class: "btn btn-primary active"} %>
-        <%if user_signed_in?()%>
-          <% if Favourite.where(post: post, user: current_user).length() != 0 %>
-            <%= link_to("", favourites_path({post_id: post.id}),method: :delete,
-                      class: 'glyphicon glyphicon-star icon-link')%>
-          <% else %>
-            <%= link_to("", favourites_path({post_id: post.id}),method: :post,
-                      class: 'glyphicon glyphicon-star-empty icon-link')%>
-          <% end%>
-          <!-- Agregar favorito -->
-          &nbsp;
-          <!-- Editar foro -->
-          <% if current_user.has_role?(:moderator)%>
-            <%=link_to("", edit_post_path(post.id),
-                      html_options = {class: "glyphicon glyphicon-pencil"})%>
-          <% end%>
-          &nbsp;
-          <!-- Borrar foro -->
-          <% if current_user.has_role?(:admin)%>
-            <%=link_to("", post_path(post.id),
-                      html_options = {class: "glyphicon glyphicon-trash", method: :delete,
-                                      data: {confirm: "¿Deseas borrarme?"}})%>
-          <% end %>
-        <%end%>
-      </p>
+        <div class="panel panel-heading" style="height: 20%">
+          <%= markdown(truncate(post.title, length: 40)) %>
+        </div>
+        <!-- Descripción del foro -->
+        <div class="panel panel-body" style="height: 60%">
+          <%= markdown(truncate(post.content,length: 250)) %>
+        </div>
+        <div class="panel panel-footer" style="height: 20%">
+          <%= link_to "Ver Más", post_path(post.id), html_options = {class: "btn btn-primary active"} %>
+          <%if user_signed_in?()%>
+            <% if Favourite.where(post: post, user: current_user).length() != 0 %>
+              <%= link_to("", favourites_path({post_id: post.id}),method: :delete,
+                        class: 'glyphicon glyphicon-star icon-link')%>
+            <% else %>
+              <%= link_to("", favourites_path({post_id: post.id}),method: :post,
+                        class: 'glyphicon glyphicon-star-empty icon-link')%>
+            <% end%>
+            <!-- Editar foro -->
+            <% if current_user.has_role?(:moderator)%>
+              <%=link_to("", edit_post_path(post.id),
+                        html_options = {class: "glyphicon glyphicon-pencil"})%>
+            <% end%>
+            <!-- Borrar foro -->
+            <% if current_user.has_role?(:admin)%>
+              <%=link_to("", post_path(post.id),
+                        html_options = {class: "glyphicon glyphicon-trash", method: :delete,
+                                        data: {confirm: "¿Deseas borrarme?"}})%>
+            <% end %>
+          <%end%>
+          <div class="badge"><span class="glyphicon glyphicon-eye-open"></span> <%= post.subcribers%></div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

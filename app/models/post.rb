@@ -4,4 +4,8 @@ class Post < ApplicationRecord
   belongs_to(:category)
   has_many(:favourites)
   has_many(:commentary)
+
+  def subcribers
+    favourites.length
+  end
 end
