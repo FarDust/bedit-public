@@ -23,7 +23,8 @@
         <li style= "margin-top: 10px;">
             <%=form_for :search, url: search_path(), class: "form-inline" do |f| %>
               <%=f.text_field(:query, class: "form-control mr-sm-2", placeholder: "search")%>
-              <%=f.submit(:search, class: "btn btn-outline-success my-2 my-sm-0", style: "display: none;")%>
+              <%=f.submit(:search, class: "btn btn-outline-success my-2 my-sm-0",
+                          style: "display: none;")%>
             <% end %>
         </li>
       </ul>
