@@ -4,14 +4,14 @@ class User < ApplicationRecord
   after_create(:assign_default_role)
 
   devise(
-          :database_authenticatable, 
-          :registerable,
-          :recoverable, 
-          :rememberable, 
-          :trackable, 
-          :validatable,
-          :omniauthable, 
-          omniauth_providers: [:google_oauth2]
+    :database_authenticatable,
+    :registerable,
+    :recoverable,
+    :rememberable,
+    :trackable,
+    :validatable,
+    :omniauthable,
+    omniauth_providers: [:google_oauth2]
   )
   validates(:email, uniqueness: true)
   validates(:username, uniqueness: true)
@@ -22,7 +22,7 @@ class User < ApplicationRecord
   has_many(:posts)
   has_many(:commentary)
 
-  def reputation()
+  def reputation
     total_likes = 0
     total_dislikes = 0
     for commentary in Commentary.where(user: self) do
@@ -41,15 +41,12 @@ class User < ApplicationRecord
     user = User.where(email: data['email']).first
 
     # Uncomment the section below if you want users to be created if they don't exist
-    unless user
-        user = User.create(
-          username: data['name'],
-          email: data['email'],
-          password: Devise.friendly_token[0,20],
-          avatar: data['image']
-        )
-    end
+    user ||= User.create(
+      username: data['name'],
+      email: data['email'],
+      password: Devise.friendly_token[0, 20],
+      avatar: data['image']
+    )
     user
   end
-
 end

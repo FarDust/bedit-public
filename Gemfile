@@ -52,7 +52,6 @@ gem('cloudinary')
 gem('identicon')
 gem('jquery-fileupload-rails')
 
-
 # Replies
 gem('safe_attributes')
 
@@ -67,9 +66,9 @@ gem('notifications', '~> 0.6.0')
 
 # Users
 gem('cancancan', '~> 2.0')
-gem('rolify')
 gem('devise')
 gem('omniauth-google-oauth2')
+gem('rolify')
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
