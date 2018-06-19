@@ -10,6 +10,47 @@
       </div>
       Creado el: <%= @post.created_at %>
     </h5>
+    <div>
+      <% if user_signed_in? %>
+        <%= link_to like_post_path(@post), method: :put, class: 'vote-link' do %>
+          <% if current_user.liked?(@post)%>
+            <span class="badge badge-liked">
+          <% else%>
+            <span class="badge">
+          <% end %>
+              <%= @post.get_likes.size%>
+              <span class="glyphicon glyphicon-thumbs-up"></span>
+            </span>
+        <% end %>
+        <%= link_to dislike_post_path(@post), method: :put, class: 'vote-link' do %>
+          <% if current_user.disliked?(@post)%>
+            <span class="badge badge-disliked">
+          <% else%>
+            <span class="badge">
+          <% end %>
+            <span class="glyphicon glyphicon-thumbs-down icon-rotate icon-flipped"></span>
+            <%= @post.get_dislikes.size%>
+          </span>
+        <% end %>
+        &nbsp;&nbsp;
+        <!-- Agregar favorito -->
+        <% if Favourite.where(post: @post, user: current_user).length() != 0 %>
+          <%= link_to("", favourites_path({post_id: @post.id}),method: :delete,
+                    class: 'glyphicon glyphicon-star icon-link')%>
+        <% else %>
+          <%= link_to("", favourites_path({post_id: @post.id}),method: :post,
+                    class: 'glyphicon glyphicon-star-empty icon-link')%>
+        <% end%>
+        &nbsp;
+        <% @category = Category.find(@post.category_id) %>
+        <%if current_user.has_role?(:moderator, @category) or current_user.has_role?(:admin) %>
+            <!-- Borrar post -->
+            <%=link_to("", post_path(@post.id),
+                      html_options = {class: "glyphicon glyphicon-trash", method: :delete,
+                                      data: {confirm: "¿Deseas borrar este post?"}})%>
+        <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
 

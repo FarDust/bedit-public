@@ -1,22 +1,35 @@
-<div class="jumbotron">
-
-  <div class="alert alert-danger" role="alert">
-    Este formulario se encuentra en desarrollo. Algunas opciones pueden fallar.
+<% if not current_user.has_role?(:admin) %>
+  <div class="jumbotron">
+    <div class="row">
+      <h2>Solicitar ser moderador</h2>
+      <%= form_for(:request, url: communities_path(), class: "form-horizontal") do |f| %>
+        <div class="form-group">
+          <%= f.hidden_field(:user, value: current_user.username, class: "form-control") %>
+        </div>
+        <div class="form-group">
+          <% f.text_field(:user, value: current_user.username, class: "form-control") %>
+          <%= f.label(:category) %><br />
+          <% @categorias = Category.all.select {|category| not current_user.has_role?(:moderator,
+                                                                                      category)} %>
+          <% @categorias = @categorias.select {|c| not c.id == params[:category_id].to_i} %>
+          <% @first_category = Category.find(params[:category_id].to_i) %>
+          <%
+            @categorias.insert(0, @first_category) if not current_user.has_role?(:moderator,
+                                                                                 @first_category)
+          %>
+          <%=
+            f.collection_select(:category, @categorias, :id, :name, {class: "custom-select"})
+          %>
+        </div>
+        <div class="actions">
+          <%= f.submit("Enviar solicitud", class: "btn btn-primary active") %>
+        </div>
+      <% end %>
+    </div>
   </div>
 
-  <div class="row">
-    <h2>Solicitar ser moderador</h2>
-    <%= form_for(:post, url: communities_path(), class: "form-horizontal") do |f| %>
-    
-      <div class="form-group">
-        <%= f.label(:category) %><br />
-        <%= f.collection_select(:category, Category.all, :id, :name, {prompt: "--Select a forum--",
-                                                                      class: "custom-select"}) %>
-      </div>
-
-      <div class="actions">
-        <%= f.submit("Enviar solicitud", class: "btn btn-primary active") %>
-      </div>
-    <% end %>
+<% else %>
+  <div class="alert alert-warning" role="alert">
+    <p>¡Ya eres administrador! No necesitas hacer solicitudes de moderación</p>
   </div>
-</div>
+<% end %>

@@ -1,14 +1,14 @@
 class User < ApplicationRecord
   rolify
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
+
+  after_create(:assign_default_role)
+
   devise(:database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable)
   validates(:email, uniqueness: true)
   validates(:username, uniqueness: true)
   acts_as_voter()
   has_many(:publication)
-
   has_many(:commentaries)
   has_many(:favourites, dependent: :destroy)
   has_many(:posts)
@@ -22,5 +22,9 @@ class User < ApplicationRecord
       total_dislikes += commentary.get_dislikes.size
     end
     [(Math.exp(total_likes) - total_dislikes * Math.log([total_likes, 1].max())), 0].max()
+  end
+
+  def assign_default_role
+    add_role(:normal) if roles.blank?
   end
 end

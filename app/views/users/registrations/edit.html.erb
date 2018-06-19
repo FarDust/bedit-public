@@ -4,17 +4,19 @@
   <div class="panel-heading">Reputación</div>
   <div class="panel-body">
     <div>
-      ¡Felicidades tienes <span class="badge"><%= resource.reputation.to_i %> </span> puntos! 
+      ¡Felicidades tienes <span class="badge"><%= resource.reputation.to_i %> </span> puntos!
     </div>
   </div>
 </div>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }, class:"form-horizontal") do |f| %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name),
+             html: { method: :put }, class:"form-horizontal") do |f| %>
   <%= devise_error_messages! %>
 
   <div class="form-group">
     <%= f.label(:email)%><br />
-    <%= f.email_field(:email, autocomplete: "email", readonly: true, class: "form-control form-control-plaintext")%>
+    <%= f.email_field(:email, autocomplete: "email", readonly: true,
+                      class: "form-control form-control-plaintext")%>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -24,7 +26,8 @@
   <div class="form-group">
     <%= f.label(:current_password)%>
     <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field( :current_password, autocomplete: "off",  class: "form-control") %>
+    <%= f.password_field(:current_password, autocomplete: "off", autofocus: true,
+                         class: "form-control") %>
   </div>
 
   <div class="form-group">
@@ -38,7 +41,7 @@
 
   <div class="form-group">
     <%= f.label(:password_confirmation) %><br />
-    <%= f.password_field(:password_confirmation, autofocus: true, autocomplete: "off", class: "form-control")%>
+    <%= f.password_field(:password_confirmation, autocomplete: "off", class: "form-control")%>
   </div>
 
   <div class="form-group row" style="height: 100px">
@@ -51,15 +54,8 @@
       </span>
     </div>
     <div class="col col-md col-md-2">
-      <img id="outFrame" style= "width: 100px; height: 100px; margin: 2px; border-radius: 5px; display: none;"></img>
-    </div>
-  </div>
-
-  <div class="form-group row">
-    <div class="col col-md col-md-2">
-      <h4>Tipo de usuario</h4><br>
-      <i>Actualmente eres <%= resource.roles.name %></i>
-      <%= f.select(:roles, ['moderator', 'admin'], class: 'form-control', include_blank: true)%>
+      <img id="outFrame" style= "width: 100px; height: 100px; margin: 2px; border-radius: 5px; display: none;">
+      </img>
     </div>
   </div>
 
@@ -70,9 +66,15 @@
 
 <h3>Cancel my account</h3>
 
-<p>Unhappy? <%= button_to( "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger btn-primary mb-2" )%></p>
+<p>Unhappy? <%= button_to("Cancel my account",
+                          registration_path(resource_name),
+                          data: { confirm: "Are you sure?" },
+                          method: :delete,
+                          class: "btn btn-danger btn-primary mb-2" )%></p>
 
 <%= link_to("Back", :back )%>
+
+<br><br>
 
 <script type='text/javascript'>
 document.getElementById("fileupload").onchange = function(evt) {

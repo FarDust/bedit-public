@@ -26,11 +26,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # PUT /resource
   def update
-    if params.key?('user') && params['user'].key?('roles')
-      current_user.add_role(params['user']['roles'].to_sym)
-      params['user'].delete('roles')
-    end
-    params['user']['roles'] = [params['user']['roles']]
     if params.key?('user') && params['user'].key?('avatar')
       avatar = params['user']['avatar']
       url = Cloudinary::Uploader.upload(avatar, options = { public_id: current_user.username })

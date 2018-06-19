@@ -10,18 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180604132642) do
+ActiveRecord::Schema.define(version: 20180613184207) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "assignments", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "role_id"
+  create_table "administrates", force: :cascade do |t|
+    t.string "user"
+    t.integer "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["role_id"], name: "index_assignments_on_role_id"
-    t.index ["user_id"], name: "index_assignments_on_user_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -91,7 +89,6 @@ ActiveRecord::Schema.define(version: 20180604132642) do
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
-    t.string "username"
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -103,6 +100,7 @@ ActiveRecord::Schema.define(version: 20180604132642) do
     t.inet "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "username"
     t.string "avatar"
     t.integer "roles_mask"
     t.index ["email"], name: "index_users_on_email", unique: true
@@ -132,6 +130,4 @@ ActiveRecord::Schema.define(version: 20180604132642) do
     t.index ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope"
   end
 
-  add_foreign_key "assignments", "roles"
-  add_foreign_key "assignments", "users"
 end

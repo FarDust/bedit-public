@@ -1,3 +1,4 @@
+
 <div class="col-sm-6 col-md-6" id=<%= post_path(post.id) %> >  
   <div class="thumbnail" style="height: 300px">
     <!-- En caso de querer mostrar una imagen (ToDo) -->
@@ -21,13 +22,12 @@
               <%= link_to("", favourites_path({post_id: post.id}),method: :post,
                         class: 'glyphicon glyphicon-star-empty icon-link')%>
             <% end%>
-            <!-- Editar foro -->
-            <% if current_user.has_role?(:moderator)%>
+            <% @category = Category.find(post.category_id) %>
+            <% if current_user.has_any_role?(:admin, {name: :moderator, resource: @category}) %>
+              <!-- Editar foro -->
               <%=link_to("", edit_post_path(post.id),
                         html_options = {class: "glyphicon glyphicon-pencil"})%>
-            <% end%>
-            <!-- Borrar foro -->
-            <% if current_user.has_role?(:admin)%>
+              <!-- Borrar foro -->
               <%=link_to("", post_path(post.id),
                         html_options = {class: "glyphicon glyphicon-trash", method: :delete,
                                         data: {confirm: "¿Deseas borrarme?"}})%>
