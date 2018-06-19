@@ -3,8 +3,16 @@ class User < ApplicationRecord
 
   after_create(:assign_default_role)
 
-  devise(:database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable)
+  devise(
+          :database_authenticatable, 
+          :registerable,
+          :recoverable, 
+          :rememberable, 
+          :trackable, 
+          :validatable,
+          :omniauthable, 
+          omniauth_providers: [:google_oauth2]
+  )
   validates(:email, uniqueness: true)
   validates(:username, uniqueness: true)
   acts_as_voter()
