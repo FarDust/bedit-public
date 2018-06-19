@@ -32,7 +32,7 @@
           <li>
             <%= link_to(edit_user_registration_path()) do %>
               Hola, <%= current_user.username %>
-              <% if current_user.avatar %>
+              <% if !current_user.avatar.nil? %>
                 <%= image_tag(current_user.avatar, alt: current_user.username, size: "30") %>
               <% end %>
             <% end %>
