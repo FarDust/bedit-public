@@ -16,11 +16,14 @@
           <%= link_to "Ver Más", post_path(post.id), html_options = {class: "btn btn-primary active"} %>
           <%if user_signed_in?()%>
             <% if Favourite.where(post: post, user: current_user).length() != 0 %>
-              <%= link_to("", favourites_path({post_id: post.id}),method: :delete,
-                        class: 'glyphicon glyphicon-star icon-link')%>
+              <%= link_to( favourites_path({post_id: post.id}),method: :delete,
+                        class: 'btn btn-default') do%>
+                Suscrito <%= post.subcribers%>
+              <% end %>
             <% else %>
-              <%= link_to("", favourites_path({post_id: post.id}),method: :post,
-                        class: 'glyphicon glyphicon-star-empty icon-link')%>
+              <%= link_to(favourites_path({post_id: post.id}),method: :post, class: 'btn btn-danger') do %>
+                Suscribirse
+              <% end %>
             <% end%>
             <% @category = Category.find(post.category_id) %>
             <% if current_user.has_any_role?(:admin, {name: :moderator, resource: @category}) %>
@@ -33,7 +36,6 @@
                                         data: {confirm: "¿Deseas borrarme?"}})%>
             <% end %>
           <%end%>
-          <div class="badge"><span class="glyphicon glyphicon-eye-open"></span> <%= post.subcribers%></div>
         </div>
       </div>
     </div>
