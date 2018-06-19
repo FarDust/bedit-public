@@ -11,11 +11,16 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   post('/search', to: 'welcome#search')
   get('/forum', to: 'forums#index')
+  get('/rankings/users', to: 'rankings#users')
+  get('/rankings/posts', to: 'rankings#posts')
+  get('/rankings/categories', to: 'rankings#categories')
   resources :communities
   post('/commentaries', to: 'commentaries#create')
   post('/favourites', to: 'favourites#create')
   delete('/favourites', to: 'favourites#delete')
   patch('/subscribe', to: 'favourites#subscribe')
+
+
   resources(:favourites)
   resources(:administrate)
   root(to: 'pages#index')

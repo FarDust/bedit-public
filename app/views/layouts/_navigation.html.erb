@@ -17,6 +17,27 @@
         <li><%= link_to("Inicio", root_path(), class: "") %></li>
         <li><%= link_to("Foros", forum_path()) %></li>
         <li><%= link_to("Comunidades", communities_path()) %></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Rankings
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li>
+              <%= link_to(rankings_posts_path()) do %>
+                Post
+              <% end %>
+            </li>
+            <li>
+              <%= link_to(rankings_users_path()) do %>
+                Usuarios
+              <% end %>
+            </li>
+            <li>
+              <%= link_to(rankings_categories_path()) do %>
+                Categorias
+              <% end %>
+            </li>
+          </ul>
+        </li>
         <% if user_signed_in?() %>
           <li><li><%= link_to("Favoritos", favourites_path()) %></li></li>
         <%end%>
