@@ -5,8 +5,13 @@ Rails.application.routes.draw do
   post('administrate/refuse')
   root('welcome#index')
   mount Notifications::Engine => "/notifications"
-  # devise_for :users
-  devise_for(:users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations', confirmations: 'users/confirmations' })
+  # Config Devise
+  devise_for(:users, controllers: { 
+    sessions: 'users/sessions', 
+    registrations: 'users/registrations', 
+    confirmations: 'users/confirmations',  
+    omniauth_callbacks: 'omniauth_callbacks' 
+  })
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   post('/search', to: 'welcome#search')
   get('/forum', to: 'forums#index')
