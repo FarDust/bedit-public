@@ -22,7 +22,7 @@
               <% end %>
             <% else %>
               <%= link_to(favourites_path({post_id: post.id}),method: :post, class: 'btn btn-danger') do %>
-                Suscribirse
+                Suscribirse <%= post.subcribers%>
               <% end %>
             <% end%>
             <% @category = Category.find(post.category_id) %>
