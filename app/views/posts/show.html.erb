@@ -1,6 +1,12 @@
 <h2><%= markdown(@post.title.capitalize()) %></h2>
 
 <div class="jumbotron" onload="render();">
+  <% available = ['tiempo','votos']%>
+  <% for option in available do%>
+    <%= link_to post_path(@post.id,{order: option}) do%>
+      <spam class='btn btn-default'><%= option.capitalize() %></spam>
+    <% end %>
+  <% end %>
   <div class="row">
     <!-- Mostrar el contenido del post -->
     <div class="panel panel-default">
