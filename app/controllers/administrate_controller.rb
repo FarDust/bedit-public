@@ -15,18 +15,14 @@ class AdministrateController < ApplicationController
     @moderator.add_role(:moderator, Category.find(params['administrate']['id']))
     @request = Administrate.where(user: params['administrate']['user'],
                                   category: params['administrate']['id'])
-    @request.each() do |r|
-      r.delete()
-    end
+    @request.each(&:delete)
     redirect_to(administrate_index_path(), notice: 'Has aprobado la solicitud')
   end
 
   def refuse
     @request = Administrate.where(user: params['administrate']['user'],
                                   category: params['administrate']['id'])
-    @request.each() do |r|
-      r.delete()
-    end
+    @request.each(&:delete)
     redirect_to(administrate_index_path(), notice: 'Has rechazado la solicitud')
   end
 
