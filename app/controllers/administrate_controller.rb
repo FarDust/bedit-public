@@ -11,19 +11,26 @@ class AdministrateController < ApplicationController
   end
 
   def approve
-    @moderator = User.find_by(username: params['administrate']['user'])
-    @moderator.add_role(:moderator, Category.find(params['administrate']['id']))
+    define_moderator(params['administrate']['user'])
     @request = Administrate.where(user: params['administrate']['user'],
                                   category: params['administrate']['id'])
-    @request.each(&:delete)
-    redirect_to(administrate_index_path(), notice: 'Has aprobado la solicitud')
+    delete_request(@request, 'Has aprobado la solicitud')
   end
 
   def refuse
     @request = Administrate.where(user: params['administrate']['user'],
                                   category: params['administrate']['id'])
-    @request.each(&:delete)
-    redirect_to(administrate_index_path(), notice: 'Has rechazado la solicitud')
+    delete_request(@request, 'Has rechazado la solicitud')
+  end
+
+  def define_moderator(username)
+    @moderator = User.find_by(username: username)
+    @moderator.add_role(:moderator, Category.find(params['administrate']['id']))
+  end
+
+  def delete_request(request, notice)
+    request.each(&:delete)
+    redirect_to(administrate_index_path(), notice: notice)
   end
 
   def delete_user
