@@ -51,7 +51,6 @@ class CommentariesController < ApplicationController
         @commentary.liked_by(current_user)
       end
     end
-    redirect_back(fallback_location: root_path())
   end
 
   def dislike
@@ -63,6 +62,5 @@ class CommentariesController < ApplicationController
         @commentary.disliked_by(current_user)
       end
     end
-    redirect_back(fallback_location: root_path())
   end
 end
