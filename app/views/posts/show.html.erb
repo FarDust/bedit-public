@@ -51,6 +51,7 @@
                       html_options = {class: "glyphicon glyphicon-trash", method: :delete,
                                       data: {confirm: "¿Deseas borrar este post?"}})%>
         <% end %>
+        <a href="#comment" onClick = ""><span class= 'btn btn-default' onClick = "">Comentar</span></a>
       <% end %>
     </div>
   </div>
@@ -59,7 +60,7 @@
 <%= render(@comentarios) %>
 
 <%if user_signed_in?()%>
-  <div class="jumbotron">
+  <div class="jumbotron" id="comment">
     <div class="row">
       <h2>Comentar</h2>
       <%= form_for(:commentary, url: commentaries_path(), class: "form-horizontal") do |f| %>
@@ -72,6 +73,7 @@
         </div>
         <div class="actions">
           <%= f.submit("Crear", class: "btn btn-primary active") %>
+          <span href="#" id="uploader" ></span>
         </div>
       <% end %>
     </div>
@@ -84,4 +86,14 @@
           window.top.location = window.location;
       }
   };
+</script>
+
+<script type="text/javascript">
+  $('#uploader').cloudinary_upload_widget(
+    { cloud_name: 'hctj9u4ot', upload_preset: 'commentary', 
+      cropping: 'server', folder: 'commentaries', theme: 'minimal',
+      button_class: "btn btn-default", max_image_width: 400, max_image_height: 400},
+    function(error, result) { 
+      $('#commentary_text')[0].value += '![](' +  result["0"]['secure_url'] + ') '
+     });
 </script>

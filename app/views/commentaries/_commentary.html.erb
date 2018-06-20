@@ -2,72 +2,71 @@
 <div class="jumbotron" id=<%= post_path(commentary.id) %>>
   <div class="row">
     <!-- Mostrar el contenido del comentario -->
-    <h3>
-      <%if commentary.user_id%>
-        <div class="panel panel-info">
-          <div class="panel-heading">
-            <%= image_tag(User.find(commentary.user_id).avatar, alt: User.find(commentary.user_id).username,size: "50", class: "kiwy")%> 
-            <%=User.find(commentary.user_id).username.capitalize() %> 
-            <span class="badge"><%= User.find(commentary.user_id).reputation.to_i %> </span>
-          </div>
-          <div class="panel-body"><%= markdown(commentary.text) %></div>
-          <div class="panel-footer">
-            <strong>Publicado hace:</strong> <%=time_ago_in_words(commentary.created_at)%>
-          </div>
-        </div>
-      <% else%>
-        <%= markdown(commentary.text) %>
-      <% end %>
-    </h3>
-    <h5>
-        <% usr = ""%>
-        <%if commentary.user_id %>
-          <%usr = User.find(commentary.user_id).username %>
-        <% end %>
-    </h5>
-    <div>
-        <%= link_to(like_commentary_path(commentary), method: :put, class: 'vote-link') do %>
-          <% if user_signed_in? && current_user.liked?(commentary)%>
-            <span class="badge badge-liked">
-          <% else%>
-            <span class="badge">
-          <% end %>
-              <%= commentary.get_likes.size%>
-              <span class="glyphicon glyphicon-thumbs-up"></span>
-            </span>
-        <% end %>
-        <%= link_to dislike_commentary_path(commentary), method: :put,class: 'vote-link' do %>
-          <% if user_signed_in? && current_user.disliked?(commentary)%>
-            <span class="badge badge-disliked">
-          <% else%>
-            <span class="badge">
-          <% end %>
-            <span class="glyphicon glyphicon-thumbs-down icon-rotate icon-flipped"></span>
-            <%= commentary.get_dislikes.size%>
+    <%if !commentary.user_id.nil? %>
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <%= image_tag(User.find(commentary.user_id).avatar, alt: User.find(commentary.user_id).username,size: "50", class: "kiwy")%> 
+          <%=User.find(commentary.user_id).username.capitalize() %>
+          <span class="badge">
+            <%= User.find(commentary.user_id).reputation.to_i %>
           </span>
+        </div>
+        <div class="panel-body">
+          <%= markdown(commentary.text) %>
+        </div>
+        <div class="panel-footer">
+          <strong>Publicado hace:</strong> <%=time_ago_in_words(commentary.created_at)%>
+        </div>
+      </div>
+    <% end %>
+    <div>
+      <%= link_to(like_commentary_path(commentary), method: :put, class: 'vote-link') do %>
+        <% if user_signed_in? && current_user.liked?(commentary)%>
+          <span class="badge badge-liked">
+        <% else%>
+          <span class="badge">
         <% end %>
-        <% if user_signed_in? %>
-          <% @post = Post.find(params['id']) %>
-          <% @forum = Category.find(@post.category_id) %>
-          <%
-            @roles = current_user.has_role?(:admin) || current_user.has_role?(:moderator, @forum)
-          %>
-          <%if (current_user.id.to_s == commentary.user_id) or @roles%>
-            <%=link_to("", commentary_path(commentary),
-                       html_options = {class: "glyphicon glyphicon-trash", method: :delete,
-                                       data: {confirm: "¿Deseas borrar este comentario?"}})%>
-          <% end %>
+            <%= commentary.get_likes.size%>
+            <span class="glyphicon glyphicon-thumbs-up"></span>
+          </span>
+      <% end %>
+      <%= link_to dislike_commentary_path(commentary), method: :put,class: 'vote-link' do %>
+        <% if user_signed_in? && current_user.disliked?(commentary)%>
+          <span class="badge badge-disliked">
+        <% else%>
+          <span class="badge">
         <% end %>
+          <span class="glyphicon glyphicon-thumbs-down icon-rotate icon-flipped"></span>
+          <%= commentary.get_dislikes.size%>
+        </span>
+      <% end %>
+      <% if user_signed_in? %>
+        <% @post = Post.find(params['id']) %>
+        <% @forum = Category.find(@post.category_id) %>
+        <%
+          @roles = current_user.has_role?(:admin) || current_user.has_role?(:moderator, @forum)
+        %>
+        <%if (current_user.id.to_s == commentary.user_id) or @roles%>
+          <%=link_to("", commentary_path(commentary),
+                      html_options = {class: "glyphicon glyphicon-trash", method: :delete,
+                                      data: {confirm: "¿Deseas borrar este comentario?"}})%>
+        <% end %>
+      <% end %>
     </div>
     <div>
     <% if user_signed_in?%>
       <span onClick="toggle_<%= commentary.id %>();" class="btn btn-default">Responder</span>
       <div style='display: none;' id="reply-<%= commentary.id %>">
+        &nbsp;
+        <br>
+        <a href="https://github.com/google/styleguide/blob/gh-pages/docguide/style.md" class="badge">
+            Markdown style reference
+        </a>
         <%= form_for :reply, url: commentaries_path(), class: "form-group" do |f| %>
           <%= f.text_area(:text, rows: 3, placeholder: "Escribe tu respuesta aqui...",id: commentary.id , class: "form-control", style: "resize: none;") %>
           <%= hidden_field_tag(:commentary_id, commentary.id) %>
           <%= f.submit('Enviar',class: "btn btn-default") %>
-          &ensp;
+          &nbsp;
           <span href="#" id="uploader-<%= commentary.id %>" ></span>
         <% end %>
       </div>
