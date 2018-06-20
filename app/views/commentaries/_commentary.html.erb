@@ -1,12 +1,19 @@
+<script src="//widget.cloudinary.com/global/all.js" type="text/javascript"></script>  
 <div class="jumbotron" id=<%= post_path(commentary.id) %>>
   <div class="row">
     <!-- Mostrar el contenido del comentario -->
     <h3>
       <%if commentary.user_id%>
         <div class="panel panel-info">
-          <div class="panel-heading"><%= image_tag(User.find(commentary.user_id).avatar, alt: User.find(commentary.user_id).username,size: "50")%> <%=User.find(commentary.user_id).username %></div>
+          <div class="panel-heading">
+            <%= image_tag(User.find(commentary.user_id).avatar, alt: User.find(commentary.user_id).username,size: "50", class: "kiwy")%> 
+            <%=User.find(commentary.user_id).username.capitalize() %> 
+            <span class="badge"><%= User.find(commentary.user_id).reputation.to_i %> </span>
+          </div>
           <div class="panel-body"><%= markdown(commentary.text) %></div>
-          <div class="panel-footer"><span class="badge"><%= User.find(commentary.user_id).reputation.to_i %> </span> puntos</div>
+          <div class="panel-footer">
+            <strong>Publicado hace:</strong> <%=time_ago_in_words(commentary.created_at)%>
+          </div>
         </div>
       <% else%>
         <%= markdown(commentary.text) %>
@@ -17,8 +24,6 @@
         <%if commentary.user_id %>
           <%usr = User.find(commentary.user_id).username %>
         <% end %>
-        Publicado por: <%= usr.capitalize%><br>
-        Publicado hace: <%=time_ago_in_words(commentary.created_at)%>
     </h5>
     <div>
         <%= link_to(like_commentary_path(commentary), method: :put, class: 'vote-link') do %>
@@ -42,7 +47,7 @@
           </span>
         <% end %>
         <% if user_signed_in? %>
-          <% @post = Post.find(commentary.post_id.to_i) %>
+          <% @post = Post.find(params['id']) %>
           <% @forum = Category.find(@post.category_id) %>
           <%
             @roles = current_user.has_role?(:admin) || current_user.has_role?(:moderator, @forum)
@@ -54,18 +59,47 @@
           <% end %>
         <% end %>
     </div>
+    <div>
     <% if user_signed_in?%>
-      <div>
+      <span onClick="toggle_<%= commentary.id %>();" class="btn btn-default">Responder</span>
+      <div style='display: none;' id="reply-<%= commentary.id %>">
         <%= form_for :reply, url: commentaries_path(), class: "form-group" do |f| %>
-          <%= f.label("Responder") %>
-          <%= f.text_field(:text,placeholder: "reply")%>
+          <%= f.text_area(:text, rows: 3, placeholder: "Escribe tu respuesta aqui...",id: commentary.id , class: "form-control", style: "resize: none;") %>
           <%= hidden_field_tag(:commentary_id, commentary.id) %>
-          <%= f.submit(class: "btn btn-default") %>
+          <%= f.submit('Enviar',class: "btn btn-default") %>
+          &ensp;
+          <span href="#" id="uploader-<%= commentary.id %>" ></span>
         <% end %>
       </div>
+    </div>
       <% for reply in commentary.replies %>
-        <%= render(reply.response)%>
+        <% if !reply.response.nil? %>
+          <%= render(reply.response)%>
+        <% end %>
       <% end%>
     <% end %>
   </div>
 </div>
+
+<script type="text/javascript">
+  $('#uploader-<%= commentary.id %>').cloudinary_upload_widget(
+    { cloud_name: 'hctj9u4ot', upload_preset: 'commentary', 
+      cropping: 'server', folder: 'commentaries', theme: 'minimal',
+      button_class: "btn btn-default", max_image_width: 400, max_image_height: 400},
+    function(error, result) { 
+      console.log(error,result);
+      console.log($('#<%= commentary.id%>').value)
+      $('#<%= commentary.id%>')[0].value += '![](' +  result["0"]['secure_url'] + ')'
+     });
+</script>
+
+<script type="text/javascript">
+  function toggle_<%= commentary.id %>(){
+    obj = $('#reply-<%= commentary.id %>')[0]
+    if (obj.style.display == "none"){
+      obj.style.display = "inherit";
+    } else {
+      obj.style.display = "none";
+    }
+  }
+</script>

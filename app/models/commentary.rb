@@ -25,7 +25,7 @@ class Commentary < ApplicationRecord
   end
 
   def self.sort_by_votes(params)
-    @comentarios = Commentary.where(post_id: params[:id]).sort_by { 
-      |x| (x.get_likes.size - x.get_dislikes.size) }.reverse!
+    @comentarios = Commentary.where(post_id: params[:id]).sort_by { |x|
+      (x.get_likes.size - x.get_dislikes.size) }.reverse!
   end
 end

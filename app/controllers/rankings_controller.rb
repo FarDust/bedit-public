@@ -3,14 +3,14 @@ class RankingsController < ApplicationController
     @users = User.all().sort_by do |user|
       user.reputation
     end
-    @users = @users[0..50]
+    @users = @users[0..50].reverse!
   end
 
   def posts
     @posts = Post.all().sort_by do |post|
       [post.get_likes.size - post.get_dislikes.size, 0].min()
     end
-    @posts = @posts[0..50]
+    @posts = @posts[0..50].reverse!
   end
 
   def categories

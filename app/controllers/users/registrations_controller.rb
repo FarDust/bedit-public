@@ -15,7 +15,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def create
     user = params['user']['username']
     url = Cloudinary::Uploader.upload(Identicon.data_url_for(user), options = { public_id: user })
-    params['user']['avatar'] = url['secure_url']
+    params['user']['avatar'] = url['url']
     super
   end
 
