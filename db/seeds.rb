@@ -31,8 +31,7 @@ def seed_users
                   username: user,
                   password: '123456',
                   email: "#{user}@uc.cl",
-                  avatar: Identicon.data_url_for(user),
-                  id: users.find_index(user) + 1
+                  avatar: Identicon.data_url_for(user)
                )
     define_role(@usuario)
   end
