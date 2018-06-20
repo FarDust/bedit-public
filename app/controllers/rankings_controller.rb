@@ -1,8 +1,6 @@
 class RankingsController < ApplicationController
   def users
-    @users = User.all().sort_by do |user|
-      user.reputation
-    end
+    @users = User.all().sort_by(&:reputation)
     @users = @users[0..50].reverse!
   end
 
