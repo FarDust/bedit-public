@@ -44,7 +44,8 @@ def seed_posts
       Post.create(
         title: Faker::Lorem.sentences[0],
         content: Faker::Lorem.sentences[0],
-        category_id: categoria.id
+        category_id: categoria.id,
+        user: User.where(username: :admin)[0]
       )
     end
   end
@@ -64,7 +65,7 @@ def seed_commentaries
   end
 end
 
-seed_categories()
 seed_users()
+seed_categories()
 seed_posts()
 seed_commentaries()

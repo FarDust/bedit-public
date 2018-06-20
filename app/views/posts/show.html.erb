@@ -1,12 +1,23 @@
-<h3><%= @post.title %></h3>
+<h2><%= markdown(@post.title.capitalize()) %></h2>
 
 <div class="jumbotron" onload="render();">
   <div class="row">
     <!-- Mostrar el contenido del post -->
-    <h3><%=markdown(@post.content) %></h3>
-    <h5>
-      Creado el: <%= @post.created_at %>
-    </h5>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <%= image_tag(User.find(@post.user_id).avatar, alt: User.find(@post.user_id).username,size: "50", class: "kiwy")%> 
+        <%=User.find(@post.user_id).username.capitalize() %>
+        <span class="badge">
+          <%= User.find(@post.user_id).reputation.to_i %>
+        </span>
+      </div>
+      <div class="panel-body">
+        <%=markdown(@post.content) %>
+      </div>
+      <div class="panel-footer">
+        <strong>Publicado hace:</strong> <%=time_ago_in_words(@post.created_at)%>
+      </div>
+    </div>
     <div>
       <% if user_signed_in? %>
         <%= link_to like_post_path(@post), method: :put, class: 'vote-link' do %>

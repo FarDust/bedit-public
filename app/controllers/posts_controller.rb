@@ -12,9 +12,10 @@ class PostsController < ApplicationController
   end
 
   def create
-    new_category = Post.create(category: Category.find_by(id: params['post']['category']),
-                               title: params['post']['title'], content: params['post']['content'])
-    new_category.save()
+    new_post = Post.create(category: Category.find_by(id: params['post']['category']),
+                           title: params['post']['title'], content: params['post']['content'],
+                           user: current_user)
+    new_post.save()
     redirect_to(forum_path())
   end
 
