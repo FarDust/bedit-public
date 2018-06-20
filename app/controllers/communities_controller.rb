@@ -1,5 +1,5 @@
 class CommunitiesController < ApplicationController
-  before_action(:authenticate_user!, except: [:index, :show])
+  before_action(:authenticate_user!, except: %i[index show])
 
   def new
   end
@@ -21,6 +21,5 @@ class CommunitiesController < ApplicationController
   end
 
   def moderator
-
   end
 end

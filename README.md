@@ -19,6 +19,8 @@ https://grupo-21.herokuapp.com/
 CLOUDINARY_CLOUD=<secret>
 CLOUDINARY_KEY=<secret>
 CLOUDINARY_SECRET=<secret>
+GOOGLE_CLIENT_ID=<secret>
+GOOGLE_CLIENT_SECRET=<secret>
 ```
 
 #### Mount application
