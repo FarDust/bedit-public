@@ -36,6 +36,7 @@
                                         data: {confirm: "¿Deseas borrarme?"}})%>
             <% end %>
           <%end%>
+          <strong>Abierto por:</strong> <%= truncate(post.user.username.capitalize(),length: 10) %>
         </div>
       </div>
     </div>
