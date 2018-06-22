@@ -1,4 +1,4 @@
-<h2><%= markdown(@post.title.capitalize()) %></h2>
+<h2><%= @post.title.capitalize() %></h2>
 <% available = ['tiempo','votos']%>
 
 <div class="jumbotron" onload="render();">
@@ -44,11 +44,12 @@
         &nbsp;&nbsp;
         <!-- Agregar favorito -->
         <%if user_signed_in?()%>
+            <div style="display: inline-block;">
             <% if @favourite.length() != 0 %>
               <% @favourite = @favourite[0] %>
               <%= link_to( favourites_path({post_id: @post.id}),method: :delete,
                         class: 'btn btn-default') do%>
-                Suscrito <%= @post.subcribers%>
+                Siguiendo <%= @post.subcribers%>
               <% end %>
               &nbsp;
               <% if @favourite.isSubcribe %>
@@ -60,9 +61,10 @@
                               html_options = {class: icon , method: :patch})%>
             <% else %>
               <%= link_to(favourites_path({post_id: @post.id}),method: :post, class: 'btn btn-danger') do %>
-                Suscribirse <%= @post.subcribers%>
+                Seguir <%= @post.subcribers%>
               <% end %>
             <% end%>
+            </div>
         <% end %>
         &nbsp;
         <% @category = Category.find(@post.category_id) %>
@@ -74,9 +76,11 @@
         <% end %>
         <a href="#comment" onClick = ""><span class= 'btn btn-default' onClick = "">Comentar</span></a>
       <% end %>
-      <div class="dropdown btn btn-default">
-        <a class="dropdown-toggle icon-link" data-toggle="dropdown" href="#">Ordenar por...
-        <span class="caret"></span></a>
+      <div class="dropdown" style="display: inline-block;">
+        <a class="dropdown-toggle icon-link btn btn-default" data-toggle="dropdown" href="#">
+          Ordenar por...
+          <span class="caret"></span>
+        </a>
         <ul class="dropdown-menu">
           <% for option in available do%>
             <li>

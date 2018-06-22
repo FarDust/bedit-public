@@ -50,6 +50,7 @@ class PostsController < ApplicationController
     else
       @post.liked_by(current_user)
     end
+    redirect_back(fallback_location: root_path())
   end
 
   def dislike
@@ -59,5 +60,6 @@ class PostsController < ApplicationController
     else
       @post.disliked_by(current_user)
     end
+    redirect_back(fallback_location: root_path())
   end
 end
