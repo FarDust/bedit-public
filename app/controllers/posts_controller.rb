@@ -6,11 +6,11 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @favourite = Favourite.where(post: @post, user: current_user)
-    if params['order'] == 'tiempo'
-      @comentarios = Commentary.sort_by_date(params)
-    else
-      @comentarios = Commentary.sort_by_votes(params)
-    end
+    @comentarios = if params['order'] == 'tiempo'
+                     Commentary.sort_by_date(params)
+                   else
+                     Commentary.sort_by_votes(params)
+                   end
   end
 
   def new

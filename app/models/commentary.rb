@@ -32,8 +32,6 @@ class Commentary < ApplicationRecord
   end
 
   def self.sort_by_date(params)
-    @comentarios = Commentary.where(post_id: params[:id]).sort_by do |x|
-      x.created_at
-    end .reverse!
+    @comentarios = Commentary.where(post_id: params[:id]).sort_by(&:created_at) .reverse!
   end
 end
