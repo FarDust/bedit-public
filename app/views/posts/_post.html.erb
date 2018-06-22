@@ -6,7 +6,7 @@
       <div class="panel-default" style="height: 90%">
       <!-- Titulo del foro -->
         <div class="panel panel-heading" style="height: 20%">
-          <strong><%= markdown(truncate(post.title, length: 40)) %></strong>
+          <strong><%= truncate(post.title, length: 40) %></strong>
         </div>
         <!-- Descripción del foro -->
         <div class="panel panel-body" style="height: 60%">
@@ -18,11 +18,11 @@
             <% if Favourite.where(post: post, user: current_user).length() != 0 %>
               <%= link_to( favourites_path({post_id: post.id}),method: :delete,
                         class: 'btn btn-default') do%>
-                Suscrito <%= post.subcribers%>
+                Siguiendo <%= post.subcribers%>
               <% end %>
             <% else %>
               <%= link_to(favourites_path({post_id: post.id}),method: :post, class: 'btn btn-danger') do %>
-                Suscribirse <%= post.subcribers%>
+                Seguir <%= post.subcribers%>
               <% end %>
             <% end%>
             <% @category = Category.find(post.category_id) %>

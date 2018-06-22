@@ -45,47 +45,15 @@
     </div>
   </div>
 
-  <!-- Categoría de politica -->
-  <h3>Politica</h3>
-  <!-- Only for debugging purposes -->
-  <h5>Últimos <%= @posts_politica.length %> foros</h5>
-  <div class="jumbotron">
-      <div class="row">
-        <!-- Renderear cada post de la categoría -->
-        <%= render(@posts_politica) %>
-      </div>
-  </div>
-
-  <!-- Categoría de programación -->
-  <h3>Programación</h3>
-  <!-- Only for debugging purposes -->
-  <h5>Últimos <%= @posts_programacion.length %> foros</h5>
-  <div class="jumbotron">
-      <div class="row">
-        <!-- Renderear cada post de la categoría -->
-        <%= render(@posts_programacion) %>
-      </div>
-  </div>
-
-  <!-- Categoría de Juegos -->
-  <h3>Juegos</h3>
-  <!-- Only for debugging purposes -->
-  <h5>Últimos <%= @posts_juegos.length %> foros</h5>
-  <div class="jumbotron">
-      <div class="row">
-        <!-- Renderear cada post de la categoría -->
-        <%= render(@posts_juegos) %>
-      </div>
-  </div>
-  
-  <!-- Categoría de Data Science -->
-  <h3>Data Science</h3>
-  <!-- Only for debugging purposes -->
-  <h5>Últimos <%= @posts_data_science.length %> foros</h5>
-  <div class="jumbotron">
-      <div class="row">
-        <!-- Renderear cada post de la categoría -->
-        <%= render(@posts_data_science) %>
-      </div>
-  </div>
-      
+  <% for category in @categories do%>
+    <% posts = Post.where(category_id: category.id).last(4) %>
+    <h3><%= category.name %></h3>
+    <h5>Últimas <%= posts.length %> publicaciones</h5>
+    <div class="jumbotron">
+        <div class="row">
+          <!-- Renderear cada post de la categoría -->
+          <%= render(posts) %>
+        </div>
+    </div>
+  <% end %>
+</div>

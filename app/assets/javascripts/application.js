@@ -21,3 +21,32 @@
 //= require jquery-fileupload
 
 //= require_tree .
+
+function toggle_like(obj) {
+    like_objects = obj.parentNode.childNodes
+    focus = Array();
+    like_objects.forEach(function (like_obj){ 
+        if (like_obj.nodeType == 1){
+            like_obj.childNodes.forEach(function (badge){
+                if (badge.nodeType == 1){
+                    focus.push([like_obj.getAttribute('name'), badge]);
+                }
+            });
+        }
+    });
+    focus.forEach(function(badge) {
+        if (badge[0] == "like"){
+            if (badge[1].className == "badge"){
+                badge[1].className = "badge badge-liked";
+            }else{
+                badge[1].className = "badge";    
+            }
+        }else{
+            if (badge[1].className == "badge"){
+                badge[1].className = "badge badge-disliked";
+            }else{
+                badge[1].className = "badge";      
+            }
+        }
+    });
+}

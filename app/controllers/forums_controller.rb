@@ -7,11 +7,8 @@ class ForumsController < ApplicationController
              else
                Post.sort_by_trends()
              end
-    @posts.paginate(page: params[:page], per_page: 6).order(created_at: :desc)
-    @posts_politica = Post.where(category_id: 1).last(4)
-    @posts_programacion = Post.where(category_id: 2).last(4)
-    @posts_juegos = Post.where(category_id: 3).last(4)
-    @posts_data_science = Post.where(category_id: 3).last(4)
+    @posts = Post.paginate(page: params[:page], per_page: 6).order(created_at: :desc)
+    @categories = Category.all().last(4)
   end
 
   def mostrar
