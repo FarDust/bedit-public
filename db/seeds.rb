@@ -13,7 +13,7 @@ def define_role(user)
     user.remove_role(:normal)
     user.add_role(:admin)
   elsif user.username == 'moderator'
-    user.add_role(:moderator, Category.find_by(name: 'Juegos'))
+    user.add_role(:moderator, Category.find(1))
   end
 end
 
@@ -65,7 +65,7 @@ def seed_commentaries
   end
 end
 
-seed_users()
 seed_categories()
+seed_users()
 seed_posts()
 seed_commentaries()

@@ -6,7 +6,10 @@
     <!-- Mostrar el contenido del post -->
     <div class="panel panel-default">
       <div class="panel-heading">
-        <%= image_tag(User.find(@post.user_id).avatar, alt: User.find(@post.user_id).username,size: "50", class: "kiwy")%> 
+        <%= image_tag(User.find(@post.user_id).avatar,
+                      alt: User.find(@post.user_id).username,
+                      size: "50",
+                      class: "kiwy")%> 
         <%=User.find(@post.user_id).username.capitalize() %>
         <span class="badge">
           <%= User.find(@post.user_id).reputation.to_i %>
@@ -105,11 +108,12 @@
       <h2>Comentar</h2>
       <%= form_for(:commentary, url: commentaries_path(), class: "form-horizontal") do |f| %>
         <!-- Enviar escondido el id del post y del usuario -->
-        <%= hidden_field_tag "commentary[post_id]", "#{@post.id}" %>
-        <%= hidden_field_tag "commentary[user_id]", current_user.id %>
+        <%= hidden_field_tag("commentary[post_id]", "#{@post.id}") %>
+        <%= hidden_field_tag("commentary[user_id]", current_user.id) %>
         <div class="form-group">
           <%= f.label("Comenta aqui: ") %><br />
-          <%= f.text_area(:text, rows: 4, placeholder: "Escribe tu comentario aqui...", class: "form-control", style: "resize: none;") %>
+          <%= f.text_area(:text, rows: 4, placeholder: "Escribe tu comentario aqui...",
+                          class: "form-control", style: "resize: none;") %>
         </div>
         <div class="actions">
           <%= f.submit("Crear", class: "btn btn-primary active") %>
@@ -130,10 +134,10 @@
 
 <script type="text/javascript">
   $('#uploader').cloudinary_upload_widget(
-    { cloud_name: 'hctj9u4ot', upload_preset: 'commentary', 
+    { cloud_name: 'hctj9u4ot', upload_preset: 'commentary',
       cropping: 'server', folder: 'commentaries', theme: 'minimal',
       button_class: "btn btn-default", max_image_width: 400, max_image_height: 400},
-    function(error, result) { 
+    function(error, result) {
       $('#commentary_text')[0].value += '![](' +  result["0"]['secure_url'] + ') '
      });
 </script>

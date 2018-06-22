@@ -8,7 +8,8 @@ class Commentary < ApplicationRecord
   has_many(:inverse_replies, class_name: 'Reply', foreign_key: 'response_id')
   has_many(:inverse_responses, through: :inverse_replies, source: :commentary)
 
-  after_commit :create_notifications, on: [:create]
+  after_commit(:create_notifications, on: [:create])
+
   def create_notifications
     if !post_id.nil?
       to_nofify = Favourite.where(post: Post.find(post_id), isSubcribe: true)

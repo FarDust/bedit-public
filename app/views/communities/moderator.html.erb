@@ -8,7 +8,7 @@
         </div>
         <div class="form-group">
           <% f.text_field(:user, value: current_user.username, class: "form-control") %>
-          <%= f.label(:category) %><br />
+          <%= f.label(:Foro) %><br />
           <% @categorias = Category.all.select {|category| not current_user.has_role?(:moderator,
                                                                                       category)} %>
           <% @categorias = @categorias.select {|c| not c.id == params[:category_id].to_i} %>
