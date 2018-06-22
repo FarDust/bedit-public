@@ -58,7 +58,7 @@
             <th scope="col">Foro</th>
             <th scope="col">Número de Posts</th>
             <!--<th scope="col">Suscriptores</th>-->
-            <th scope="col" class="text-center">Moderar</th>
+            <th scope="col"></th>
           </tr>
         </thead>
         <tbody>
@@ -70,9 +70,8 @@
               </td>
               <td class="col-xs-2"><%= Post.all.select{|p| p.category_id == u.id}.length() %></td>
               <td class="col-xs-3" align="center">
-                <%= button_to("Moderar",
-                              forum_path(u.id),
-                              class: "btn btn-primary" )%>
+                <%= link_to("Moderar", "#{communities_path()}/#{u.id}",
+                            html_options = {class: "btn btn-primary active"}) %>
               </td>
             </tr>
           <% end %>
