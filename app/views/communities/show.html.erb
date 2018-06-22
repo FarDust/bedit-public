@@ -1,4 +1,4 @@
-<h1>Foros</h1>
+<h1> <%=Category.find(params['id'].to_i).name%> </h1>
 <div class="jumbotron">
   <div class="row">
     <%= render(@posts) %>
