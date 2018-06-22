@@ -1,4 +1,5 @@
-<h2><%= markdown(@post.title.capitalize()) %></h2>
+<h2><%= @post.title.capitalize() %></h2>
+<% available = ['tiempo','votos']%>
 
 <div class="jumbotron" onload="render();">
   <div class="row">
@@ -46,18 +47,27 @@
         &nbsp;&nbsp;
         <!-- Agregar favorito -->
         <%if user_signed_in?()%>
-            <% if Favourite.where(post: @post, user: current_user).length() != 0 %>
+            <div style="display: inline-block;">
+            <% if @favourite.length() != 0 %>
+              <% @favourite = @favourite[0] %>
               <%= link_to( favourites_path({post_id: @post.id}),method: :delete,
                         class: 'btn btn-default') do%>
-                Suscrito <%= @post.subcribers%>
+                Siguiendo <%= @post.subcribers%>
               <% end %>
+              &nbsp;
+              <% if @favourite.isSubcribe %>
+                <% icon = "glyphicon glyphicon-volume-off icon-link" %>
+              <% else %>
+                <% icon = "glyphicon glyphicon-bell icon-link" %>
+              <% end %>
+              <%= link_to("", subscribe_path(@favourite.id),
+                              html_options = {class: icon , method: :patch})%>
             <% else %>
-              <%= link_to(favourites_path({post_id: @post.id}),
-                                          method: :post,
-                                          class: 'btn btn-danger') do %>
-                Suscribirse <%= @post.subcribers%>
+              <%= link_to(favourites_path({post_id: @post.id}),method: :post, class: 'btn btn-danger') do %>
+                Seguir <%= @post.subcribers%>
               <% end %>
             <% end%>
+            </div>
         <% end %>
         &nbsp;
         <% @category = Category.find(@post.category_id) %>
@@ -70,6 +80,21 @@
         <a href="#comment" onClick = ""><span class= 'btn btn-default' onClick = "">Comentar</span>
         </a>
       <% end %>
+      <div class="dropdown" style="display: inline-block;">
+        <a class="dropdown-toggle icon-link btn btn-default" data-toggle="dropdown" href="#">
+          Ordenar por...
+          <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <% for option in available do%>
+            <li>
+            <%= link_to post_path(@post.id,{order: option}) do%>
+              <spam class=''><%= option.capitalize() %></spam>
+            <% end %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
     </div>
   </div>
 </div>

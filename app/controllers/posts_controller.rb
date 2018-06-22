@@ -5,7 +5,12 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @comentarios = Commentary.sort_by_votes(params)
+    @favourite = Favourite.where(post: @post, user: current_user)
+    @comentarios = if params['order'] == 'tiempo'
+                     Commentary.sort_by_date(params)
+                   else
+                     Commentary.sort_by_votes(params)
+                   end
   end
 
   def new
