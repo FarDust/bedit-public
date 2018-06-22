@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180620054033) do
+ActiveRecord::Schema.define(version: 20180622234356) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -90,6 +90,20 @@ ActiveRecord::Schema.define(version: 20180620054033) do
     t.index ["resource_type", "resource_id"], name: "index_roles_on_resource_type_and_resource_id"
   end
 
+  create_table "subscriptions", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "categories_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["categories_id"], name: "index_subscriptions_on_categories_id"
+    t.index ["user_id"], name: "index_subscriptions_on_user_id"
+  end
+
+  create_table "subscritions", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -134,4 +148,6 @@ ActiveRecord::Schema.define(version: 20180620054033) do
   end
 
   add_foreign_key "posts", "users"
+  add_foreign_key "subscriptions", "categories", column: "categories_id"
+  add_foreign_key "subscriptions", "users"
 end
