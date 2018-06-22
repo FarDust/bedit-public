@@ -1,8 +1,4 @@
 <div class="container">
-  <!-- Espacio con alerta de desarrollo -->
-  <div class="alert alert-danger" role="alert">
-    La aplicación se encuentra aún en desarrollo
-  </div>
   <%if user_signed_in?()%>
     <div class="alert alert-success" role="alert">
       ¿No encuentras el foro que buscas? <br><br>
@@ -13,8 +9,27 @@
   <%end%>
   
   <!-- Todos los foros -->
-  <h3>Todos los foros</h3>
-  <h5>Últimos foros creados en todas las categorías</h5>
+  <div style="display: inline-block; width: 87%;">
+    <h3>Todos los foros</h3>
+    <h5>Últimos foros creados en todas las categorías</h5>
+  </div>
+  <div class="dropdown" style="display: inline-block; width: 5%;">
+    <a class="dropdown-toggle icon-link btn btn-default" data-toggle="dropdown" href="#">
+      Ordenar por...
+      <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu">
+      <% available = ["relevancia","tiempo","puntos"]%>
+      <% for option in available do%>
+        <li>
+        <%= link_to forum_path({order: option}) do%>
+          <spam class=''><%= option.capitalize() %></spam>
+        <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <br></br>
   <div class="jumbotron">
         <!-- Espacio para mostrar los fotos en la aplicación -->
       <div class="row">

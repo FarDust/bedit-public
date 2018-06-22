@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  rolify
+  rolify()
 
   after_create(:assign_default_role)
 

@@ -44,7 +44,7 @@ class CommentariesController < ApplicationController
 
   def like
     @commentary = Commentary.find(params[:id])
-    if current_user != User.find(@commentary.user_id)
+    if current_user != @commentary.user
       if current_user.liked?(@commentary)
         @commentary.disliked_by(current_user)
       else
@@ -56,7 +56,7 @@ class CommentariesController < ApplicationController
 
   def dislike
     @commentary = Commentary.find(params[:id])
-    if current_user != User.find(@commentary.user_id)
+    if current_user != @commentary.user
       if current_user.disliked?(@commentary)
         @commentary.liked_by(current_user)
       else
