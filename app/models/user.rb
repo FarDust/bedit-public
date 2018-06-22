@@ -36,6 +36,14 @@ class User < ApplicationRecord
     add_role(:normal) if roles.blank?
   end
 
+  def moderator?
+    response = false
+    for category in Category.all.each do
+      response = true if has_role?(:moderator, category)
+    end
+    response
+  end
+
   def self.from_omniauth(access_token)
     data = access_token.info
     user = User.where(email: data['email']).first

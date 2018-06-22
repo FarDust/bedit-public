@@ -18,6 +18,24 @@
     </div>
   <%end%>
 
+  <% if user_signed_in?() && current_user.moderator?()%>
+    <div class="alert alert-success" role="alert">
+      Herramientas de moderador &nbsp;&nbsp;&nbsp;
+      <%= link_to("+", administrate_index_path(), html_options = {class: "btn btn-primary"}) %>
+      <br><br>
+      <%
+        requests = Administrate.all.select {|r| current_user.has_role?(:moderator,
+                                                                       Category.find(r.category))}
+      %>
+      <%=
+        link_to("Solicitudes de moderación (#{requests.length})",
+                moderate_path(),
+                html_options = {class: "btn btn-terceary active"}
+                )
+      %>
+    </div>
+  <%end%>
+
   <h1>Comunidades</h1>
   <!-- Espacio para mostrar las comunidades -->
   <div class="jumbotron">

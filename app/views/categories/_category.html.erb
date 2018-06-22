@@ -7,7 +7,7 @@
       <%= link_to("Ver Más", "#{communities_path()}/#{category.id}",
                   html_options = {class: "btn btn-primary active"}) %>
       <% if user_signed_in?()%>
-        <% if not current_user.has_any_role?(:admin, {name: :moderator, resource: category })%>
+        <% if not current_user.has_any_role?(:admin, {name: :moderator, resource: category})%>
           <%= link_to("Ser moderador", communities_moderator_path(category_id: category.id),
                       html_options = {class: "btn btn-secundary active"}) %>
         <% end%>

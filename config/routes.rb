@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get('/moderate', to: 'moderate#index')
+
   get('communities/moderator')
   post('administrate/approve')
   post('administrate/refuse')
@@ -7,11 +9,11 @@ Rails.application.routes.draw do
   root('welcome#index')
   mount Notifications::Engine => "/notifications"
   # Config Devise
-  devise_for(:users, controllers: { 
-    sessions: 'users/sessions', 
-    registrations: 'users/registrations', 
-    confirmations: 'users/confirmations',  
-    omniauth_callbacks: 'users/omniauth_callbacks' 
+  devise_for(:users, controllers: {
+    sessions: 'users/sessions',
+    registrations: 'users/registrations',
+    confirmations: 'users/confirmations',
+    omniauth_callbacks: 'users/omniauth_callbacks'
   })
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   post('/search', to: 'welcome#search')
