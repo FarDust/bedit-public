@@ -3,7 +3,8 @@
 </div>
 <div class="media-content">
   <%post = Post.find(notification.target.post_id)%>
-  <%= notification.actor.username %> commento en <%=link_to(post.title ,main_app.posts_path() + "/" + post.id.to_s, onclick: "render(this);")%>
+  <%= notification.actor.username %> comentó en
+  <%=link_to(post.title ,main_app.posts_path() + "/" + post.id.to_s, onclick: "render(this);")%>
 </div>
 <script>
   function render(obj) {

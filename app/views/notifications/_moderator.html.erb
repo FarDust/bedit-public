@@ -1,0 +1,24 @@
+<div class="media-heading">
+    Respondieron a tu solicitud de moderación.
+</div>
+<div class="media-content">
+  <% category = Category.find(notification.target.category) %>
+  <% if current_user.has_role?(:moderator, category) %>
+    <% response = 'aceptado' %>
+  <% else %>
+    <% response = 'rechazado' %>
+  <% end %>
+  <%= notification.actor.username %> ha <%= response %> tu solicitud de moderación en
+  <%= link_to(category.name,
+              "#{main_app.communities_path()}/#{category.id}",
+              onclick: "render(this);") %>
+</div>
+<script>
+  function render(obj) {
+      var href = obj.href
+      console.log(href)
+      if (window.location !== window.top.location) {
+          window.top.location.href = href
+      }
+  };
+</script>

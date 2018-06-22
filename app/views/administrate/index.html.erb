@@ -11,7 +11,8 @@
           </tr>
         </thead>
         <tbody>
-          <% Administrate.all.each do |r| %>
+          <% requests = Administrate.all.select {|r| not r.answered} %>
+          <% requests.each do |r| %>
             <tr>
               <td class="col-xs-4"><%= r.user %></td>
               <td class="col-xs-4"><%= Category.find(r.category).name %></td>

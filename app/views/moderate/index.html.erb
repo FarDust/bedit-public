@@ -6,14 +6,14 @@
         <thead>
           <tr>
             <th scope="col">Usuario</th>
-            <th scope="col">Categoría</th>
+            <th scope="col">Foro</th>
             <th scope="col"></th>
           </tr>
         </thead>
         <tbody>
+          <% list = Administrate.all.select {|r| not r.answered} %>
           <%
-            list = Administrate.all.select {|r| current_user.has_role?(:moderator,
-                                                                       Category.find(r.category))}
+            list = list.select {|r| current_user.has_role?(:moderator, Category.find(r.category))}
           %>
           <% list.each do |r| %>
             <tr>

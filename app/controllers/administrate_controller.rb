@@ -14,13 +14,13 @@ class AdministrateController < ApplicationController
     define_moderator(params['administrate']['user'])
     @request = Administrate.where(user: params['administrate']['user'],
                                   category: params['administrate']['id'])
-    delete_request(@request, 'Has aprobado la solicitud')
+    answer_request('aprobado')
   end
 
   def refuse
     @request = Administrate.where(user: params['administrate']['user'],
                                   category: params['administrate']['id'])
-    delete_request(@request, 'Has rechazado la solicitud')
+    answer_request('rechazado')
   end
 
   def define_moderator(username)
@@ -28,9 +28,13 @@ class AdministrateController < ApplicationController
     @moderator.add_role(:moderator, Category.find(params['administrate']['id']))
   end
 
-  def delete_request(request, notice)
-    request.each(&:delete)
-    redirect_to(administrate_index_path(), notice: notice)
+  def answer_request(result)
+    @request[0].create_notifications(current_user)
+    for r in @request.each do
+      r.update_attribute(:answered, true)
+    end
+    redirect_back(fallback_location: administrate_index_path(),
+                  notice: "Has #{result} la solicitud")
   end
 
   def delete_user
