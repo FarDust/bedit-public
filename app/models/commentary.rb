@@ -25,8 +25,13 @@ class Commentary < ApplicationRecord
   end
 
   def self.sort_by_votes(params)
+    @comentarios = sort_by_date(params)
     @comentarios = Commentary.where(post_id: params[:id]).sort_by do |x|
       (x.get_likes.size - x.get_dislikes.size)
     end .reverse!
+  end
+
+  def self.sort_by_date(params)
+    @comentarios = Commentary.where(post_id: params[:id]).sort_by(&:created_at) .reverse!
   end
 end
