@@ -1,12 +1,12 @@
 class ForumsController < ApplicationController
   def index
-    if params['order'] == 'tiempo'
-      @posts = Post.sort_by_date()
-    elsif params['order'] == 'puntos'
-      @posts = Post.sort_by_points()
-    else
-      @posts = Post.sort_by_trends()
-    end
+    @posts = if params['order'] == 'tiempo'
+               Post.sort_by_date()
+             elsif params['order'] == 'puntos'
+               Post.sort_by_points()
+             else
+               Post.sort_by_trends()
+             end
     @posts.paginate(page: params[:page], per_page: 6).order(created_at: :desc)
     @posts_politica = Post.where(category_id: 1).last(4)
     @posts_programacion = Post.where(category_id: 2).last(4)

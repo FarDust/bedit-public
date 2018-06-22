@@ -17,14 +17,14 @@ class CommunitiesController < ApplicationController
   end
 
   def show
-    if params['order'] == 'tiempo'
-      @posts = Post.sort_by_date()
-    elsif params['order'] == 'puntos'
-      @posts = Post.sort_by_points()
-    else
-      @posts = Post.sort_by_trends()
-    end
-    @posts = @posts.where(category: Category.find(params[:id]))
+    @posts = Post.where(category: Category.find(params[:id]))
+    @posts = if params['order'] == 'tiempo'
+               @posts.sort_by_date()
+             elsif params['order'] == 'puntos'
+               @posts.sort_by_points()
+             else
+               @posts.sort_by_trends()
+             end
   end
 
   def moderator
