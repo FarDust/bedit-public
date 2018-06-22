@@ -11,24 +11,20 @@ class Post < ApplicationRecord
   end
 
   def points
-    favourites.length * [1,(get_likes.size - get_dislikes.size)].max()
-  end 
-
-  def sort_by_points
-    Post.all().sort_by do |x|
-      x.points()
-    end .reverse!
+    subcribers * [1,(get_likes.size - get_dislikes.size)].max()
   end
 
-  def sort_by_date
-    Post.all().sort_by do |x|
-      x.created_at
-    end .reverse!
+  def self.sort_by_points
+    Post.all().sort_by(&:points).reverse!
   end
 
-  def sort_by_trends
+  def self.sort_by_date
+    Post.all().sort_by(&:created_at).reverse!
+  end
+
+  def self.sort_by_trends
     Post.all().sort_by do |x|
-      x.points * 1 / [(Date.today - x.created_at),1].min()
+      x.points() / [(Date.today.to_time.to_i - x.created_at.to_time.to_i)**2, 1].min()
     end .reverse!
   end
 end

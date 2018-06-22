@@ -13,11 +13,18 @@ class CommunitiesController < ApplicationController
   end
 
   def index
-    @communities = Category.last(5)
+    @communities = Category.all()
   end
 
   def show
-    @posts = Post.where(category_id: params[:id]).last(100)
+    if params['order'] == 'tiempo'
+      @posts = Post.sort_by_date()
+    elsif params['order'] == 'puntos'
+      @posts = Post.sort_by_points()
+    else
+      @posts = Post.sort_by_trends()
+    end
+    @posts = @posts.where(category: Category.find(params[:id]))
   end
 
   def moderator
