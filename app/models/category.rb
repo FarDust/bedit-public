@@ -1,4 +1,4 @@
 class Category < ApplicationRecord
-  resourcify
+  resourcify()
   has_many(:posts, dependent: :destroy)
 end

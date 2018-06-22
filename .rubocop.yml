@@ -12,7 +12,7 @@ AllCops:
 
 
 Layout/EndOfLine:
-  Enabled: true
+  Enabled: false
 
 Lint/UselessAssignment:
   Enabled: false

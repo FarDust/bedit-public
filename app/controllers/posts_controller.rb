@@ -17,10 +17,9 @@ class PostsController < ApplicationController
   end
 
   def create
-    new_post = Post.create(category: Category.find_by(id: params['post']['category']),
-                           title: params['post']['title'], content: params['post']['content'],
-                           user: current_user)
-    new_post.save()
+    Post.create(category: Category.find_by(id: params['post']['category']),
+                title: params['post']['title'], content: params['post']['content'],
+                user: current_user).save()
     redirect_to(forum_path())
   end
 
