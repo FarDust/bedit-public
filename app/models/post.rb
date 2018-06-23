@@ -11,11 +11,12 @@ class Post < ApplicationRecord
   def create_notifications
     to_nofify = Subscription.where(category: category)
     for subcrition in to_nofify do
+      next if subcrition.user == current_user
       Notification.create(
         notify_type: 'new_post',
         actor: user,
         user: subcrition.user,
-        target: self
+        target: to_nofify
       )
     end
   end

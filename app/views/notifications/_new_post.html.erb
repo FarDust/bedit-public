@@ -1,0 +1,16 @@
+<div class="media-heading">
+    Crearon una nueva publicacion en <%= notification.target.category.name %>
+</div>
+<div class="media-content">
+  <%= notification.actor.username %> creo
+  <%=link_to(notification.post.title ,main_app.posts_path() + "/" + notification.post.id.to_s, onclick: "render(this);")%>
+</div>
+<script>
+  function render(obj) {
+      var href = obj.href
+      console.log(href)
+      if (window.location !== window.top.location) {
+          window.top.location.href = href
+      }
+  };
+</script>
