@@ -41,7 +41,7 @@
         </span>
       <% end %>
       <% if user_signed_in? %>
-        <% @post = Post.find(params['id']) %>
+        <% @post = Post.find(Commentary.find_parent_id(commentary)) %>
         <% @forum = Category.find(@post.category_id) %>
         <%
           @roles = current_user.has_role?(:admin) || current_user.has_role?(:moderator, @forum)
@@ -73,7 +73,8 @@
     </div>
       <% for reply in commentary.replies %>
         <% if !reply.response.nil? %>
-          <%= render(reply.response)%>
+          
+          <%= render(template: "commentaries/_commentary.html.erb", locals: {commentary: reply.response})%>
         <% end %>
       <% end%>
     <% end %>

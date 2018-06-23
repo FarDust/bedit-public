@@ -7,7 +7,7 @@
             <%= user.username.capitalize()%>
         </h4>
         <p>
-            Reputacion: <%= user.reputation %> puntos <br>
+            Reputacion: <%= user.reputation.to_i() %> puntos <br>
             Publicaciones: <%= user.posts.length() %>
         </p>
     </div>

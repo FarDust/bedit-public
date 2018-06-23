@@ -27,24 +27,28 @@ class Commentary < ApplicationRecord
 
   def get_parent_post
     if !post_id.nil?
-      return Post.find(post_id)
+      Post.find(post_id)
     else
-      return Post.find(find_parent_id(self))
+      Post.find(Commentary.find_parent_id(self))
     end
   end
 
   def self.find_parent_id(commentary)
-    for reply in commentary.inverse_responses
-      if !reply.post_id.nil?
-        return reply.post_id
-      else
-        return Commentary.find_parent_id(reply)
+    if !commentary.post_id.nil?
+      commentary.post_id
+    else
+      for reply in commentary.inverse_responses
+        if !reply.post_id.nil?
+          return reply.post_id
+        else
+          return Commentary.find_parent_id(reply)
+        end
       end
     end
   end
 
   def votes
-    get_likes.size - x.get_dislikes.size
+    get_likes.size - get_dislikes.size
   end
 
   def self.sort_by_votes(params)

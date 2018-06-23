@@ -1,7 +1,7 @@
 <h2>Perfil de <%= resource.username.capitalize %></h2>
 
 <%= render(resource)%>
-<%= render(template: "users/users/_profile.html.erb", user: resource)%>
+<%= render(template: "users/users/_profile.html.erb", locals: {user: resource})%>
 
 
 <div class="panel panel-default">
