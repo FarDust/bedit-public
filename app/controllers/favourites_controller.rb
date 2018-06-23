@@ -2,10 +2,11 @@ class FavouritesController < ApplicationController
   before_action(:authenticate_user!)
 
   def index
-    @favourites = Favourite.where(user: current_user)
-    puts(current_user.subscriptions())
-    puts('*************************************************')
-    @posts = Post.where({ id: @favourites[0]['post_id'] })
+    @subscriptions = current_user.subscriptions
+    @favourites = current_user.favourites
+    
+    @posts = Post.where(id: @favourites.map { |a| a['post_id'] })
+    @subs = Category.where(id: @subscriptions.map { |a| a['category_id'] })
   end
 
   def create
