@@ -1,17 +1,17 @@
 <div class="container">
   <%if user_signed_in?()%>
     <div class="alert alert-success" role="alert">
-      ¿No encuentras el foro que buscas? <br><br>
+      ¿Quieres hacer una publicación? <br><br>
       <%=
-        link_to("Crear foro", new_post_path(), html_options = {class: "btn btn-primary active"})
+        link_to("Crear publicación", new_post_path(), html_options = {class: "btn btn-primary active"})
       %>
     </div>
   <%end%>
-  
+
   <!-- Todos los foros -->
   <div style="display: inline-block; width: 87%;">
-    <h3>Todos los foros</h3>
-    <h5>Últimos foros creados en todas las categorías</h5>
+    <h1>Publicaciones</h1>
+    <h5>Últimas publicaciones creadas en todas las categorías</h5>
   </div>
   <div class="dropdown" style="display: inline-block; width: 5%;">
     <a class="dropdown-toggle icon-link btn btn-default" data-toggle="dropdown" href="#">
