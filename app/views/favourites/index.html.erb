@@ -4,5 +4,19 @@
 <% end %>
 
 <% if @posts.length() != 0 %>
-  <%= render(@posts) %>
+  <h3>Publicaciones</h3>
+  <div class="jumbotron">
+    <div class="row">
+        <%= render(@posts) %>
+    </div>
+  </div>
 <% end %>
+
+<% if @subs.length() != 0 %>
+  <h3>Foros</h3>
+  <div class="jumbotron">
+    <div class="row">
+        <%= render(@subs) %>
+    </div>
+  </div>
+ <% end %>
