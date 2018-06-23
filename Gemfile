@@ -41,7 +41,6 @@ gem('bcrypt', '~> 3.1.7')
 # gem 'capistrano-rails', group: :development
 
 gem('bootstrap', '~> 4.1.0')
-gem('devise')
 gem('redcarpet')
 gem('rubocop', '~> 0.55.0', require: false)
 gem('sprockets-rails')
@@ -53,7 +52,7 @@ gem('cloudinary')
 gem('identicon')
 gem('jquery-fileupload-rails')
 
-# replies
+# Replies
 gem('safe_attributes')
 
 # votes
@@ -64,6 +63,12 @@ gem('traceroute')
 
 # Notifications
 gem('notifications', '~> 0.6.0')
+
+# Users
+gem('cancancan', '~> 2.0')
+gem('devise')
+gem('omniauth-google-oauth2')
+gem('rolify')
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

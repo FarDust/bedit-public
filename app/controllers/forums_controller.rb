@@ -1,10 +1,17 @@
+require('will_paginate/array')
+
 class ForumsController < ApplicationController
   def index
-    @posts = Post.paginate(page: params[:page], per_page: 6).order(created_at: :desc)
-    @posts_politica = Post.where(category_id: 1).last(4)
-    @posts_programacion = Post.where(category_id: 2).last(4)
-    @posts_juegos = Post.where(category_id: 3).last(4)
-    @posts_data_science = Post.where(category_id: 3).last(4)
+    @posts = Post.all()
+    @posts = if params['order'] == 'tiempo'
+               Post.sort_by_date(@posts)
+             elsif params['order'] == 'puntos'
+               Post.sort_by_points(@posts)
+             else
+               Post.sort_by_trends(@posts)
+             end
+    @posts = @posts.paginate(page: params[:page], per_page: 6)
+    @categories = Category.all().last(4)
   end
 
   def mostrar

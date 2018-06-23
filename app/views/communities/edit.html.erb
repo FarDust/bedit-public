@@ -1,0 +1,29 @@
+<div class="jumbotron">
+
+  <div class="alert alert-danger" role="alert">
+    <p>Este formulario se encuentra en desarrollo. Algunas opciones pueden fallar.<p>
+  </div>
+
+  <div class="row">
+    <h2>Edit community</h2>
+    <%= form_tag(:post, url: communities_path(@post), method: "put", class: "form-horizontal") do %>
+
+      <div class="form-group">
+        <label>Title</label><br />
+        <%= text_field_tag(:title, @post.title, class: "form-control") %>
+        <br/>
+        <label>Descripción</label>
+        &nbsp;
+        <a href="https://github.com/google/styleguide/blob/gh-pages/docguide/style.md" class="badge">
+            Markdown style reference
+        </a>
+        <br/>
+        <%= text_area_tag(:content, @post.content, rows: 10, placeholder: "Write your content...",
+                          class: "form-control") %>
+      </div>
+      <div class="actions">
+        <%= submit_tag("Save", class: "btn btn-primary active") %>
+      </div>
+    <% end %>
+  </div>
+</div>

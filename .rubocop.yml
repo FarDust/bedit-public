@@ -10,9 +10,16 @@ AllCops:
     - 'app/channels/application_cable/*'
     - 'app/controllers/notifications/notifications_controller.rb'
 
+
+Layout/EndOfLine:
+  Enabled: false
+
+Lint/UselessAssignment:
+  Enabled: false
+
 Metrics/AbcSize:
   Enabled: true
-  Max: 18
+  Max: 15
 
 Metrics/LineLength:
   Enabled: true
@@ -20,37 +27,18 @@ Metrics/LineLength:
 
 Metrics/MethodLength:
   Enabled: true
-  Max: 20
-
-Layout/EndOfLine:
-  Enabled: true
+  Max: 15
 
 Style/BracesAroundHashParameters:
   Enabled: true
 
-Style/ClassMethods:
-  Enabled: true
-
-Style/TernaryParentheses:
-  Enabled: true
-  EnforcedStyle: require_parentheses
-
 Style/ClassAndModuleChildren:
   EnforcedStyle: compact
 
-Style/MethodCallWithoutArgsParentheses:
-  Enabled: false
-
-Style/MethodCallWithArgsParentheses:
+Style/ClassMethods:
   Enabled: true
 
-Style/StringLiterals:
-  EnforcedStyle: single_quotes
-
 Style/Documentation:
-  Enabled: false
-
-Style/GuardClause:
   Enabled: false
 
 Style/EmptyMethod:
@@ -59,11 +47,21 @@ Style/EmptyMethod:
 Style/For:
   EnforcedStyle: for
 
-Style/Negateif:
+Style/GuardClause:
+  Enabled: false
+
+Style/MethodCallWithoutArgsParentheses:
+  Enabled: false
+
+Style/MethodCallWithArgsParentheses:
+  Enabled: true
+
+Style/NegatedIf:
   EnforcedStyle: postfix
 
-Layout/EndOfLine:
-  Enabled: false
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
 
-Lint/UselessAssignment:
-  Enabled: false
+Style/TernaryParentheses:
+  Enabled: true
+  EnforcedStyle: require_parentheses

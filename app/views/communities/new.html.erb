@@ -1,0 +1,29 @@
+<div class="jumbotron">
+  <div class="alert alert-danger" role="alert">
+    <p>Este formulario se encuentra en desarrollo. Algunas opciones pueden fallar.</p>
+  </div>
+  <div class="row">
+    <h2>Create new community</h2>
+    <%= form_for(:post, url: communities_path(), class: "form-horizontal") do |f| %>
+
+      <div class="form-group">
+        <%= f.label(:title) %><br />
+        <%= f.text_field(:title, class: "form-control") %>
+      </div>
+      <div class="form-group">
+        <%= f.label("Descripción") %>
+        &nbsp;
+        <a href="https://github.com/google/styleguide/blob/gh-pages/docguide/style.md" class="badge">
+            Markdown style reference
+        </a>
+        <br/>
+        <%= f.text_area(:content, rows: 10, placeholder: "Describe your forum...",
+                                  class: "form-control") %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit("Create", class: "btn btn-primary active") %>
+      </div>
+    <% end %>
+  </div>
+</div>

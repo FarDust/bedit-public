@@ -1,5 +1,43 @@
 <div class="container">
-  <h1>Comunidades</h1>
+  <% requests = Administrate.all.select {|r| not r.answered} %>
+  <% if user_signed_in?() && current_user.has_role?(:admin)%>
+    <div class="alert alert-success" role="alert">
+      Herramientas de administrador &nbsp;&nbsp;&nbsp;
+      <%= link_to("+", administrate_index_path(), html_options = {class: "btn btn-primary"}) %>
+      <br><br>
+      <%=
+        link_to("Crear foro", new_community_path(),
+                html_options = {class: "btn btn-primary active"})
+      %>
+      <%=
+        link_to("Solicitudes de moderación (#{requests.length})",
+                administrate_index_path(),
+                html_options = {class: "btn btn-terceary active"}
+                )
+      %>
+    </div>
+  <%end%>
+
+
+  <% if user_signed_in?() && current_user.moderator?()%>
+    <div class="alert alert-success" role="alert">
+      Herramientas de moderador &nbsp;&nbsp;&nbsp;
+      <%= link_to("+", moderate_path(), html_options = {class: "btn btn-primary"}) %>
+      <br><br>
+      <%
+        requests = requests.select {|r| current_user.has_role?(:moderator,
+                                                               Category.find(r.category))}
+      %>
+      <%=
+        link_to("Solicitudes de moderación (#{requests.length})",
+                moderate_path(),
+                html_options = {class: "btn btn-terceary active"}
+                )
+      %>
+    </div>
+  <%end%>
+
+  <h1>Foros</h1>
   <!-- Espacio para mostrar las comunidades -->
   <div class="jumbotron">
       <div class="row">

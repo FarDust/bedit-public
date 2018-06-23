@@ -1,5 +1,6 @@
 class CommentariesController < ApplicationController
   before_action(:authenticate_user!, except: [:show])
+
   def index
   end
 
@@ -8,33 +9,60 @@ class CommentariesController < ApplicationController
 
   def create
     if params.key?('commentary')
-      new_comentary = Commentary.create(
-        post_id: params['commentary']['post_id'],
-        text: params['commentary']['text'],
-        user_id: params['commentary']['user_id']
-      )
-      # new_comentary.post = Post.find(params['commentary']['post_id'].to_i)
-      new_comentary.user = current_user
-      new_comentary.save()
+      create_commentary(params['commentary'])
     elsif params.key?('reply')
-      base_commentary = Commentary.find(params['commentary_id'].to_i)
-      new_comentary = Commentary.create(text: params['reply']['text'],
-                                        user_id: current_user.id)
-      new_comentary.user = current_user
-      new_comentary.save()
-      base_commentary.replies.build(response_id: new_comentary.id)
-      base_commentary.save()
+      create_reply(params)
     end
     redirect_back(fallback_location: forum_path())
   end
 
-  def vote
+  def create_commentary(commentary)
+    new_comentary = Commentary.create(
+      text: commentary['text'],
+      post_id: commentary['post_id'],
+      user_id: commentary['user_id']
+    )
+    new_comentary.user = current_user
+    new_comentary.save()
+  end
+
+  def create_reply(reply)
+    base_commentary = Commentary.find(reply['commentary_id'].to_i)
+    new_comentary = Commentary.create(text: reply['reply']['text'],
+                                      user_id: current_user.id)
+    new_comentary.user = current_user
+    new_comentary.save()
+    base_commentary.replies.build(response_id: new_comentary.id)
+    base_commentary.save()
+  end
+
+  def destroy
     @commentary = Commentary.find(params[:id])
-    if current_user.liked?(@commentary)
-      @commentary.disliked_by(current_user)
-    else
-      @commentary.liked_by(current_user)
+    @commentary.delete()
+    redirect_back(fallback_location: forum_path(), notice: 'Comentario borrado')
+  end
+
+  def like
+    @commentary = Commentary.find(params[:id])
+    if current_user != @commentary.user
+      if current_user.liked?(@commentary)
+        @commentary.disliked_by(current_user)
+      else
+        @commentary.liked_by(current_user)
+      end
     end
-    redirect_back(fallback_location: root_path())
+    redirect_to(post_path(@commentary.post_id) + '#commentary-' + @commentary.id.to_s)
+  end
+
+  def dislike
+    @commentary = Commentary.find(params[:id])
+    if current_user != @commentary.user
+      if current_user.disliked?(@commentary)
+        @commentary.liked_by(current_user)
+      else
+        @commentary.disliked_by(current_user)
+      end
+    end
+    redirect_to(post_path(@commentary.post_id) + '#commentary-' + @commentary.id.to_s)
   end
 end
