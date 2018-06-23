@@ -1,12 +1,12 @@
 <div class="jumbotron">
   <div class="row">
-    <h2>Edit post</h2>
+    <h2>Editar publicación</h2>
     <%= form_tag(:post, url: posts_path(@post), method: "put", class: "form-horizontal") do %>
       <div class="form-group">
-        <label>Title</label><br />
+        <label>Título</label><br />
         <%= text_field_tag(:title, @post.title, class: "form-control") %>
         <br/>
-        <label>Content</label>
+        <label>Contenido</label>
         &nbsp;
         <a href="https://github.com/google/styleguide/blob/gh-pages/docguide/style.md" class="badge">
             Markdown style reference
