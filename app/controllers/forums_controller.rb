@@ -14,6 +14,16 @@ class ForumsController < ApplicationController
     @categories = Category.all().last(4)
   end
 
+  def create
+    Category.create(
+      name: params[:forum][:name],
+      topic: params[:forum][:topic],
+      description: params[:forum][:description]
+    )
+    redirect_to(communities_path(),
+                notice: "¡Has creado un foro llamado #{params[:forum][:name]}!")
+  end
+
   def mostrar
     @post = Post.find(params[:id])
     @comentarios = Commentary.where(post_id: params[:id])

@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   resources :communities
   post('/commentaries', to: 'commentaries#create')
   post('/favourites', to: 'favourites#create')
+  post('/forums', to: 'forums#create')
   delete('/favourites', to: 'favourites#delete')
   patch('/subscribe', to: 'favourites#subscribe')
   post('/subscribe', to: 'subscriptions#create')

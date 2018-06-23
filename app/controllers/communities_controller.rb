@@ -9,7 +9,7 @@ class CommunitiesController < ApplicationController
       Administrate.create(user: params['request']['user'],
                           category: params['request']['category'],
                           answered: false)
-      redirect_to(communities_path(), notice: '¡Tu solicitud a sido enviada!')
+      redirect_back(notice: '¡Tu solicitud a sido enviada!')
     end
   end
 
