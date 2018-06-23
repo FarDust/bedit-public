@@ -3,6 +3,9 @@ class FavouritesController < ApplicationController
 
   def index
     @favourites = Favourite.where(user: current_user)
+    puts(current_user.subscriptions())
+    puts('*************************************************')
+    @posts = Post.where({ id: @favourites[0]['post_id'] })
   end
 
   def create
