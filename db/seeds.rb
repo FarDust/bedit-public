@@ -17,10 +17,17 @@ def define_role(user)
   end
 end
 
-def seed_categories
-  categorias = ['Política', 'Programación', 'Juegos', 'Data Science']
-  categorias.each do |name|
-    Category.create(name: name)
+def seed_forums
+  categorias = {Política: ['Política chilena', 'Ley Bolsas Plásticas'],
+                Programación: ['Ruby gems', 'Git for dummies', 'Tutoriales RoR'],
+                Juegos: ['Nintento Switch', 'Trucos AoE', "New Assassin's Creed"]}
+  categorias.each do |topic|
+    topic.each do |forum|
+    Category.create(
+      name: forum
+      topic: topic
+      description: Faker::Lorem.sentences[0]
+    )
   end
 end
 
@@ -65,7 +72,7 @@ def seed_commentaries
   end
 end
 
-seed_categories()
+seed_forums()
 seed_users()
 seed_posts()
 seed_commentaries()
