@@ -5,7 +5,11 @@
     <%if !commentary.user_id.nil? %>
       <div class="panel panel-info">
         <div class="panel-heading">
-          <%= image_tag(User.find(commentary.user_id).avatar, alt: User.find(commentary.user_id).username,size: "50", class: "kiwy")%> 
+          <%= link_to(profile_path({id: User.find(commentary.user_id).id}), method: :patch) do %>
+            <% if !User.find(commentary.user_id).avatar.nil? %>
+                <%= image_tag(User.find(commentary.user_id).avatar, alt: User.find(commentary.user_id).username,size: "50", class: "kiwy")%>
+            <% end %>
+          <% end %>
           <%=User.find(commentary.user_id).username.capitalize() %>
           <span class="badge">
             <%= User.find(commentary.user_id).reputation.to_i %>
