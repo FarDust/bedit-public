@@ -1,0 +1,9 @@
+<% user_signed_in?()%>
+    <% if current_user == user %>
+        <%= link_to(edit_user_registration_path()), class: "btn-warning" do %>
+                Editar mi perfil
+        <% end %>
+    <% end %>
+
+    <%= render(template: "users/users/_profile.html.erb", locals: {user: user})%>
+<% end %>
