@@ -1,4 +1,20 @@
 <!-- Mostrar la lista de favoritos -->
+
+
 <% if @favourites.length() != 0 %>
-  <%= render(@favourites) %>
+  <h3>Publicaciones</h3>
+  <div class="jumbotron">
+    <div class="row">
+      <%= render(@favourites) %>
+    </div>
+  </div>
 <% end %>
+
+<% if @subs.length() != 0 %>
+  <h3>Foros</h3>
+  <div class="jumbotron">
+    <div class="row">
+        <%= render(@subs) %>
+    </div>
+  </div>
+ <% end %>
