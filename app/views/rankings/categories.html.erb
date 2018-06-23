@@ -1,0 +1,10 @@
+<div class="container">
+    <h1>Mejores 10 foros</h1>
+    <% ranking = 1%>
+    <%for category in @categories do%>
+        <div id= <%= ranking%>>
+            <%= render(category)%>
+        </div>
+        <%ranking +=1%>
+    <% end %>
+</div>

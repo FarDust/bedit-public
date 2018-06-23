@@ -12,5 +12,6 @@ class RankingsController < ApplicationController
   end
 
   def categories
+    @categories = Category.all().sort_by(&:subcribers)[0..10].reverse!
   end
 end
