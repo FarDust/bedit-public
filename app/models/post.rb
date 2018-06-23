@@ -1,10 +1,25 @@
 class Post < ApplicationRecord
   acts_as_votable() # Activate Vote
   resourcify() # Activate Roles
-  belongs_to(:category)
+  belongs_to(:category, dependent: :destroy)
   belongs_to(:user)
   has_many(:favourites)
   has_many(:commentary)
+
+  after_commit(:create_notifications, on: [:create])
+
+  def create_notifications
+    to_nofify = Subscription.where(category: category)
+    for subcrition in to_nofify do
+      next if subcrition.user == user
+      Notification.create(
+        notify_type: 'new_post',
+        actor: user,
+        user: subcrition.user,
+        target: self
+      )
+    end
+  end
 
   def subcribers
     favourites.length

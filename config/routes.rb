@@ -26,8 +26,8 @@ Rails.application.routes.draw do
   post('/favourites', to: 'favourites#create')
   delete('/favourites', to: 'favourites#delete')
   patch('/subscribe', to: 'favourites#subscribe')
-
-
+  post('/subscribe', to: 'subscriptions#create')
+  delete('/subscribe', to: 'subscriptions#delete')
   resources(:favourites)
   resources(:administrate)
   root(to: 'pages#index')
