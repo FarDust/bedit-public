@@ -1,7 +1,7 @@
 <div class="container">
     <h2>Perfil de <%=user.username %></h2>
     <div class="jumbotron">
-        <%= render(user)%>
+        <%= render(template: "users/users/_user.html.erb", locals: {user: user})%>
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h3>Publicaciones con mejor reputacion</h3>
@@ -31,7 +31,7 @@
                                 Puntos: <%= post.points%>
                             </span >
                             &nbsp;
-                            <span  class="label label-info">
+                            <span  class="label label-infoc">
                                 Relevancia: <%= post.relevance%>
                             </span >
                         </div>

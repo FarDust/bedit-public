@@ -52,7 +52,7 @@
       <ul class="nav navbar-nav navbar navbar-light bg-light navbar-right" style="margin-top: 0">
         <% if user_signed_in?() %>
           <li>
-            <%= link_to(edit_user_registration_path()) do %>
+            <%= link_to(profile_path({id: current_user.id}), method: :patch) do %>
               Hola, <%= current_user.username %>
               <% if !current_user.avatar.nil? %>
                 <%= image_tag(current_user.avatar, alt: current_user.username, size: "30") %>
