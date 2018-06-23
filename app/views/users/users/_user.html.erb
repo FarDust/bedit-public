@@ -1,0 +1,14 @@
+<div class="media" id="presentation-<%=user.id%>">
+    <div class="media-left">
+        <%= image_tag(user.avatar, alt: user.username, size: "60", class: "img-thumbnail media-object", alt:"Cinque Terre") %>
+    </div>
+    <div class="media-body">
+        <h4 class="media-heading">
+            <%= user.username.capitalize()%>
+        </h4>
+        <p>
+            Reputacion: <%= user.reputation %> puntos <br>
+            Publicaciones: <%= user.posts.length() %>
+        </p>
+    </div>
+</div>

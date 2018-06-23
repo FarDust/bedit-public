@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="jumbotron">
+        <%= render(user)%>
+        <div class="container" style="display: block-inline; width:50%;">
+            <h3>
+                Mejores comentarios y repuestas para la comunidad
+            </h3>
+            <% for commentary in  user.commentaries.sort_by(&:votes).revere![0..4] %>
+                <div class="media" id="commentary-<%=commentary.id%>">
+                    <div class="media-left">
+                        <%= image_tag(user.avatar, alt: user.username, size: "60", class: "img-thumbnail media-object", alt:"Cinque Terre") %>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">
+                            <%= link_to( "Ver Más", post_path(Commentary.find_parent_id(commentary)), html_options = {class: "btn btn-primary active"} )%>
+                        </h4>
+                        <%= markdown(commentary.content)%>
+                    </div>
+                </div>
+            <% end %>
+        </div>
+        <div class="container" style="display: block-inline; width:47%;">
+            <h3>
+                Publicaciones con mejor reputacion
+            </h3>
+            <% for post in  user.posts.sort_by(&:points).revere![0..4] %>
+                <div class="media" id="post-<%=post.id%>">
+                    <div class="media-left">
+                        <%= image_tag(user.avatar, alt: user.username, size: "60", class: "img-thumbnail media-object", alt:"Cinque Terre") %>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">
+                            <%= link_to( "Ver Más", post_path(post.id), html_options = {class: "btn btn-primary active"} )%>
+                        </h4>
+                        <%= render(post.content)%>
+                    </div>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>
