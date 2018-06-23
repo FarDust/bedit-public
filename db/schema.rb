@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180622234356) do
+ActiveRecord::Schema.define(version: 20180623002029) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -92,10 +92,10 @@ ActiveRecord::Schema.define(version: 20180622234356) do
 
   create_table "subscriptions", force: :cascade do |t|
     t.bigint "user_id"
-    t.bigint "categories_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["categories_id"], name: "index_subscriptions_on_categories_id"
+    t.bigint "category_id"
+    t.index ["category_id"], name: "index_subscriptions_on_category_id"
     t.index ["user_id"], name: "index_subscriptions_on_user_id"
   end
 
@@ -148,6 +148,7 @@ ActiveRecord::Schema.define(version: 20180622234356) do
   end
 
   add_foreign_key "posts", "users"
+  add_foreign_key "subscriptions", "categories"
   add_foreign_key "subscriptions", "categories", column: "categories_id"
   add_foreign_key "subscriptions", "users"
 end
