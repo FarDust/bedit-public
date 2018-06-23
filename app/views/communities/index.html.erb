@@ -6,7 +6,7 @@
       <%= link_to("+", administrate_index_path(), html_options = {class: "btn btn-primary"}) %>
       <br><br>
       <%=
-        link_to("Crear comunidad", new_community_path(),
+        link_to("Crear foro", new_community_path(),
                 html_options = {class: "btn btn-primary active"})
       %>
       <%=
@@ -22,7 +22,7 @@
   <% if user_signed_in?() && current_user.moderator?()%>
     <div class="alert alert-success" role="alert">
       Herramientas de moderador &nbsp;&nbsp;&nbsp;
-      <%= link_to("+", administrate_index_path(), html_options = {class: "btn btn-primary"}) %>
+      <%= link_to("+", moderate_path(), html_options = {class: "btn btn-primary"}) %>
       <br><br>
       <%
         requests = requests.select {|r| current_user.has_role?(:moderator,

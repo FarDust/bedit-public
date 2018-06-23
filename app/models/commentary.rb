@@ -14,6 +14,7 @@ class Commentary < ApplicationRecord
     if !post_id.nil?
       to_nofify = Favourite.where(post: Post.find(post_id), isSubcribe: true)
       for subcrition in to_nofify do
+        next if subcrition.user == user
         Notification.create(
           notify_type: 'comment',
           actor: user,
@@ -21,7 +22,6 @@ class Commentary < ApplicationRecord
           target: self
         )
       end
-      # Code for commentary of commentaries notifications
     end
   end
 
