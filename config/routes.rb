@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     confirmations: 'users/confirmations',
     omniauth_callbacks: 'users/omniauth_callbacks'
   })
+  patch('/profile', to: 'users#profile')
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   post('/search', to: 'welcome#search')
   get('/forum', to: 'forums#index')
