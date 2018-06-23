@@ -25,6 +25,32 @@ class Commentary < ApplicationRecord
     end
   end
 
+  def get_parent_post
+    if !post_id.nil?
+      Post.find(post_id)
+    else
+      Post.find(Commentary.find_parent_id(self))
+    end
+  end
+
+  def self.find_parent_id(commentary)
+    if !commentary.post_id.nil?
+      commentary.post_id
+    else
+      for reply in commentary.inverse_responses
+        if !reply.post_id.nil?
+          return reply.post_id
+        else
+          return Commentary.find_parent_id(reply)
+        end
+      end
+    end
+  end
+
+  def votes
+    get_likes.size - get_dislikes.size
+  end
+
   def self.sort_by_votes(params)
     @comentarios = sort_by_date(params)
     @comentarios = Commentary.where(post_id: params[:id]).sort_by do |x|

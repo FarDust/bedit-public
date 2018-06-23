@@ -6,10 +6,11 @@
     <!-- Mostrar el contenido del post -->
     <div class="panel panel-default">
       <div class="panel-heading">
-        <%= image_tag(User.find(@post.user_id).avatar,
-                      alt: User.find(@post.user_id).username,
-                      size: "50",
-                      class: "kiwy")%> 
+        <%= link_to(profile_path({id: User.find(@post.user_id).id}), method: :patch) do %>
+            <% if !User.find(@post.user_id).avatar.nil? %>
+                <%= image_tag(User.find(@post.user_id).avatar, alt: User.find(@post.user_id).username, size: "50", class: "kiwy")%>
+            <% end %>
+          <% end %> 
         <%=User.find(@post.user_id).username.capitalize() %>
         <span class="badge">
           <%= User.find(@post.user_id).reputation.to_i %>

@@ -1,0 +1,23 @@
+<div class="media" id="presentation-<%=user.id%>">
+    <div class="media-left">
+        <%= link_to(profile_path({id: user.id}), method: :patch) do %>
+            <% if !user.avatar.nil? %>
+                <%= image_tag(user.avatar, alt: user.username, size: "60", class: "img-thumbnail media-object", alt:"Cinque Terre") %>
+            <% end %>
+        <% end %>
+        <% if current_user == user %>
+            <%= link_to(edit_user_registration_path(), class: "btn btn-warning") do %>
+                    Editar mi perfil
+            <% end %>
+        <% end %>
+    </div>
+    <div class="media-body">
+        <h4 class="media-heading">
+            <%= user.username.capitalize()%>
+        </h4>
+        <p>
+            Reputacion: <%= user.reputation.to_i() %> puntos <br>
+            Publicaciones: <%= user.posts.length() %>
+        </p>
+    </div>
+</div>

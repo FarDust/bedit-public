@@ -1,0 +1,3 @@
+<%if user_signed_in?()%>
+    <%= render(template: "users/users/_profile.html.erb", locals: {user: @user})%>
+<% end %>

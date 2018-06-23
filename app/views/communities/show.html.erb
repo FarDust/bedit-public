@@ -1,7 +1,15 @@
 <div style="display: inline-block; width: 77%;">
-  <h1><%= @posts[0].category.name.capitalize() %></h1>
+  <div style="display: inline-block;">
+    <h1><%= @posts[0].category.name.capitalize() %>&nbsp;</h1>
+  </div>
+  <div style="display: inline-block;">
+    <h4><span class="label label-default"><%= @posts[0].category.topic %></span></h4>
+  </div>
+  <div class="panel panel-body" style="height: 60%">
+    <%= markdown(@posts[0].category.description) %>
+  </div>
 </div>
-<div style="display: inline-block; width: 20%;">
+<div style="display: inline-block;">
   <div style="display: inline-block;">
     <% if Subscription.where(category: @posts[0].category, user: current_user).length > 0 %>
       <%= link_to(subscribe_path(id: @posts[0].category.id),method: :delete,
@@ -31,6 +39,7 @@
     </ul>
   </div>
 </div>
+<br><br>
 <div class="jumbotron">
   <div class="row">
     <%= render(@posts) %>

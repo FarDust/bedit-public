@@ -17,10 +17,31 @@ def define_role(user)
   end
 end
 
-def seed_categories
-  categorias = ['Política', 'Programación', 'Juegos', 'Data Science']
-  categorias.each do |name|
-    Category.create(name: name)
+def seed_forums
+  categorias = {
+    Política: [
+      ['Política chilena', 'Publicaciones sobre la política nacional'],
+      ['Ley Bolsas Plásticas', 'Discute sobre la nueva ley de plásticos']
+    ],
+    Programación: [
+      ['Ruby gems', 'Recomendaciones y cosas varias relacionadas con gemas de Ruby.'],
+      ['Git for dummies', 'Aprende a usar git de forma sencilla.'],
+      ['Tutoriales RoR', 'Un espacio dedicado a enseñar desarrollo con Ruby on Rails.']
+    ],
+    Juegos: [
+      ['Nintento Switch', 'Novedades y todo lo relacionado con la última consola de nintendo.'],
+      ['Trucos AoE', 'Todos los códigos y tips para el hitórico juego Age of Empires.'],
+      ["New Assassin's Creed", 'Información actualizada del desarrollo de este nuevo juego.']
+    ]
+  }
+  categorias.keys.each do |topic|
+    categorias[topic].each do |forum|
+    Category.create(
+      name: forum[0],
+      topic: topic,
+      description: forum[1]
+    )
+    end
   end
 end
 
@@ -65,7 +86,7 @@ def seed_commentaries
   end
 end
 
-seed_categories()
+seed_forums()
 seed_users()
 seed_posts()
 seed_commentaries()

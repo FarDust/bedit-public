@@ -5,7 +5,11 @@
     <%if !commentary.user_id.nil? %>
       <div class="panel panel-info">
         <div class="panel-heading">
-          <%= image_tag(User.find(commentary.user_id).avatar, alt: User.find(commentary.user_id).username,size: "50", class: "kiwy")%> 
+          <%= link_to(profile_path({id: User.find(commentary.user_id).id}), method: :patch) do %>
+            <% if !User.find(commentary.user_id).avatar.nil? %>
+                <%= image_tag(User.find(commentary.user_id).avatar, alt: User.find(commentary.user_id).username,size: "50", class: "kiwy")%>
+            <% end %>
+          <% end %>
           <%=User.find(commentary.user_id).username.capitalize() %>
           <span class="badge">
             <%= User.find(commentary.user_id).reputation.to_i %>
@@ -41,7 +45,7 @@
         </span>
       <% end %>
       <% if user_signed_in? %>
-        <% @post = Post.find(params['id']) %>
+        <% @post = Post.find(Commentary.find_parent_id(commentary)) %>
         <% @forum = Category.find(@post.category_id) %>
         <%
           @roles = current_user.has_role?(:admin) || current_user.has_role?(:moderator, @forum)
@@ -73,7 +77,8 @@
     </div>
       <% for reply in commentary.replies %>
         <% if !reply.response.nil? %>
-          <%= render(reply.response)%>
+          
+          <%= render(template: "commentaries/_commentary.html.erb", locals: {commentary: reply.response})%>
         <% end %>
       <% end%>
     <% end %>
