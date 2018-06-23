@@ -1,24 +1,24 @@
 <div style="display: inline-block; width: 77%;">
   <div style="display: inline-block;">
-    <h1><%= @posts[0].category.name.capitalize() %>&nbsp;</h1>
+    <h1><%= @category.name.capitalize() %>&nbsp;</h1>
   </div>
   <div style="display: inline-block;">
-    <h4><span class="label label-default"><%= @posts[0].category.topic %></span></h4>
+    <h4><span class="label label-default"><%= @category.topic %></span></h4>
   </div>
   <div class="panel panel-body" style="height: 60%">
-    <%= markdown(@posts[0].category.description) %>
+    <%= markdown(@category.description) %>
   </div>
 </div>
 <div style="display: inline-block;">
   <div style="display: inline-block;">
-    <% if Subscription.where(category: @posts[0].category, user: current_user).length > 0 %>
-      <%= link_to(subscribe_path(id: @posts[0].category.id),method: :delete,
+    <% if Subscription.where(category: @category, user: current_user).length > 0 %>
+      <%= link_to(subscribe_path(id: @category.id),method: :delete,
                 class: 'btn btn-default') do%>
-        Suscrito <%= @posts[0].category.subcribers%>
+        Suscrito <%= @category.subcribers%>
       <% end %>
     <% else %>
-      <%= link_to(subscribe_path(id: @posts[0].category.id),method: :post, class: 'btn btn-danger') do %>
-        Suscribirse <%= @posts[0].category.subcribers%>
+      <%= link_to(subscribe_path(id: @category.id),method: :post, class: 'btn btn-danger') do %>
+        Suscribirse <%= @category.subcribers%>
       <% end %>
     <% end %>
   </div>
@@ -31,7 +31,7 @@
       <% available = ["relevancia","tiempo","puntos"]%>
       <% for option in available do%>
         <li>
-        <%= link_to "#{communities_path()}/#{@posts[0].category.id}#{root_path({order: option})[1,100]}" do%>
+        <%= link_to "#{communities_path()}/#{@category.id}#{root_path({order: option})[1,100]}" do%>
           <spam class=''><%= option.capitalize() %></spam>
         <% end %>
         </li>
