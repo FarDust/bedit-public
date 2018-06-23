@@ -1,5 +1,5 @@
 
-<div class="col-sm-6 col-md-6" id=<%= post_path(post.id) %> >  
+<div class="col-sm-6 col-md-6" id=<%= post_path(post.id) %> >
   <div class="thumbnail" style="height: 300px">
     <!-- En caso de querer mostrar una imagen (ToDo) -->
     <div class="caption" style="height: 90%">
@@ -36,6 +36,7 @@
                                         data: {confirm: "¿Deseas borrarme?"}})%>
             <% end %>
           <%end%>
+          &nbsp;
           <strong>Abierto por:</strong> <%= truncate(post.user.username.capitalize(),length: 10) %>
         </div>
       </div>
