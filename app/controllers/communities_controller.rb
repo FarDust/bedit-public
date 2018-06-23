@@ -20,11 +20,11 @@ class CommunitiesController < ApplicationController
   def show
     @posts = Post.where(category: Category.find(params[:id]))
     @posts = if params['order'] == 'tiempo'
-               @posts.sort_by_date()
+               Post.sort_by_date(@posts)
              elsif params['order'] == 'puntos'
-               @posts.sort_by_points()
+               Post.sort_by_points(@posts)
              else
-               @posts.sort_by_trends()
+               Post.sort_by_trends(@posts)
              end
   end
 
