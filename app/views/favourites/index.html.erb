@@ -1,9 +1,11 @@
 <!-- Mostrar la lista de favoritos -->
-<% if @posts.length() != 0 %>
+
+
+<% if @favourites.length() != 0 %>
   <h3>Publicaciones</h3>
   <div class="jumbotron">
     <div class="row">
-        <%= render(@posts) %>
+      <%= render(@favourites) %>
     </div>
   </div>
 <% end %>
