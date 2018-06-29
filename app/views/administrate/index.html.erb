@@ -62,7 +62,7 @@
           <% User.all.sort {|x,y| x.username <=> y.username} .each do |u| %>
             <tr>
               <td class="col-xs-3">
-                <%= image_tag(u.avatar, alt: u.username, size: "30") %>
+                <%= link_to(image_tag(u.avatar, alt: u.username, size: "30"), profile_path({id: u.id}), method: :patch) %>
                 &nbsp;&nbsp;
                 <%= u.username %>
               </td>
