@@ -1,13 +1,14 @@
 <div class="container">
-  <h1>Mejores 50 usuarios</h1>
-  <% ranking = 1%>
-  <%for user in @users do%>
+  <h1>50 usuarios con mejor reputación</h1>
+  <% ranking = 1 %>
+  <% for user in @users do %>
     <div class="panel panel-default">
       <div class="panel-heading">
         <h2>
         <div class="icon-large icon-cup" ></div>
-        <strong>#<%=ranking%></strong>
-        <%= image_tag(user.avatar, alt: user.username,size: "50") %> <%= user.username.capitalize() %>
+        <strong>#<%= ranking %></strong>
+        <%= link_to(image_tag(user.avatar, alt: user.username,size: "50"), profile_path(id: user.id), method: :patch) %>
+        <%= user.username %>
         </h2>
       </div>
       <div class="panel-body">
