@@ -1,4 +1,5 @@
 <h2><%= @post.title.capitalize() %></h2>
+<h5> &nbsp;   Foro: <%= link_to(Category.find(@post.category_id).name, "#{communities_path()}/#{@post.category_id}") %></h5>
 <% available = ['tiempo','votos']%>
 
 <div class="jumbotron" onload="render();">
@@ -10,7 +11,7 @@
             <% if !User.find(@post.user_id).avatar.nil? %>
                 <%= image_tag(User.find(@post.user_id).avatar, alt: User.find(@post.user_id).username, size: "50", class: "kiwy")%>
             <% end %>
-          <% end %> 
+          <% end %>
         <%=User.find(@post.user_id).username.capitalize() %>
         <span class="badge">
           <%= User.find(@post.user_id).reputation.to_i %>
