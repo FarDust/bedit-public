@@ -14,7 +14,7 @@
           <% requests = Administrate.all.select {|r| not r.answered} %>
           <% requests.each do |r| %>
             <tr>
-              <td class="col-xs-4"><%= r.user %></td>
+              <td class="col-xs-4"><%= link_to(r.user, profile_path({id: User.find_by(username: r.user).id}), method: :patch) %></td>
               <td class="col-xs-4"><%= Category.find(r.category).name %></td>
               <td class="col-xs-4">
                 <div class="col-md-4">
