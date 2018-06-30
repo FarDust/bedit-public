@@ -4,8 +4,13 @@
     <%= form_for(:post, url: posts_path(), class: "form-horizontal") do |f| %>
       <div class="form-group">
         <%= f.label(:foro) %><br />
-        <%= f.collection_select(:category, Category.all, :id, :name, {prompt: "--Select a forum--",
-                                                                      class: "custom-select"}) %>
+        <% @categories = Category.all %>
+        <% if params.key?(:category_id) %>
+          <% @categories = @categories.select {|c| not c.id == params[:category_id].to_i} %>
+          <% @first_category = Category.find(params[:category_id].to_i) %>
+          <% @categories.insert(0, @first_category) %>
+        <% end %>
+        <%= f.collection_select(:category, @categories, :id, :name, {class: "custom-select"}) %>
       </div>
       <div class="form-group">
         <%= f.label(:titulo) %><br />

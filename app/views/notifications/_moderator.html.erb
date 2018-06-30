@@ -9,9 +9,7 @@
     <% response = 'rechazado' %>
   <% end %>
   <%= notification.actor.username %> ha <%= response %> tu solicitud de moderación en
-  <%= link_to(category.name,
-              "#{main_app.communities_path()}/#{category.id}",
-              onclick: "render(this);") %>
+  <%= link_to(category.name, "#{main_app.communities_path()}/#{category.id}", onclick: "render(this);") %>
 </div>
 <script>
   function render(obj) {
