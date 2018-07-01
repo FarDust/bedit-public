@@ -1,3 +1,42 @@
-<div class="jumbotron">
-  <%= render(@posts)%>
+<div class="container panel-group" id="accordion">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <a data-toggle="collapse" data-target="#users" data-parent="#accordion">
+        Usuarios <spam class="badge"><%= @users.length %></spam>
+      </a>
+    </div>
+    <div class="panel-body collapse" id="users">
+      <% if @users.length > 0 %>
+        <% for user in @users do %>
+          <%= render(template: "users/users/_user.html.erb", locals: {user: user})%>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <a data-toggle="collapse" data-target="#forums" data-parent="#accordion">
+        Foros <spam class="badge"><%= @forums.length %></spam>
+      </a>
+    </div>
+    <div class="panel-body collapse" id="forums">
+      <% if @forums.length > 0 %>
+        <%= render(@forums)%>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="panel panel-default" data-toggle="collapse" data-target="#posts" data-parent="#accordion">
+    <div class="panel-heading">
+      <a data-toggle="collapse" data-target="#forums">
+        Publicaciones <spam class="badge"><%= @posts.length %></spam>
+      </a>
+    </div>
+    <div class="panel-body collapse" id="posts">
+      <% if @posts.length > 0 %>
+        <%= render(@posts)%>
+      <% end %>
+    </div>
+  </div>
 </div>

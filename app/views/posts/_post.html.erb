@@ -5,11 +5,11 @@
     <div class="caption" style="height: 90%">
       <div class="panel-default" style="height: 90%">
       <!-- Titulo del foro -->
-        <div class="panel panel-heading" style="height: 20%">
+        <div class="panel panel-heading" style="height: 20%; overflow: hidden;">
           <strong><%= truncate(post.title, length: 40) %></strong>
         </div>
         <!-- Descripción del foro -->
-        <div class="panel panel-body" style="height: 60%">
+        <div class="panel panel-body" style="height: 60%; overflow: hidden;">
           <%= markdown(truncate(post.content,length: 250)) %>
         </div>
         <div class="panel panel-footer" style="height: 20%">
