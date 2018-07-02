@@ -27,33 +27,28 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # PUT /resource
   def update
     @user = User.find(current_user.id)
-
     if current_user.provider == 'google'
-      params[:user].delete("password")
-      params[:user].delete("password_confirmation")
+      params[:user].delete('password')
+      params[:user].delete('password_confirmation')
       new_params = params.require(:user).permit(:email, :username)
     else
-      new_params = params.require(:user).permit(:email, :username, :current_password, :password, :password_confirmation)  
+      new_params = params.require(:user).permit(:email, :username, :current_password, :password, :password_confirmation)
     end
-
     if params.key?('user') && params['user'].key?('avatar')
       avatar = params['user']['avatar']
       url = Cloudinary::Uploader.upload(avatar, options = { public_id: current_user.username })
       new_params['avatar'] = url['secure_url']
     end
-
-    if current_user.provider == 'google'
-      is_valid = @user.update_without_password(new_params)
-    else
-      is_valid = @user.update_with_password(new_params)
-    end
-
+    is_valid = if current_user.provider == 'google'
+       @user.update_without_password(new_params)
+     else
+       @user.update_with_password(new_params)
+     end
     if is_valid
-      set_flash_message :notice, :updated
-      sign_in @user, :bypass => true
-      redirect_to after_update_path_for(@user)
+      set_flash_message(:notice, :updated)
+      sign_in(@user, bypass: true)
+      redirect_to(after_update_path_for(@user))
     end
-      
   end
 
   # DELETE /resource
