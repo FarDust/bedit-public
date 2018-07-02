@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   post('administrate/refuse')
   post('administrate/delete_user')
   root('welcome#index')
-  mount Notifications::Engine => "/notifications"
+  mount( Notifications::Engine => "/notifications")
   # Config Devise
   devise_for(:users, controllers: {
     sessions: 'users/sessions',
@@ -27,6 +27,7 @@ Rails.application.routes.draw do
   post('/commentaries', to: 'commentaries#create')
   post('/favourites', to: 'favourites#create')
   post('/forums', to: 'forums#create')
+  post('/forums/background', to: 'forums#background')
   delete('/favourites', to: 'favourites#delete')
   patch('/subscribe', to: 'favourites#subscribe')
   post('/subscribe', to: 'subscriptions#create')
