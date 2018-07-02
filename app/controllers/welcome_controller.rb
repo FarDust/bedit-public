@@ -34,6 +34,6 @@ class WelcomeController < ApplicationController
     name = Category.arel_table[:name]
     topic = Category.arel_table[:topic]
     @forums = Category.where(name.matches("%#{query}%"))
-                     .or(User.where(topic.matches("%#{query}%")))
+                      .or(User.where(topic.matches("%#{query}%")))
   end
 end
