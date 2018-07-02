@@ -18,8 +18,7 @@
             Markdown style reference
         </a>
         <br/>
-        <%= text_area_tag(:content, @post.content, rows: 10, placeholder: "Write your content...",
-                          class: "form-control") %>
+        <%= text_area_tag(:content, @post.content, rows: 10, placeholder: "Write your content...", class: "form-control") %>
       </div>
       <div class="actions">
         <%= submit_tag("Save", class: "btn btn-primary active") %>

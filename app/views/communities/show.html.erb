@@ -1,9 +1,3 @@
-<% if !@posts[0].nil?%>
- <% category = @posts[0].category %>
-<% else %>
-  <% category = @category %>
-<% end %>
-
 <% if user_signed_in?() %>
   <div class="alert alert-success" role="alert">
     ¿Quieres hacer una publicación? <br><br>
@@ -12,11 +6,11 @@
 <% end %>
 
 <% background = nil %>
-<% if !category.background.nil? %>
-  <% background = category.background.url %>
+<% if !@category.background.nil? %>
+  <% background = @category.background.url %>
 <% end %>
 
-<div class="precontainer" style= "background-image: url(<%= background %>);">
+<div class="precontainer" style="background-image: url(<%= background %>);">
 
   <div class="enchanced">
     <div style=" display: inline-block; width: 80%">
@@ -31,61 +25,82 @@
     </div>
   </div>
   <div>
-    <div class="panel panel-body">
+    <% if !background.nil? %>
+      <% style = "background-color: rgba(255,255,255,.6);" %>
+    <% else %>
+      <% style = "" %>
+    <% end %>
+    <div class="panel panel-body" style="<%= style %>">
       <%= markdown(@category.description) %>
     </div>
     <div class="container">
-      <ul class="list-inline" style="right: 10%;">
-        <li class="list-inline-item">
-          <% if Subscription.where(category: @category, user: current_user).length > 0 %>
-            <%= link_to(subscribe_path(id: @category.id), method: :delete, class: 'btn btn-default') do %>
-              Suscrito <%= @category.subcribers %>
+      <div class="row">
+        <div class="col col-sm-8 col-md-10">
+          <ul class="list-inline" style="right: 10%;">
+            <li class="list-inline-item">
+              <% if Subscription.where(category: @category, user: current_user).length > 0 %>
+                <%= link_to(subscribe_path(id: @category.id), method: :delete, class: 'btn btn-default') do %>
+                  Suscrito <%= @category.subcribers %>
+                <% end %>
+              <% else %>
+                <%= link_to(subscribe_path(id: @category.id),method: :post, class: 'btn btn-danger') do %>
+                  Suscribirse <%= @category.subcribers %>
+                <% end %>
+              <% end %>
+            </li>
+            &nbsp;
+            <% if current_user.has_any_role?(:admin, {name: :moderator, resource: @category}) %>
+              <li class="list-inline-item">
+                <div class="actions">
+                  <span id="background-uploader">
+                  </span>
+                  <% if background %>
+                    <span>
+                      <%= link_to(forums_background_path(category_id: @category.id), html_options = {class: "btn btn-default", method: :delete, 'aria-label': "Close"}) do %>
+                        <span class="glyphicon glyphicon-trash"></span>
+                      <% end %>
+                    </span>
+                  <% end %>
+                </div>
+              </li>
+              &nbsp;
             <% end %>
-          <% else %>
-            <%= link_to(subscribe_path(id: @category.id),method: :post, class: 'btn btn-danger') do %>
-              Suscribirse <%= @category.subcribers %>
+            <% if not current_user.has_any_role?(:admin, {name: :moderator, resource: @category}) %>
+              <li class="list-inline-item">
+                <%= link_to("Ser moderador", communities_moderator_path(category_id: @category.id), html_options = {class: "btn btn-secundary active"}) %>
+              </li>
+              &nbsp;
             <% end %>
-          <% end %>
-        </li>
-        &nbsp;
-        <% if current_user.has_any_role?(:admin, {name: :moderator, resource: category}) %>
-          <li class="list-inline-item">
-            <div class="actions">
-              <spam id="background-uploader">
-              </spam>
-            </div>
-          </li>
-          &nbsp;
-        <% end %>
-        <% if not current_user.has_any_role?(:admin, {name: :moderator, resource: @category}) %>
-          <li class="list-inline-item">
-            <%= link_to("Ser moderador", communities_moderator_path(category_id: @category.id), html_options = {class: "btn btn-secundary active"}) %>
-          </li>
-          &nbsp;
-        <% end %>
-        <li class="list-inline-item">
+          </ul>
+        </div>
+        <div class="col col-sm-2">
           <div class="dropdown">
             <a class="dropdown-toggle icon-link btn btn-default" data-toggle="dropdown" href="#">
               Ordenar por...
               <span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
-              <% available = ["relevancia","tiempo","puntos"]%>
-              <% for option in available do%>
+              <% available = ["relevancia","tiempo","puntos"] %>
+              <% for option in available do %>
                 <li>
                 <%= link_to "#{communities_path()}/#{@category.id}#{root_path({order: option})[1,100]}" do%>
-                  <spam class=''><%= option.capitalize() %></spam>
+                  <span class=''><%= option.capitalize() %></span>
                 <% end %>
                 </li>
               <% end %>
             </ul>
           </div>
-        </li>
-      </ul>
+        </div>
+      </div>
     </div>
   </div>
-  <br>
-  <div class="jumbotron">
+
+  <% if !background.nil? %>
+    <% style = "background-color: rgba(255,255,255,0);" %>
+  <% else %>
+    <% style = "" %>
+  <% end %>
+  <div class="jumbotron" style="<%= style %>">
     <div class="row">
       <%= render(@posts) %>
     </div>
@@ -95,12 +110,13 @@
   $('#background-uploader').cloudinary_upload_widget(
     { cloud_name: 'hctj9u4ot', upload_preset: 'commentary',
       cropping: 'server', folder: 'backgrounds', theme: 'minimal',
-      button_class: "btn btn-success", thumbnails: false,
+      button_class: "btn btn-default", thumbnails: false,
       button_caption: "Cambiar fondo" },
     function(error, result) {
-      result['0']['forum_id'] = parseInt('<%= category.id %>');
-      jQuery.post('<%= forums_background_path()%>', data= result['0'], success= function(data,textStatus){
+      result['0']['forum_id'] = parseInt('<%= @category.id %>');
+      jQuery.post('<%= forums_background_path() %>', data= result['0'], success= function(data,textStatus){
         alert('Imagen de fondo de las publicaciones cambiada');
       });
+      location.reload();
      });
 </script>
