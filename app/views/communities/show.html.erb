@@ -25,11 +25,12 @@
     </div>
   </div>
   <div>
-    <% if background %>
-    <div class="panel panel-body" style="background-color: rgba(255,255,255,.6);">
+    <% if !background.nil? %>
+      <% style = "background-color: rgba(255,255,255,.6);" %>
     <% else %>
-    <div class="panel panel-body">
+      <% style = "" %>
     <% end %>
+    <div class="panel panel-body" style="<%= style %>">
       <%= markdown(@category.description) %>
     </div>
     <div class="container">
@@ -89,11 +90,12 @@
     </div>
   </div>
   <br>
-  <% if background %>
-  <div class="jumbotron" style="background-color: rgba(0,0,0,0);">
+  <% if !background.nil? %>
+    <% style = "background-color: rgba(255,255,255,0);" %>
   <% else %>
-  <div class="jumbotron">
+    <% style = "" %>
   <% end %>
+  <div class="jumbotron" style="<% style %>">
     <div class="row">
       <%= render(@posts) %>
     </div>
