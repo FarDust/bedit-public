@@ -1,5 +1,9 @@
 class WelcomeController < ApplicationController
   def index
+    @cantidadUsuarios = User.count
+    @cantidadPosts = Post.count
+    @cantidadForos = Category.count
+    @cantidadFavoritos = Favourite.select(:user_id).distinct.count
   end
 
   def search

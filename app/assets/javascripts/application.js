@@ -22,6 +22,9 @@
 
 //= require_tree .
 
+//= require Chart.bundle
+//= require chartkick
+
 function toggle_like(obj) {
     like_objects = obj.parentNode.childNodes
     focus = Array();
