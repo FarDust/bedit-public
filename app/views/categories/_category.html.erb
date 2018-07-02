@@ -5,8 +5,7 @@
         <%= truncate(category.name, :length => 40) %>
       </h3>
       <h6 style='margin: 0;position: absolute; top: 60%; left: 50%; margin-right: -50%; transform: translate(-50%, -50%)'>
-        <%= truncate(category.description, :length => 70) %>
-        <%= Redcarpet::Markdown.new(Redcarpet::Render::StripDown).render(category.description) %>
+        <%= truncate(Redcarpet::Markdown.new(Redcarpet::Render::StripDown).render(category.description), :length => 70) %>
       </h6>
       <span class="label label-default" style='margin: 0;position: absolute; top: 10%; left: 80%; margin-right: -50%; transform: translate(-50%, -50%)'>
         <%= category.topic %>
