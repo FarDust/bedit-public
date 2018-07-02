@@ -12,7 +12,7 @@
     </div>
 
     <!-- Links de la izquierda dentro de la barra de navegación -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="position: sticky; position: -webkit-sticky;">
       <ul class="nav navbar-nav navbar navbar-light bg-light navbar-left">
 
         <li><%= link_to("Publicaciones", forum_path()) %></li>
@@ -42,10 +42,9 @@
           <li><li><%= link_to("Favoritos", favourites_path()) %></li></li>
         <%end%>
         <li style= "margin-top: 10px;">
-            <%=form_for :search, url: search_path(), class: "form-inline" do |f| %>
+            <%=form_for :search, url: search_path(), class: "form-inline", method: :post do |f| %>
               <%=f.text_field(:query, class: "form-control mr-sm-2", placeholder: "search")%>
-              <%=f.submit(:search, class: "btn btn-outline-success my-2 my-sm-0",
-                          style: "display: none;")%>
+              <%=f.submit(:search, class: "btn btn-outline-success my-2 my-sm-0", style: "display: none;")%>
             <% end %>
         </li>
       </ul>

@@ -2,16 +2,8 @@ require('will_paginate/array')
 
 class ForumsController < ApplicationController
   def index
-    @posts = Post.all()
-    @posts = if params['order'] == 'tiempo'
-               Post.sort_by_date(@posts)
-             elsif params['order'] == 'puntos'
-               Post.sort_by_points(@posts)
-             else
-               Post.sort_by_trends(@posts)
-             end
-    @posts = @posts.paginate(page: params[:page], per_page: 6)
     @categories = Category.all().last(4)
+    @posts = manage_posts()
   end
 
   def create
@@ -27,5 +19,31 @@ class ForumsController < ApplicationController
   def mostrar
     @post = Post.find(params[:id])
     @comentarios = Commentary.where(post_id: params[:id])
+  end
+
+  def background
+    forum = Category.find(params['forum_id'])
+    if current_user.has_any_role?(:admin, name: :moderator, resource: forum)
+      if forum.background?
+        forum.background.update(url: params['secure_url'])
+      else
+        forum.background = Background.create(category: forum, url: params['secure_url'])
+        forum.save()
+      end
+    end
+  end
+
+  private
+
+  def manage_posts
+    @posts = Post.all()
+    @posts = if params['order'] == 'tiempo'
+               Post.sort_by_date(@posts)
+             elsif params['order'] == 'puntos'
+               Post.sort_by_points(@posts)
+             else
+               Post.sort_by_trends(@posts)
+             end
+    @posts = @posts.paginate(page: params[:page], per_page: 6)
   end
 end
