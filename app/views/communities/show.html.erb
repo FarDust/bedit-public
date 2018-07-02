@@ -54,6 +54,12 @@
             </div>
           </li>
           &nbsp;
+          <% if background %>
+            <li class="list-inline-item">
+              <%= link_to("Quitar fondo", forums_delete_background_path(category_id: @category.id), html_options = {class: "btn btn-success", method: :delete}) %>
+            </li>
+            &nbsp;
+          <% end %>
         <% end %>
         <% if not current_user.has_any_role?(:admin, {name: :moderator, resource: @category}) %>
           <li class="list-inline-item">

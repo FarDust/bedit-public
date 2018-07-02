@@ -28,6 +28,7 @@ Rails.application.routes.draw do
   post('/favourites', to: 'favourites#create')
   post('/forums', to: 'forums#create')
   post('/forums/background', to: 'forums#background')
+  delete('forums/delete_background')
   delete('/favourites', to: 'favourites#delete')
   patch('/subscribe', to: 'favourites#subscribe')
   post('/subscribe', to: 'subscriptions#create')
