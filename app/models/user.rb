@@ -53,7 +53,8 @@ class User < ApplicationRecord
       username: data['name'],
       email: data['email'],
       password: Devise.friendly_token[0, 20],
-      avatar: data['image']
+      avatar: data['image'],
+      provider: 'google'
     )
     user
   end
