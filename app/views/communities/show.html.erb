@@ -10,7 +10,7 @@
   <% background = @category.background.url %>
 <% end %>
 
-<div class="precontainer" style= "background-image: url(<%= background %>);">
+<div class="precontainer" style="background-image: url(<%= background %>);">
 
   <div class="enchanced">
     <div style=" display: inline-block; width: 80%">
@@ -68,8 +68,8 @@
               <span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
-              <% available = ["relevancia","tiempo","puntos"]%>
-              <% for option in available do%>
+              <% available = ["relevancia","tiempo","puntos"] %>
+              <% for option in available do %>
                 <li>
                 <%= link_to "#{communities_path()}/#{@category.id}#{root_path({order: option})[1,100]}" do%>
                   <spam class=''><%= option.capitalize() %></spam>
@@ -101,8 +101,9 @@
       button_caption: "Cambiar fondo" },
     function(error, result) {
       result['0']['forum_id'] = parseInt('<%= @category.id %>');
-      jQuery.post('<%= forums_background_path()%>', data= result['0'], success= function(data,textStatus){
+      jQuery.post('<%= forums_background_path() %>', data= result['0'], success= function(data,textStatus){
         alert('Imagen de fondo de las publicaciones cambiada');
       });
+      location.reload();
      });
 </script>
