@@ -1,18 +1,23 @@
 <div class="jumbotron">
   <div class="row">
-    <h2>Create new post</h2>
+    <h2>Crear nueva publicación</h2>
     <%= form_for(:post, url: posts_path(), class: "form-horizontal") do |f| %>
       <div class="form-group">
-        <%= f.label(:category) %><br />
-        <%= f.collection_select(:category, Category.all, :id, :name, {prompt: "--Select a forum--",
-                                                                      class: "custom-select"}) %>
+        <%= f.label(:foro) %><br />
+        <% @categories = Category.all %>
+        <% if params.key?(:category_id) %>
+          <% @categories = @categories.select {|c| not c.id == params[:category_id].to_i} %>
+          <% @first_category = Category.find(params[:category_id].to_i) %>
+          <% @categories.insert(0, @first_category) %>
+        <% end %>
+        <%= f.collection_select(:category, @categories, :id, :name, {class: "custom-select"}) %>
       </div>
       <div class="form-group">
-        <%= f.label(:title) %><br />
+        <%= f.label(:titulo) %><br />
         <%= f.text_field(:title, class: "form-control") %>
       </div>
       <div class="form-group">
-        <%= f.label(:content) %>
+        <%= f.label(:contenido) %>
         &nbsp;
         <a href="https://github.com/google/styleguide/blob/gh-pages/docguide/style.md" class="badge">
             Markdown style reference
@@ -23,7 +28,7 @@
       </div>
 
       <div class="actions">
-        <%= f.submit("Create", class: "btn btn-primary active") %>
+        <%= f.submit("Publicar", class: "btn btn-primary active") %>
         &nbsp;
         <span href="#" id="uploader" ></span>
       </div>
@@ -33,10 +38,10 @@
 
 <script type="text/javascript">
   $('#uploader').cloudinary_upload_widget(
-    { cloud_name: 'hctj9u4ot', upload_preset: 'commentary', 
+    { cloud_name: 'hctj9u4ot', upload_preset: 'commentary',
       cropping: 'server', folder: 'commentaries', theme: 'minimal',
       button_class: "btn btn-default", max_image_width: 400, max_image_height: 400},
-    function(error, result) { 
+    function(error, result) {
       $('#post_content')[0].value += '![](' +  result["0"]['secure_url'] + ') '
      });
 </script>

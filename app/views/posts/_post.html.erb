@@ -28,16 +28,13 @@
             <% @category = Category.find(post.category_id) %>
             <% if current_user.has_any_role?(:admin, {name: :moderator, resource: @category}) %>
               <!-- Editar foro -->
-              <%=link_to("", edit_post_path(post.id),
-                        html_options = {class: "glyphicon glyphicon-pencil"})%>
+              <%=link_to("", edit_post_path(post.id), html_options = {class: "glyphicon glyphicon-pencil"})%>
               <!-- Borrar foro -->
-              <%=link_to("", post_path(post.id),
-                        html_options = {class: "glyphicon glyphicon-trash", method: :delete,
-                                        data: {confirm: "¿Deseas borrarme?"}})%>
+              <%=link_to("", post_path(post.id), html_options = {class: "glyphicon glyphicon-trash", method: :delete, data: {confirm: "¿Deseas borrarme?"}})%>
             <% end %>
           <%end%>
           &nbsp;
-          <strong>Abierto por:</strong> <%= truncate(post.user.username.capitalize(),length: 10) %>
+          <strong>Abierto por:</strong> <%= link_to(truncate(post.user.username,length: 10), profile_path({id: post.user.id}), method: :patch) %>
         </div>
       </div>
     </div>

@@ -4,27 +4,35 @@
   <% category = @category %>
 <% end %>
 
+<%if user_signed_in?()%>
+  <div class="alert alert-success" role="alert">
+    ¿Quieres hacer una publicación? <br><br>
+    <%=
+      link_to("Crear publicación", new_post_path(category_id: @category.id), html_options = {class: "btn btn-primary active"})
+    %>
+  </div>
+<%end%>
 <div style="display: inline-block; width: 65%;">
   <div style="display: inline-block;">
-    <h1><%= category.name.capitalize() %>&nbsp;</h1>
+    <h1><%= @category.name %>&nbsp;</h1>
   </div>
   <div style="display: inline-block;">
-    <h4><span class="label label-default"><%= category.topic %></span></h4>
+    <h4><span class="label label-default"><%= @category.topic %></span></h4>
   </div>
   <div class="panel panel-body" style="height: 60%">
-    <%= markdown(category.description) %>
+    <%= markdown(@category.description) %>
   </div>
 </div>
 <div style="display: inline-block;">
   <div style="display: inline-block;">
-    <% if Subscription.where(category: category, user: current_user).length > 0 %>
-      <%= link_to(subscribe_path(id: category.id),method: :delete,
+    <% if Subscription.where(category: @category, user: current_user).length > 0 %>
+      <%= link_to(subscribe_path(id: @category.id),method: :delete,
                 class: 'btn btn-default') do%>
-        Suscrito <%= category.subcribers%>
+        Suscrito <%= @category.subcribers%>
       <% end %>
     <% else %>
-      <%= link_to(subscribe_path(id: category.id),method: :post, class: 'btn btn-danger') do %>
-        Suscribirse <%= category.subcribers%>
+      <%= link_to(subscribe_path(id: @category.id),method: :post, class: 'btn btn-danger') do %>
+        Suscribirse <%= @category.subcribers%>
       <% end %>
     <% end %>
   </div>
@@ -43,7 +51,7 @@
       <% available = ["relevancia","tiempo","puntos"]%>
       <% for option in available do%>
         <li>
-        <%= link_to "#{communities_path()}/#{category.id}#{root_path({order: option})[1,100]}" do%>
+        <%= link_to "#{communities_path()}/#{@category.id}#{root_path({order: option})[1,100]}" do%>
           <spam class=''><%= option.capitalize() %></spam>
         <% end %>
         </li>

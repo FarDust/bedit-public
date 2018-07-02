@@ -9,7 +9,7 @@ class CommunitiesController < ApplicationController
       Administrate.create(user: params['request']['user'],
                           category: params['request']['category'],
                           answered: false)
-      redirect_back(notice: '¡Tu solicitud a sido enviada!')
+      redirect_back(fallback_location: root_path(), notice: '¡Tu solicitud a sido enviada!')
     end
   end
 
@@ -18,7 +18,8 @@ class CommunitiesController < ApplicationController
   end
 
   def show
-    @posts = Post.where(category: Category.find(params[:id]))
+    @category =  Category.find(params[:id])
+    @posts = Post.where(category: @category)
     @posts = if params['order'] == 'tiempo'
                Post.sort_by_date(@posts)
              elsif params['order'] == 'puntos'

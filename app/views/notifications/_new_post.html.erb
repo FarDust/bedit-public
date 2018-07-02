@@ -1,9 +1,10 @@
 <div class="media-heading">
-    Crearon una nueva publicacion en <%= Category.find(notification.target.category_id).name %>
+    Crearon una nueva publicación en <%= Category.find(notification.target.category_id).name %>
 </div>
 <div class="media-content">
-  <%= notification.actor.username %> creo 
-  <%=link_to(notification.target.title ,main_app.post_path(notification.target.id), onclick: "render(this);")%>
+  <%= notification.actor.username %>
+  creó
+  <%= link_to(notification.target.title ,main_app.post_path(notification.target.id), onclick: "render(this);") %>
 </div>
 <script>
   function render(obj) {

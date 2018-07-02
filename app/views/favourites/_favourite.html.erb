@@ -1,6 +1,6 @@
-<% post = Post.find(favourite.post.id) %> 
+<% post = Post.find(favourite.post.id) %>
 
-<div class="col-sm-6 col-md-6" id=<%= post_path(post.id) %> >  
+<div class="col-sm-6 col-md-6" id=<%= post_path(post.id) %> >
   <div class="thumbnail" style="height: 300px">
     <!-- En caso de querer mostrar una imagen (ToDo) -->
     <div class="caption" style="height: 90%">
@@ -17,13 +17,13 @@
           <%= link_to "Ver Más", post_path(post.id), html_options = {class: "btn btn-primary active"} %>
           <%if user_signed_in?()%>
             <% if Favourite.where(post: post, user: current_user).length() != 0 %>
-              <%= link_to( favourites_path({post_id: post.id}),method: :delete,
+              <%= link_to(favourites_path({post_id: post.id}),method: :delete,
                         class: 'btn btn-default') do%>
                 Siguiendo <%= post.subcribers%>
               <% end %>
             <% else %>
               <%= link_to(favourites_path({post_id: post.id}),method: :post, class: 'btn btn-danger') do %>
-                Seguir <%= post.subcribers%>
+                Seguir <%= post.subcribers %>
               <% end %>
             <% end%>
             <% @category = Category.find(post.category_id) %>
@@ -46,10 +46,10 @@
           <% end %>
           <%= link_to("", subscribe_path(favourite.id),
                            html_options = {class: icon , method: :patch})%>
-        <strong>Abierto por:</strong> <%= truncate(post.user.username.capitalize(),length: 10) %> 
+        &nbsp;
+        <strong>Abierto por:</strong> <%= link_to(truncate(post.user.username,length: 10), profile_path({id: post.user.id}), method: :patch) %>
         </div>
       </div>
     </div>
   </div>
 </div>
-
