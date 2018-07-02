@@ -74,8 +74,7 @@
                   <%= form_for(:administrate, url: administrate_approve_path(),
                                class: "form-horizontal") do |f| %>
                       <%= f.hidden_field(:user, value: u.username, class: "form-control") %>
-                      <div class="col-lg-1"></div>
-                      <div class="col-lg-5">
+                      <div class="col-lg-6">
                         <%
                           @categories = Category.all.select {|c| not u.has_role?(:moderator, c)}
                         %>
