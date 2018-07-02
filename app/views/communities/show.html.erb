@@ -1,9 +1,3 @@
-<% if !@posts[0].nil?%>
- <% category = @posts[0].category %>
-<% else %>
-  <% category = @category %>
-<% end %>
-
 <% if user_signed_in?() %>
   <div class="alert alert-success" role="alert">
     ¿Quieres hacer una publicación? <br><br>
@@ -12,8 +6,8 @@
 <% end %>
 
 <% background = nil %>
-<% if !category.background.nil? %>
-  <% background = category.background.url %>
+<% if !@category.background.nil? %>
+  <% background = @category.background.url %>
 <% end %>
 
 <div class="precontainer" style= "background-image: url(<%= background %>);">
@@ -48,7 +42,7 @@
           <% end %>
         </li>
         &nbsp;
-        <% if current_user.has_any_role?(:admin, {name: :moderator, resource: category}) %>
+        <% if current_user.has_any_role?(:admin, {name: :moderator, resource: @category}) %>
           <li class="list-inline-item">
             <div class="actions">
               <spam id="background-uploader">
@@ -98,7 +92,7 @@
       button_class: "btn btn-success", thumbnails: false,
       button_caption: "Cambiar fondo" },
     function(error, result) {
-      result['0']['forum_id'] = parseInt('<%= category.id %>');
+      result['0']['forum_id'] = parseInt('<%= @category.id %>');
       jQuery.post('<%= forums_background_path()%>', data= result['0'], success= function(data,textStatus){
         alert('Imagen de fondo de las publicaciones cambiada');
       });
