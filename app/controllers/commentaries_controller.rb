@@ -43,7 +43,7 @@ class CommentariesController < ApplicationController
   end
 
   def like
-    @commentary = Commentary.find(params[:id])
+    find(params)
     if current_user != @commentary.user
       if current_user.liked?(@commentary)
         @commentary.disliked_by(current_user)
@@ -51,11 +51,11 @@ class CommentariesController < ApplicationController
         @commentary.liked_by(current_user)
       end
     end
-    redirect_to(post_path(@commentary.post_id) + '#commentary-' + @commentary.id.to_s)
+    redirect_self_path(@commentary)
   end
 
   def dislike
-    @commentary = Commentary.find(params[:id])
+    find(params)
     if current_user != @commentary.user
       if current_user.disliked?(@commentary)
         @commentary.liked_by(current_user)
@@ -63,6 +63,21 @@ class CommentariesController < ApplicationController
         @commentary.disliked_by(current_user)
       end
     end
-    redirect_to(post_path(@commentary.post_id) + '#commentary-' + @commentary.id.to_s)
+    redirect_self_path(@commentary)
+  end
+
+  private
+
+  def get_parent_path(commentary)
+    post_path(Commentary.find_parent_id(commentary))
+  end
+
+  def redirect_self_path(commentary)
+    redirect_to(get_parent_path(commentary) + '#commentary-' + commentary.id.to_s)
+  end
+
+  def find(params)
+    @commentary = Commentary.find(params[:id])
+    @commentary
   end
 end

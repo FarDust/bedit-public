@@ -1,4 +1,4 @@
-<div style="display: inline-block; width: 77%;">
+<div style="display: inline-block; width: 65%;">
   <div style="display: inline-block;">
     <h1><%= @posts[0].category.name.capitalize() %>&nbsp;</h1>
   </div>
@@ -21,6 +21,10 @@
         Suscribirse <%= @posts[0].category.subcribers%>
       <% end %>
     <% end %>
+  </div>
+  <div class="actions" style="display: inline-block;">
+    <spam id="background-uploader">
+    </spam>
   </div>
   <div class="dropdown" style="display: inline-block;">
     <a class="dropdown-toggle icon-link btn btn-default" data-toggle="dropdown" href="#">
@@ -45,3 +49,16 @@
     <%= render(@posts) %>
   </div>
 </div>
+
+<script type="text/javascript">
+  $('#background-uploader').cloudinary_upload_widget(
+    { cloud_name: 'hctj9u4ot', upload_preset: 'commentary',
+      cropping: 'server', folder: 'backgrounds', theme: 'minimal',
+      button_class: "btn btn-success", thumbnails: false,
+      button_caption: "Cambiar fondo" },
+    function(error, result) {
+      post();
+      result['0']['secure_url'];
+      alert('Imagen de fondo de las publicaciones cambiada');
+     });
+</script>

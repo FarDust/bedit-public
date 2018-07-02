@@ -1,9 +1,9 @@
 <div class="container panel-group" id="accordion">
   <div class="panel panel-default">
     <div class="panel-heading">
-      <a data-toggle="collapse" data-target="#users" data-parent="#accordion">
-        Usuarios <spam class="badge"><%= @users.length %></spam>
-      </a>
+      <spam data-toggle="collapse" data-target="#users" data-parent="#accordion">
+        Usuarios <spam class="badge"><%= @users.length %></spam> <spam class="caret"></span>
+      </spam>
     </div>
     <div class="panel-body collapse" id="users">
       <% if @users.length > 0 %>
@@ -16,9 +16,9 @@
 
   <div class="panel panel-default">
     <div class="panel-heading">
-      <a data-toggle="collapse" data-target="#forums" data-parent="#accordion">
-        Foros <spam class="badge"><%= @forums.length %></spam>
-      </a>
+      <spam data-toggle="collapse" data-target="#forums" data-parent="#accordion">
+        Foros <spam class="badge"><%= @forums.length %></spam> <spam class="caret"></span>
+      </spam>
     </div>
     <div class="panel-body collapse" id="forums">
       <% if @forums.length > 0 %>
@@ -29,9 +29,9 @@
 
   <div class="panel panel-default">
     <div class="panel-heading">
-      <a data-toggle="collapse" data-target="#posts" data-parent="#accordion">
-        Publicaciones <spam class="badge"><%= @posts.length %></spam>
-      </a>
+      <spam data-toggle="collapse" data-target="#posts" data-parent="#accordion">
+        Publicaciones <spam class="badge"><%= @posts.length %></spam> <spam class="caret"></span>
+      </spam>
     </div>
     <div class="panel-body collapse" id="posts">
       <% if @posts.length > 0 %>

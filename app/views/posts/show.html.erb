@@ -1,129 +1,137 @@
-<h2><%= @post.title.capitalize() %></h2>
-<% available = ['tiempo','votos']%>
+<% background = nil %>
+<% if !@post.category.background.nil? %>
+  <% background = @post.category.background.url %>
+<% end %>
 
-<div class="jumbotron" onload="render();">
-  <div class="row">
-    <!-- Mostrar el contenido del post -->
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <%= link_to(profile_path({id: User.find(@post.user_id).id}), method: :patch) do %>
-            <% if !User.find(@post.user_id).avatar.nil? %>
-                <%= image_tag(User.find(@post.user_id).avatar, alt: User.find(@post.user_id).username, size: "50", class: "kiwy")%>
-            <% end %>
-          <% end %> 
-        <%=User.find(@post.user_id).username.capitalize() %>
-        <span class="badge">
-          <%= User.find(@post.user_id).reputation.to_i %>
-        </span>
-      </div>
-      <div class="panel-body">
-        <%=markdown(@post.content) %>
-      </div>
-      <div class="panel-footer">
-        <strong>Publicado hace:</strong> <%=time_ago_in_words(@post.created_at)%>
-      </div>
-    </div>
-    <div>
-      <% if user_signed_in? %>
-        <%= link_to like_post_path(@post), method: :put, class: 'vote-link' do %>
-          <% if current_user.liked?(@post)%>
-            <span class="badge badge-liked">
-          <% else%>
-            <span class="badge">
-          <% end %>
-              <%= @post.get_likes.size%>
-              <span class="glyphicon glyphicon-thumbs-up"></span>
-            </span>
-        <% end %>
-        <%= link_to dislike_post_path(@post), method: :put, class: 'vote-link' do %>
-          <% if current_user.disliked?(@post)%>
-            <span class="badge badge-disliked">
-          <% else%>
-            <span class="badge">
-          <% end %>
-            <span class="glyphicon glyphicon-thumbs-down icon-rotate icon-flipped"></span>
-            <%= @post.get_dislikes.size%>
+<div class="precontainer" style= "background-image: url(<%= background %>);">
+  <h2><%= @post.title.capitalize() %></h2>
+  <% available = ['tiempo','votos']%>
+
+  <div class="jumbotron" onload="render();">
+    <div class="row">
+      <!-- Mostrar el contenido del post -->
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <%= link_to(profile_path({id: User.find(@post.user_id).id}), method: :patch) do %>
+              <% if !User.find(@post.user_id).avatar.nil? %>
+                  <%= image_tag(User.find(@post.user_id).avatar, alt: User.find(@post.user_id).username, size: "50", class: "kiwy")%>
+              <% end %>
+            <% end %> 
+          <%=User.find(@post.user_id).username.capitalize() %>
+          <span class="badge">
+            <%= User.find(@post.user_id).reputation.to_i %>
           </span>
-        <% end %>
-        &nbsp;&nbsp;
-        <!-- Agregar favorito -->
-        <%if user_signed_in?()%>
-            <div style="display: inline-block;">
-            <% if @favourite.length() != 0 %>
-              <% @favourite = @favourite[0] %>
-              <%= link_to( favourites_path({post_id: @post.id}),method: :delete,
-                        class: 'btn btn-default') do%>
-                Siguiendo <%= @post.subcribers%>
-              <% end %>
-              &nbsp;
-              <% if @favourite.isSubcribe %>
-                <% icon = "glyphicon glyphicon-volume-off icon-link" %>
-              <% else %>
-                <% icon = "glyphicon glyphicon-bell icon-link" %>
-              <% end %>
-              <%= link_to("", subscribe_path(@favourite.id),
-                              html_options = {class: icon , method: :patch})%>
-            <% else %>
-              <%= link_to(favourites_path({post_id: @post.id}),method: :post, class: 'btn btn-danger') do %>
-                Seguir <%= @post.subcribers%>
-              <% end %>
-            <% end%>
-            </div>
-        <% end %>
-        &nbsp;
-        <% @category = Category.find(@post.category_id) %>
-        <%if current_user.has_role?(:moderator, @category) or current_user.has_role?(:admin) %>
-            <!-- Borrar post -->
-            <%=link_to("", post_path(@post.id),
-                      html_options = {class: "glyphicon glyphicon-trash", method: :delete,
-                                      data: {confirm: "¿Deseas borrar este post?"}})%>
-        <% end %>
-        <a href="#comment" onClick = "">
-          <span class= 'btn btn-default' onClick = "">Comentar</span>
-        </a>
-      <% end %>
-      <div class="dropdown" style="display: inline-block;">
-        <a class="dropdown-toggle icon-link btn btn-default" data-toggle="dropdown" href="#">
-          Ordenar por...
-          <span class="caret"></span>
-        </a>
-        <ul class="dropdown-menu">
-          <% for option in available do%>
-            <li>
-            <%= link_to post_path(@post.id,{order: option}) do%>
-              <spam class=''><%= option.capitalize() %></spam>
+        </div>
+        <div class="panel-body">
+          <%=markdown(@post.content) %>
+        </div>
+        <div class="panel-footer">
+          <strong>Publicado hace:</strong> <%=time_ago_in_words(@post.created_at)%>
+        </div>
+      </div>
+      <div>
+        <% if user_signed_in? %>
+          <%= link_to like_post_path(@post), method: :put, class: 'vote-link' do %>
+            <% if current_user.liked?(@post)%>
+              <span class="badge badge-liked">
+            <% else%>
+              <span class="badge">
             <% end %>
-            </li>
+                <%= @post.get_likes.size%>
+                <span class="glyphicon glyphicon-thumbs-up"></span>
+              </span>
           <% end %>
-        </ul>
+          <%= link_to dislike_post_path(@post), method: :put, class: 'vote-link' do %>
+            <% if current_user.disliked?(@post)%>
+              <span class="badge badge-disliked">
+            <% else%>
+              <span class="badge">
+            <% end %>
+              <span class="glyphicon glyphicon-thumbs-down icon-rotate icon-flipped"></span>
+              <%= @post.get_dislikes.size%>
+            </span>
+          <% end %>
+          &nbsp;&nbsp;
+          <!-- Agregar favorito -->
+          <%if user_signed_in?()%>
+              <div style="display: inline-block;">
+              <% if @favourite.length() != 0 %>
+                <% @favourite = @favourite[0] %>
+                <%= link_to( favourites_path({post_id: @post.id}),method: :delete,
+                          class: 'btn btn-default') do%>
+                  Siguiendo <%= @post.subcribers%>
+                <% end %>
+                &nbsp;
+                <% if @favourite.isSubcribe %>
+                  <% icon = "glyphicon glyphicon-volume-off icon-link" %>
+                <% else %>
+                  <% icon = "glyphicon glyphicon-bell icon-link" %>
+                <% end %>
+                <%= link_to("", subscribe_path(@favourite.id),
+                                html_options = {class: icon , method: :patch})%>
+              <% else %>
+                <%= link_to(favourites_path({post_id: @post.id}),method: :post, class: 'btn btn-danger') do %>
+                  Seguir <%= @post.subcribers%>
+                <% end %>
+              <% end%>
+              </div>
+          <% end %>
+          &nbsp;
+          <% @category = Category.find(@post.category_id) %>
+          <%if current_user.has_role?(:moderator, @category) or current_user.has_role?(:admin) %>
+              <!-- Borrar post -->
+              <%=link_to("", post_path(@post.id),
+                        html_options = {class: "glyphicon glyphicon-trash", method: :delete,
+                                        data: {confirm: "¿Deseas borrar este post?"}})%>
+          <% end %>
+          <a href="#comment" onClick = "">
+            <span class= 'btn btn-default' onClick = "">Comentar</span>
+          </a>
+        <% end %>
+        <div class="dropdown" style="display: inline-block;">
+          <a class="dropdown-toggle icon-link btn btn-default" data-toggle="dropdown" href="#">
+            Ordenar por...
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <% for option in available do%>
+              <li>
+              <%= link_to post_path(@post.id,{order: option}) do%>
+                <spam class=''><%= option.capitalize() %></spam>
+              <% end %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
+
+  <%= render(@comentarios) %>
+
+  <%if user_signed_in?()%>
+    <div class="jumbotron" id="comment">
+      <div class="row">
+        <h2>Comentar</h2>
+        <%= form_for(:commentary, url: commentaries_path(), class: "form-horizontal") do |f| %>
+          <!-- Enviar escondido el id del post y del usuario -->
+          <%= hidden_field_tag("commentary[post_id]", "#{@post.id}") %>
+          <%= hidden_field_tag("commentary[user_id]", current_user.id) %>
+          <div class="form-group">
+            <%= f.label("Comenta aqui: ") %><br />
+            <%= f.text_area(:text, rows: 4, placeholder: "Escribe tu comentario aqui...",
+                            class: "form-control", style: "resize: none;") %>
+          </div>
+          <div class="actions">
+            <%= f.submit("Crear", class: "btn btn-primary active") %>
+            <span href="#" id="uploader" ></span>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <%end%>
 </div>
 
-<%= render(@comentarios) %>
-
-<%if user_signed_in?()%>
-  <div class="jumbotron" id="comment">
-    <div class="row">
-      <h2>Comentar</h2>
-      <%= form_for(:commentary, url: commentaries_path(), class: "form-horizontal") do |f| %>
-        <!-- Enviar escondido el id del post y del usuario -->
-        <%= hidden_field_tag("commentary[post_id]", "#{@post.id}") %>
-        <%= hidden_field_tag("commentary[user_id]", current_user.id) %>
-        <div class="form-group">
-          <%= f.label("Comenta aqui: ") %><br />
-          <%= f.text_area(:text, rows: 4, placeholder: "Escribe tu comentario aqui...",
-                          class: "form-control", style: "resize: none;") %>
-        </div>
-        <div class="actions">
-          <%= f.submit("Crear", class: "btn btn-primary active") %>
-          <span href="#" id="uploader" ></span>
-        </div>
-      <% end %>
-    </div>
-  </div>
-<%end%>
 
 <script>
   function render() {
