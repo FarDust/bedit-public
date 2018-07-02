@@ -25,7 +25,11 @@
     </div>
   </div>
   <div>
+    <% if background %>
+    <div class="panel panel-body" style="background-color: rgba(255,255,255,.6);">
+    <% else %>
     <div class="panel panel-body">
+    <% end %>
       <%= markdown(@category.description) %>
     </div>
     <div class="container">
