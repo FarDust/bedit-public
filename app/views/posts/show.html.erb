@@ -6,6 +6,9 @@
 <h2>
   <%= @post.title.capitalize() %>
 </h2>
+<h5>
+  &nbsp;   Foro: <%= link_to(Category.find(@post.category_id).name, "#{communities_path()}/#{@post.category_id}") %>
+</h5>
 
 <div class="precontainer" style= "background-image: url(<%= background %>);">
   <% available = ['tiempo','votos'] %>
