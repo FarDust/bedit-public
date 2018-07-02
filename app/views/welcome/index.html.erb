@@ -13,6 +13,42 @@
       <%= column_chart Post.group_by_day_of_week(:created_at, format: "%a").count %>
     </div>
   <% end %>
+
+  <% if current_user.moderator? %>
+    <div class="jumbotron">
+      <h3>¡Hola <b><%= current_user.username.titleize %></b>!</h3>
+      <p>Gracias por ser moderador. </p>
+    </div>
+
+    <% if @ultimasPublicaciones.length != 0 %>
+      <div class="jumbotron">
+        <h3>Últimas 5 publicaciones creadas</h3>
+        <%= render(@ultimasPublicaciones)%>
+      </div>
+    <% end %>
+  <% end %>
+
+  <% if !current_user.moderator? & !current_user.has_role?(:admin) %>
+    <div class="jumbotron">
+      <h3>¡Hola <b><%= current_user.username.titleize %></b>!</h3>
+      
+      <% if Post.where(id: current_user.id).count > 0 %>
+      <p>Gráfico de las publicaciones creadas por ti con respecto al tiempo.</p>
+        <%= line_chart Post.where(id: current_user.id).group_by_day(:created_at).count %>
+      <% end %>
+      <% if Post.where(id: current_user.id).count == 0 %>
+        <p>No has creado ninguna publicación :(</p>
+      <% end %>
+    </div>
+
+    <% if @ultimasPublicaciones.length != 0 %>
+      <div class="jumbotron">
+        <h3>Últimas 5 publicaciones creadas</h3>
+        <%= render(@ultimasPublicaciones)%>
+      </div>
+    <% end %>
+  <% end %>
+
 <% end %>
 
 <% if current_user.nil? %>
