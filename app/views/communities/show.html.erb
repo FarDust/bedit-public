@@ -50,17 +50,18 @@
         <% if current_user.has_any_role?(:admin, {name: :moderator, resource: @category}) %>
           <li class="list-inline-item">
             <div class="actions">
-              <spam id="background-uploader">
-              </spam>
+              <span id="background-uploader">
+              </span>
+              <% if background %>
+                <span>
+                  <%= link_to(forums_background_path(category_id: @category.id), html_options = {class: "btn btn-danger", method: :delete, 'aria-label': "Close"}) do %>
+                    <span class="glyphicon glyphicon-remove"></span>
+                  <% end %>
+                </span>
+              <% end %>
             </div>
           </li>
           &nbsp;
-          <% if background %>
-            <li class="list-inline-item">
-              <%= link_to("Quitar fondo", forums_delete_background_path(category_id: @category.id), html_options = {class: "btn btn-success", method: :delete}) %>
-            </li>
-            &nbsp;
-          <% end %>
         <% end %>
         <% if not current_user.has_any_role?(:admin, {name: :moderator, resource: @category}) %>
           <li class="list-inline-item">
@@ -79,7 +80,7 @@
               <% for option in available do %>
                 <li>
                 <%= link_to "#{communities_path()}/#{@category.id}#{root_path({order: option})[1,100]}" do%>
-                  <spam class=''><%= option.capitalize() %></spam>
+                  <span class=''><%= option.capitalize() %></span>
                 <% end %>
                 </li>
               <% end %>
@@ -89,13 +90,13 @@
       </ul>
     </div>
   </div>
-  <br>
+
   <% if !background.nil? %>
     <% style = "background-color: rgba(255,255,255,0);" %>
   <% else %>
     <% style = "" %>
   <% end %>
-  <div class="jumbotron" style="<% style %>">
+  <div class="jumbotron" style="<%= style %>">
     <div class="row">
       <%= render(@posts) %>
     </div>
