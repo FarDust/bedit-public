@@ -4,7 +4,7 @@ class FavouritesController < ApplicationController
   def index
     @subscriptions = current_user.subscriptions
     @favourites = current_user.favourites
-    
+
     @posts = Post.where(id: @favourites.map { |a| a['post_id'] })
     @subs = Category.where(id: @subscriptions.map { |a| a['category_id'] })
   end
