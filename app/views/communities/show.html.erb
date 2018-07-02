@@ -83,7 +83,11 @@
     </div>
   </div>
   <br>
+  <% if background %>
+  <div class="jumbotron" style="background-color: rgba(0,0,0,0);">
+  <% else %>
   <div class="jumbotron">
+  <% end %>
     <div class="row">
       <%= render(@posts) %>
     </div>
