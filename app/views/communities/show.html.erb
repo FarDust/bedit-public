@@ -34,42 +34,46 @@
       <%= markdown(@category.description) %>
     </div>
     <div class="container">
-      <ul class="list-inline" style="right: 10%;">
-        <li class="list-inline-item">
-          <% if Subscription.where(category: @category, user: current_user).length > 0 %>
-            <%= link_to(subscribe_path(id: @category.id), method: :delete, class: 'btn btn-default') do %>
-              Suscrito <%= @category.subcribers %>
-            <% end %>
-          <% else %>
-            <%= link_to(subscribe_path(id: @category.id),method: :post, class: 'btn btn-danger') do %>
-              Suscribirse <%= @category.subcribers %>
-            <% end %>
-          <% end %>
-        </li>
-        &nbsp;
-        <% if current_user.has_any_role?(:admin, {name: :moderator, resource: @category}) %>
-          <li class="list-inline-item">
-            <div class="actions">
-              <span id="background-uploader">
-              </span>
-              <% if background %>
-                <span>
-                  <%= link_to(forums_background_path(category_id: @category.id), html_options = {class: "btn btn-danger", method: :delete, 'aria-label': "Close"}) do %>
-                    <span class="glyphicon glyphicon-remove"></span>
-                  <% end %>
-                </span>
+      <div class="row">
+        <div class="col col-sm-8 col-md-10">
+          <ul class="list-inline" style="right: 10%;">
+            <li class="list-inline-item">
+              <% if Subscription.where(category: @category, user: current_user).length > 0 %>
+                <%= link_to(subscribe_path(id: @category.id), method: :delete, class: 'btn btn-default') do %>
+                  Suscrito <%= @category.subcribers %>
+                <% end %>
+              <% else %>
+                <%= link_to(subscribe_path(id: @category.id),method: :post, class: 'btn btn-danger') do %>
+                  Suscribirse <%= @category.subcribers %>
+                <% end %>
               <% end %>
-            </div>
-          </li>
-          &nbsp;
-        <% end %>
-        <% if not current_user.has_any_role?(:admin, {name: :moderator, resource: @category}) %>
-          <li class="list-inline-item">
-            <%= link_to("Ser moderador", communities_moderator_path(category_id: @category.id), html_options = {class: "btn btn-secundary active"}) %>
-          </li>
-          &nbsp;
-        <% end %>
-        <li class="list-inline-item">
+            </li>
+            &nbsp;
+            <% if current_user.has_any_role?(:admin, {name: :moderator, resource: @category}) %>
+              <li class="list-inline-item">
+                <div class="actions">
+                  <span id="background-uploader">
+                  </span>
+                  <% if background %>
+                    <span>
+                      <%= link_to(forums_background_path(category_id: @category.id), html_options = {class: "btn btn-default", method: :delete, 'aria-label': "Close"}) do %>
+                        <span class="glyphicon glyphicon-trash"></span>
+                      <% end %>
+                    </span>
+                  <% end %>
+                </div>
+              </li>
+              &nbsp;
+            <% end %>
+            <% if not current_user.has_any_role?(:admin, {name: :moderator, resource: @category}) %>
+              <li class="list-inline-item">
+                <%= link_to("Ser moderador", communities_moderator_path(category_id: @category.id), html_options = {class: "btn btn-secundary active"}) %>
+              </li>
+              &nbsp;
+            <% end %>
+          </ul>
+        </div>
+        <div class="col col-sm-2">
           <div class="dropdown">
             <a class="dropdown-toggle icon-link btn btn-default" data-toggle="dropdown" href="#">
               Ordenar por...
@@ -86,8 +90,8 @@
               <% end %>
             </ul>
           </div>
-        </li>
-      </ul>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -106,7 +110,7 @@
   $('#background-uploader').cloudinary_upload_widget(
     { cloud_name: 'hctj9u4ot', upload_preset: 'commentary',
       cropping: 'server', folder: 'backgrounds', theme: 'minimal',
-      button_class: "btn btn-success", thumbnails: false,
+      button_class: "btn btn-default", thumbnails: false,
       button_caption: "Cambiar fondo" },
     function(error, result) {
       result['0']['forum_id'] = parseInt('<%= @category.id %>');
