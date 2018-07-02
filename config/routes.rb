@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   patch('/profile', to: 'users#profile')
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   post('/search', to: 'welcome#search')
+  get('/search', to: 'welcome#search')
   get('/forum', to: 'forums#index')
   get('/rankings/users', to: 'rankings#users')
   get('/rankings/posts', to: 'rankings#posts')
