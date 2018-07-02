@@ -7,4 +7,8 @@ class Category < ApplicationRecord
   def subcribers
     subscriptions.length
   end
+
+  def background?
+    !background.nil?
+  end
 end
