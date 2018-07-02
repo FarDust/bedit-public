@@ -34,7 +34,7 @@ class ForumsController < ApplicationController
   end
 
   def delete_background
-    background = Background.find_by(category_id: params[:category_id].to_i())
+    background = Category.find(params[:category_id].to_i()).background
     background.delete()
     redirect_back(fallback_location: root_path())
   end
