@@ -1,3 +1,5 @@
+require('redcarpet/render_strip')
+
 class CommunitiesController < ApplicationController
   before_action(:authenticate_user!, except: %i[index show])
 
