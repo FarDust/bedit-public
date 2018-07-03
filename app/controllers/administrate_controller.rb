@@ -40,7 +40,7 @@ class AdministrateController < ApplicationController
   def delete_user
     @user = User.find(params[:user_id].to_i)
     @username = @user.username
-    @user.delete()
+    @user.destroy()
     redirect_to(administrate_index_path(), notice: "Has eliminado la cuenta de #{@username}")
   end
 
