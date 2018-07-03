@@ -33,6 +33,9 @@ def seed_forums
       ['Nintento Switch', 'Novedades y todo lo relacionado con la última consola de nintendo.'],
       ['Trucos AoE', 'Todos los códigos y tips para el hitórico juego Age of Empires.'],
       ["New Assassin's Creed", 'Información actualizada del desarrollo de este nuevo juego.']
+    ],
+    Random: [
+      ['Memes', 'Espacio para compartir los mejores memes.']
     ]
   }
   categorias.keys.each do |topic|
