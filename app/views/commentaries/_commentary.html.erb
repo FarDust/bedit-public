@@ -1,19 +1,26 @@
-<script src="//widget.cloudinary.com/global/all.js" type="text/javascript"></script>  
+<script src="//widget.cloudinary.com/global/all.js" type="text/javascript"></script>
 <div class="jumbotron" id="commentary-<%= commentary.id %>">
   <div class="row">
     <!-- Mostrar el contenido del comentario -->
     <%if !commentary.user_id.nil? %>
       <div class="panel panel-info">
         <div class="panel-heading">
-          <%= link_to(profile_path({id: User.find(commentary.user_id).id}), method: :patch) do %>
-            <% if !User.find(commentary.user_id).avatar.nil? %>
-                <%= image_tag(User.find(commentary.user_id).avatar, alt: User.find(commentary.user_id).username,size: "50", class: "kiwy")%>
+          <% if commentary.user %>
+            <%= link_to(profile_path({id: User.find(commentary.user_id).id}), method: :patch) do %>
+              <% if !User.find(commentary.user_id).avatar.nil? %>
+                  <%= image_tag(User.find(commentary.user_id).avatar, alt: User.find(commentary.user_id).username, size: "50", class: "kiwy") %>
+              <% end %>
             <% end %>
+            <%=User.find(commentary.user_id).username %>
+            <span class="badge">
+              <%= User.find(commentary.user_id).reputation.to_i %>
+            </span>
+          <% else %>
+            <%= link_to("http://k30.kn3.net/taringa/7/A/8/6/1/7/emiliorok1/27F.jpg") do %>
+              <%= image_tag("http://k30.kn3.net/taringa/7/A/8/6/1/7/emiliorok1/27F.jpg", alt: "No hay cuenta", size: "50", class: "kiwy") %>
+            <% end %>
+            Cuenta borrada
           <% end %>
-          <%=User.find(commentary.user_id).username.capitalize() %>
-          <span class="badge">
-            <%= User.find(commentary.user_id).reputation.to_i %>
-          </span>
         </div>
         <div class="panel-body">
           <%= markdown(commentary.text) %>
@@ -77,7 +84,7 @@
     </div>
       <% for reply in commentary.replies %>
         <% if !reply.response.nil? %>
-          
+
           <%= render(template: "commentaries/_commentary.html.erb", locals: {commentary: reply.response})%>
         <% end %>
       <% end%>
@@ -87,10 +94,10 @@
 
 <script type="text/javascript">
   $('#uploader-<%= commentary.id %>').cloudinary_upload_widget(
-    { cloud_name: 'hctj9u4ot', upload_preset: 'commentary', 
+    { cloud_name: 'hctj9u4ot', upload_preset: 'commentary',
       cropping: 'server', folder: 'commentaries', theme: 'minimal',
       button_class: "btn btn-default", max_image_width: 400, max_image_height: 400},
-    function(error, result) { 
+    function(error, result) {
       console.log(error,result);
       console.log($('#<%= commentary.id%>').value)
       $('#<%= commentary.id%>')[0].value += '![](' +  result["0"]['secure_url'] + ')'

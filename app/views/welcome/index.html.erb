@@ -1,10 +1,67 @@
-<div class="jumbotron">
-  <h1>Hola!</h1>
-  <p>
-    La aplicación se encuentra aún en la fase de desarrollo así que puede ser que encuentres unos
-    pequeños errores.
-  </p>
-  <p>
-    <%= link_to("Ver los foros", forum_path(), html_options = {class: "btn btn-primary active"}) %>
-  </p>
-</div>
+<% if !current_user.nil? %>
+  <% if current_user.has_role?(:admin) %>
+    <div class="jumbotron">
+      <h3>¡Hola <b><%= current_user.username.titleize %></b>!</h3>
+      <p>Existen <b style="color: red"><%= @cantidadUsuarios %></b> usuarios registrados en la plataforma, de los cuales <b style="color: red"><%= @cantidadFavoritos %></b> tienen cosas agregados a favoritos.</p>
+      <p>Gráfico con los usuarios registrados por fecha:</p>
+      <%= line_chart User.group_by_day(:created_at).count %>
+    </div>
+
+    <div class="jumbotron">
+      <p>Hay publicados <b style="color: red"><%= @cantidadPosts %></b> posts en <b style="color: red"><%= @cantidadForos %></b> foros. </p>
+      <p>Gráfico con los posts publicados en cada día de la semana:</p>
+      <%= column_chart Post.group_by_day_of_week(:created_at, format: "%a").count %>
+    </div>
+  <% end %>
+
+  <% if current_user.moderator? %>
+    <div class="jumbotron">
+      <h3>¡Hola <b><%= current_user.username.titleize %></b>!</h3>
+      <p>Gracias por ser moderador. </p>
+    </div>
+
+    <% if @ultimasPublicaciones.length != 0 %>
+      <div class="jumbotron">
+        <h3>Últimas 5 publicaciones creadas</h3>
+        <%= render(@ultimasPublicaciones)%>
+      </div>
+    <% end %>
+  <% end %>
+
+  <% if !current_user.moderator? & !current_user.has_role?(:admin) %>
+    <div class="jumbotron">
+      <h3>¡Hola <b><%= current_user.username.titleize %></b>!</h3>
+      
+      <% if Post.where(id: current_user.id).count > 0 %>
+      <p>Gráfico de las publicaciones creadas por ti con respecto al tiempo.</p>
+        <%= line_chart Post.where(id: current_user.id).group_by_day(:created_at).count %>
+      <% end %>
+      <% if Post.where(id: current_user.id).count == 0 %>
+        <p>No has creado ninguna publicación :(</p>
+      <% end %>
+    </div>
+
+    <% if @ultimasPublicaciones.length != 0 %>
+      <div class="jumbotron">
+        <h3>Últimas 5 publicaciones creadas</h3>
+        <%= render(@ultimasPublicaciones)%>
+      </div>
+    <% end %>
+  <% end %>
+
+<% end %>
+
+<% if current_user.nil? %>
+  <div class="jumbotron">
+    <h3>¡Hola!</h3>
+    <p>¡¿Aún no te registras?! Tenemos <b style="color: red"><%= @cantidadForos %></b> foros creados esperándote. <%= link_to("Regístrate", new_user_registration_path()) %> ahora y accede a la comunidad.</p>
+    <p>Si es que ya tienes cuenta, no olvides <%= link_to("iniciar sesión", user_session_path()) %> para poder acceder a todas las funcionalidades.</p>
+  </div>
+
+  <% if @ultimasPublicaciones.length != 0 %>
+    <div class="jumbotron">
+      <h3>Últimas 5 publicaciones creadas</h3>
+      <%= render(@ultimasPublicaciones)%>
+    </div>
+  <% end %>
+<% end %>

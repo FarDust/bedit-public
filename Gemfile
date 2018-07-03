@@ -24,6 +24,11 @@ gem('dotenv-rails', groups: %i[development test])
 gem('faker')
 gem('jquery-rails')
 
+# Gema para los gráficos
+gem('chartkick')
+# Gema para agrupar fechas
+gem('groupdate')
+
 # Use CoffeeScript for .coffee assets and views
 gem('coffee-rails', '~> 4.2')
 

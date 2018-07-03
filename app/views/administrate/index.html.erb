@@ -14,7 +14,7 @@
           <% requests = Administrate.all.select {|r| not r.answered} %>
           <% requests.each do |r| %>
             <tr>
-              <td class="col-xs-4"><%= r.user %></td>
+              <td class="col-xs-4"><%= link_to(r.user, profile_path({id: User.find_by(username: r.user).id}), method: :patch) %></td>
               <td class="col-xs-4"><%= Category.find(r.category).name %></td>
               <td class="col-xs-4">
                 <div class="col-md-4">
@@ -62,7 +62,7 @@
           <% User.all.sort {|x,y| x.username <=> y.username} .each do |u| %>
             <tr>
               <td class="col-xs-3">
-                <%= image_tag(u.avatar, alt: u.username, size: "30") %>
+                <%= link_to(image_tag(u.avatar, alt: u.username, size: "30"), profile_path({id: u.id}), method: :patch) %>
                 &nbsp;&nbsp;
                 <%= u.username %>
               </td>
@@ -74,8 +74,7 @@
                   <%= form_for(:administrate, url: administrate_approve_path(),
                                class: "form-horizontal") do |f| %>
                       <%= f.hidden_field(:user, value: u.username, class: "form-control") %>
-                      <div class="col-lg-1"></div>
-                      <div class="col-lg-5">
+                      <div class="col-lg-6">
                         <%
                           @categories = Category.all.select {|c| not u.has_role?(:moderator, c)}
                         %>

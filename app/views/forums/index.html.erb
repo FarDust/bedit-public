@@ -1,17 +1,15 @@
 <div class="container">
-  <%if user_signed_in?()%>
+  <% if user_signed_in?() %>
     <div class="alert alert-success" role="alert">
       ¿Quieres hacer una publicación? <br><br>
-      <%=
-        link_to("Crear publicación", new_post_path(), html_options = {class: "btn btn-primary active"})
-      %>
+      <%= link_to("Crear publicación", new_post_path(), html_options = {class: "btn btn-primary active"}) %>
     </div>
-  <%end%>
+  <% end %>
 
   <!-- Todos los foros -->
   <div style="display: inline-block; width: 87%;">
     <h1>Publicaciones</h1>
-    <h5>Últimas publicaciones creadas en todas las categorías</h5>
+    <h5>Últimas publicaciones creadas en todos los foros</h5>
   </div>
   <div class="dropdown" style="display: inline-block; width: 5%;">
     <a class="dropdown-toggle icon-link btn btn-default" data-toggle="dropdown" href="#">
@@ -19,10 +17,10 @@
       <span class="caret"></span>
     </a>
     <ul class="dropdown-menu">
-      <% available = ["relevancia","tiempo","puntos"]%>
+      <% available = ["relevancia","tiempo","puntos"] %>
       <% for option in available do%>
         <li>
-        <%= link_to forum_path({order: option}) do%>
+        <%= link_to forum_path({order: option}) do %>
           <spam class=''><%= option.capitalize() %></spam>
         <% end %>
         </li>
@@ -39,16 +37,16 @@
       <div class="row">
         <h4 class="text-center">
             <!-- Dividir por páginas (6 foros por página) -->
-            <%= will_paginate @posts, :previous_label => "&larr; Anterior", :next_label => "Siguiente &rarr;" %>
+            <%= will_paginate(@posts, :previous_label => "&larr; Anterior", :next_label => "Siguiente &rarr;") %>
         </h4>
       </div>
     </div>
   </div>
 
-  <% for category in @categories do%>
+  <% for category in @categories do %>
     <% posts = Post.where(category_id: category.id).last(4) %>
-    <h3><%= category.name %></h3>
-    <h5>Últimas <%= posts.length %> publicaciones</h5>
+    <h3><%= link_to(category.name, "#{communities_path()}/#{category.id}") %></h3>
+    <h5>Últimas <%= posts.length() %> publicaciones</h5>
     <div class="jumbotron">
         <div class="row">
           <!-- Renderear cada post de la categoría -->

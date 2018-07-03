@@ -1,3 +1,5 @@
+require('redcarpet/render_strip')
+
 class CommunitiesController < ApplicationController
   before_action(:authenticate_user!, except: %i[index show])
 
@@ -9,7 +11,7 @@ class CommunitiesController < ApplicationController
       Administrate.create(user: params['request']['user'],
                           category: params['request']['category'],
                           answered: false)
-      redirect_back(notice: '¡Tu solicitud a sido enviada!')
+      redirect_back(fallback_location: root_path(), notice: '¡Tu solicitud a sido enviada!')
     end
   end
 

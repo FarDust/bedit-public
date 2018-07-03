@@ -1,4 +1,4 @@
-<% if not current_user.has_role?(:admin) %>
+<% if not current_user.has_role?(:admin) and current_user.reputation() >= 200 %>
   <div class="jumbotron">
     <div class="row">
       <h2>Solicitar ser moderador</h2>
@@ -9,17 +9,11 @@
         <div class="form-group">
           <% f.text_field(:user, value: current_user.username, class: "form-control") %>
           <%= f.label(:Foro) %><br />
-          <% @categorias = Category.all.select {|category| not current_user.has_role?(:moderator,
-                                                                                      category)} %>
+          <% @categorias = Category.all.select {|category| not current_user.has_role?(:moderator, category)} %>
           <% @categorias = @categorias.select {|c| not c.id == params[:category_id].to_i} %>
           <% @first_category = Category.find(params[:category_id].to_i) %>
-          <%
-            @categorias.insert(0, @first_category) if not current_user.has_role?(:moderator,
-                                                                                 @first_category)
-          %>
-          <%=
-            f.collection_select(:category, @categorias, :id, :name, {class: "custom-select"})
-          %>
+          <% @categorias.insert(0, @first_category) if not current_user.has_role?(:moderator, @first_category) %>
+          <%= f.collection_select(:category, @categorias, :id, :name, {class: "custom-select"}) %>
         </div>
         <div class="actions">
           <%= f.submit("Enviar solicitud", class: "btn btn-primary active") %>
@@ -28,8 +22,19 @@
     </div>
   </div>
 
-<% else %>
+<% elsif current_user.has_role?(:admin) %>
   <div class="alert alert-warning" role="alert">
     <p>¡Ya eres administrador! No necesitas hacer solicitudes de moderación</p>
+  </div>
+<% elsif current_user.reputation() < 200 %>
+  <div class="alert alert-warning" role="alert">
+    <p>
+      Para solicitar ser moderador debes tener al menos 200 puntos.
+      <% if current_user.reputation().to_i() == 1 %>
+        Actualmente tienes <%= current_user.reputation().to_i() %> punto.
+      <% else %>
+        Actualmente tienes <%= current_user.reputation().to_i() %> puntos.
+      <% end %>
+    </p>
   </div>
 <% end %>
