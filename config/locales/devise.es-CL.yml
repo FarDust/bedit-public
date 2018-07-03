@@ -45,6 +45,9 @@ es-CL:
         subject: "Instrucciones para desbloquear tu cuenta"
         unlock: "Desbloquear mi cuenta"
       welcome: "Bienvenid@ %{email}!"
+    omniauth_callbacks:
+      failure: "Lo sentimos %{kind}, no has podido iniciar sesión porque \"%{reason}\"."
+      success: "Has iniciado sesión correctamente, %{kind}."
     passwords:
       edit:
         change_password: "Cambiar mi contraseña"
