@@ -8,6 +8,51 @@ require('identicon')
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+def create_sodrigo
+  user = User.create(
+    username: "Sodrigo Raffie",
+    password: '123456',
+    email: "sodrigoraffie@gmail.com",
+    avatar: "https://res.cloudinary.com/hctj9u4ot/image/upload/v1530587791/commentaries/jnwljnz8sb51rka3j0sm.jpg"
+ )
+end
+
+def create_Rosa
+  user = User.create(
+    username: "Rosa Alarcon",
+    password: '123456',
+    email: "ralarcon@uc.cl",
+    avatar:  Identicon.data_url_for("Rosa Alarcon")
+ )
+ user.remove_role(:normal)
+ user.add_role(:admin)
+end
+
+def create_fernando
+  user = User.create(
+    username: "Fernando Florenzano",
+    password: '123456',
+    email: "faflorenzano@uc.cl",
+    avatar:  Identicon.data_url_for("Fernando Florenzano")
+ )
+end
+
+def create_fandres
+  user = User.create(
+    username: "Fandres Ernandez",
+    password: '123456',
+    email: "alfernandez@uc.cl",
+    avatar:  Identicon.data_url_for("Fernando Florenzano")
+  )
+end
+
+def create_presentation_users
+  create_fandres()
+  create_fernando()
+  create_Rosa()
+  create_sodrigo()
+end
+
 def define_role(user)
   if user.username == 'admin'
     user.remove_role(:normal)
@@ -16,6 +61,7 @@ def define_role(user)
     user.add_role(:moderator, Category.find(1))
   end
 end
+
 
 def seed_forums
   categorias = {
@@ -46,7 +92,7 @@ def seed_forums
 end
 
 def seed_users
-  users = ['normal', 'moderator', 'admin']
+  users = ['admin']
   users.each do |user|
     @usuario = User.create(
                   username: user,
@@ -112,6 +158,8 @@ def seed_commentaries
     end
   end
 end
+
+create_presentation_users()
 
 seed_forums()
 seed_users()
