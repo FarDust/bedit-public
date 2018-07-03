@@ -19,9 +19,9 @@ class User < ApplicationRecord
   has_many(:publication)
   has_many(:commentaries)
   has_many(:favourites, dependent: :destroy)
-  has_many(:posts)
+  has_many(:posts, dependent: :destroy)
   has_many(:commentary)
-  has_many(:subscriptions)
+  has_many(:subscriptions, dependent: :destroy)
 
   def reputation
     total_likes = 0

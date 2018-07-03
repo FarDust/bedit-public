@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   get('communities/moderator')
   post('administrate/approve')
+  post('administrate/permit')
   post('administrate/refuse')
   post('administrate/delete_user')
   root('welcome#index')

@@ -71,19 +71,11 @@
                 <% if u.has_role?(:admin) %>
                   <div class="text-success" align="center">admin</div>
                 <% else %>
-                  <%= form_for(:administrate, url: administrate_approve_path(),
-                               class: "form-horizontal") do |f| %>
+                  <%= form_for(:administrate, url: administrate_permit_path(), class: "form-horizontal") do |f| %>
                       <%= f.hidden_field(:user, value: u.username, class: "form-control") %>
-                      <div class="col-lg-1"></div>
-                      <div class="col-lg-5">
-                        <%
-                          @categories = Category.all.select {|c| not u.has_role?(:moderator, c)}
-                        %>
-                        <%= f.collection_select(:id,
-                                                @categories,
-                                                :id,
-                                                :name,
-                                                {class: "custom-select"}) %>
+                      <div class="col-lg-6">
+                        <% @categories = Category.all.select {|c| not u.has_role?(:moderator, c)} %>
+                        <%= f.collection_select(:id, @categories, :id, :name, {class: "custom-select"}) %>
                       </div>
                       <div class="col-lg-1">
                         <div class="actions">
@@ -97,10 +89,7 @@
                 <% if u.has_role?(:admin) %>
                   <div class="text-danger">No puedes eliminar administradores</div>
                 <% else %>
-                  <%= button_to("Eliminar cuenta",
-                                administrate_delete_user_path(user_id: u.id),
-                                            data: { confirm: "Are you sure?" },
-                                            class: "btn btn-danger" )%>
+                  <%= button_to("Eliminar cuenta", administrate_delete_user_path(user_id: u.id), data: { confirm: "Are you sure?" }, class: "btn btn-danger" ) %>
                 <% end %>
               </td>
             </tr>
