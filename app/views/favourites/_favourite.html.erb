@@ -10,7 +10,7 @@
           <strong><%= truncate(post.title, length: 40) %></strong>
         </div>
         <!-- Descripción del foro -->
-        <div class="panel panel-body" style="height: 60%">
+        <div class="panel panel-body" style="height: 60%; overflow:hidden;">
           <%= markdown(truncate(post.content,length: 250)) %>
         </div>
         <div class="panel panel-footer" style="height: 20%">
