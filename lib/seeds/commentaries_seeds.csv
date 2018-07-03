@@ -1,0 +1,12 @@
+id_post,contenido,id_usuario
+1,"Muy buena noticia, gracias por compartirla con la comunidad",4
+1,Todo es culpa del gobierno anterior,3
+2,Ya no se puede ir a comprar tranquilo,4
+2,¿Y no se te ocurre pensar en los beneficios para el medio ambiente de esta nueva medida?,1
+4,"Te recomiendo hacer todo a mano y no usar devise. Es mejor poder implementar todo por separado e incluso le puedes implementar cosas como subir imágenes a las publicaciones, google sign in, etc.",3
+4,No te recomiendo hacerla con rails. Es mejor hacerla con PHP!,4
+5,"No c, pero al menos te respondí. Salu2",4
+6,"Te recomiendo hacerlo con las facilidades que te da rails, es muy bueno y no se darán cuenta que nada de las publicaciones tendrán sentido y que se nota que tienes que rellenar de alguna forma.",3
+8,Buen meme 11/10,4
+8,Memazo diría yo 20/10,3
+8,![Gif](https://media.giphy.com/media/cCbJkYtJa2mt2oCtBc/giphy.gif),2
