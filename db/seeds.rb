@@ -43,7 +43,7 @@ def create_fandres
     username: "Fandres Ernandez",
     password: '123456',
     email: "alfernandez@uc.cl",
-    avatar:  Identicon.data_url_for("Fernando Florenzano")
+    avatar:  Identicon.data_url_for("Fandres Ernandez")
   )
 end
 
