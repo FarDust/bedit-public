@@ -10,6 +10,16 @@ class AdministrateController < ApplicationController
   def index
   end
 
+  def permit
+    Administrate.create(user: params['administrate']['user'],
+                        category: params['administrate']['id'],
+                        answered: true)
+    define_moderator(params['administrate']['user'])
+    @request = Administrate.where(user: params['administrate']['user'],
+                                  category: params['administrate']['id'])
+    answer_request('permitido')
+  end
+
   def approve
     define_moderator(params['administrate']['user'])
     @request = Administrate.where(user: params['administrate']['user'],
