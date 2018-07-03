@@ -18,15 +18,23 @@
       <!-- Mostrar el contenido del post -->
       <div class="panel panel-default">
         <div class="panel-heading">
-          <%= link_to(profile_path({id: User.find(@post.user_id).id}), method: :patch) do %>
-              <% if !User.find(@post.user_id).avatar.nil? %>
-                  <%= image_tag(User.find(@post.user_id).avatar, alt: User.find(@post.user_id).username, size: "50", class: "kiwy")%>
+
+            <% if @post.user %>
+              <%= link_to(profile_path({id: User.find(@post.user_id).id}), method: :patch) do %>
+                <% if !User.find(@post.user_id).avatar.nil? %>
+                    <%= image_tag(User.find(@post.user_id).avatar, alt: User.find(@post.user_id).username, size: "50", class: "kiwy")%>
+                <% end %>
               <% end %>
+              <%= User.find(@post.user_id).username %>
+              <span class="badge">
+                <%= User.find(@post.user_id).reputation.to_i() %>
+              </span>
+            <% else %>
+              <%= link_to("http://k30.kn3.net/taringa/7/A/8/6/1/7/emiliorok1/27F.jpg") do %>
+                <%= image_tag("http://k30.kn3.net/taringa/7/A/8/6/1/7/emiliorok1/27F.jpg", alt: "No hay cuenta", size: "50", class: "kiwy") %>
+              <% end %>
+              Cuenta borrada
             <% end %>
-          <%= User.find(@post.user_id).username.capitalize() %>
-          <span class="badge">
-            <%= User.find(@post.user_id).reputation.to_i %>
-          </span>
         </div>
         <div class="panel-body">
           <%= markdown(@post.content) %>
