@@ -70,22 +70,32 @@ def seed_posts
       title: publicacion['titulo'],
       content: publicacion['contenido'],
       category_id: publicacion['id_foro'],
-      user: User.all.sample
+      user: User.find(publicacion['id_usuario'])
     )
   end
 end
 
+def seed_favourites
+  csv_text = File.read(Rails.root.join('lib', 'seeds', 'favourites_seeds.csv'))
+  csv = CSV.parse(csv_text, :headers => true, :encoding => 'UTF-8')
+  csv.each do |favorito|
+    Favourite.create(
+      user_id: favorito['id_usuario'],
+      post_id: favorito['id_post']
+    )
+  end
+end
+
+
 def seed_commentaries
-  comentarios = ['Comentario 1', 'Comentario 2']
-  posts = Post.all
-  posts.each do |post|
-    3.times do
-      Commentary.create(
-        text: Faker::Lorem.sentences[0],
-        post_id: post.id,
-        user_id: User.all.sample.id
-      )
-    end
+  csv_text = File.read(Rails.root.join('lib', 'seeds', 'commentaries_seeds.csv'))
+  csv = CSV.parse(csv_text, :headers => true, :encoding => 'UTF-8')
+  csv.each do |comentario|
+    Commentary.create(
+      text: comentario['contenido'],
+      post_id: comentario['id_post'],
+      user_id: comentario['id_usuario']
+    )
   end
 end
 
@@ -93,3 +103,4 @@ seed_forums()
 seed_users()
 seed_posts()
 seed_commentaries()
+seed_favourites()
