@@ -14,13 +14,13 @@ class PostsController < ApplicationController
   end
 
   def new
+    @categories = Category.all
   end
 
   def create
-    Post.create(category: Category.find_by(id: params['post']['category']),
-                title: params['post']['title'], content: params['post']['content'],
-                user: current_user).save()
-    redirect_to(forum_path())
+    post = create_from_params(params)
+    post.save()
+    redirect_to(post_path(post.id))
   end
 
   def _post
@@ -60,5 +60,13 @@ class PostsController < ApplicationController
       @post.disliked_by(current_user)
     end
     redirect_back(fallback_location: root_path())
+  end
+
+  private
+
+  def create_from_params(params)
+    Post.create(category: Category.find(params['post']['category']),
+                title: params['post']['title'], content: params['post']['content'],
+                user: current_user)
   end
 end
