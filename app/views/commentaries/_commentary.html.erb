@@ -11,6 +11,7 @@
                   <%= image_tag(User.find(commentary.user_id).avatar, alt: User.find(commentary.user_id).username, size: "50", class: "kiwy") %>
               <% end %>
             <% end %>
+            &nbsp;
             <%=User.find(commentary.user_id).username %>
             <span class="badge">
               <%= User.find(commentary.user_id).reputation.to_i %>
@@ -19,6 +20,7 @@
             <%= link_to("http://k30.kn3.net/taringa/7/A/8/6/1/7/emiliorok1/27F.jpg") do %>
               <%= image_tag("http://k30.kn3.net/taringa/7/A/8/6/1/7/emiliorok1/27F.jpg", alt: "No hay cuenta", size: "50", class: "kiwy") %>
             <% end %>
+            &nbsp;
             Cuenta borrada
           <% end %>
         </div>
@@ -74,9 +76,9 @@
             Markdown style reference
         </a>
         <%= form_for :reply, url: commentaries_path(), class: "form-group" do |f| %>
-          <%= f.text_area(:text, rows: 3, placeholder: "Escribe tu respuesta aqui...",id: commentary.id , class: "form-control", style: "resize: none;") %>
+          <%= f.text_area(:text, rows: 3, placeholder: "Escribe tu respuesta aquí...",id: commentary.id , class: "form-control", style: "resize: none;") %>
           <%= hidden_field_tag(:commentary_id, commentary.id) %>
-          <%= f.submit('Enviar',class: "btn btn-default") %>
+          <%= f.submit('Publicar',class: "btn btn-primary") %>
           &nbsp;
           <span href="#" id="uploader-<%= commentary.id %>" ></span>
         <% end %>
