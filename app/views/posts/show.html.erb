@@ -18,13 +18,13 @@
       <!-- Mostrar el contenido del post -->
       <div class="panel panel-default">
         <div class="panel-heading">
-
             <% if @post.user %>
               <%= link_to(profile_path({id: User.find(@post.user_id).id}), method: :patch) do %>
                 <% if !User.find(@post.user_id).avatar.nil? %>
                     <%= image_tag(User.find(@post.user_id).avatar, alt: User.find(@post.user_id).username, size: "50", class: "kiwy")%>
                 <% end %>
               <% end %>
+              &nbsp;
               <%= User.find(@post.user_id).username %>
               <span class="badge">
                 <%= User.find(@post.user_id).reputation.to_i() %>
@@ -33,6 +33,7 @@
               <%= link_to("http://k30.kn3.net/taringa/7/A/8/6/1/7/emiliorok1/27F.jpg") do %>
                 <%= image_tag("http://k30.kn3.net/taringa/7/A/8/6/1/7/emiliorok1/27F.jpg", alt: "No hay cuenta", size: "50", class: "kiwy") %>
               <% end %>
+              &nbsp;
               Cuenta borrada
             <% end %>
         </div>
@@ -95,7 +96,7 @@
               <%= link_to("", post_path(@post.id), html_options = {class: "glyphicon glyphicon-trash", method: :delete, data: {confirm: "¿Deseas borrar este post?"}}) %>
           <% end %>
           <a href="#comment" onClick = "">
-            <span class= 'btn btn-default' onClick = "">Comentar</span>
+            <span class='btn btn-default' onClick="">Comentar</span>
           </a>
         <% end %>
         <div class="dropdown" style="display: inline-block;">
@@ -128,12 +129,11 @@
           <%= hidden_field_tag("commentary[post_id]", "#{@post.id}") %>
           <%= hidden_field_tag("commentary[user_id]", current_user.id) %>
           <div class="form-group">
-            <%= f.label("Comenta aqui: ") %><br />
-            <%= f.text_area(:text, rows: 4, placeholder: "Escribe tu comentario aqui...",
+            <%= f.text_area(:text, rows: 4, placeholder: "Escribe tu comentario aquí...",
                             class: "form-control", style: "resize: none;") %>
           </div>
           <div class="actions">
-            <%= f.submit("Crear", class: "btn btn-primary active") %>
+            <%= f.submit("Publicar", class: "btn btn-primary active") %>
             <span href="#" id="uploader" ></span>
           </div>
         <% end %>
@@ -153,9 +153,14 @@
 
 <script type="text/javascript">
   $('#uploader').cloudinary_upload_widget(
-    { cloud_name: 'hctj9u4ot', upload_preset: 'commentary',
-      cropping: 'server', folder: 'commentaries', theme: 'minimal',
-      button_class: "btn btn-default", max_image_width: 400, max_image_height: 400},
+    {cloud_name: 'hctj9u4ot',
+     upload_preset: 'commentary',
+     cropping: 'server',
+     folder: 'commentaries',
+     theme: 'minimal',
+     button_class: "btn btn-default",
+     max_image_width: 400,
+     max_image_height: 400},
     function(error, result) {
       $('#commentary_text')[0].value += '![](' +  result["0"]['secure_url'] + ') '
      });
