@@ -86,7 +86,6 @@ def seed_favourites
   end
 end
 
-
 def seed_commentaries
   csv_text = File.read(Rails.root.join('lib', 'seeds', 'commentaries_seeds.csv'))
   csv = CSV.parse(csv_text, :headers => true, :encoding => 'UTF-8')
@@ -99,8 +98,17 @@ def seed_commentaries
   end
 end
 
+def seed_likes
+  csv_text = File.read(Rails.root.join('lib', 'seeds', 'likes_seeds.csv'))
+  csv = CSV.parse(csv_text, :headers => true, :encoding => 'UTF-8')
+  csv.each do |like|
+    Commentary.find(like['id_comentario']).liked_by(User.find(like['id_usuario']))
+  end
+end
+
 seed_forums()
 seed_users()
 seed_posts()
 seed_commentaries()
 seed_favourites()
+seed_likes()
