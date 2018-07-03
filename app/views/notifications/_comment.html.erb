@@ -2,8 +2,12 @@
     Comentaron un post que sigues
 </div>
 <div class="media-content">
-  <%post = Post.find(notification.target.post_id)%>
-  <%= notification.actor.username %> comentó en
+  <%post = Post.find(notification.target.post_id) %>
+  <% if !notification.actor.nil? %>
+    <%= notification.actor.username %> comentó en
+  <% else %>
+    Comentaron en
+  <% end %>
   <%=link_to(post.title ,main_app.posts_path() + "/" + post.id.to_s, onclick: "render(this);")%>
 </div>
 <script>
