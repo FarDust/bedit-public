@@ -42,9 +42,9 @@
           <li><li><%= link_to("Favoritos", favourites_path()) %></li></li>
         <%end%>
         <li style= "margin-top: 10px;">
-            <%=form_for :search, url: search_path(), class: "form-inline", method: :post do |f| %>
-              <%=f.text_field(:query, class: "form-control mr-sm-2", placeholder: "search")%>
-              <%=f.submit(:search, class: "btn btn-outline-success my-2 my-sm-0", style: "display: none;")%>
+            <%= form_for(:search, url: search_path(), class: "form-inline", method: :post) do |f| %>
+              <%= f.text_field(:query, class: "form-control mr-sm-2", placeholder: "Buscar") %>
+              <%= f.submit(:search, class: "btn btn-outline-success my-2 my-sm-0", style: "display: none;") %>
             <% end %>
         </li>
       </ul>
@@ -63,7 +63,7 @@
             Notificaciones <span class="badge"><%= Notification.unread_count(current_user) %></span>
           </button>
           </li>
-        <%end%>
+        <% end %>
         <% if user_signed_in?() %>
           <li><%= link_to("Cerrar Sesión", destroy_user_session_path(), method: :delete) %></li>
         <% else %>
