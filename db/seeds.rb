@@ -114,9 +114,9 @@ def seed_posts
   csv.each do |publicacion|
     Post.create(
       title: publicacion['titulo'],
+      user_id: publicacion['id_usuario'],
       content: publicacion['contenido'],
-      category_id: publicacion['id_foro'],
-      user: User.find(publicacion['id_usuario'])
+      category_id: publicacion['id_foro']
     )
   end
 end
