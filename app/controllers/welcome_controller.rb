@@ -4,7 +4,7 @@ class WelcomeController < ApplicationController
     @cantidadPosts = Post.count
     @cantidadForos = Category.count
     @cantidadFavoritos = Favourite.select(:user_id).distinct.count
-    @ultimasPublicaciones = Post.last(5)
+    @ultimasPublicaciones = Post.last(6)
   end
 
   def search
