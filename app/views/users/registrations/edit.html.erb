@@ -1,11 +1,11 @@
-<h2>Perfil de <%= resource.username.capitalize %></h2>
+<h2>Perfil de <%= resource.username %></h2>
 
 
 <div class="panel panel-default">
   <div class="panel-heading">Reputación</div>
   <div class="panel-body">
     <div>
-      ¡Felicidades tienes <span class="badge"><%= resource.reputation.to_i %> </span> puntos!
+      ¡Felicitaciones, tienes <span class="badge"><%= resource.reputation.to_i %> </span> puntos!
     </div>
   </div>
 </div>
@@ -34,7 +34,7 @@
                             class: "form-control") %>
       </div>
     <% end %>
-    
+
 
     <div class="form-group">
       <%= f.label(:password)%> <i>(leave blank if you don't want to change it)</i><br />
@@ -45,7 +45,7 @@
       <% end %>
     </div>
 
-  
+
     <div class="form-group">
       <%= f.label(:password_confirmation) %><br />
       <%= f.password_field(:password_confirmation, autocomplete: "off", class: "form-control")%>
