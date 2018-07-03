@@ -16,8 +16,7 @@
 
   <div class="form-group">
     <%= f.label(:email)%><br />
-    <%= f.email_field(:email, autocomplete: "email", readonly: true,
-                      class: "form-control form-control-plaintext")%>
+    <%= f.email_field(:email, autocomplete: "email", readonly: true, class: "form-control form-control-plaintext") %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -28,27 +27,27 @@
 
     <% if resource.provider.nil? %>
       <div class="form-group">
-        <%= f.label(:current_password)%>
-        <i>(we need your current password to confirm your changes)</i><br />
-        <%= f.password_field(:current_password, autocomplete: "off", autofocus: true,
-                            class: "form-control") %>
+        <%= f.label(:contraseña_actual) %>
+        <i>(necesaria para confirmar los cambios)</i><br />
+        <%= f.password_field(:current_password, autocomplete: "off", autofocus: true, class: "form-control") %>
       </div>
     <% end %>
 
 
     <div class="form-group">
-      <%= f.label(:password)%> <i>(leave blank if you don't want to change it)</i><br />
+      <%= f.label(:contraseña) %>
+      <i>(deja esta casilla en blanco si no deseas cambiar contraseña)</i><br />
       <%= f.password_field(:password, autocomplete: "off", class: "form-control")%>
       <% if @minimum_password_length %>
         <br />
-        <em><%= @minimum_password_length %> characters minimum</em>
+        <em><%= @minimum_password_length %> caracteres mínimo</em>
       <% end %>
     </div>
 
 
     <div class="form-group">
-      <%= f.label(:password_confirmation) %><br />
-      <%= f.password_field(:password_confirmation, autocomplete: "off", class: "form-control")%>
+      <%= f.label(:confirmar_contraseña) %><br />
+      <%= f.password_field(:password_confirmation, autocomplete: "off", class: "form-control") %>
     </div>
   <% end %>
 
@@ -58,7 +57,7 @@
       <span class="btn btn-success fileinput-button">
         <i class="glyphicon glyphicon-plus"></i>
           <span>Seleccionar avatar</span>
-        <%= f.file_field(:avatar, {id: "fileupload" })%>
+        <%= f.file_field(:avatar, {id: "fileupload" }) %>
       </span>
     </div>
     <div class="col col-md col-md-2">
@@ -68,19 +67,15 @@
   </div>
 
   <div class="actions form form-group">
-    <%= f.submit("Update", class: "btn btn-primary mb-2") %>
+    <%= f.submit("Actualizar", class: "btn btn-primary mb-2") %>
   </div>
 <% end %>
+<br><br><br>
+<h5>¿Deseas cancelar tu cuenta?</h5>
 
-<h3>Cancel my account</h3>
+<p><%= button_to("Borrar", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger btn-primary mb-2") %></p>
 
-<p>Unhappy? <%= button_to("Cancel my account",
-                          registration_path(resource_name),
-                          data: { confirm: "Are you sure?" },
-                          method: :delete,
-                          class: "btn btn-danger btn-primary mb-2" )%></p>
-
-<%= link_to("Back", :back )%>
+<%= link_to("Atrás", :back ) %>
 
 <br><br>
 
