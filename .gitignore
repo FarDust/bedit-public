@@ -157,6 +157,8 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+# Lock seeds files
+lib/seeds/.~lock.*
 
 # End of https://www.gitignore.io/api/ruby,macos,linux,rails,windows
 .
