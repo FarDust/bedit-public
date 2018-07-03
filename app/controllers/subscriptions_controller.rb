@@ -1,4 +1,5 @@
 class SubscriptionsController < ApplicationController
+  before_action(:authenticate_user!)
   def create
     new_favourite = Subscription.create(
       user: current_user,
