@@ -96,9 +96,15 @@
 
 <script type="text/javascript">
   $('#uploader-<%= commentary.id %>').cloudinary_upload_widget(
-    { cloud_name: 'hctj9u4ot', upload_preset: 'commentary',
-      cropping: 'server', folder: 'commentaries', theme: 'minimal',
-      button_class: "btn btn-default", max_image_width: 400, max_image_height: 400},
+    {cloud_name: 'hctj9u4ot',
+     upload_preset: 'commentary',
+     cropping: 'server',
+     folder: 'commentaries',
+     theme: 'minimal',
+     button_class: "btn btn-default",
+     button_caption: "Subir imagen",
+     max_image_width: 400,
+     max_image_height: 400},
     function(error, result) {
       console.log(error,result);
       console.log($('#<%= commentary.id%>').value)

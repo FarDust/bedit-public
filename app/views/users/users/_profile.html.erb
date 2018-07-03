@@ -4,7 +4,7 @@
         <%= render(template: "users/users/_user.html.erb", locals: {user: user})%>
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3>Publicaciones con mejor reputacion</h3>
+                <h3>Publicaciones con mejor reputación</h3>
             </div>
             <div class="panel-body">
                 <% for post in  user.posts.sort_by(&:points).reverse![0..4] %>
@@ -24,7 +24,7 @@
                         </div>
                         <div class="panel-footer">
                             <span  class="label label-success">
-                                Suscriptores: <%= post.subcribers%>
+                                Seguidores: <%= post.subcribers%>
                             </span>
                             &nbsp;
                             <span  class="label label-primary">
@@ -42,7 +42,7 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h3>
-                    Mejores comentarios y repuestas para la comunidad
+                    Comentarios y respuestas mejor puntuados por la comunidad
                 </h3>
             </div>
             <div class="panel-body">

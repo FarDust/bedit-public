@@ -1,14 +1,14 @@
 <div class="notifications row">
   <div class="heading clearfix">
-    <%= t('notifications.all_notifications') %>
+    <%= 'Notificaciones nuevas' %>
 
     <span class="pull-xs-right">
-      <%= link_to t('notifications.clean_all'), notifications.clean_notifications_path, class: 'btn btn-sm btn-secondary', method: 'delete' %>
+      <%= link_to('Marcar todo como leído', notifications.clean_notifications_path, class: 'btn btn-sm btn-secondary', method: 'delete') %>
     </span>
   </div>
   <div class="list">
     <% if @notifications.blank? %>
-      <div class="no-records"><%= t('notifications.no_records') %></div>
+      <div class="no-records"><%= 'No tienes notificaciones sin leer' %></div>
     <% else %>
       <% @notification_groups.each do |group, notifications| %>
         <div class="notification-group">
