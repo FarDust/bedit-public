@@ -59,14 +59,41 @@ def seed_users
 end
 
 def seed_posts
-  categorias = Category.all
-  categorias.each do |categoria|
-    5.times do
+  publicaciones = {
+    'Política Chilena': [
+      ['Gobierno encabeza mesa de trabajo tras cierre de la empresa Maersk', 
+        '¿Qué opinan de esta noticia que encontré? 
+        [Link a la noticia](http://www.emol.com/noticias/Economia/2018/06/30/911723/Ministro-Monckeberg-encabeza-mesa-de-trabajo-para-acordar-acciones-tras-cierre-de-empresa-Maersk-en-San-Antonio.html)']
+    ],
+    'Ley Bolsas Plásticas': [
+      ['No puedo comprar tranquilo',
+        'Odio ir a comprar y que se me queden las bolsas recicladas... Maldita ley, no puedo ir a comprar tranquilo.'],
+      ['Amo la nueva ley',
+        'Me encanta ver cada vez más personas 
+        caminando con sus bolsas reutilizables, se nota que Chile está avanzando como país.']
+    ],
+    'Ruby Gems': [
+      ['Busco gema para crear foro',
+        'Hola amigos, tengo que para una tarea crear un foro similar a Redit, conocen alguna gema que podría ayudarme con esto?.
+        Les dejo un meme para llamar su atención:
+        ![Momazo](https://i.imgflip.com/1qlyex.jpg)']
+    ],
+    'Git for dummies': [
+      ['Libro para aprender Git',
+        'Hola, me recomiendan algún libro para aprender más sobre Git por favor. Les dejo un meme para no morir en el olvido.
+
+        ![Meme](https://cdn-images-1.medium.com/max/650/1*ODQUZPiwWu04XxKX4f2jbg.jpeg)']
+    ]
+  }
+
+  publicaciones.keys.each do |foro|
+    f = Category.where(name: foro)
+    publicaciones[foro].each do |publicacion|
       Post.create(
-        title: Faker::Lorem.sentences[0],
-        content: Faker::Lorem.sentences[0],
-        category_id: categoria.id,
-        user: User.where(username: :admin)[0]
+        title: publicacion[0],
+        content: publicacion[1],
+        category_id: f.id,
+        user: User.all.sample
       )
     end
   end
