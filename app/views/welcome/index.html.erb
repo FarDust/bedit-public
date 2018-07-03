@@ -23,7 +23,9 @@
     <% if @ultimasPublicaciones.length != 0 %>
       <div class="jumbotron">
         <h3>Últimas 5 publicaciones creadas</h3>
-        <%= render(@ultimasPublicaciones)%>
+        <div class="row">
+          <%= render(@ultimasPublicaciones)%>
+        </div>
       </div>
     <% end %>
   <% end %>
@@ -43,8 +45,10 @@
 
     <% if @ultimasPublicaciones.length != 0 %>
       <div class="jumbotron">
-        <h3>Últimas 5 publicaciones creadas</h3>
-        <%= render(@ultimasPublicaciones)%>
+        <h3>Últimas <%= @ultimasPublicaciones.length %> publicaciones creadas</h3>
+        <div class="row">
+          <%= render(@ultimasPublicaciones)%>
+        </div>
       </div>
     <% end %>
   <% end %>
@@ -61,7 +65,9 @@
   <% if @ultimasPublicaciones.length != 0 %>
     <div class="jumbotron">
       <h3>Últimas 5 publicaciones creadas</h3>
-      <%= render(@ultimasPublicaciones)%>
+      <div class="row">
+        <%= render(@ultimasPublicaciones)%>
+      </div>
     </div>
   <% end %>
 <% end %>
