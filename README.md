@@ -1,3 +1,5 @@
+[![Maintainability](https://api.codeclimate.com/v1/badges/ec1fbd0adbba51ba4e8c/maintainability)](https://codeclimate.com/github/FarDust/bedit-public/maintainability)
+
 # README
 
 ## Heroku
