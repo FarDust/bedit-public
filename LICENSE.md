@@ -1,7 +1,7 @@
 MIT License
 
 Copyright (c) 2018 Gabriel Andrés Faúndez Soto
-Copyright (c) 2018 Emilio Arturo Villagran Varas
+Copyright (c) 2018 Emilio Arturo Villagrán Varas
 Copyright (c) 2018 Francisco Hernán Guíñez Correa
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
